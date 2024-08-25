@@ -14,11 +14,11 @@ jobs:
 
       - name: Set up Git
         run: |
-          git config --global user.email "twój_email@example.com"
-          git config --global user.name "Twoje Imię"
+          git config --global user.email "andrew.mroz@gmail.com"
+          git config --global user.name "Zimny65"
 
       - name: Commit changes
         run: |
           git add .
-          git commit -m "Automatyczny commit z GitHub Actions"
+          git commit -m "GitHub Actions automatic commit"
           git push origin main
