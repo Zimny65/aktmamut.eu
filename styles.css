@@ -1,0 +1,97 @@
+/* Resetowanie marginesów i odstępów */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styl dla całego ciała strony */
+body {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.6;
+    background-color: #333; /* Ustawienie jednolitego ciemnego tła */
+    color: #fff;
+    overflow: hidden; /* Zapobiega przewijaniu */
+}
+
+/* Nagłówek */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Nagłówek na wierzchu */
+}
+
+/* Logo */
+.logo {
+    width: 80px;
+    height: 80px;
+}
+
+/* Nagłówek - środkowa część */
+.header-center {
+    text-align: center;
+}
+
+.header-center h1 {
+    margin-bottom: 5px;
+}
+
+.header-center p {
+    font-style: normal;
+}
+
+/* Nawigacja */
+.header-right {
+    margin-right: 20px; /* Dodano margines, aby menu nie wychodziło poza ekran */
+}
+
+.header-right ul {
+    list-style: none;
+    display: flex;
+}
+
+.header-right ul li {
+    margin: 0 10px; /* Zmniejszono margines między elementami, aby zmieścić się w nagłówku */
+}
+
+.header-right ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Mapa w pełnym ekranie */
+#map-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Bez obramowania */
+    z-index: 1; /* Mapa poniżej nagłówka i stopki */
+}
+
+/* Stylizacja kontrolek mapy */
+.leaflet-control {
+    margin-top: 70px; /* Przesunięcie kontrolki w dół, aby nie nachodziła na nagłówek */
+}
+
+/* Stopka */
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Stopka na wierzchu */
+}
