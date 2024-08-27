@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ef714584588ebb3bbe766409c837b4a3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+        <style>
+        .leaflet-container {
+            width: 100vw;
+            height: 100vh;
+        }
+        .leaflet-control-zoom {
+            transform: translateY(160px); /* Większe przesunięcie kontrolki w dół */
+        }
+        .leaflet-control-attribution {
+            display: none;
+        }
+        .leaflet-control-minimap {
+            transform: translateY(-60px); /* Przesunięcie mini mapy w górę */
+        }
+        </style>
+    
+    
+            <div class="folium-map" id="map_ef714584588ebb3bbe766409c837b4a3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ef714584588ebb3bbe766409c837b4a3 = L.map(
+                "map_ef714584588ebb3bbe766409c837b4a3",
+                {
+                    center: [45.0, 25.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1ead817bb723b86847b2622f446dde9f = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {"attribution": "Map data: \u0026copy; OpenStreetMap contributors, SRTM | Map style: \u0026copy; OpenTopoMap (CC-BY-SA)", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_1ead817bb723b86847b2622f446dde9f.addTo(map_ef714584588ebb3bbe766409c837b4a3);
+        
+    
+            var marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff = L.markerClusterGroup(
+                {"maxClusterRadius": 4}
+            );
+        
+    
+            var marker_172b4ad5a0095b0e77d4b3616c06d963 = L.marker(
+                [48.8578167, 17.6756536],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_d048cf8e21a543ee698471671d33d94e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e001\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_172b4ad5a0095b0e77d4b3616c06d963.setIcon(div_icon_d048cf8e21a543ee698471671d33d94e);
+        
+    
+        var popup_a44714629f108eccfbaf6d34eb68fe62 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_774d0460ba71b86646623dff26281910 = $(`<div id="html_774d0460ba71b86646623dff26281910" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velka Javorina<br>CZ Velká Javořina<br>SK Veľká Javorina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Karpaty Słowacko-Morawskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Białe Karpaty<br>CZ Bílé Karpaty<br>SK Biele Karpaty</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Javorinská hornatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">970 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2332</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2023-08-16</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_a44714629f108eccfbaf6d34eb68fe62.setContent(html_774d0460ba71b86646623dff26281910);
+            
+        
+
+        marker_172b4ad5a0095b0e77d4b3616c06d963.bindPopup(popup_a44714629f108eccfbaf6d34eb68fe62)
+        ;
+
+        
+    
+    
+            var marker_ca333731c46bc7163a786b362ee75681 = L.marker(
+                [48.6795397, 17.5644075],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_e0d3a2a24d744a421f843ff7fdb1e2f3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e002\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ca333731c46bc7163a786b362ee75681.setIcon(div_icon_e0d3a2a24d744a421f843ff7fdb1e2f3);
+        
+    
+        var popup_e91ffac97d44e6d8ed37c5bd9e999047 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_aabe955286312fa8dd3d274c14058e55 = $(`<div id="html_aabe955286312fa8dd3d274c14058e55" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Bradlo<br>SK Bradlo</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Karpaty Słowacko-Morawskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pogórze Myjawskie<br>SK Myjavská pahorkatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">543 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_e91ffac97d44e6d8ed37c5bd9e999047.setContent(html_aabe955286312fa8dd3d274c14058e55);
+            
+        
+
+        marker_ca333731c46bc7163a786b362ee75681.bindPopup(popup_e91ffac97d44e6d8ed37c5bd9e999047)
+        ;
+
+        
+    
+    
+            var marker_e745887cd02aa3960095c40437fec3df = L.marker(
+                [49.3190897, 18.3674708],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_b3cd7b7b95dc91358da07eb694cdc793 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e003\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e745887cd02aa3960095c40437fec3df.setIcon(div_icon_b3cd7b7b95dc91358da07eb694cdc793);
+        
+    
+        var popup_246436a8fb8ad70c05494604005ebe11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fe38a31302d61b5da9629ffc8397c726 = $(`<div id="html_fe38a31302d61b5da9629ffc8397c726" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Javornik<br>SK Veľký Javorník<br>PL Wielki Jawornik</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Karpaty Słowacko-Morawskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Jaworniki<br>SK Javorníky</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Vysoké Javorníky<br>Javornícka hornatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1071 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_246436a8fb8ad70c05494604005ebe11.setContent(html_fe38a31302d61b5da9629ffc8397c726);
+            
+        
+
+        marker_e745887cd02aa3960095c40437fec3df.bindPopup(popup_246436a8fb8ad70c05494604005ebe11)
+        ;
+
+        
+    
+    
+            var marker_782995a3e8705a5c4c76b5792177560f = L.marker(
+                [49.3930561, 18.4052953],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_40aa697773b3ce3c8f69bec9294e44c1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e004\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_782995a3e8705a5c4c76b5792177560f.setIcon(div_icon_40aa697773b3ce3c8f69bec9294e44c1);
+        
+    
+        var popup_ff49ab74bde7b2da92e74ec34a8f5648 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_05e0acdcf4e3c45519b8dae963f253b6 = $(`<div id="html_05e0acdcf4e3c45519b8dae963f253b6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Beskydek<br>SK Beskydok<br>CZ Beskydek<br>PL Beskidek</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pogórze Turżowskie<br>SK Turzovská vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Zadné vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">953 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1803</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-01-26</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_ff49ab74bde7b2da92e74ec34a8f5648.setContent(html_05e0acdcf4e3c45519b8dae963f253b6);
+            
+        
+
+        marker_782995a3e8705a5c4c76b5792177560f.bindPopup(popup_ff49ab74bde7b2da92e74ec34a8f5648)
+        ;
+
+        
+    
+    
+            var marker_82331d8fb0dfb76b9266bd52070c2ae9 = L.marker(
+                [49.5061351, 18.6708983],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_4d12d2cf70ab08fa2af3f14e3ce28327 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e005\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_82331d8fb0dfb76b9266bd52070c2ae9.setIcon(div_icon_4d12d2cf70ab08fa2af3f14e3ce28327);
+        
+    
+        var popup_4fb094af33c3eba5503fd33a9b8fb926 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c1976ac6b89223deabfd160769a7b00a = $(`<div id="html_c1976ac6b89223deabfd160769a7b00a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Polom<br>CZ Velký Polom<br>SK Veľký Polom</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Beskidy Śląsko-Morawskie<br>DE Mährisch-Schlesischen Beskiden<br>CZ Moravskoslezské Beskydy<br>SK Moravsko-sliezske Beskydy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pogórze Łysogórskie<br>CZ Lysohorská hornatina<br>SK Zadné hory</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1067 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1759</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-11-12</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_4fb094af33c3eba5503fd33a9b8fb926.setContent(html_c1976ac6b89223deabfd160769a7b00a);
+            
+        
+
+        marker_82331d8fb0dfb76b9266bd52070c2ae9.bindPopup(popup_4fb094af33c3eba5503fd33a9b8fb926)
+        ;
+
+        
+    
+    
+            var marker_3a80e4bd55e516cb797addf2915a9a7e = L.marker(
+                [49.5134564, 18.9478525],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_e739930dfb3e9d1aaea1a54880e98836 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e006\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_3a80e4bd55e516cb797addf2915a9a7e.setIcon(div_icon_e739930dfb3e9d1aaea1a54880e98836);
+        
+    
+        var popup_7ebc655926d8b544541cc4afbde944c4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_064ba17e97e8762b9f09e3b813728a7a = $(`<div id="html_064ba17e97e8762b9f09e3b813728a7a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Kykula<br>SK Kykula<br>PL Kikuła</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Międzygórze Jabłonkowskie<br>CZ Jablunkovské mezihoří<br>SK Jablunkovské medzihorie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">845 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_7ebc655926d8b544541cc4afbde944c4.setContent(html_064ba17e97e8762b9f09e3b813728a7a);
+            
+        
+
+        marker_3a80e4bd55e516cb797addf2915a9a7e.bindPopup(popup_7ebc655926d8b544541cc4afbde944c4)
+        ;
+
+        
+    
+    
+            var marker_42ac7b3244b0ff7c88ed0c65842ec4d8 = L.marker(
+                [49.4135494, 18.9691022],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_00c49557c24e436f37ac562954ab7835 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e007\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_42ac7b3244b0ff7c88ed0c65842ec4d8.setIcon(div_icon_00c49557c24e436f37ac562954ab7835);
+        
+    
+        var popup_465da2d707d03b5e7bc9ab9e62f18d41 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e8e8906f843d7c36d9ce8a401d216c74 = $(`<div id="html_e8e8906f843d7c36d9ce8a401d216c74" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Wielka Racza<br>SK Veľká Rača</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Beskid Żywiecko-Kysucki<br>SK Kysucké Beskydy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pasmo Wielkiej Raczy<br>SK Rača</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1236 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1750</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-10-01</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_465da2d707d03b5e7bc9ab9e62f18d41.setContent(html_e8e8906f843d7c36d9ce8a401d216c74);
+            
+        
+
+        marker_42ac7b3244b0ff7c88ed0c65842ec4d8.bindPopup(popup_465da2d707d03b5e7bc9ab9e62f18d41)
+        ;
+
+        
+    
+    
+            var marker_58f00341b567a75996d280447ef239c9 = L.marker(
+                [49.2756592, 19.1006606],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_b613fe7111a328ec6ae5971d0118a1f3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e008\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_58f00341b567a75996d280447ef239c9.setIcon(div_icon_b613fe7111a328ec6ae5971d0118a1f3);
+        
+    
+        var popup_8660e1eac7c09dbd6f500766924a3ea7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3833a92ced5b2f35e679f0d9b32275d0 = $(`<div id="html_3833a92ced5b2f35e679f0d9b32275d0" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Pupov<br>SK Pupov</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Kysuckie<br>SK Kysucká vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Kysucké bradlá</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1096 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1805</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-01-27</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_8660e1eac7c09dbd6f500766924a3ea7.setContent(html_3833a92ced5b2f35e679f0d9b32275d0);
+            
+        
+
+        marker_58f00341b567a75996d280447ef239c9.bindPopup(popup_8660e1eac7c09dbd6f500766924a3ea7)
+        ;
+
+        
+    
+    
+            var marker_ae69b2a424bc1b5ec6f8c47058a233a6 = L.marker(
+                [49.5731525, 19.5294989],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_bd98cf315aaea683bf8cc31c215671de = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e009\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ae69b2a424bc1b5ec6f8c47058a233a6.setIcon(div_icon_bd98cf315aaea683bf8cc31c215671de);
+        
+    
+        var popup_7466f1a89b91ae8f8a575014b5d6bce7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d5bf36a6f7ee32dd3a4ee2f77f51a3dc = $(`<div id="html_d5bf36a6f7ee32dd3a4ee2f77f51a3dc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Babia Góra<br>SK Babia hora<br>DE Teufelspitze<br>HU Babia-Gura</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Beskid Żywiecko-Orawski<br>SK Oravské Beskydy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pasmo Babiogórskie<br>SK Babia hora</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1725 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1717</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-05-28</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_7466f1a89b91ae8f8a575014b5d6bce7.setContent(html_d5bf36a6f7ee32dd3a4ee2f77f51a3dc);
+            
+        
+
+        marker_ae69b2a424bc1b5ec6f8c47058a233a6.bindPopup(popup_7466f1a89b91ae8f8a575014b5d6bce7)
+        ;
+
+        
+    
+    
+            var marker_719ea89eec44c50e8d2abb0c3b0ae11a = L.marker(
+                [49.4116906, 19.3902761],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_8de76852c98b12dea3acb6204b56c6fe = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e010\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_719ea89eec44c50e8d2abb0c3b0ae11a.setIcon(div_icon_8de76852c98b12dea3acb6204b56c6fe);
+        
+    
+        var popup_254286d9bbcfb025c41d3040d9f010d5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fbc8731da8eec6f114a171229086f382 = $(`<div id="html_fbc8731da8eec6f114a171229086f382" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Vrata<br>SK Vráta</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Podbeskydská vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1051 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1728</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-07-09</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_254286d9bbcfb025c41d3040d9f010d5.setContent(html_fbc8731da8eec6f114a171229086f382);
+            
+        
+
+        marker_719ea89eec44c50e8d2abb0c3b0ae11a.bindPopup(popup_254286d9bbcfb025c41d3040d9f010d5)
+        ;
+
+        
+    
+    
+            var marker_875d7c6c1ada219d04443ac66bbcd79d = L.marker(
+                [49.4015447, 20.6419517],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_8300c884ee344ba0d3d50ad69afc61ff = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e011\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_875d7c6c1ada219d04443ac66bbcd79d.setIcon(div_icon_8300c884ee344ba0d3d50ad69afc61ff);
+        
+    
+        var popup_c970deebf8453ee2ec7ea8e0895c5547 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_eab264b65fd08f7283d4c4511d7365be = $(`<div id="html_eab264b65fd08f7283d4c4511d7365be" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Eliasovka<br>SK Eliášovka<br>PL Eliaszówka</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Beskid Nadpopradzki<br>SK Popradské Beskydy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pasmo Lubowelskie<br>SK Ľubovnianska vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1023 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1715</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-05-21</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_c970deebf8453ee2ec7ea8e0895c5547.setContent(html_eab264b65fd08f7283d4c4511d7365be);
+            
+        
+
+        marker_875d7c6c1ada219d04443ac66bbcd79d.bindPopup(popup_c970deebf8453ee2ec7ea8e0895c5547)
+        ;
+
+        
+    
+    
+            var marker_2aad1b54e1626220b6d31b0200669ab5 = L.marker(
+                [49.2344364, 20.9886861],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_417b7d2423d4633806723445772ef63b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e012\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_2aad1b54e1626220b6d31b0200669ab5.setIcon(div_icon_417b7d2423d4633806723445772ef63b);
+        
+    
+        var popup_b1753dca96d025fa8df1ec5dc5ff596a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2a5c85a96f5329d7bee643ebeb80c9a4 = $(`<div id="html_2a5c85a96f5329d7bee643ebeb80c9a4" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Mincol<br>SK Minčol<br>PL Minczoł Czerchowski</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Beskidy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Czerchowskie<br>SK Čergov</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1157 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1752</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-10-14</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_b1753dca96d025fa8df1ec5dc5ff596a.setContent(html_2a5c85a96f5329d7bee643ebeb80c9a4);
+            
+        
+
+        marker_2aad1b54e1626220b6d31b0200669ab5.bindPopup(popup_b1753dca96d025fa8df1ec5dc5ff596a)
+        ;
+
+        
+    
+    
+            var marker_36ea11d62e3bd2c49d891f674c630fd0 = L.marker(
+                [49.2712608, 19.2499547],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_82fddec56b7c8c307db1b55ea5c81727 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e013\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_36ea11d62e3bd2c49d891f674c630fd0.setIcon(div_icon_82fddec56b7c8c307db1b55ea5c81727);
+        
+    
+        var popup_dd3f8e8fc9007189a47ef34525525914 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_658dcbeed2bf40e24e5bea8ebc843167 = $(`<div id="html_658dcbeed2bf40e24e5bea8ebc843167" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Mincol<br>SK Minčol<br>PL Minczoł Orawski</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Magura Orawska<br>SK Oravská Magura</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Kubínska hoľa</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1394 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1727</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-07-08</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_dd3f8e8fc9007189a47ef34525525914.setContent(html_658dcbeed2bf40e24e5bea8ebc843167);
+            
+        
+
+        marker_36ea11d62e3bd2c49d891f674c630fd0.bindPopup(popup_dd3f8e8fc9007189a47ef34525525914)
+        ;
+
+        
+    
+    
+            var marker_bcd76b761dd41cfa77e792be85abe324 = L.marker(
+                [49.3357519, 19.4687133],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_0b8c13b40d9aebaef5bde5c115b52b86 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e014\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_bcd76b761dd41cfa77e792be85abe324.setIcon(div_icon_0b8c13b40d9aebaef5bde5c115b52b86);
+        
+    
+        var popup_fb1d7efd007f6efbe65335e79d961a09 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3d29d206279c45629e1d85fbbd94585e = $(`<div id="html_3d29d206279c45629e1d85fbbd94585e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Kycera<br>SK Kýčera</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Oravská vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">953 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2319</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2023-06-06</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_fb1d7efd007f6efbe65335e79d961a09.setContent(html_3d29d206279c45629e1d85fbbd94585e);
+            
+        
+
+        marker_bcd76b761dd41cfa77e792be85abe324.bindPopup(popup_fb1d7efd007f6efbe65335e79d961a09)
+        ;
+
+        
+    
+    
+            var marker_e7468c3f1ae2aea14cdaadeec0fe5ee4 = L.marker(
+                [49.2975503, 19.6932986],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_110018734afb2f1a2d850e412d424c9c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e015\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e7468c3f1ae2aea14cdaadeec0fe5ee4.setIcon(div_icon_110018734afb2f1a2d850e412d424c9c);
+        
+    
+        var popup_c23957c98df7266f7891280c7fa53baf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_45a2710c44d861e0a2f1325cf91c5609 = $(`<div id="html_45a2710c44d861e0a2f1325cf91c5609" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Skorusina<br>SK Skorušina<br>PL Skoruszyna</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Skoruszyńskie Wierchy<br>SK Skorušinské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Skorušina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1314 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1726</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-07-06</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_c23957c98df7266f7891280c7fa53baf.setContent(html_45a2710c44d861e0a2f1325cf91c5609);
+            
+        
+
+        marker_e7468c3f1ae2aea14cdaadeec0fe5ee4.bindPopup(popup_c23957c98df7266f7891280c7fa53baf)
+        ;
+
+        
+    
+    
+            var marker_552f7c2e63851bf6143951992a152029 = L.marker(
+                [49.3806917, 20.5549653],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_b300f870daf8fb195d2accac6ac4c9ae = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e016\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_552f7c2e63851bf6143951992a152029.setIcon(div_icon_b300f870daf8fb195d2accac6ac4c9ae);
+        
+    
+        var popup_c22de3a6617f17961fe0d0cf8c03268a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a16229cb49b0f8d156edaf5b92f8d487 = $(`<div id="html_a16229cb49b0f8d156edaf5b92f8d487" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Vysoke Skalky<br>SK Vysoké Skalky<br>PL Wysoka</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pieniny<br>DE Pieninen<br>SK Pieniny</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Małe Pieniny</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1050 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1716</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-05-21</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_c22de3a6617f17961fe0d0cf8c03268a.setContent(html_a16229cb49b0f8d156edaf5b92f8d487);
+            
+        
+
+        marker_552f7c2e63851bf6143951992a152029.bindPopup(popup_c22de3a6617f17961fe0d0cf8c03268a)
+        ;
+
+        
+    
+    
+            var marker_33cb2c128b42944d15b2e9e883851251 = L.marker(
+                [49.2919952, 20.1983392],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_95459009e0a66ffad33e45cdb415e72a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e017\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_33cb2c128b42944d15b2e9e883851251.setIcon(div_icon_95459009e0a66ffad33e45cdb415e72a);
+        
+    
+        var popup_33abb61c09db181a8e61e56a2c377342 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f68f3d879dffd762e810373e7ba23665 = $(`<div id="html_f68f3d879dffd762e810373e7ba23665" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Repisko<br>SK Repisko<br>PL Rzepisko</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Magura Spiska<br>SK Spišská Magura</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Repisko</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1259 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1843</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-09-09</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_33abb61c09db181a8e61e56a2c377342.setContent(html_f68f3d879dffd762e810373e7ba23665);
+            
+        
+
+        marker_33cb2c128b42944d15b2e9e883851251.bindPopup(popup_33abb61c09db181a8e61e56a2c377342)
+        ;
+
+        
+    
+    
+            var marker_31f03123d8aa74593349c611dde93b0b = L.marker(
+                [49.2305461, 20.7686581],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_279d321b64bbcf879137ee5ff97ee630 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e018\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_31f03123d8aa74593349c611dde93b0b.setIcon(div_icon_279d321b64bbcf879137ee5ff97ee630);
+        
+    
+        var popup_06889af7d341009757ae7aae6bcbfc33 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3621dcb9af3bdc10890afbb889300065 = $(`<div id="html_3621dcb9af3bdc10890afbb889300065" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Hromovec<br>SK Hromovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Spišsko-šarišské medzihorie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Hromovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">894 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1847</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-10-12</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_06889af7d341009757ae7aae6bcbfc33.setContent(html_3621dcb9af3bdc10890afbb889300065);
+            
+        
+
+        marker_31f03123d8aa74593349c611dde93b0b.bindPopup(popup_06889af7d341009757ae7aae6bcbfc33)
+        ;
+
+        
+    
+    
+            var marker_342884827c9879383602b1ff53ec01a8 = L.marker(
+                [49.1931992, 20.6241894],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_6080dc4e5c6c6b689cefd6b742d3738c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e019\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_342884827c9879383602b1ff53ec01a8.setIcon(div_icon_6080dc4e5c6c6b689cefd6b742d3738c);
+        
+    
+        var popup_152ab3e018dbea3a2270dfae5c8d9aff = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_eadf5e1f5c2ec0cea7010d8f38e887b6 = $(`<div id="html_eadf5e1f5c2ec0cea7010d8f38e887b6" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Cierna Hora<br>SK Čierna hora<br>PL Czarna Góra Lewocka</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Lewockie<br>SK Levočské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Levočská vysočina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1289 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1846</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-10-12</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_152ab3e018dbea3a2270dfae5c8d9aff.setContent(html_eadf5e1f5c2ec0cea7010d8f38e887b6);
+            
+        
+
+        marker_342884827c9879383602b1ff53ec01a8.bindPopup(popup_152ab3e018dbea3a2270dfae5c8d9aff)
+        ;
+
+        
+    
+    
+            var marker_152044e4c85e513d3740d6ed1403433a = L.marker(
+                [49.0901589, 20.9223183],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_79eb5a4f2faa88c76a205589d96860dc = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e020\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_152044e4c85e513d3740d6ed1403433a.setIcon(div_icon_79eb5a4f2faa88c76a205589d96860dc);
+        
+    
+        var popup_e49e7c811a3581b2450ae9ef356b4645 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_01c00367adc6231c7a95d91a99f1656c = $(`<div id="html_01c00367adc6231c7a95d91a99f1656c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Bachuren<br>SK Bachureň</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Bachureń<br>SK Bachureň</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1081 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1930</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-08-18</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_e49e7c811a3581b2450ae9ef356b4645.setContent(html_01c00367adc6231c7a95d91a99f1656c);
+            
+        
+
+        marker_152044e4c85e513d3740d6ed1403433a.bindPopup(popup_e49e7c811a3581b2450ae9ef356b4645)
+        ;
+
+        
+    
+    
+            var marker_6da79299ac1f1d83ec8310eaa2cbb56c = L.marker(
+                [48.9903354, 20.9576852],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_f85d3c0cc270b67959654f0962d1a030 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e021\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6da79299ac1f1d83ec8310eaa2cbb56c.setIcon(div_icon_f85d3c0cc270b67959654f0962d1a030);
+        
+    
+        var popup_4ea8cbbd205345efc6d08993348e257f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_df9b81aa2960d0d7336921a5c086c0f4 = $(`<div id="html_df9b81aa2960d0d7336921a5c086c0f4" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Za Horou<br>SK Za horou</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Magura </td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Šarišská vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">717 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1929</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-08-17</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_4ea8cbbd205345efc6d08993348e257f.setContent(html_df9b81aa2960d0d7336921a5c086c0f4);
+            
+        
+
+        marker_6da79299ac1f1d83ec8310eaa2cbb56c.bindPopup(popup_4ea8cbbd205345efc6d08993348e257f)
+        ;
+
+        
+    
+    
+            var marker_fdde368dfbfa0ec2a380e0f6c4334dda = L.marker(
+                [48.5235691, 17.3916679],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_0a092fda2502bbe9772760489fced26a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e022\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_fdde368dfbfa0ec2a380e0f6c4334dda.setIcon(div_icon_0a092fda2502bbe9772760489fced26a);
+        
+    
+        var popup_2457c293c6c7c008cf25aa3098c1d96d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89a9eb5482a712915daffbdf7f56c7ea = $(`<div id="html_89a9eb5482a712915daffbdf7f56c7ea" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Zaruby<br>SK Záruby</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Małe Karpaty<br>SK Malé Karpaty</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Pezinské Karpaty<br>Biele hory</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">768 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_2457c293c6c7c008cf25aa3098c1d96d.setContent(html_89a9eb5482a712915daffbdf7f56c7ea);
+            
+        
+
+        marker_fdde368dfbfa0ec2a380e0f6c4334dda.bindPopup(popup_2457c293c6c7c008cf25aa3098c1d96d)
+        ;
+
+        
+    
+    
+            var marker_1e9e6b1f06d6c277d3f9862c156ac9bc = L.marker(
+                [48.7744446, 18.0408335],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_45234eb867a1ffcec9a70f66dfd05e6b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e023\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1e9e6b1f06d6c277d3f9862c156ac9bc.setIcon(div_icon_45234eb867a1ffcec9a70f66dfd05e6b);
+        
+    
+        var popup_a22b9598d56696239cc4e7534df72eca = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_be8dabbd99a980d19a17c1a8d183ba78 = $(`<div id="html_be8dabbd99a980d19a17c1a8d183ba78" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Inovec<br>SK Inovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Inowieckie<br>SK Považský Inovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Vysoký Inovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1042 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_a22b9598d56696239cc4e7534df72eca.setContent(html_be8dabbd99a980d19a17c1a8d183ba78);
+            
+        
+
+        marker_1e9e6b1f06d6c277d3f9862c156ac9bc.bindPopup(popup_a22b9598d56696239cc4e7534df72eca)
+        ;
+
+        
+    
+    
+            var marker_977e64d3a9a21675e33a85bca0c6242e = L.marker(
+                [48.4694441, 18.2397228],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_047cc06243abe9ddff718bb9e8630519 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e024\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_977e64d3a9a21675e33a85bca0c6242e.setIcon(div_icon_047cc06243abe9ddff718bb9e8630519);
+        
+    
+        var popup_bdbee938f620983e42e8e93899170647 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8445b53d143b2a6ea33904922d0e0a6c = $(`<div id="html_8445b53d143b2a6ea33904922d0e0a6c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Tribec<br>SK Veľký Tribeč</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Trybecz<br>SK Tribeč</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Veľký Tribeč<br>Vysoký Tribeč</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">830 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1904</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-05-01</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_bdbee938f620983e42e8e93899170647.setContent(html_8445b53d143b2a6ea33904922d0e0a6c);
+            
+        
+
+        marker_977e64d3a9a21675e33a85bca0c6242e.bindPopup(popup_bdbee938f620983e42e8e93899170647)
+        ;
+
+        
+    
+    
+            var marker_5b7ff186c361853ab235a06323d7596c = L.marker(
+                [48.9550174, 18.4632025],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_a5fe6d69982b6dbe524f572e8b51e5b2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e025\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_5b7ff186c361853ab235a06323d7596c.setIcon(div_icon_a5fe6d69982b6dbe524f572e8b51e5b2);
+        
+    
+        var popup_22c5adbd42d95008dbd7cc92036c83d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_67a4c0ce59d50216ce164c6323b4f40c = $(`<div id="html_67a4c0ce59d50216ce164c6323b4f40c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Strazov<br>SK Strážov</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Strażowskie<br>SK Strážovské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Zliechovská hornatina<br>Strážov</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1213 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2427</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2024-06-17</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_22c5adbd42d95008dbd7cc92036c83d7.setContent(html_67a4c0ce59d50216ce164c6323b4f40c);
+            
+        
+
+        marker_5b7ff186c361853ab235a06323d7596c.bindPopup(popup_22c5adbd42d95008dbd7cc92036c83d7)
+        ;
+
+        
+    
+    
+            var marker_3932be70269fe633ce862b9889f1cd68 = L.marker(
+                [49.1252315, 18.4958339],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_80faa658d836be1b357c31db0b64bda8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e026\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_3932be70269fe633ce862b9889f1cd68.setIcon(div_icon_80faa658d836be1b357c31db0b64bda8);
+        
+    
+        var popup_2b88f4d443ab36337ab842f7f0e96227 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f23e61f1c196453a7d4588225361adbd = $(`<div id="html_f23e61f1c196453a7d4588225361adbd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Manin<br>SK Veľký Manín</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Sułowskie Wierchy<br>SK Súľovské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Manínska vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">891 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_2b88f4d443ab36337ab842f7f0e96227.setContent(html_f23e61f1c196453a7d4588225361adbd);
+            
+        
+
+        marker_3932be70269fe633ce862b9889f1cd68.bindPopup(popup_2b88f4d443ab36337ab842f7f0e96227)
+        ;
+
+        
+    
+    
+            var marker_5ffc2001d92146b548d6427c7686b83a = L.marker(
+                [48.9580417, 18.76086],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_fbd9d2168e6c539266a3c3e3198a9356 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e027\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_5ffc2001d92146b548d6427c7686b83a.setIcon(div_icon_fbd9d2168e6c539266a3c3e3198a9356);
+        
+    
+        var popup_0bd30e94726d26f7b5075d15616b1d47 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9051586aa5a5cd90fccc96e47efc5bd9 = $(`<div id="html_9051586aa5a5cd90fccc96e47efc5bd9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Chlieviska<br>SK Chlieviská</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Żar<br>SK Žiar</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Sokol</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1024 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2327</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2023-07-18</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_0bd30e94726d26f7b5075d15616b1d47.setContent(html_9051586aa5a5cd90fccc96e47efc5bd9);
+            
+        
+
+        marker_5ffc2001d92146b548d6427c7686b83a.bindPopup(popup_0bd30e94726d26f7b5075d15616b1d47)
+        ;
+
+        
+    
+    
+            var marker_6dc76b65d0bdf20182617559f3223f19 = L.marker(
+                [49.1876676, 19.0308065],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_4225cec3666dbb44a18c86fa31b00429 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e028\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6dc76b65d0bdf20182617559f3223f19.setIcon(div_icon_4225cec3666dbb44a18c86fa31b00429);
+        
+    
+        var popup_312052d354c791b800ae8f5a04d0aa4d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_35cc3a63a05dc717320d1f7a2b838105 = $(`<div id="html_35cc3a63a05dc717320d1f7a2b838105" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Krivan<br>SK Veľký Kriváň</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Mała Fatra<br>SK Malá Fatra<br>HU Kis-Fátra<br>DE Kleine Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Krivánska Fatra<br>Krivánske Veterné hole</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1709 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2422</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2024-05-13</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_312052d354c791b800ae8f5a04d0aa4d.setContent(html_35cc3a63a05dc717320d1f7a2b838105);
+            
+        
+
+        marker_6dc76b65d0bdf20182617559f3223f19.bindPopup(popup_312052d354c791b800ae8f5a04d0aa4d)
+        ;
+
+        
+    
+    
+            var marker_a8cc51f2e501014b300f5ab454b638ed = L.marker(
+                [48.9016671, 19.0788897],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_30d41d4726fce8035f053aaa9bbafd34 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e029\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a8cc51f2e501014b300f5ab454b638ed.setIcon(div_icon_30d41d4726fce8035f053aaa9bbafd34);
+        
+    
+        var popup_dc1e10c19103cc1b51cfcf3b68b12a27 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e71e24923d6a11125dcbf3da09bc15ed = $(`<div id="html_e71e24923d6a11125dcbf3da09bc15ed" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Ostredok<br>SK Ostredok</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wielka Fatra<br>SK Veľká Fatra<br>DE Große Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Hôľna Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1596 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1944</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-10-24</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_dc1e10c19103cc1b51cfcf3b68b12a27.setContent(html_e71e24923d6a11125dcbf3da09bc15ed);
+            
+        
+
+        marker_a8cc51f2e501014b300f5ab454b638ed.bindPopup(popup_dc1e10c19103cc1b51cfcf3b68b12a27)
+        ;
+
+        
+    
+    
+            var marker_e4fecd0307371fda622fa7df1a067f1c = L.marker(
+                [48.8602788, 19.2902785],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_57db5eed2698c1328de48560ec2d665b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e030\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e4fecd0307371fda622fa7df1a067f1c.setIcon(div_icon_57db5eed2698c1328de48560ec2d665b);
+        
+    
+        var popup_895cec598b856957cd5eaa07e80f152b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_418473b662a1dcbe49136e22f8611c41 = $(`<div id="html_418473b662a1dcbe49136e22f8611c41" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Kozi Chrbat<br>SK Kozí chrbát<br>PL Kozi Grzbiet</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Starohorskie Wierchy<br>SK Starohorské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1330 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1723</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-07-03</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_895cec598b856957cd5eaa07e80f152b.setContent(html_418473b662a1dcbe49136e22f8611c41);
+            
+        
+
+        marker_e4fecd0307371fda622fa7df1a067f1c.bindPopup(popup_895cec598b856957cd5eaa07e80f152b)
+        ;
+
+        
+    
+    
+            var marker_a9c1abcd6874f3fbe3bacca541befe74 = L.marker(
+                [49.1513894, 19.3427782],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_a93b9c7833eea1ae12e113d5e803f5c3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e031\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a9c1abcd6874f3fbe3bacca541befe74.setIcon(div_icon_a93b9c7833eea1ae12e113d5e803f5c3);
+        
+    
+        var popup_eb20d96295be122aefef399a1fad62e4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6ae01450097c89cbcbc2bd6270e6dd4d = $(`<div id="html_6ae01450097c89cbcbc2bd6270e6dd4d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Choc<br>SK Veľký Choč<br>PL Wielki Chocz</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Choczańskie<br>SK Chočské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Choč</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1608 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1725</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-07-05</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_eb20d96295be122aefef399a1fad62e4.setContent(html_6ae01450097c89cbcbc2bd6270e6dd4d);
+            
+        
+
+        marker_a9c1abcd6874f3fbe3bacca541befe74.bindPopup(popup_eb20d96295be122aefef399a1fad62e4)
+        ;
+
+        
+    
+    
+            var marker_a851e78fbb0f48df2fa493519df2328f = L.marker(
+                [49.1638173, 20.1340332],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_bd1627430eb976c71513c569de421cab = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e032\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a851e78fbb0f48df2fa493519df2328f.setIcon(div_icon_bd1627430eb976c71513c569de421cab);
+        
+    
+        var popup_16b969c056f70b0e15b0c374aec9caf4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6f07adf0b290f2388799f44daf6ede98 = $(`<div id="html_6f07adf0b290f2388799f44daf6ede98" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Gerlach<br>SK Gerlachovský štít<br>HU Gerlachfalvi-csúcs<br>DE Gerlach</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Tatry<br>DE Tatra<br>SK Tatry<br>HU Tátra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Východné Tatry<br>Vysoké Tatry</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">2655 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_16b969c056f70b0e15b0c374aec9caf4.setContent(html_6f07adf0b290f2388799f44daf6ede98);
+            
+        
+
+        marker_a851e78fbb0f48df2fa493519df2328f.bindPopup(popup_16b969c056f70b0e15b0c374aec9caf4)
+        ;
+
+        
+    
+    
+            var marker_bfe3ac6b77771a52239f3ae51b3ad777 = L.marker(
+                [48.9364443, 19.6403892],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_4968b3e9336f67574e210d85e9294009 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e033\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_bfe3ac6b77771a52239f3ae51b3ad777.setIcon(div_icon_4968b3e9336f67574e210d85e9294009);
+        
+    
+        var popup_39356c1ab7934072bf5fb62ba1ebde4b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a6bebc51965c31245ed18401e8c732e3 = $(`<div id="html_a6bebc51965c31245ed18401e8c732e3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Dumbier<br>SK Ďumbier<br>PL Dziumbier<br>HU Gyömbér<br>DE Djumbier</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Niżne Tatry<br>SK Nízke Tatry<br>HU Alacsony-Tátra<br>DE Niedere Tatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Ďumbierske Tatry<br>Ďumbier</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">2046 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1724</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-07-04</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_39356c1ab7934072bf5fb62ba1ebde4b.setContent(html_a6bebc51965c31245ed18401e8c732e3);
+            
+        
+
+        marker_bfe3ac6b77771a52239f3ae51b3ad777.bindPopup(popup_39356c1ab7934072bf5fb62ba1ebde4b)
+        ;
+
+        
+    
+    
+            var marker_710b72a8dd90a789020bd6e92a58b91e = L.marker(
+                [49.0161114, 20.1608337],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_e74f1feb724ea0f466e78a5f9f945028 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e034\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_710b72a8dd90a789020bd6e92a58b91e.setIcon(div_icon_e74f1feb724ea0f466e78a5f9f945028);
+        
+    
+        var popup_33b484bbb0640729eac73ba66e454552 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7e6e723f0c5a069c27a11c0cc266147b = $(`<div id="html_7e6e723f0c5a069c27a11c0cc266147b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Kozi Kamen<br>SK Kozí kameň</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Kozie Grzbiety<br>SK Kozie chrbty</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Dúbrava</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1255 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1722</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-07-02</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_33b484bbb0640729eac73ba66e454552.setContent(html_7e6e723f0c5a069c27a11c0cc266147b);
+            
+        
+
+        marker_710b72a8dd90a789020bd6e92a58b91e.bindPopup(popup_33b484bbb0640729eac73ba66e454552)
+        ;
+
+        
+    
+    
+            var marker_3c2e6ba9dd3b9bd78275c04bcaac88da = L.marker(
+                [49.0463894, 20.8711116],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_a3da0fa19803ef75411c63772d58fb2f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e035\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_3c2e6ba9dd3b9bd78275c04bcaac88da.setIcon(div_icon_a3da0fa19803ef75411c63772d58fb2f);
+        
+    
+        var popup_a383da44f0efed5fc21e7195b94f48fd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d6fd66ec83a9968b730937810fa6a9cd = $(`<div id="html_d6fd66ec83a9968b730937810fa6a9cd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Smrekovica<br>SK Smrekovica</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Branisko<br>SK Branisko</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Smrekovica</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1199 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1924</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-08-15</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_a383da44f0efed5fc21e7195b94f48fd.setContent(html_d6fd66ec83a9968b730937810fa6a9cd);
+            
+        
+
+        marker_3c2e6ba9dd3b9bd78275c04bcaac88da.bindPopup(popup_a383da44f0efed5fc21e7195b94f48fd)
+        ;
+
+        
+    
+    
+            var marker_705d74fd2c5dad3a04908dab615058fc = L.marker(
+                [48.6247223, 18.6355678],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_041d63afd2188414080fcdf7710643f4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e036\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_705d74fd2c5dad3a04908dab615058fc.setIcon(div_icon_041d63afd2188414080fcdf7710643f4);
+        
+    
+        var popup_be3b11e8cf542ae6c94a4693bca559f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d829ba082ba7748f019fe036a361207e = $(`<div id="html_d829ba082ba7748f019fe036a361207e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Vtacnik<br>SK Vtáčnik</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;"><br>SK Vtáčnik</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Vysoký Vtáčnik</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1346 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1906</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-05-02</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_be3b11e8cf542ae6c94a4693bca559f2.setContent(html_d829ba082ba7748f019fe036a361207e);
+            
+        
+
+        marker_705d74fd2c5dad3a04908dab615058fc.bindPopup(popup_be3b11e8cf542ae6c94a4693bca559f2)
+        ;
+
+        
+    
+    
+            var marker_1f69ec16d6fc901f61aa609ebbfc673b = L.marker(
+                [48.4111114, 18.5444443],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_8dcfcd6b3019390763733bcf85c479fa = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e037\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1f69ec16d6fc901f61aa609ebbfc673b.setIcon(div_icon_8dcfcd6b3019390763733bcf85c479fa);
+        
+    
+        var popup_70027fcc76c238cf745a5150da7157ff = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_664c18e5772c770f61e64f8c9b6c1906 = $(`<div id="html_664c18e5772c770f61e64f8c9b6c1906" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Inovec<br>SK Veľký Inovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Hroński Inowiec<br>SK Pohronský Inovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Veľký Inovec</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">901 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1905</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-05-01</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_70027fcc76c238cf745a5150da7157ff.setContent(html_664c18e5772c770f61e64f8c9b6c1906);
+            
+        
+
+        marker_1f69ec16d6fc901f61aa609ebbfc673b.bindPopup(popup_70027fcc76c238cf745a5150da7157ff)
+        ;
+
+        
+    
+    
+            var marker_04190cda6f040d80adae2e560cc6839c = L.marker(
+                [48.4030567, 18.8775349],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_06f6cc5e81a712da6ea816617a0b5d9d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e038\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_04190cda6f040d80adae2e560cc6839c.setIcon(div_icon_06f6cc5e81a712da6ea816617a0b5d9d);
+        
+    
+        var popup_05fc932b353b55702ae6389222ae28c3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4b49d7bef148f099df12424c2b2d94fc = $(`<div id="html_4b49d7bef148f099df12424c2b2d94fc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Sitno<br>SK Sitno</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Szczawnickie<br>SK Štiavnické vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Sitnianska vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1009 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1907</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-05-03</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_05fc932b353b55702ae6389222ae28c3.setContent(html_4b49d7bef148f099df12424c2b2d94fc);
+            
+        
+
+        marker_04190cda6f040d80adae2e560cc6839c.bindPopup(popup_05fc932b353b55702ae6389222ae28c3)
+        ;
+
+        
+    
+    
+            var marker_e3d71984b7328f8c59c9e8ee8e9d0069 = L.marker(
+                [48.8066679, 18.9736112],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_e5e5b53858fe14b18e1e2e19be124fab = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e039\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e3d71984b7328f8c59c9e8ee8e9d0069.setIcon(div_icon_e5e5b53858fe14b18e1e2e19be124fab);
+        
+    
+        var popup_870d0b6b3c171917799f20ec0762e50e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a27bf313c9b1ba507d3608ba3d2e9596 = $(`<div id="html_a27bf313c9b1ba507d3608ba3d2e9596" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Flochova<br>SK Flochová</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Kremnickie<br>SK Kremnické vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Flochovský chrbát</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1317 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_870d0b6b3c171917799f20ec0762e50e.setContent(html_a27bf313c9b1ba507d3608ba3d2e9596);
+            
+        
+
+        marker_e3d71984b7328f8c59c9e8ee8e9d0069.bindPopup(popup_870d0b6b3c171917799f20ec0762e50e)
+        ;
+
+        
+    
+    
+            var marker_51f1e0acf2bec4766064a58024b1af8d = L.marker(
+                [48.6372224, 19.4838895],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_9c6ac3e08ee9d4b6d846687c85009fc1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e040\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_51f1e0acf2bec4766064a58024b1af8d.setIcon(div_icon_9c6ac3e08ee9d4b6d846687c85009fc1);
+        
+    
+        var popup_9b946cd4b17ebe998417f0c46a99dadd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_943ec508f87f00f2708eb20bde17d05a = $(`<div id="html_943ec508f87f00f2708eb20bde17d05a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Polana<br>SK Poľana</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Polana<br>SK Poľana</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Vysoká Poľana</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1458 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2129</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2021-08-18</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_9b946cd4b17ebe998417f0c46a99dadd.setContent(html_943ec508f87f00f2708eb20bde17d05a);
+            
+        
+
+        marker_51f1e0acf2bec4766064a58024b1af8d.bindPopup(popup_9b946cd4b17ebe998417f0c46a99dadd)
+        ;
+
+        
+    
+    
+            var marker_d4e4296342103b93325fc46a8f9921c2 = L.marker(
+                [48.4991675, 19.3780568],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_ac91b948cab078a687bda587f991089f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e041\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d4e4296342103b93325fc46a8f9921c2.setIcon(div_icon_ac91b948cab078a687bda587f991089f);
+        
+    
+        var popup_e26b225f88e30074b2d10e40dcc64f52 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ccd8cf538b1ce8854019704a8b2a78c0 = $(`<div id="html_ccd8cf538b1ce8854019704a8b2a78c0" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Ostrozka<br>SK Ostrôžka</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Ostróżki<br>SK Ostrôžky</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">877 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1901</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-04-29</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_e26b225f88e30074b2d10e40dcc64f52.setContent(html_ccd8cf538b1ce8854019704a8b2a78c0);
+            
+        
+
+        marker_d4e4296342103b93325fc46a8f9921c2.bindPopup(popup_e26b225f88e30074b2d10e40dcc64f52)
+        ;
+
+        
+    
+    
+            var marker_4d750c14843a54f5a193ebe76c997d90 = L.marker(
+                [48.4416678, 19.2894443],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_156691d7086c220690f154e3a8b1cf6a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e042\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4d750c14843a54f5a193ebe76c997d90.setIcon(div_icon_156691d7086c220690f154e3a8b1cf6a);
+        
+    
+        var popup_64de15a6c68ef94aa7c0ae846a38b881 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00dfe8620094dc06f750ad3387907a54 = $(`<div id="html_00dfe8620094dc06f750ad3387907a54" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Javorie<br>SK Javorie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Jaworze<br>SK Javorie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Javorianska hornatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1044 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1902</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-04-29</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_64de15a6c68ef94aa7c0ae846a38b881.setContent(html_00dfe8620094dc06f750ad3387907a54);
+            
+        
+
+        marker_4d750c14843a54f5a193ebe76c997d90.bindPopup(popup_64de15a6c68ef94aa7c0ae846a38b881)
+        ;
+
+        
+    
+    
+            var marker_b8c7805185ca03a3d2c3060e8fa98419 = L.marker(
+                [48.3845112, 19.2067286],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_1bb7d980eb8da9252f300959dd0fdea9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e043\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b8c7805185ca03a3d2c3060e8fa98419.setIcon(div_icon_1bb7d980eb8da9252f300959dd0fdea9);
+        
+    
+        var popup_c174ce78e456d646811d1b5a9383254d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0a1ff78924c21756da56d990270f97b5 = $(`<div id="html_0a1ff78924c21756da56d990270f97b5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Kopany Zavoz<br>SK Kopaný závoz</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pogórze Krupińskie<br>SK Krupinská planina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">SK Závozská vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">775 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1903</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-04-30</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_c174ce78e456d646811d1b5a9383254d.setContent(html_0a1ff78924c21756da56d990270f97b5);
+            
+        
+
+        marker_b8c7805185ca03a3d2c3060e8fa98419.bindPopup(popup_c174ce78e456d646811d1b5a9383254d)
+        ;
+
+        
+    
+    
+            var marker_8cbffc71cbd18fb9f50f6f740e100323 = L.marker(
+                [48.7733338, 19.8855561],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_ffcbe1ccd8462b18ab8cfb6920d91d60 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e044\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8cbffc71cbd18fb9f50f6f740e100323.setIcon(div_icon_ffcbe1ccd8462b18ab8cfb6920d91d60);
+        
+    
+        var popup_f97cf80c57197af586615b6236618993 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1502a71d3798f47f5a5d07258810fb98 = $(`<div id="html_1502a71d3798f47f5a5d07258810fb98" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Fabova Hola<br>SK Fabova hoľa</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Rudawy Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Rudawy Weporskie<br>SK Veporské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Grupa Fabowej<br>SK Fabova hoľa</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1439 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2126</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2021-08-15</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_f97cf80c57197af586615b6236618993.setContent(html_1502a71d3798f47f5a5d07258810fb98);
+            
+        
+
+        marker_8cbffc71cbd18fb9f50f6f740e100323.bindPopup(popup_f97cf80c57197af586615b6236618993)
+        ;
+
+        
+    
+    
+            var marker_f21c3fdd8392d99904276e44323e4426 = L.marker(
+                [48.7791242, 19.9657841],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_dd2164748a3fbf465f6e3c1f16692095 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e045\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_f21c3fdd8392d99904276e44323e4426.setIcon(div_icon_dd2164748a3fbf465f6e3c1f16692095);
+        
+    
+        var popup_661e7a50785ab79245d89452b7eba912 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f57c732e3eab6e211e2c0934b0f87d75 = $(`<div id="html_f57c732e3eab6e211e2c0934b0f87d75" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Klak Muran<br>SK Muránsky Kľak</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Rudawy Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Kras Spisko-Gemerski<br>SK Spišsko-gemerský kras</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Murańska Płanina<br>SK Muránska planina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1409 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2127</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2021-08-16</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_661e7a50785ab79245d89452b7eba912.setContent(html_f57c732e3eab6e211e2c0934b0f87d75);
+            
+        
+
+        marker_f21c3fdd8392d99904276e44323e4426.bindPopup(popup_661e7a50785ab79245d89452b7eba912)
+        ;
+
+        
+    
+    
+            var marker_52c46a37343777a29bc4eca5e71f4bb9 = L.marker(
+                [48.7758338, 20.2111117],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_bee50c21f488d352d1695e60d7a19502 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e046\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_52c46a37343777a29bc4eca5e71f4bb9.setIcon(div_icon_bee50c21f488d352d1695e60d7a19502);
+        
+    
+        var popup_1beb24fa891a8d313f7f4aafb51432e6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fe4addf38c001e4031e8b2e5198da4ee = $(`<div id="html_fe4addf38c001e4031e8b2e5198da4ee" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Stolica<br>SK Stolica</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Rudawy Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Stolickie<br>SK Stolické vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1476 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2339</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2023-09-14</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_1beb24fa891a8d313f7f4aafb51432e6.setContent(html_fe4addf38c001e4031e8b2e5198da4ee);
+            
+        
+
+        marker_52c46a37343777a29bc4eca5e71f4bb9.bindPopup(popup_1beb24fa891a8d313f7f4aafb51432e6)
+        ;
+
+        
+    
+    
+            var marker_d05c4304a4384cae93ae5f3448b35b50 = L.marker(
+                [48.7773, 20.339],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_165bfb94e434059b836979c3f453fb94 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e047\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d05c4304a4384cae93ae5f3448b35b50.setIcon(div_icon_165bfb94e434059b836979c3f453fb94);
+        
+    
+        var popup_64e2f3f669195bf9cbbc9ac4e016bc11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c9e291070224d2a952f73b8b82cb06eb = $(`<div id="html_c9e291070224d2a952f73b8b82cb06eb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Velky Radzim<br>SK Veľký Radzim</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Rudawy Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pogórze Rewuckie<br>SK Revúcka vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">991 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">2206</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2022-05-12</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_64e2f3f669195bf9cbbc9ac4e016bc11.setContent(html_c9e291070224d2a952f73b8b82cb06eb);
+            
+        
+
+        marker_d05c4304a4384cae93ae5f3448b35b50.bindPopup(popup_64e2f3f669195bf9cbbc9ac4e016bc11)
+        ;
+
+        
+    
+    
+            var marker_0559e854a5946aea05a90d1affde211e = L.marker(
+                [48.7694447, 20.6538899],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_7010def3c33343d6891447ceb531f7d5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e048\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0559e854a5946aea05a90d1affde211e.setIcon(div_icon_7010def3c33343d6891447ceb531f7d5);
+        
+    
+        var popup_31833656e3c344355f62a2e08e04c8c2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e0a057526b29675f97f45a20f9da5472 = $(`<div id="html_e0a057526b29675f97f45a20f9da5472" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Zlaty Stol<br>SK Zlatý stôl<br>PL Złoty Stół</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Rudawy Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Wołowskie<br>SK Volovské vrchy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Grupa Złotego Stołu<br>SK Zlatý stôl</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1322 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1811</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-04-21</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_31833656e3c344355f62a2e08e04c8c2.setContent(html_e0a057526b29675f97f45a20f9da5472);
+            
+        
+
+        marker_0559e854a5946aea05a90d1affde211e.bindPopup(popup_31833656e3c344355f62a2e08e04c8c2)
+        ;
+
+        
+    
+    
+            var marker_fb3763b0f6e7a018e328ef12d10eabad = L.marker(
+                [48.9241674, 21.0125423],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_a2b39c2a59ac8cc4b52aaa428cfd52e7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e049\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_fb3763b0f6e7a018e328ef12d10eabad.setIcon(div_icon_a2b39c2a59ac8cc4b52aaa428cfd52e7);
+        
+    
+        var popup_0d5d7b8411e9b340cdef7c85bee3dcd0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cbf4b954acb85a3a699962f9041eb883 = $(`<div id="html_cbf4b954acb85a3a699962f9041eb883" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Rohacka<br>SK Roháčka<br>PL Rohaczka</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Rudawy Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Cierna Hora<br>SK Čierna hora<br>PL Czarna Góra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Rohacka<br>SK Roháčka<br>PL Rohaczka</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1029 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1925</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-08-16</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_0d5d7b8411e9b340cdef7c85bee3dcd0.setContent(html_cbf4b954acb85a3a699962f9041eb883);
+            
+        
+
+        marker_fb3763b0f6e7a018e328ef12d10eabad.bindPopup(popup_0d5d7b8411e9b340cdef7c85bee3dcd0)
+        ;
+
+        
+    
+    
+            var marker_4428b54e722cba83070992a95cf38430 = L.marker(
+                [48.6536239, 20.7691012],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_df21e53f106140c45de322f6913f3361 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e050\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4428b54e722cba83070992a95cf38430.setIcon(div_icon_df21e53f106140c45de322f6913f3361);
+        
+    
+        var popup_fe9711411e028f2233cc150bd740c285 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_73d0d178bdf6d9defa5f14a9e46c24cd = $(`<div id="html_73d0d178bdf6d9defa5f14a9e46c24cd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Matesova Skala<br>SK Matesova skala</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Rudawy Słowackie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Kras Gemersko-Turniański<br>SK Slovenský kras<br>HU Gömör-Tornai karszt</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">925 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1810</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-04-20</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_fe9711411e028f2233cc150bd740c285.setContent(html_73d0d178bdf6d9defa5f14a9e46c24cd);
+            
+        
+
+        marker_4428b54e722cba83070992a95cf38430.bindPopup(popup_fe9711411e028f2233cc150bd740c285)
+        ;
+
+        
+    
+    
+            var marker_9e97f51da90c9c2f4fd0770ea644e151 = L.marker(
+                [47.837, 18.7835],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_7eaf4998e2b9889c5f19802a845d73d5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e051\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9e97f51da90c9c2f4fd0770ea644e151.setIcon(div_icon_7eaf4998e2b9889c5f19802a845d73d5);
+        
+    
+        var popup_cfb711dd2a1b4a63886293d7b1be001e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4bd8f3b4a88822bcd03fd250fc219341 = $(`<div id="html_4bd8f3b4a88822bcd03fd250fc219341" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Burdov<br>SK Burdov</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Północnowęgierskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Borzsony<br>HU Börzsöny<br> PL Berżeń</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Burda<br>SK Burda</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">395 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_cfb711dd2a1b4a63886293d7b1be001e.setContent(html_4bd8f3b4a88822bcd03fd250fc219341);
+            
+        
+
+        marker_9e97f51da90c9c2f4fd0770ea644e151.bindPopup(popup_cfb711dd2a1b4a63886293d7b1be001e)
+        ;
+
+        
+    
+    
+            var marker_786e39ea3416d801836da10e771fedc6 = L.marker(
+                [48.1586119, 19.7894444],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_38996dc64921ef533798bdaf42116a36 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e052\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_786e39ea3416d801836da10e771fedc6.setIcon(div_icon_38996dc64921ef533798bdaf42116a36);
+        
+    
+        var popup_de82fed6fd8e22bdff181abff680d4c4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2f5d7132b7d505692ec4ea2e2bcdaf05 = $(`<div id="html_2f5d7132b7d505692ec4ea2e2bcdaf05" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Karanc<br>SK Karanč<br>HU Karancs</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Północnowęgierskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Cserhat<br>HU Cserhát-hegység<br>SK Cerová vrchovina<br>PL Czerhat</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">727 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_de82fed6fd8e22bdff181abff680d4c4.setContent(html_2f5d7132b7d505692ec4ea2e2bcdaf05);
+            
+        
+
+        marker_786e39ea3416d801836da10e771fedc6.bindPopup(popup_de82fed6fd8e22bdff181abff680d4c4)
+        ;
+
+        
+    
+    
+            var marker_4a8ec3bc55a53e9d3b69488b8ec4111f = L.marker(
+                [48.46567, 20.46775],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_95e08bd648e01928b10771354cfee757 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e053\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4a8ec3bc55a53e9d3b69488b8ec4111f.setIcon(div_icon_95e08bd648e01928b10771354cfee757);
+        
+    
+        var popup_c4ff4a5043c1144ecd04822a836060f2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c07ce127fd0b30b29b2c1ba9ba72c326 = $(`<div id="html_c07ce127fd0b30b29b2c1ba9ba72c326" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Liscia Diera<br>SK Líščia diera</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Północnowęgierskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Cserehat<br>HU Cserehát<br>SK Bodvianska pahorkatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">401 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_c4ff4a5043c1144ecd04822a836060f2.setContent(html_c07ce127fd0b30b29b2c1ba9ba72c326);
+            
+        
+
+        marker_4a8ec3bc55a53e9d3b69488b8ec4111f.bindPopup(popup_c4ff4a5043c1144ecd04822a836060f2)
+        ;
+
+        
+    
+    
+            var marker_4158908f307a05a38b009d816d6fb937 = L.marker(
+                [48.9454443, 21.4674213],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_701118bee40c53bb6058746a5200047f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e054\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4158908f307a05a38b009d816d6fb937.setIcon(div_icon_701118bee40c53bb6058746a5200047f);
+        
+    
+        var popup_4b0c060e515e1dcd599a35dd71c685a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e33a02dc743c743d90c9f9637a85bd7 = $(`<div id="html_6e33a02dc743c743d90c9f9637a85bd7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Simonka<br>SK Šimonka</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Północnowęgierskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Slańskie<br>SK Slanské vrchy<br>HU Szalánci-hegység</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1092 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1832</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-08-25</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_4b0c060e515e1dcd599a35dd71c685a7.setContent(html_6e33a02dc743c743d90c9f9637a85bd7);
+            
+        
+
+        marker_4158908f307a05a38b009d816d6fb937.bindPopup(popup_4b0c060e515e1dcd599a35dd71c685a7)
+        ;
+
+        
+    
+    
+            var marker_a8fd894406a43f5c410a999308c99622 = L.marker(
+                [48.4759964, 21.7057911],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_ec767433279b3b56ef22b1eda486b7fa = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e055\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a8fd894406a43f5c410a999308c99622.setIcon(div_icon_ec767433279b3b56ef22b1eda486b7fa);
+        
+    
+        var popup_a9178d9253a3b4b607481e9910156a11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b01d70a5315ccdadc332d9a163c1884a = $(`<div id="html_b01d70a5315ccdadc332d9a163c1884a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Rozhladna<br>SK Rozhľadňa</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Średniogórze Północnowęgierskie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Góry Zemplińskie<br>SK Zemplínske vrchy<br>HU Zempléni-hegység</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">469 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1822</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-05-06</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_a9178d9253a3b4b607481e9910156a11.setContent(html_b01d70a5315ccdadc332d9a163c1884a);
+            
+        
+
+        marker_a8fd894406a43f5c410a999308c99622.bindPopup(popup_a9178d9253a3b4b607481e9910156a11)
+        ;
+
+        
+    
+    
+            var marker_fc0fa995db72f16bbe1a1ca0f1883bce = L.marker(
+                [49.38861, 21.16278],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_aaeb31d75d6d477e5ffc9c0b1b64ebac = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e056\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_fc0fa995db72f16bbe1a1ca0f1883bce.setIcon(div_icon_aaeb31d75d6d477e5ffc9c0b1b64ebac);
+        
+    
+        var popup_afcd6359ede8f35b2ee2db70234c008c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e46112918bdabd59d393209eb8917c4c = $(`<div id="html_e46112918bdabd59d393209eb8917c4c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Busov<br>SK Busov</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Karpaty Wschodnie<br>Beskid Niski</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Beskid Niski<br>SK Nízke Beskydy</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Busow<br>SK Busov</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1002 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1751</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-10-14</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_afcd6359ede8f35b2ee2db70234c008c.setContent(html_e46112918bdabd59d393209eb8917c4c);
+            
+        
+
+        marker_fc0fa995db72f16bbe1a1ca0f1883bce.bindPopup(popup_afcd6359ede8f35b2ee2db70234c008c)
+        ;
+
+        
+    
+    
+            var marker_7a9da9afb134f3ac18a1011cf388528c = L.marker(
+                [49.40778, 21.34028],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_3f6b01a373774c2532273094e4a11c46 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e057\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_7a9da9afb134f3ac18a1011cf388528c.setIcon(div_icon_3f6b01a373774c2532273094e4a11c46);
+        
+    
+        var popup_57cf4048ad67b9e599d37f1e1b23d21c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1af3584ef1d87d6e7a29d5b6bc760bb8 = $(`<div id="html_1af3584ef1d87d6e7a29d5b6bc760bb8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Smilniansky Vrch<br>SK Smilniansky vrch</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Karpaty Wschodnie<br>Beskid Niski</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pogórze Ondawskie<br>SK Ondavská vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">749 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1754</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2017-10-15</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_57cf4048ad67b9e599d37f1e1b23d21c.setContent(html_1af3584ef1d87d6e7a29d5b6bc760bb8);
+            
+        
+
+        marker_7a9da9afb134f3ac18a1011cf388528c.bindPopup(popup_57cf4048ad67b9e599d37f1e1b23d21c)
+        ;
+
+        
+    
+    
+            var marker_ba2dc1fc053ef9453b6eefece3a72250 = L.marker(
+                [49.20247, 22.12461],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_047f545ac173ae3dcd48eafb1e526b10 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e058\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ba2dc1fc053ef9453b6eefece3a72250.setIcon(div_icon_047f545ac173ae3dcd48eafb1e526b10);
+        
+    
+        var popup_f329ecbe9f13e015cf96687be8d9fcd1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f7a9ba3af10aeb080eb798d83c587ea1 = $(`<div id="html_f7a9ba3af10aeb080eb798d83c587ea1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Wysoki Groń<br>SK Vysoký Grúň</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Karpaty Wschodnie<br>Beskid Niski</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pogórze Laboreckie<br>SK Laborecká vrchovina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">904 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1850</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2018-10-20</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_f329ecbe9f13e015cf96687be8d9fcd1.setContent(html_f7a9ba3af10aeb080eb798d83c587ea1);
+            
+        
+
+        marker_ba2dc1fc053ef9453b6eefece3a72250.bindPopup(popup_f329ecbe9f13e015cf96687be8d9fcd1)
+        ;
+
+        
+    
+    
+            var marker_6d0fa1f6fbca0fc9e91c2c96a75b8cbb = L.marker(
+                [49.08869, 22.56778],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_655abcf9ecfd424f4bfbf45ace608586 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e059\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6d0fa1f6fbca0fc9e91c2c96a75b8cbb.setIcon(div_icon_655abcf9ecfd424f4bfbf45ace608586);
+        
+    
+        var popup_9ed78490d77b81e914249c9cd7ff7270 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_84986e7c98c8b45500afa9b677829647 = $(`<div id="html_84986e7c98c8b45500afa9b677829647" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Krzemieniec<br>SK Kremenec<br>UA Кременець<br>HU Kremenáros</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Karpaty Wschodnie<br>Beskidy Lesiste</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Bieszczady Zachodnie<br>SK Bukovské vrchy<br>UA Західні Бещади</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Bukovce</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1221 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1634</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2016-11-24</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_9ed78490d77b81e914249c9cd7ff7270.setContent(html_84986e7c98c8b45500afa9b677829647);
+            
+        
+
+        marker_6d0fa1f6fbca0fc9e91c2c96a75b8cbb.bindPopup(popup_9ed78490d77b81e914249c9cd7ff7270)
+        ;
+
+        
+    
+    
+            var marker_ca947c9fc19c74fccbdc9af6e1efc58b = L.marker(
+                [48.89153, 22.11373],
+                {}
+            ).addTo(marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff);
+        
+    
+            var div_icon_8feae926a9a197a62dccfd9027dbf3bb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e060\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ca947c9fc19c74fccbdc9af6e1efc58b.setIcon(div_icon_8feae926a9a197a62dccfd9027dbf3bb);
+        
+    
+        var popup_2c6721d69d30062313debb356877c61e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_048db139c1c8cac91e0867120bad3d14 = $(`<div id="html_048db139c1c8cac91e0867120bad3d14" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Wyhorlat<br>SK Vihorlat</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Karpaty Wschodnie<br>Pasmo Wulkaniczne</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Pasmo Wulkaniczne<br>SK Vihorlatsko-gutínska oblasť<br>UA Вулканічний хребет<br>RO Munţii Vulcanici de Nord</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wyhorlat<br>SK Vihorlatské vrchy<br>UA Вигорлат</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">1076 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;">1923</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;">2019-08-04</td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_2c6721d69d30062313debb356877c61e.setContent(html_048db139c1c8cac91e0867120bad3d14);
+            
+        
+
+        marker_ca947c9fc19c74fccbdc9af6e1efc58b.bindPopup(popup_2c6721d69d30062313debb356877c61e)
+        ;
+
+        
+    
+    
+            marker_cluster_70d3e2713e2e4c351d7ce00d30ea75ff.addTo(map_ef714584588ebb3bbe766409c837b4a3);
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_ef714584588ebb3bbe766409c837b4a3);
+        
+    
+            var tile_layer_6be05180fba1244686f5adf9135ab1aa = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_6a5ac9b79fc2f802ebb7a16e54177c9e = new L.Control.MiniMap(
+                tile_layer_6be05180fba1244686f5adf9135ab1aa,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_ef714584588ebb3bbe766409c837b4a3.addControl(mini_map_6a5ac9b79fc2f802ebb7a16e54177c9e);
+        
+</script>
+</html>

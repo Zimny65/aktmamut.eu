@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c1d2e39749703d799b2bdc090250b23a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+        <style>
+        .leaflet-container {
+            width: 100vw;
+            height: 100vh;
+        }
+        .leaflet-control-zoom {
+            transform: translateY(160px); /* Większe przesunięcie kontrolki w dół */
+        }
+        .leaflet-control-attribution {
+            display: none;
+        }
+        .leaflet-control-minimap {
+            transform: translateY(-60px); /* Przesunięcie mini mapy w górę */
+        }
+        </style>
+    
+    
+            <div class="folium-map" id="map_c1d2e39749703d799b2bdc090250b23a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c1d2e39749703d799b2bdc090250b23a = L.map(
+                "map_c1d2e39749703d799b2bdc090250b23a",
+                {
+                    center: [45.0, 25.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_98a7134fd163fe850926f2024587242a = L.tileLayer(
+                "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+                {"attribution": "Map data: \u0026copy; OpenStreetMap contributors, SRTM | Map style: \u0026copy; OpenTopoMap (CC-BY-SA)", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_98a7134fd163fe850926f2024587242a.addTo(map_c1d2e39749703d799b2bdc090250b23a);
+        
+    
+            var marker_cluster_d6735e24043fd4b9e384e4b21a823ecc = L.markerClusterGroup(
+                {"maxClusterRadius": 4}
+            );
+        
+    
+            var marker_4bf5d4de633e5f012177a79c09473520 = L.marker(
+                [48.4300994, 16.2888419],
+                {}
+            ).addTo(marker_cluster_d6735e24043fd4b9e384e4b21a823ecc);
+        
+    
+            var div_icon_ccf870c1a73306d85496089ab6302c27 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e001\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4bf5d4de633e5f012177a79c09473520.setIcon(div_icon_ccf870c1a73306d85496089ab6302c27);
+        
+    
+        var popup_d237f153f5130447df16da3b930010fd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6844520b973995293c80fd0a75824bed = $(`<div id="html_6844520b973995293c80fd0a75824bed" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Michelberg<br>DE Michelberg</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Podkarpacie Zachodnie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Dolnoaustriackie Góry Wyspowe<br>DE Niederösterreichische Inselbergschwelle<br>CZ Weinviertelská pahorkatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Rohrwald</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">409 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_d237f153f5130447df16da3b930010fd.setContent(html_6844520b973995293c80fd0a75824bed);
+            
+        
+
+        marker_4bf5d4de633e5f012177a79c09473520.bindPopup(popup_d237f153f5130447df16da3b930010fd)
+        ;
+
+        
+    
+    
+            var marker_d966c71b4ce5883a91860eaaf064d719 = L.marker(
+                [48.5770233, 16.3956814],
+                {}
+            ).addTo(marker_cluster_d6735e24043fd4b9e384e4b21a823ecc);
+        
+    
+            var div_icon_37e293ad150a043db6fb899ad7a32946 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e002\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d966c71b4ce5883a91860eaaf064d719.setIcon(div_icon_37e293ad150a043db6fb899ad7a32946);
+        
+    
+        var popup_501f12ccbebc1ddb580c00efbdad59ce = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_907b50dacfbe5110cedaddca2de8f6aa = $(`<div id="html_907b50dacfbe5110cedaddca2de8f6aa" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Buschberg<br>DE Buschberg</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Podkarpacie Zachodnie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Dolnoaustriackie Góry Wyspowe<br>DE Niederösterreichische Inselbergschwelle<br>CZ Weinviertelská pahorkatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Leiser Berge</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">491 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_501f12ccbebc1ddb580c00efbdad59ce.setContent(html_907b50dacfbe5110cedaddca2de8f6aa);
+            
+        
+
+        marker_d966c71b4ce5883a91860eaaf064d719.bindPopup(popup_501f12ccbebc1ddb580c00efbdad59ce)
+        ;
+
+        
+    
+    
+            var marker_01f689b831586d15c729f6181a0b1955 = L.marker(
+                [48.6767644, 16.4893914],
+                {}
+            ).addTo(marker_cluster_d6735e24043fd4b9e384e4b21a823ecc);
+        
+    
+            var div_icon_cc821709009b938811f4c54a05acf402 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e003\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_01f689b831586d15c729f6181a0b1955.setIcon(div_icon_cc821709009b938811f4c54a05acf402);
+        
+    
+        var popup_c0a74b01455863f3a7f4571f1f08461c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_df31fe44dabac29009960b9c8ff8feb3 = $(`<div id="html_df31fe44dabac29009960b9c8ff8feb3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Staatzer Berg<br>DE Staatzer Berg</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Podkarpacie Zachodnie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Dolnoaustriackie Góry Wyspowe<br>DE Niederösterreichische Inselbergschwelle<br>CZ Weinviertelská pahorkatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Staatzer Klippe</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">332 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_c0a74b01455863f3a7f4571f1f08461c.setContent(html_df31fe44dabac29009960b9c8ff8feb3);
+            
+        
+
+        marker_01f689b831586d15c729f6181a0b1955.bindPopup(popup_c0a74b01455863f3a7f4571f1f08461c)
+        ;
+
+        
+    
+    
+            var marker_a5973fdd39ea5f2ff7dccedf6409609a = L.marker(
+                [48.7090242, 16.5857183],
+                {}
+            ).addTo(marker_cluster_d6735e24043fd4b9e384e4b21a823ecc);
+        
+    
+            var div_icon_8f768cf251be5dd119d7c6b29a859ad7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e004\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a5973fdd39ea5f2ff7dccedf6409609a.setIcon(div_icon_8f768cf251be5dd119d7c6b29a859ad7);
+        
+    
+        var popup_340b7e2ab8ca3193c9616ac16f866920 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2e769a2ca6d09f12318f6e21874097dc = $(`<div id="html_2e769a2ca6d09f12318f6e21874097dc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Galgenberg<br>DE Galgenberg</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Zewnętrzne Karpaty Zachodnie<br>Podkarpacie Zachodnie</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Dolnoaustriackie Góry Wyspowe<br>DE Niederösterreichische Inselbergschwelle<br>CZ Weinviertelská pahorkatina</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Falkensteiner Berge</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">480 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_340b7e2ab8ca3193c9616ac16f866920.setContent(html_2e769a2ca6d09f12318f6e21874097dc);
+            
+        
+
+        marker_a5973fdd39ea5f2ff7dccedf6409609a.bindPopup(popup_340b7e2ab8ca3193c9616ac16f866920)
+        ;
+
+        
+    
+    
+            var marker_0811b540f9cde426d481b80eabdd98cb = L.marker(
+                [48.1322, 16.9386],
+                {}
+            ).addTo(marker_cluster_d6735e24043fd4b9e384e4b21a823ecc);
+        
+    
+            var div_icon_cdc28f4c527fec0b3d69b821b000f5ea = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 10px; font-family: Oswald, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e005\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0811b540f9cde426d481b80eabdd98cb.setIcon(div_icon_cdc28f4c527fec0b3d69b821b000f5ea);
+        
+    
+        var popup_b00d1ac2c812c86db654538e96301cb1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f23ceafd12938c031f1604a0c183ab5c = $(`<div id="html_f23ceafd12938c031f1604a0c183ab5c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">PEAK:</td>                     <td style="padding: 4px; vertical-align: top;">Hundsheimer Berg<br>DE Hundsheimer Berg</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">REGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wewnętrzne Karpaty Zachodnie<br>Tatry i Fatra</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MESOREGION:</td>                     <td style="padding: 4px; vertical-align: top;">Wzgórza Hainburskie<br>DE Hundsheimer Berge</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">MICROREGION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">HEIGHT:</td>                     <td style="padding: 4px; vertical-align: top;">480 m</td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">EXPEDITION:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>                 <tr>                     <td style="font-weight: bold; padding: 4px; vertical-align: top;">DATE:</td>                     <td style="padding: 4px; vertical-align: top;"></td>                 </tr>             </table>         </div>         </div>`)[0];
+                popup_b00d1ac2c812c86db654538e96301cb1.setContent(html_f23ceafd12938c031f1604a0c183ab5c);
+            
+        
+
+        marker_0811b540f9cde426d481b80eabdd98cb.bindPopup(popup_b00d1ac2c812c86db654538e96301cb1)
+        ;
+
+        
+    
+    
+            marker_cluster_d6735e24043fd4b9e384e4b21a823ecc.addTo(map_c1d2e39749703d799b2bdc090250b23a);
+        
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_c1d2e39749703d799b2bdc090250b23a);
+        
+    
+            var tile_layer_bb90dc4fecc86fdcd708b123695d66a6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_141c3d0211893660edf6c913b64dbc1e = new L.Control.MiniMap(
+                tile_layer_bb90dc4fecc86fdcd708b123695d66a6,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_c1d2e39749703d799b2bdc090250b23a.addControl(mini_map_141c3d0211893660edf6c913b64dbc1e);
+        
+</script>
+</html>
