@@ -31,13 +31,14 @@ header {
 
 /* Logo */
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
 }
 
 /* Nagłówek - środkowa część */
 .header-center {
     text-align: center;
+    font-size: 1em; /* Double the default size */
 }
 
 .header-center h1 {
@@ -111,7 +112,7 @@ footer {
     display: flex;
     flex-wrap: nowrap; /* Zapobiega zawijaniu się liter */
     justify-content: center;
-    gap: 1vw; /* Odstęp między literami */
+    gap: 0.01vw; /* Odstęp między literami */
     max-width: 90vw; /* Maksymalna szerokość kontenera */
 }
 
