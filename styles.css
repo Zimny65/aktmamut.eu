@@ -15,10 +15,10 @@ body {
     overflow: hidden; /* Zapobiega przewijaniu */
 }
 
-/* Nagłówek */
+/* Header */
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
@@ -29,16 +29,28 @@ header {
     z-index: 10; /* Nagłówek na wierzchu */
 }
 
-/* Logo */
-.logo {
-    width: 80px;
-    height: 80px;
+.header-center {
+    flex: 1;
+    text-align: center;
+    font-size: 2em; /* Default size for larger screens */
 }
 
-/* Nagłówek - środkowa część */
-.header-center {
-    text-align: center;
-    font-size: 1em; /* Double the default size */
+@media (max-width: 1200px) {
+    .header-center {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 800px) {
+    .header-center {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-center {
+        font-size: 1.2em;
+    }
 }
 
 .header-center h1 {
@@ -98,6 +110,25 @@ footer {
     z-index: 10; /* Stopka na wierzchu */
 }
 
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Align items vertically */
+    width: 90%; /* Adjust width if needed */
+    margin: 0 auto; /* Center the content */
+}
+
+footer .logo {
+    margin-left: 20px; /* Adjust the left margin as needed */
+    width: 80px;
+    height: 80px;
+}
+
+footer p {
+    flex-grow: 1; /* Allow the paragraph to take up remaining space */
+    text-align: center; /* Center the text */
+}
+
 /* New styles for the banner */
 .banner {
     width: 100%;
@@ -110,28 +141,39 @@ footer {
 
 .container {
     display: flex;
-    flex-wrap: nowrap; /* Zapobiega zawijaniu się liter */
+    flex-wrap: nowrap; /* Prevents wrapping of letters */
     justify-content: center;
-    gap: 0.01vw; /* Odstęp między literami */
-    max-width: 90vw; /* Maksymalna szerokość kontenera */
+    gap: 0.2em; /* Adjusted spacing between letters */
+    max-width: 90vw; /* Maximum width of the container */
 }
 
 .letter {
-    width: 4vw; /* Zmniejszony rozmiar litery (50% mniejszy niż wcześniej) */
-    max-width: 256px; /* Maksymalna szerokość liter */
-    height: auto; /* Zachowanie proporcji liter */
-}
-
-.space {
-    width: 2vw; /* Odstęp między słowami */
+    width: 2em; /* Default size */
+    max-width: 256px; /* Initial max width */
     height: auto;
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
     .letter {
-        width: 3.5vw; /* Zmniejszony rozmiar liter na większych ekranach */
-    }
-    .space {
-        width: 3vw; /* Odstęp między słowami na większych ekranach */
+        width: 1.8em; /* Adjusted size */
     }
 }
+
+@media (max-width: 800px) {
+    .letter {
+        width: 1.5em; /* Adjusted size */
+    }
+}
+
+@media (max-width: 600px) {
+    .letter {
+        width: 1.2em; /* Adjusted size */
+    }
+}
+
+.space {
+    width: 1em; /* Adjusted space between words */
+    height: auto;
+}
+
+
