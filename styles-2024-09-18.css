@@ -1,4 +1,3 @@
-
 /* Resetowanie marginesów i odstępów */
 body, h1, h2, p, ul {
     margin: 0;
@@ -20,7 +19,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
     position: absolute;
     top: 0;
@@ -31,8 +30,8 @@ header {
 
 /* Logo */
 .logo {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
 }
 
 /* Nagłówek - środkowa część */
@@ -95,42 +94,4 @@ footer {
     left: 0;
     width: 100%;
     z-index: 10; /* Stopka na wierzchu */
-}
-
-/* New styles for the banner */
-.banner {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Półprzezroczysty czarny pasek (80%) */
-    display: flex;
-    justify-content: center;
-    padding-top: 15px; /* Ustawienie równych odstępów z góry i dołu */
-    padding-bottom: 15px; /* Ustawienie równych odstępów z góry i dołu */
-}
-
-.container {
-    display: flex;
-    flex-wrap: nowrap; /* Zapobiega zawijaniu się liter */
-    justify-content: center;
-    gap: 1vw; /* Odstęp między literami */
-    max-width: 90vw; /* Maksymalna szerokość kontenera */
-}
-
-.letter {
-    width: 4vw; /* Zmniejszony rozmiar litery (50% mniejszy niż wcześniej) */
-    max-width: 256px; /* Maksymalna szerokość liter */
-    height: auto; /* Zachowanie proporcji liter */
-}
-
-.space {
-    width: 2vw; /* Odstęp między słowami */
-    height: auto;
-}
-
-@media (min-width: 1200px) {
-    .letter {
-        width: 3.5vw; /* Zmniejszony rozmiar liter na większych ekranach */
-    }
-    .space {
-        width: 3vw; /* Odstęp między słowami na większych ekranach */
-    }
 }
