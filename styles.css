@@ -47,12 +47,6 @@ header {
     }
 }
 
-@media (max-width: 600px) {
-    .header-center {
-        font-size: 1em;
-    }
-}
-
 .header-center h1 {
     margin-bottom: 5px;
 }
@@ -156,12 +150,6 @@ footer p {
 @media (max-width: 800px) {
     .letter {
         width: 1.2em; /* Adjusted size */
-    }
-}
-
-@media (max-width: 600px) {
-    .letter {
-        width: 1em; /* Adjusted size */
     }
 }
 
