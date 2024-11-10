@@ -56,55 +56,23 @@ header {
 }
 
 /* Nawigacja */
-.header-left {
-    margin-left: 20px; /* Dodano margines, aby menu nie wychodziło poza ekran */
+.header-right {
+    margin-right: 20px; /* Dodano margines, aby menu nie wychodziło poza ekran */
 }
 
-.header-left ul {
+.header-right ul {
     list-style: none;
     display: flex;
-    position: relative;
 }
 
-.header-left ul li {
-    position: relative;
+.header-right ul li {
     margin: 0 10px; /* Zmniejszono margines między elementami, aby zmieścić się w nagłówku */
 }
 
-.header-left ul li a {
+.header-right ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-}
-
-/* Submenu styling */
-.header-left ul li .submenu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Position below MENU */
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 0;
-    list-style: none;
-    min-width: 100px;
-}
-
-.header-left ul li:hover .submenu {
-    display: block;
-}
-
-.header-left ul li .submenu li {
-    padding: 5px 10px;
-}
-
-.header-left ul li .submenu li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: normal;
-}
-
-.header-left ul li .submenu li a:hover {
-    text-decoration: underline;
 }
 
 /* Mapa w pełnym ekranie */
@@ -189,3 +157,5 @@ footer p {
     width: 1em; /* Adjusted space between words */
     height: auto;
 }
+
+
