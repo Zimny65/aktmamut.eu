@@ -1,5 +1,5 @@
 [[redirects]]
   from = "https://kampinos.aktmamut.eu/*"
-  to = "/maps/kampinos/:splat"
+  to = "/maps/kampinos:splat"
   status = 200
   force = true
