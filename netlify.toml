@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://kampinos.aktmamut.eu/*"
+  to = "/generatedmaps/kampinos/:splat"
+  status = 200
+  force = true
