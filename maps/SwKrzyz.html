@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SwKrzyz</title>
+    <link rel="icon" href="M32.png" type="image/png">
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dab2f65f7ab4617973305aaeac645db9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dab2f65f7ab4617973305aaeac645db9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dab2f65f7ab4617973305aaeac645db9 = L.map(
+                "map_dab2f65f7ab4617973305aaeac645db9",
+                {
+                    center: [50.883404778571425, 20.678599775000006],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cad9455708477d3bf9f7f5c63c9d95c2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_cad9455708477d3bf9f7f5c63c9d95c2.addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var tile_layer_e750dd7297957c8772eeb28b42e900d6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_e750dd7297957c8772eeb28b42e900d6.addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var marker_39fadf5edc7f5f991e4634449628db62 = L.marker(
+                [51.0270156, 19.9698792],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_fefef0f294625eb0c9868c4165ba4d7e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e1\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_39fadf5edc7f5f991e4634449628db62.setIcon(div_icon_fefef0f294625eb0c9868c4165ba4d7e);
+        
+    
+        var popup_0725a4f29c90c99bda980f2f1684bcd7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_aef74e9961e82920c38cc3fe07b672cb = $(`<div id="html_aef74e9961e82920c38cc3fe07b672cb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Fajna Ryba</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Przedborsko-Małogoskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">347 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2221</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2022-09-24</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-09-24-09-46-fajna-ryba-114471326" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-09-24-09-46-fajna-ryba-114471326</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_0725a4f29c90c99bda980f2f1684bcd7.setContent(html_aef74e9961e82920c38cc3fe07b672cb);
+            
+        
+
+        marker_39fadf5edc7f5f991e4634449628db62.bindPopup(popup_0725a4f29c90c99bda980f2f1684bcd7)
+        ;
+
+        
+    
+    
+            var marker_5fe0786b6bf330d83bf6a8bae8efdf8f = L.marker(
+                [51.1764311, 20.7553117],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_b0ca90bf9d59dfea554328dce7703dfc = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e2\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_5fe0786b6bf330d83bf6a8bae8efdf8f.setIcon(div_icon_b0ca90bf9d59dfea554328dce7703dfc);
+        
+    
+        var popup_a65ff3ecca960ac7174a1ccd5b644ff9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6880ca9a46b492e8d686fde9f4049a7d = $(`<div id="html_6880ca9a46b492e8d686fde9f4049a7d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Altana</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Wzgórza Niekłańsko-Bliżyńskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">408 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2201</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2022-01-02</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-02-09-09-altana-91922460" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-02-09-09-altana-91922460</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_a65ff3ecca960ac7174a1ccd5b644ff9.setContent(html_6880ca9a46b492e8d686fde9f4049a7d);
+            
+        
+
+        marker_5fe0786b6bf330d83bf6a8bae8efdf8f.bindPopup(popup_a65ff3ecca960ac7174a1ccd5b644ff9)
+        ;
+
+        
+    
+    
+            var marker_af94355c9b34a025d4a736630cdde292 = L.marker(
+                [50.9844978, 20.3048183],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_4b296ca2b48ea3defe4b90a5976b68b5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e3\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_af94355c9b34a025d4a736630cdde292.setIcon(div_icon_4b296ca2b48ea3defe4b90a5976b68b5);
+        
+    
+        var popup_c2cc0543c37af48151acf77e5781c4c0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f081e3cd965828cd4e86dfff746227ca = $(`<div id="html_f081e3cd965828cd4e86dfff746227ca" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Góra Dobrzeszowska</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Dobrzeszowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">364 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2101</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2021-02-25</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-02-25-08-58-gora-dobrzeszowska-66560932" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-02-25-08-58-gora-dobrzeszowska-66560932</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_c2cc0543c37af48151acf77e5781c4c0.setContent(html_f081e3cd965828cd4e86dfff746227ca);
+            
+        
+
+        marker_af94355c9b34a025d4a736630cdde292.bindPopup(popup_c2cc0543c37af48151acf77e5781c4c0)
+        ;
+
+        
+    
+    
+            var marker_e7c9caa1aeabb6953e64fa7768c02af6 = L.marker(
+                [50.9750592, 20.4448803],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_9244a4e8cfa84ee566cf9cddfb70ce3b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e4\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e7c9caa1aeabb6953e64fa7768c02af6.setIcon(div_icon_9244a4e8cfa84ee566cf9cddfb70ce3b);
+        
+    
+        var popup_442af618f74720b77197dff8ffefe099 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ea916fa3d1f4e03d46a902a5306d8e4e = $(`<div id="html_ea916fa3d1f4e03d46a902a5306d8e4e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Góra Siniewska</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Oblęgorskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">448 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2012</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2020-08-16</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-08-16-06-51-gora-siniewska-54827290" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-08-16-06-51-gora-siniewska-54827290</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_442af618f74720b77197dff8ffefe099.setContent(html_ea916fa3d1f4e03d46a902a5306d8e4e);
+            
+        
+
+        marker_e7c9caa1aeabb6953e64fa7768c02af6.bindPopup(popup_442af618f74720b77197dff8ffefe099)
+        ;
+
+        
+    
+    
+            var marker_ae00ac33d8b023397bbfd373cad7dde7 = L.marker(
+                [51.0220386, 20.7340847],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_8727429090d0dcc98b00317b0d8d111c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e5\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ae00ac33d8b023397bbfd373cad7dde7.setIcon(div_icon_8727429090d0dcc98b00317b0d8d111c);
+        
+    
+        var popup_d3027ca80b3515a3a4d32bc5b158f6ac = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_844ea9ee0e6a0eeb0018384e75afb5b7 = $(`<div id="html_844ea9ee0e6a0eeb0018384e75afb5b7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Góra Osieczyńska</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Wzgórza Suchedniowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">407 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2001</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2020-06-04</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-04-12-26-gora-osieczynska-50481176" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-04-12-26-gora-osieczynska-50481176</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_d3027ca80b3515a3a4d32bc5b158f6ac.setContent(html_844ea9ee0e6a0eeb0018384e75afb5b7);
+            
+        
+
+        marker_ae00ac33d8b023397bbfd373cad7dde7.bindPopup(popup_d3027ca80b3515a3a4d32bc5b158f6ac)
+        ;
+
+        
+    
+    
+            var marker_349e17ecfad2c0d3c28e3c2fe7132752 = L.marker(
+                [50.9981892, 20.8748097],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_2dfa3fbf9be1cb53c6881a24b4afec44 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e6\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_349e17ecfad2c0d3c28e3c2fe7132752.setIcon(div_icon_2dfa3fbf9be1cb53c6881a24b4afec44);
+        
+    
+        var popup_9118fae33601bef1396377fd5e3c27f1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e91b692e6b551ba12bed2c886bafd08d = $(`<div id="html_e91b692e6b551ba12bed2c886bafd08d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Kamień Michniowski</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Sieradowickie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">435 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2203</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2022-02-06</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-02-06-08-28-kamien-michniowski-94630926" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-02-06-08-28-kamien-michniowski-94630926</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_9118fae33601bef1396377fd5e3c27f1.setContent(html_e91b692e6b551ba12bed2c886bafd08d);
+            
+        
+
+        marker_349e17ecfad2c0d3c28e3c2fe7132752.bindPopup(popup_9118fae33601bef1396377fd5e3c27f1)
+        ;
+
+        
+    
+    
+            var marker_0b8b77bb1a55047a375fcfc9a18354a3 = L.marker(
+                [50.9580194, 20.8331283],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_03b5468f6f24d122061297c36a41e146 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e7\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0b8b77bb1a55047a375fcfc9a18354a3.setIcon(div_icon_03b5468f6f24d122061297c36a41e146);
+        
+    
+        var popup_34d1fcffbf6c14a8ec9d2052241dc7e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8bab1ba6c8829b15a756c95b96784785 = $(`<div id="html_8bab1ba6c8829b15a756c95b96784785" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Bukowa Góra</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Klonowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">484 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2202</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2022-01-07</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-07-09-41-bukowa-gora-92265671" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-07-09-41-bukowa-gora-92265671</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_34d1fcffbf6c14a8ec9d2052241dc7e1.setContent(html_8bab1ba6c8829b15a756c95b96784785);
+            
+        
+
+        marker_0b8b77bb1a55047a375fcfc9a18354a3.bindPopup(popup_34d1fcffbf6c14a8ec9d2052241dc7e1)
+        ;
+
+        
+    
+    
+            var marker_9923ee63c916fcc05d0dd438117cc742 = L.marker(
+                [50.9485342, 20.6460422],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_58d340535aac215bff01fda648af3a61 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e8\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9923ee63c916fcc05d0dd438117cc742.setIcon(div_icon_58d340535aac215bff01fda648af3a61);
+        
+    
+        var popup_4c163ad64abeff3a60e4a8ca00fff159 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_aec31f64fed9f14da413e31eccd993a4 = $(`<div id="html_aec31f64fed9f14da413e31eccd993a4" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Sosnowica</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Wzgórza Tumlińskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">403 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2358</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2023-12-29</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-12-29-10-06-sosnowica-156848236" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-12-29-10-06-sosnowica-156848236</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_4c163ad64abeff3a60e4a8ca00fff159.setContent(html_aec31f64fed9f14da413e31eccd993a4);
+            
+        
+
+        marker_9923ee63c916fcc05d0dd438117cc742.bindPopup(popup_4c163ad64abeff3a60e4a8ca00fff159)
+        ;
+
+        
+    
+    
+            var marker_8f452509710721b113c7229131adab37 = L.marker(
+                [50.9043681, 20.7641406],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_badacfcbb98588d8afde00d16d918172 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e9\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8f452509710721b113c7229131adab37.setIcon(div_icon_badacfcbb98588d8afde00d16d918172);
+        
+    
+        var popup_7e692ff201b0d652929cbe4023358f56 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_de212f07dbacf070a3310d2935bad5de = $(`<div id="html_de212f07dbacf070a3310d2935bad5de" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Klonówka</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Masłowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">461 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2503</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2025-01-19</td>                 </tr>         </table></div></div>`)[0];
+                popup_7e692ff201b0d652929cbe4023358f56.setContent(html_de212f07dbacf070a3310d2935bad5de);
+            
+        
+
+        marker_8f452509710721b113c7229131adab37.bindPopup(popup_7e692ff201b0d652929cbe4023358f56)
+        ;
+
+        
+    
+    
+            var marker_d31a0dd43eafd94d5afe64ab598ff3b2 = L.marker(
+                [50.8982992, 20.8022047],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_8108ca3270aeb38b4cc9421d54b22d18 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e10\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d31a0dd43eafd94d5afe64ab598ff3b2.setIcon(div_icon_8108ca3270aeb38b4cc9421d54b22d18);
+        
+    
+        var popup_82a4cde60c5c7e97a815f05ce3f7e50d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_07d2dd1880d1cfe7c728ea200461f4dd = $(`<div id="html_07d2dd1880d1cfe7c728ea200461f4dd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Radostowa</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Grzbiet Krajeński</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">451 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2503</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2025-01-19</td>                 </tr>         </table></div></div>`)[0];
+                popup_82a4cde60c5c7e97a815f05ce3f7e50d.setContent(html_07d2dd1880d1cfe7c728ea200461f4dd);
+            
+        
+
+        marker_d31a0dd43eafd94d5afe64ab598ff3b2.bindPopup(popup_82a4cde60c5c7e97a815f05ce3f7e50d)
+        ;
+
+        
+    
+    
+            var marker_9aabf6dd2cbefe873fb34a6ad3dda8bb = L.marker(
+                [50.89159, 20.89649],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_5b552be014cf246fc7d850ef405dfc33 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e11\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9aabf6dd2cbefe873fb34a6ad3dda8bb.setIcon(div_icon_5b552be014cf246fc7d850ef405dfc33);
+        
+    
+        var popup_b5c6dd5bf9df3aa7316bed4150c56dd7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_18c9da8ab664bf6c687bf2825eedaea3 = $(`<div id="html_18c9da8ab664bf6c687bf2825eedaea3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Łysica</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Łysogórskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">612 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">1647</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2016-12-31</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2016-12-31-11-51-lysica-17800773" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2016-12-31-11-51-lysica-17800773</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_b5c6dd5bf9df3aa7316bed4150c56dd7.setContent(html_18c9da8ab664bf6c687bf2825eedaea3);
+            
+        
+
+        marker_9aabf6dd2cbefe873fb34a6ad3dda8bb.bindPopup(popup_b5c6dd5bf9df3aa7316bed4150c56dd7)
+        ;
+
+        
+    
+    
+            var marker_006af51812914167b7e3a8e984141090 = L.marker(
+                [50.8335247, 20.3209231],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_d957242a765542da978798b41de38602 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e12\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_006af51812914167b7e3a8e984141090.setIcon(div_icon_d957242a765542da978798b41de38602);
+        
+    
+        var popup_c0686ce0382e37164f6237fa1033ff01 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8edc4ffcabd4767f61be88a2afb0de4d = $(`<div id="html_8edc4ffcabd4767f61be88a2afb0de4d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Góra Milechowska</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Grząby Bolmińskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">335 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2315</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2023-05-01</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-10-35-milechowska-133462108" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-10-35-milechowska-133462108</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_c0686ce0382e37164f6237fa1033ff01.setContent(html_8edc4ffcabd4767f61be88a2afb0de4d);
+            
+        
+
+        marker_006af51812914167b7e3a8e984141090.bindPopup(popup_c0686ce0382e37164f6237fa1033ff01)
+        ;
+
+        
+    
+    
+            var marker_23b67a48d8294adb1e276d297efbb405 = L.marker(
+                [50.8470914, 20.3593253],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_14544d096f02f9d7e858943076db06c9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e13\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_23b67a48d8294adb1e276d297efbb405.setIcon(div_icon_14544d096f02f9d7e858943076db06c9);
+        
+    
+        var popup_e99e1d4abd34fd3c4f65e49a95c4ca29 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d3f6d4b8388ddebc757d33ae23fd7a2a = $(`<div id="html_d3f6d4b8388ddebc757d33ae23fd7a2a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Miedzianka</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Wzgórza Miedziankowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">356 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2314</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2023-05-01</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-09-02-miedzianka-133462073" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-09-02-miedzianka-133462073</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_e99e1d4abd34fd3c4f65e49a95c4ca29.setContent(html_d3f6d4b8388ddebc757d33ae23fd7a2a);
+            
+        
+
+        marker_23b67a48d8294adb1e276d297efbb405.bindPopup(popup_e99e1d4abd34fd3c4f65e49a95c4ca29)
+        ;
+
+        
+    
+    
+            var marker_bc0e3f938ca37dd0006cc148a529cbb7 = L.marker(
+                [50.8197192, 20.4550064],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_a386beba0427573ec4ed05e4823bdb37 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e14\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_bc0e3f938ca37dd0006cc148a529cbb7.setIcon(div_icon_a386beba0427573ec4ed05e4823bdb37);
+        
+    
+        var popup_598ea9acd73913c1690bf9ab6719dc3a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_20c78dcb49e2cfb7a833cfb7da8c582d = $(`<div id="html_20c78dcb49e2cfb7a833cfb7da8c582d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Zelejowa</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Zelejowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">361 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2424</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2024-05-26</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-11-45-zelejowa-172140177" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-11-45-zelejowa-172140177</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_598ea9acd73913c1690bf9ab6719dc3a.setContent(html_20c78dcb49e2cfb7a833cfb7da8c582d);
+            
+        
+
+        marker_bc0e3f938ca37dd0006cc148a529cbb7.bindPopup(popup_598ea9acd73913c1690bf9ab6719dc3a)
+        ;
+
+        
+    
+    
+            var marker_d0debf4365d896fa9ae6d56d5252942c = L.marker(
+                [50.7971244, 20.4613553],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_2ec439d69edf4513cdc7bebd32e91d94 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e15\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d0debf4365d896fa9ae6d56d5252942c.setIcon(div_icon_2ec439d69edf4513cdc7bebd32e91d94);
+        
+    
+        var popup_516f222093245e51510cfa3493199803 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4da59ee05bd59d976141622519e618a3 = $(`<div id="html_4da59ee05bd59d976141622519e618a3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Zamkowa</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Chęcińskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">360 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;"></td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;"></td>                 </tr>         </table></div></div>`)[0];
+                popup_516f222093245e51510cfa3493199803.setContent(html_4da59ee05bd59d976141622519e618a3);
+            
+        
+
+        marker_d0debf4365d896fa9ae6d56d5252942c.bindPopup(popup_516f222093245e51510cfa3493199803)
+        ;
+
+        
+    
+    
+            var marker_b3668ee4306673e77a73a45060f93ada = L.marker(
+                [50.7922972, 20.4215419],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_bd4b28ea5c837b826b935320ad307cbe = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e16\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b3668ee4306673e77a73a45060f93ada.setIcon(div_icon_bd4b28ea5c837b826b935320ad307cbe);
+        
+    
+        var popup_cad5ce65ea4fb9994b66c5b087dd1f11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bc678cdbb769ce0ff0c8e152f1b9abbd = $(`<div id="html_bc678cdbb769ce0ff0c8e152f1b9abbd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Glinianki</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Grzywy Korzeczkowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">336 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2312</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2023-04-20</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-04-20-10-36-glinianki-zelejowa-132235101" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-04-20-10-36-glinianki-zelejowa-132235101</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_cad5ce65ea4fb9994b66c5b087dd1f11.setContent(html_bc678cdbb769ce0ff0c8e152f1b9abbd);
+            
+        
+
+        marker_b3668ee4306673e77a73a45060f93ada.bindPopup(popup_cad5ce65ea4fb9994b66c5b087dd1f11)
+        ;
+
+        
+    
+    
+            var marker_d7c3850654bdea8ff84f57d788efc550 = L.marker(
+                [50.8387433, 20.51905],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_140cc725fa17ce4a59b856282a4eb228 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e17\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d7c3850654bdea8ff84f57d788efc550.setIcon(div_icon_140cc725fa17ce4a59b856282a4eb228);
+        
+    
+        var popup_1da9e61ad9865ff03066c8f53eae2ac7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_88bbd0d10922f4e7d3f5f7a0ebee631c = $(`<div id="html_88bbd0d10922f4e7d3f5f7a0ebee631c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Patrol</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Zgórskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">338 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2425</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2024-05-26</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-15-02-patrol-172143362" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-15-02-patrol-172143362</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_1da9e61ad9865ff03066c8f53eae2ac7.setContent(html_88bbd0d10922f4e7d3f5f7a0ebee631c);
+            
+        
+
+        marker_d7c3850654bdea8ff84f57d788efc550.bindPopup(popup_1da9e61ad9865ff03066c8f53eae2ac7)
+        ;
+
+        
+    
+    
+            var marker_ee090e834fb7759ff34f3ef421efe762 = L.marker(
+                [50.8679586, 20.58785],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_267b8703a219d7eec339056bb8a0349c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e18\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ee090e834fb7759ff34f3ef421efe762.setIcon(div_icon_267b8703a219d7eec339056bb8a0349c);
+        
+    
+        var popup_f03fd02d33f342d507ffba7e74a0e5fe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_77be53c3d7bb186bf3dac56c38fa37bf = $(`<div id="html_77be53c3d7bb186bf3dac56c38fa37bf" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Karczówka</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Kadzielniańskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">319 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;"></td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;"></td>                 </tr>         </table></div></div>`)[0];
+                popup_f03fd02d33f342d507ffba7e74a0e5fe.setContent(html_77be53c3d7bb186bf3dac56c38fa37bf);
+            
+        
+
+        marker_ee090e834fb7759ff34f3ef421efe762.bindPopup(popup_f03fd02d33f342d507ffba7e74a0e5fe)
+        ;
+
+        
+    
+    
+            var marker_bc5678014938fba7e057dfddd019185a = L.marker(
+                [50.8338336, 20.5706553],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_1762c7d44d48b828dd1cfb3bb2b85e45 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e19\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_bc5678014938fba7e057dfddd019185a.setIcon(div_icon_1762c7d44d48b828dd1cfb3bb2b85e45);
+        
+    
+        var popup_95a95c14851bbce120f1402705ab8d45 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6d5c478dca4fabd94cf14bf31d66ffed = $(`<div id="html_6d5c478dca4fabd94cf14bf31d66ffed" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Biesak</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Posłowickie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">381 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2419</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2024-04-28</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_95a95c14851bbce120f1402705ab8d45.setContent(html_6d5c478dca4fabd94cf14bf31d66ffed);
+            
+        
+
+        marker_bc5678014938fba7e057dfddd019185a.bindPopup(popup_95a95c14851bbce120f1402705ab8d45)
+        ;
+
+        
+    
+    
+            var marker_73b9cf0f228a0935bda25565d05f455b = L.marker(
+                [50.8378992, 20.6439975],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_85d8306113e3fe044a9a62b8dac93207 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e20\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_73b9cf0f228a0935bda25565d05f455b.setIcon(div_icon_85d8306113e3fe044a9a62b8dac93207);
+        
+    
+        var popup_4991539bf2f08886020660327874fac2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9a0ffacefc7fd480c1ba3ceb3be72b61 = $(`<div id="html_9a0ffacefc7fd480c1ba3ceb3be72b61" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Telegraf</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Dymińskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">408 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2419</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2024-04-28</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_4991539bf2f08886020660327874fac2.setContent(html_9a0ffacefc7fd480c1ba3ceb3be72b61);
+            
+        
+
+        marker_73b9cf0f228a0935bda25565d05f455b.bindPopup(popup_4991539bf2f08886020660327874fac2)
+        ;
+
+        
+    
+    
+            var marker_ec0b8a0d473510517dca9830b3d45371 = L.marker(
+                [50.8416669, 20.7322183],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_35ed5c78c10cd49e137cd205ae562606 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e21\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ec0b8a0d473510517dca9830b3d45371.setIcon(div_icon_35ed5c78c10cd49e137cd205ae562606);
+        
+    
+        var popup_8cbe8b482a5a65c00d98ebfa2a39387f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2f467c5180af5ff2defcef5ea5fd6cdc = $(`<div id="html_2f467c5180af5ff2defcef5ea5fd6cdc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Otrocz</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Daleszyckie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">375 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;"></td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;"></td>                 </tr>         </table></div></div>`)[0];
+                popup_8cbe8b482a5a65c00d98ebfa2a39387f.setContent(html_2f467c5180af5ff2defcef5ea5fd6cdc);
+            
+        
+
+        marker_ec0b8a0d473510517dca9830b3d45371.bindPopup(popup_8cbe8b482a5a65c00d98ebfa2a39387f)
+        ;
+
+        
+    
+    
+            var marker_bf749833f2c8d72afa7d79ddf49738ba = L.marker(
+                [50.8324614, 20.7656481],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_60ab25030cdb56215aa395d1e0ffd745 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e22\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_bf749833f2c8d72afa7d79ddf49738ba.setIcon(div_icon_60ab25030cdb56215aa395d1e0ffd745);
+        
+    
+        var popup_1a027a1a9aaad8e5416305799a3e2b99 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0d2a2a64c6dfdfbd8b4308e115ae5191 = $(`<div id="html_0d2a2a64c6dfdfbd8b4308e115ae5191" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Sikorza</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Brzechowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">361 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;"></td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;"></td>                 </tr>         </table></div></div>`)[0];
+                popup_1a027a1a9aaad8e5416305799a3e2b99.setContent(html_0d2a2a64c6dfdfbd8b4308e115ae5191);
+            
+        
+
+        marker_bf749833f2c8d72afa7d79ddf49738ba.bindPopup(popup_1a027a1a9aaad8e5416305799a3e2b99)
+        ;
+
+        
+    
+    
+            var marker_362cdc14bf0cc437fb3fd13c46468049 = L.marker(
+                [50.7718156, 20.9092914],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_900a5c1792487e331acee407f6082b8e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e23\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_362cdc14bf0cc437fb3fd13c46468049.setIcon(div_icon_900a5c1792487e331acee407f6082b8e);
+        
+    
+        var popup_75b070b2b97b16db839f6bb59f167e25 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4f576f164df93b80bc6410011ad99402 = $(`<div id="html_4f576f164df93b80bc6410011ad99402" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Włochy</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Cisowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">427 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2204</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2022-03-23</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-03-23-09-20-wlochy-98169252" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-03-23-09-20-wlochy-98169252</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_75b070b2b97b16db839f6bb59f167e25.setContent(html_4f576f164df93b80bc6410011ad99402);
+            
+        
+
+        marker_362cdc14bf0cc437fb3fd13c46468049.bindPopup(popup_75b070b2b97b16db839f6bb59f167e25)
+        ;
+
+        
+    
+    
+            var marker_a3f00f86b01722123bbe65a9b8d2ee90 = L.marker(
+                [50.7347661, 20.9611928],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_a18452aefcc6d79385df3ab7c893d03e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e24\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a3f00f86b01722123bbe65a9b8d2ee90.setIcon(div_icon_a18452aefcc6d79385df3ab7c893d03e);
+        
+    
+        var popup_abc199e105ab92ab02f73d786634924a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b191973f646916cb4213bc6430e6abf5 = $(`<div id="html_b191973f646916cb4213bc6430e6abf5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Jaźwina</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Ociesęckie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">361 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2320</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2023-06-07</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-11-39-jazwina-137060561" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-11-39-jazwina-137060561</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_abc199e105ab92ab02f73d786634924a.setContent(html_b191973f646916cb4213bc6430e6abf5);
+            
+        
+
+        marker_a3f00f86b01722123bbe65a9b8d2ee90.bindPopup(popup_abc199e105ab92ab02f73d786634924a)
+        ;
+
+        
+    
+    
+            var marker_e87a11021b204080fe297b084d798fb7 = L.marker(
+                [50.7689375, 20.9905783],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_555f549c0e122407d2417929fbf10576 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e25\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e87a11021b204080fe297b084d798fb7.setIcon(div_icon_555f549c0e122407d2417929fbf10576);
+        
+    
+        var popup_afd1daf7d838c0f3d4ce2bff71f70a3f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1264bfafda02f5a89ec481d53339e90c = $(`<div id="html_1264bfafda02f5a89ec481d53339e90c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Kiełki</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Orłowińskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">452 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2102</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2021-03-31</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-03-31-09-29-kielki-69285152" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-03-31-09-29-kielki-69285152</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_afd1daf7d838c0f3d4ce2bff71f70a3f.setContent(html_1264bfafda02f5a89ec481d53339e90c);
+            
+        
+
+        marker_e87a11021b204080fe297b084d798fb7.bindPopup(popup_afd1daf7d838c0f3d4ce2bff71f70a3f)
+        ;
+
+        
+    
+    
+            var marker_2e0bc923385fd0358d6c975ac980e73d = L.marker(
+                [50.82235, 21.00758],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_b0cb399c0571eb3882f5531d43584b7a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e26\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_2e0bc923385fd0358d6c975ac980e73d.setIcon(div_icon_b0cb399c0571eb3882f5531d43584b7a);
+        
+    
+        var popup_f513e7a7530a10003768ac5c761b33f7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_385a12dbdd58036a96e27cd15e0bcb42 = $(`<div id="html_385a12dbdd58036a96e27cd15e0bcb42" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Drogosiowa</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Bielinśkie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">447 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2004</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2020-07-05</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-07-05-08-57-lysa-gora-52247770" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-07-05-08-57-lysa-gora-52247770</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_f513e7a7530a10003768ac5c761b33f7.setContent(html_385a12dbdd58036a96e27cd15e0bcb42);
+            
+        
+
+        marker_2e0bc923385fd0358d6c975ac980e73d.bindPopup(popup_f513e7a7530a10003768ac5c761b33f7)
+        ;
+
+        
+    
+    
+            var marker_cf9ea3182e090a71619c9371311ad264 = L.marker(
+                [50.8848431, 21.1080642],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_425d919ba9f5d88d2fa5300e0e122209 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e27\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_cf9ea3182e090a71619c9371311ad264.setIcon(div_icon_425d919ba9f5d88d2fa5300e0e122209);
+        
+    
+        var popup_28aadb17a5289529ddbca03277f69404 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_eb2c7e8667c32e03cd1d05df779c270e = $(`<div id="html_eb2c7e8667c32e03cd1d05df779c270e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Góra Chełmowa</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Pokrzywiańskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">351 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2321</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2023-06-07</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-14-31-chelmowa-137060928" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-14-31-chelmowa-137060928</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_28aadb17a5289529ddbca03277f69404.setContent(html_eb2c7e8667c32e03cd1d05df779c270e);
+            
+        
+
+        marker_cf9ea3182e090a71619c9371311ad264.bindPopup(popup_28aadb17a5289529ddbca03277f69404)
+        ;
+
+        
+    
+    
+            var marker_61488dede53b39b5041c5ba69a77dff1 = L.marker(
+                [50.8262592, 21.1607261],
+                {}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var div_icon_57ff1da1b706ed0d63140c2fb19d3631 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e28\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_61488dede53b39b5041c5ba69a77dff1.setIcon(div_icon_57ff1da1b706ed0d63140c2fb19d3631);
+        
+    
+        var popup_8dcfc4cf94e4bce1528715e20993dac6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1dc5b00799b5fe717884544f1a5e8950 = $(`<div id="html_1dc5b00799b5fe717884544f1a5e8950" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr>                     <td style="padding: 4px; font-weight: bold;">Peak:</td>                     <td style="padding: 4px; white-space: nowrap;">Szczytniak</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Region:</td>                     <td style="padding: 4px;">Góry Świętokrzyskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">SubRegion:</td>                     <td style="padding: 4px;">Pasmo Jeleniowskie</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Height:</td>                     <td style="padding: 4px;">554 m</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Expedition:</td>                     <td style="padding: 4px;">2003</td>                 </tr>                 <tr>                     <td style="padding: 4px; font-weight: bold;">Date:</td>                     <td style="padding: 4px;">2020-06-14</td>                 </tr>                          <tr>                     <td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                     <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-14-09-58-szczytniak-51044470" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-14-09-58-szczytniak-51044470</a></td>                 </tr>             </table></div></div>`)[0];
+                popup_8dcfc4cf94e4bce1528715e20993dac6.setContent(html_1dc5b00799b5fe717884544f1a5e8950);
+            
+        
+
+        marker_61488dede53b39b5041c5ba69a77dff1.bindPopup(popup_8dcfc4cf94e4bce1528715e20993dac6)
+        ;
+
+        
+    
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_dab2f65f7ab4617973305aaeac645db9);
+        
+    
+            var tile_layer_6ba05dcdcaad3b545868ed80431c176a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_05a32f80d3edf6a8291c0870e16fcbff = new L.Control.MiniMap(
+                tile_layer_6ba05dcdcaad3b545868ed80431c176a,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_dab2f65f7ab4617973305aaeac645db9.addControl(mini_map_05a32f80d3edf6a8291c0870e16fcbff);
+        
+</script>
+</html>
