@@ -1,3 +1,4 @@
+# Przekierowanie subdomeny kampinos.aktmamut.eu na gotową mapę
 [[redirects]]
   from = "https://kampinos.aktmamut.eu/*"
   to = "/maps/kampinos.html"
