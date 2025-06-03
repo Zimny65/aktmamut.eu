@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Masovia</title>
+    <link rel="icon" href="M32.png" type="image/png">
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c28e88209da82646b77812fb5f387de4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c28e88209da82646b77812fb5f387de4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c28e88209da82646b77812fb5f387de4 = L.map(
+                "map_c28e88209da82646b77812fb5f387de4",
+                {
+                    center: [52.10515224761905, 20.971303152380955],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bdef87ac3b56c205c7d2ad54f71ba2da = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_bdef87ac3b56c205c7d2ad54f71ba2da.addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var tile_layer_f0cf568192519bc2d6d285fdbdc3f2b5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_f0cf568192519bc2d6d285fdbdc3f2b5.addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var marker_d93e7f313aa853c661c7f237f717880a = L.marker(
+                [51.9523514, 20.0964317],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_bed9d02481061bcff56209c030f92aa8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e1\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d93e7f313aa853c661c7f237f717880a.setIcon(div_icon_bed9d02481061bcff56209c030f92aa8);
+        
+    
+        var popup_a7dbc98da927680ab845f29e9752e799 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_047ecfc10173e2bda6abb6f4f999f32a = $(`<div id="html_047ecfc10173e2bda6abb6f4f999f32a" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Zwierzyniec</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Zwierzyniecki</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_a7dbc98da927680ab845f29e9752e799.setContent(html_047ecfc10173e2bda6abb6f4f999f32a);
+            
+        
+
+        marker_d93e7f313aa853c661c7f237f717880a.bindPopup(popup_a7dbc98da927680ab845f29e9752e799)
+        ;
+
+        
+    
+    
+            var marker_cde4d74faa3ef3b34ebe59dcedd28111 = L.marker(
+                [52.0434828, 20.1045061],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_5fad47ab05b838d326ffee91ea545638 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e2\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_cde4d74faa3ef3b34ebe59dcedd28111.setIcon(div_icon_5fad47ab05b838d326ffee91ea545638);
+        
+    
+        var popup_1990df45fd2d698bd01382767a2edf1e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1628deff0df1e75fbe4d4933e78ba9de = $(`<div id="html_1628deff0df1e75fbe4d4933e78ba9de" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Polana Siwica</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Nieborowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_1990df45fd2d698bd01382767a2edf1e.setContent(html_1628deff0df1e75fbe4d4933e78ba9de);
+            
+        
+
+        marker_cde4d74faa3ef3b34ebe59dcedd28111.bindPopup(popup_1990df45fd2d698bd01382767a2edf1e)
+        ;
+
+        
+    
+    
+            var marker_55bd60bd3fc907b04e81bf0ad4d3c867 = L.marker(
+                [52.0312589, 20.2007614],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_b5d33e0cd199183a6ebb7d2fc53617c4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e3\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_55bd60bd3fc907b04e81bf0ad4d3c867.setIcon(div_icon_b5d33e0cd199183a6ebb7d2fc53617c4);
+        
+    
+        var popup_ac7e3ea960bacc55346ed363ea322075 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_89ab0f005cdc830b6926e092fdcaae3d = $(`<div id="html_89ab0f005cdc830b6926e092fdcaae3d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Duży Żak</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Nieborowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_ac7e3ea960bacc55346ed363ea322075.setContent(html_89ab0f005cdc830b6926e092fdcaae3d);
+            
+        
+
+        marker_55bd60bd3fc907b04e81bf0ad4d3c867.bindPopup(popup_ac7e3ea960bacc55346ed363ea322075)
+        ;
+
+        
+    
+    
+            var marker_659588f44bcdf3b02d699b493ea0e510 = L.marker(
+                [52.0184825, 20.1955614],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_b7e77503ffcad606c8d782bb44c4500b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e4\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_659588f44bcdf3b02d699b493ea0e510.setIcon(div_icon_b7e77503ffcad606c8d782bb44c4500b);
+        
+    
+        var popup_7eddb3a1b168eaafea3be634f3da048e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3f7920f54ac7234c908bce6c2436c266 = $(`<div id="html_3f7920f54ac7234c908bce6c2436c266" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Kopanicha</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Nieborowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_7eddb3a1b168eaafea3be634f3da048e.setContent(html_3f7920f54ac7234c908bce6c2436c266);
+            
+        
+
+        marker_659588f44bcdf3b02d699b493ea0e510.bindPopup(popup_7eddb3a1b168eaafea3be634f3da048e)
+        ;
+
+        
+    
+    
+            var marker_ae7cda401fc3deacba119ef965f0a274 = L.marker(
+                [52.0445922, 20.2041322],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_6bddd826464b765f48649b5e148c236e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e5\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ae7cda401fc3deacba119ef965f0a274.setIcon(div_icon_6bddd826464b765f48649b5e148c236e);
+        
+    
+        var popup_ed89bc0817be65a12ded5d42f6a188bd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ddf60667c7d39380c12d2213899c4b32 = $(`<div id="html_ddf60667c7d39380c12d2213899c4b32" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Rawka</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Puszcza Bolimowska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_ed89bc0817be65a12ded5d42f6a188bd.setContent(html_ddf60667c7d39380c12d2213899c4b32);
+            
+        
+
+        marker_ae7cda401fc3deacba119ef965f0a274.bindPopup(popup_ed89bc0817be65a12ded5d42f6a188bd)
+        ;
+
+        
+    
+    
+            var marker_9f1118ae2ada708c8d380338c577af7b = L.marker(
+                [52.0426339, 20.2834539],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_8ca60d4978733f075bae89d19e167049 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e6\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9f1118ae2ada708c8d380338c577af7b.setIcon(div_icon_8ca60d4978733f075bae89d19e167049);
+        
+    
+        var popup_65703617886efcd12322197f475c1f14 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_af7b908c8b5ac632d7de5f2ba936f853 = $(`<div id="html_af7b908c8b5ac632d7de5f2ba936f853" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Białe Błoto</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Puszcza Bolimowska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_65703617886efcd12322197f475c1f14.setContent(html_af7b908c8b5ac632d7de5f2ba936f853);
+            
+        
+
+        marker_9f1118ae2ada708c8d380338c577af7b.bindPopup(popup_65703617886efcd12322197f475c1f14)
+        ;
+
+        
+    
+    
+            var marker_584cbc6f8ffb2e05f3c2b0fa0f7b99db = L.marker(
+                [51.9734472, 20.2355428],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_b103af68b89a0a6554c47bf9aa28f926 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e7\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_584cbc6f8ffb2e05f3c2b0fa0f7b99db.setIcon(div_icon_b103af68b89a0a6554c47bf9aa28f926);
+        
+    
+        var popup_fa8351d0018e3933333fd7ba1dd03ab4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d5dab43506a9402dbd2a7ab77521a918 = $(`<div id="html_d5dab43506a9402dbd2a7ab77521a918" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Oberwanka</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Puszcza Bolimowska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_fa8351d0018e3933333fd7ba1dd03ab4.setContent(html_d5dab43506a9402dbd2a7ab77521a918);
+            
+        
+
+        marker_584cbc6f8ffb2e05f3c2b0fa0f7b99db.bindPopup(popup_fa8351d0018e3933333fd7ba1dd03ab4)
+        ;
+
+        
+    
+    
+            var marker_6cf7108bde342ce36890457646e00a8a = L.marker(
+                [52.0023925, 20.3405239],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_408b613b38a2e1ef9625e0fdf20e118a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e8\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6cf7108bde342ce36890457646e00a8a.setIcon(div_icon_408b613b38a2e1ef9625e0fdf20e118a);
+        
+    
+        var popup_113dbb08a760416d30260fb56cb92945 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_feab81661ccfe455c2f02af8dfc7d566 = $(`<div id="html_feab81661ccfe455c2f02af8dfc7d566" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Puszcza Mariańska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Puszcza Bolimowska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Skierniewice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_113dbb08a760416d30260fb56cb92945.setContent(html_feab81661ccfe455c2f02af8dfc7d566);
+            
+        
+
+        marker_6cf7108bde342ce36890457646e00a8a.bindPopup(popup_113dbb08a760416d30260fb56cb92945)
+        ;
+
+        
+    
+    
+            var marker_33b1978761b05b8d5de4ef58b152fe5b = L.marker(
+                [52.0219, 20.5400978],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_882b6b92ed279ecf2169f95ee7c77db0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e9\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_33b1978761b05b8d5de4ef58b152fe5b.setIcon(div_icon_882b6b92ed279ecf2169f95ee7c77db0);
+        
+    
+        var popup_fc8f711dd4e09f8bc94a4b60ac7585e8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_14c893fc9f624ccb00eaaa52d3ecc7f2 = $(`<div id="html_14c893fc9f624ccb00eaaa52d3ecc7f2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Dąbrowa Radziejowska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Lasy Radziejowskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Mszczonów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_fc8f711dd4e09f8bc94a4b60ac7585e8.setContent(html_14c893fc9f624ccb00eaaa52d3ecc7f2);
+            
+        
+
+        marker_33b1978761b05b8d5de4ef58b152fe5b.bindPopup(popup_fc8f711dd4e09f8bc94a4b60ac7585e8)
+        ;
+
+        
+    
+    
+            var marker_9f271ae475154b8587933e00aa791b50 = L.marker(
+                [51.9846353, 20.6193428],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_10146abf1e1d5a30790f84b9be0a7d0d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e10\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9f271ae475154b8587933e00aa791b50.setIcon(div_icon_10146abf1e1d5a30790f84b9be0a7d0d);
+        
+    
+        var popup_d0ace4ba94e473af41af29a5181ec799 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4c3556b2ed2bee62ef6cffab93768087 = $(`<div id="html_4c3556b2ed2bee62ef6cffab93768087" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Skulskie Dęby</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Lasy Radziejowskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Mszczonów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_d0ace4ba94e473af41af29a5181ec799.setContent(html_4c3556b2ed2bee62ef6cffab93768087);
+            
+        
+
+        marker_9f271ae475154b8587933e00aa791b50.bindPopup(popup_d0ace4ba94e473af41af29a5181ec799)
+        ;
+
+        
+    
+    
+            var marker_88e9e82f05f6230ca31e1e3541832d49 = L.marker(
+                [51.9915178, 20.6887439],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_899b610d39de75736737ea520ca2fe39 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e11\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_88e9e82f05f6230ca31e1e3541832d49.setIcon(div_icon_899b610d39de75736737ea520ca2fe39);
+        
+    
+        var popup_92bfbe54eae00fa885d946c7bdd2ecf6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1a22fcd5d9912d3a120ba8684c1052fa = $(`<div id="html_1a22fcd5d9912d3a120ba8684c1052fa" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Skulski Las</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Lasy Radziejowskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Mszczonów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_92bfbe54eae00fa885d946c7bdd2ecf6.setContent(html_1a22fcd5d9912d3a120ba8684c1052fa);
+            
+        
+
+        marker_88e9e82f05f6230ca31e1e3541832d49.bindPopup(popup_92bfbe54eae00fa885d946c7bdd2ecf6)
+        ;
+
+        
+    
+    
+            var marker_994894e5bf5b73b275677481ff6e3042 = L.marker(
+                [52.0204561, 20.7676225],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_d007126cb7ca5cb5f7bdd1ff9d72f97f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e12\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_994894e5bf5b73b275677481ff6e3042.setIcon(div_icon_d007126cb7ca5cb5f7bdd1ff9d72f97f);
+        
+    
+        var popup_273dd8bd7fa6d6287c69dda5f38f78b9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e8d2d2f096de7999816fb38435b73616 = $(`<div id="html_e8d2d2f096de7999816fb38435b73616" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Młochowski Łęg</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Młochowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Pruszków</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_273dd8bd7fa6d6287c69dda5f38f78b9.setContent(html_e8d2d2f096de7999816fb38435b73616);
+            
+        
+
+        marker_994894e5bf5b73b275677481ff6e3042.bindPopup(popup_273dd8bd7fa6d6287c69dda5f38f78b9)
+        ;
+
+        
+    
+    
+            var marker_9bda3c2caac0afa2782a81779b625bb1 = L.marker(
+                [52.1138408, 20.7562356],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_db8a1adb465843bbdf5640c1090f34f6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e13\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9bda3c2caac0afa2782a81779b625bb1.setIcon(div_icon_db8a1adb465843bbdf5640c1090f34f6);
+        
+    
+        var popup_5fa9a5712e4fc306c1b6bf20b29c8252 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c6b97ffe8b775170ddcb771880a9bf98 = $(`<div id="html_c6b97ffe8b775170ddcb771880a9bf98" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Podkowa</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Młochowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Pruszków</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_5fa9a5712e4fc306c1b6bf20b29c8252.setContent(html_c6b97ffe8b775170ddcb771880a9bf98);
+            
+        
+
+        marker_9bda3c2caac0afa2782a81779b625bb1.bindPopup(popup_5fa9a5712e4fc306c1b6bf20b29c8252)
+        ;
+
+        
+    
+    
+            var marker_068179e0bc64519b7bb34f2d51c62651 = L.marker(
+                [51.9795219, 20.9498814],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_0bfcc7dcaea0dc4749f648592bdd7276 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e14\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_068179e0bc64519b7bb34f2d51c62651.setIcon(div_icon_0bfcc7dcaea0dc4749f648592bdd7276);
+        
+    
+        var popup_aac1782d918ea04fe308818b81ee8fe6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2854456718db2c567a13668ae5cd6fa9 = $(`<div id="html_2854456718db2c567a13668ae5cd6fa9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Skarpa Jeziorki</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Chojnowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Piaseczno</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_aac1782d918ea04fe308818b81ee8fe6.setContent(html_2854456718db2c567a13668ae5cd6fa9);
+            
+        
+
+        marker_068179e0bc64519b7bb34f2d51c62651.bindPopup(popup_aac1782d918ea04fe308818b81ee8fe6)
+        ;
+
+        
+    
+    
+            var marker_68b2284b8587e019031278c28edc7004 = L.marker(
+                [51.9845947, 20.9819231],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_21a51cbd51e3e781001c888cc695af65 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e15\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_68b2284b8587e019031278c28edc7004.setIcon(div_icon_21a51cbd51e3e781001c888cc695af65);
+        
+    
+        var popup_14e61573e029c6fdedf252510363eedc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b9126169adfb727afa6f267b929db31b = $(`<div id="html_b9126169adfb727afa6f267b929db31b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Łoś</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Chojnowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Piaseczno</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_14e61573e029c6fdedf252510363eedc.setContent(html_b9126169adfb727afa6f267b929db31b);
+            
+        
+
+        marker_68b2284b8587e019031278c28edc7004.bindPopup(popup_14e61573e029c6fdedf252510363eedc)
+        ;
+
+        
+    
+    
+            var marker_9edd2bb0f4dcc5e4307e456dd7589c58 = L.marker(
+                [52.0129411, 20.9899875],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_e5163741916a905b8bea7ca91126c40b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e16\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9edd2bb0f4dcc5e4307e456dd7589c58.setIcon(div_icon_e5163741916a905b8bea7ca91126c40b);
+        
+    
+        var popup_38d8ebb623fe8a7b09f520b0f3fa1bc9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dabfccec894004cdb04055802aa2e682 = $(`<div id="html_dabfccec894004cdb04055802aa2e682" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Las Pęcherski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Chojnowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Piaseczno</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_38d8ebb623fe8a7b09f520b0f3fa1bc9.setContent(html_dabfccec894004cdb04055802aa2e682);
+            
+        
+
+        marker_9edd2bb0f4dcc5e4307e456dd7589c58.bindPopup(popup_38d8ebb623fe8a7b09f520b0f3fa1bc9)
+        ;
+
+        
+    
+    
+            var marker_e3ffb00b1e5ac43f22bc002ddc1f2276 = L.marker(
+                [52.0351319, 21.0502692],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_0702816aa750f91faa10476619472c71 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e17\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e3ffb00b1e5ac43f22bc002ddc1f2276.setIcon(div_icon_0702816aa750f91faa10476619472c71);
+        
+    
+        var popup_3b355a92037873062cde1754dd6bfb55 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b5db183e8fa9092323da3284f8905f18 = $(`<div id="html_b5db183e8fa9092323da3284f8905f18" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Uroczysko Stephana</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Chojnowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Piaseczno</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_3b355a92037873062cde1754dd6bfb55.setContent(html_b5db183e8fa9092323da3284f8905f18);
+            
+        
+
+        marker_e3ffb00b1e5ac43f22bc002ddc1f2276.bindPopup(popup_3b355a92037873062cde1754dd6bfb55)
+        ;
+
+        
+    
+    
+            var marker_e7668fc1147652ff2ae64b30549fac86 = L.marker(
+                [52.0791156, 21.1413142],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_709dd11a27f74cfb5ae9a32d5f518eb3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e18\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e7668fc1147652ff2ae64b30549fac86.setIcon(div_icon_709dd11a27f74cfb5ae9a32d5f518eb3);
+        
+    
+        var popup_95767592aa6206663d2990b2824a9977 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_be6fdaaeb5cb20f4a0835578cb4a8839 = $(`<div id="html_be6fdaaeb5cb20f4a0835578cb4a8839" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Skarpa Oborska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Chojnowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Piaseczno</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_95767592aa6206663d2990b2824a9977.setContent(html_be6fdaaeb5cb20f4a0835578cb4a8839);
+            
+        
+
+        marker_e7668fc1147652ff2ae64b30549fac86.bindPopup(popup_95767592aa6206663d2990b2824a9977)
+        ;
+
+        
+    
+    
+            var marker_e5983f66c9d0e0ffaa9ce9810d5f206a = L.marker(
+                [52.2943864, 21.2672689],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_137967a206a0b3c373c2e447bb78ca82 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e19\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e5983f66c9d0e0ffaa9ce9810d5f206a.setIcon(div_icon_137967a206a0b3c373c2e447bb78ca82);
+        
+    
+        var popup_0753fccd6ed68019cb798a208484425f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c662a72dffd18206b25add55724f2959 = $(`<div id="html_c662a72dffd18206b25add55724f2959" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Mosty Kalińskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Okuniewsko-Rembertowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Wołomin</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_0753fccd6ed68019cb798a208484425f.setContent(html_c662a72dffd18206b25add55724f2959);
+            
+        
+
+        marker_e5983f66c9d0e0ffaa9ce9810d5f206a.bindPopup(popup_0753fccd6ed68019cb798a208484425f)
+        ;
+
+        
+    
+    
+            var marker_b79b43608c47ed30281addce0e56dc45 = L.marker(
+                [52.2871486, 21.3083264],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_084cfc0dd78403663740ce152fd84819 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e20\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b79b43608c47ed30281addce0e56dc45.setIcon(div_icon_084cfc0dd78403663740ce152fd84819);
+        
+    
+        var popup_e9b8aad22a25033dfc80b8961bc4726a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_098bf4835c0e23a6b8e1207bda879a5e = $(`<div id="html_098bf4835c0e23a6b8e1207bda879a5e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Okuniewska Góra</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Okuniewsko-Rembertowski</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Wołomin</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_e9b8aad22a25033dfc80b8961bc4726a.setContent(html_098bf4835c0e23a6b8e1207bda879a5e);
+            
+        
+
+        marker_b79b43608c47ed30281addce0e56dc45.bindPopup(popup_e9b8aad22a25033dfc80b8961bc4726a)
+        ;
+
+        
+    
+    
+            var marker_c53cce507d551dc2b4bf5df55d5985ae = L.marker(
+                [52.3313994, 21.1423736],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_b2b1a76190862fb05fc0ddd65424e611 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e21\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_c53cce507d551dc2b4bf5df55d5985ae.setIcon(div_icon_b2b1a76190862fb05fc0ddd65424e611);
+        
+    
+        var popup_226ea623d01aebd6670df5a24e264209 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7418e80820674301ef2c3e90a1df34b7 = $(`<div id="html_7418e80820674301ef2c3e90a1df34b7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Horowe Bagno</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Las Marecki</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Wołomin</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_226ea623d01aebd6670df5a24e264209.setContent(html_7418e80820674301ef2c3e90a1df34b7);
+            
+        
+
+        marker_c53cce507d551dc2b4bf5df55d5985ae.bindPopup(popup_226ea623d01aebd6670df5a24e264209)
+        ;
+
+        
+    
+    
+            var marker_4425f3855f55682f87ddf555dfe55484 = L.marker(
+                [52.3770431, 21.0818083],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_8ae5568058dd7538917d3287dd67f995 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e22\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4425f3855f55682f87ddf555dfe55484.setIcon(div_icon_8ae5568058dd7538917d3287dd67f995);
+        
+    
+        var popup_ef16522e1dd073c6004b9f2866a50120 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_54b21f6abc39059676546e3d0604e6ac = $(`<div id="html_54b21f6abc39059676546e3d0604e6ac" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Puszcza Słupecka</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Lasy Drewnickie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Wołomin</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_ef16522e1dd073c6004b9f2866a50120.setContent(html_54b21f6abc39059676546e3d0604e6ac);
+            
+        
+
+        marker_4425f3855f55682f87ddf555dfe55484.bindPopup(popup_ef16522e1dd073c6004b9f2866a50120)
+        ;
+
+        
+    
+    
+            var marker_21bc1b8b9ba1ee708bb96be9538de7f4 = L.marker(
+                [52.3801583, 20.8478661],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_fe966f591db319d738d433533191dee8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e23\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_21bc1b8b9ba1ee708bb96be9538de7f4.setIcon(div_icon_fe966f591db319d738d433533191dee8);
+        
+    
+        var popup_9f8d8dc549629b052bfa450f31aae5d1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_415d2209fd49170db8e5d9089f188347 = $(`<div id="html_415d2209fd49170db8e5d9089f188347" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Ławice Kiełpińskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Lasy Chotomowskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Legionowo</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_9f8d8dc549629b052bfa450f31aae5d1.setContent(html_415d2209fd49170db8e5d9089f188347);
+            
+        
+
+        marker_21bc1b8b9ba1ee708bb96be9538de7f4.bindPopup(popup_9f8d8dc549629b052bfa450f31aae5d1)
+        ;
+
+        
+    
+    
+            var marker_1649760885943dcf7f3a91ca09b7e62c = L.marker(
+                [52.2345836, 21.1989561],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_690e9d33e6a9c18ba6565d8b2aaba5d3 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e24\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1649760885943dcf7f3a91ca09b7e62c.setIcon(div_icon_690e9d33e6a9c18ba6565d8b2aaba5d3);
+        
+    
+        var popup_e8d3a6a44dc6aa445ea8727fb1dc3d77 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_57c285b08764cd7fc45d738271f64081 = $(`<div id="html_57c285b08764cd7fc45d738271f64081" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Góry Milowe</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Stara Miłosna</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_e8d3a6a44dc6aa445ea8727fb1dc3d77.setContent(html_57c285b08764cd7fc45d738271f64081);
+            
+        
+
+        marker_1649760885943dcf7f3a91ca09b7e62c.bindPopup(popup_e8d3a6a44dc6aa445ea8727fb1dc3d77)
+        ;
+
+        
+    
+    
+            var marker_8052c1de364abbe5fc63bd4bce569a0a = L.marker(
+                [52.2216442, 21.1946825],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_e9b99dc5f374966ddf7c0d87a970d96f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e25\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8052c1de364abbe5fc63bd4bce569a0a.setIcon(div_icon_e9b99dc5f374966ddf7c0d87a970d96f);
+        
+    
+        var popup_49547e5f63667be4c201a256e8ef68e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cd59dfb55baefa8e9d8328d7a3701cda = $(`<div id="html_cd59dfb55baefa8e9d8328d7a3701cda" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Barciucha</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Stara Miłosna</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_49547e5f63667be4c201a256e8ef68e1.setContent(html_cd59dfb55baefa8e9d8328d7a3701cda);
+            
+        
+
+        marker_8052c1de364abbe5fc63bd4bce569a0a.bindPopup(popup_49547e5f63667be4c201a256e8ef68e1)
+        ;
+
+        
+    
+    
+            var marker_a4bd1f835faff534064836d816534e23 = L.marker(
+                [52.2013378, 21.2153158],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_dd50dcf9565fbf1ecc3b2e83a181ccd5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e26\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a4bd1f835faff534064836d816534e23.setIcon(div_icon_dd50dcf9565fbf1ecc3b2e83a181ccd5);
+        
+    
+        var popup_32ad9f0022903e48989df77bfa827955 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0e1c774d0983528478ab9c99146efa0d = $(`<div id="html_0e1c774d0983528478ab9c99146efa0d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Czarny Staw</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Stara Miłosna</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_32ad9f0022903e48989df77bfa827955.setContent(html_0e1c774d0983528478ab9c99146efa0d);
+            
+        
+
+        marker_a4bd1f835faff534064836d816534e23.bindPopup(popup_32ad9f0022903e48989df77bfa827955)
+        ;
+
+        
+    
+    
+            var marker_4533d48d13fed494e866bb82c995b86f = L.marker(
+                [52.2024086, 21.2464206],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_33de30cce6c0a2e3932a0549812ce573 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e27\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4533d48d13fed494e866bb82c995b86f.setIcon(div_icon_33de30cce6c0a2e3932a0549812ce573);
+        
+    
+        var popup_bac63ae9d266901e50f8e3d1f82a74d9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_62a855d7cec564957f55842669cc5881 = $(`<div id="html_62a855d7cec564957f55842669cc5881" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Pohulanka</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Stara Miłosna</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_bac63ae9d266901e50f8e3d1f82a74d9.setContent(html_62a855d7cec564957f55842669cc5881);
+            
+        
+
+        marker_4533d48d13fed494e866bb82c995b86f.bindPopup(popup_bac63ae9d266901e50f8e3d1f82a74d9)
+        ;
+
+        
+    
+    
+            var marker_7e2868e88bef6e8a0031b42e42b50e3e = L.marker(
+                [52.1962108, 21.2239664],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_458ddfd4d17f9a2a895472c27c21a0a5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e28\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_7e2868e88bef6e8a0031b42e42b50e3e.setIcon(div_icon_458ddfd4d17f9a2a895472c27c21a0a5);
+        
+    
+        var popup_1fb773e51d78dd35c502b6c0a82108c9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_073bc9a25d7822a7a137af56a9d5c15f = $(`<div id="html_073bc9a25d7822a7a137af56a9d5c15f" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Góra Fryca</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Stara Miłosna</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_1fb773e51d78dd35c502b6c0a82108c9.setContent(html_073bc9a25d7822a7a137af56a9d5c15f);
+            
+        
+
+        marker_7e2868e88bef6e8a0031b42e42b50e3e.bindPopup(popup_1fb773e51d78dd35c502b6c0a82108c9)
+        ;
+
+        
+    
+    
+            var marker_4247dd32450fa9a6172653bd9b71bccd = L.marker(
+                [52.1844058, 21.2576858],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_595b36c13c2ea5842102e57e49ff4553 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e29\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4247dd32450fa9a6172653bd9b71bccd.setIcon(div_icon_595b36c13c2ea5842102e57e49ff4553);
+        
+    
+        var popup_5159516bd361327ae96c8d67003f8c93 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bf5981e2c839eaadbd3e416a19d41ed8 = $(`<div id="html_bf5981e2c839eaadbd3e416a19d41ed8" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Biały Ług</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Józefów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_5159516bd361327ae96c8d67003f8c93.setContent(html_bf5981e2c839eaadbd3e416a19d41ed8);
+            
+        
+
+        marker_4247dd32450fa9a6172653bd9b71bccd.bindPopup(popup_5159516bd361327ae96c8d67003f8c93)
+        ;
+
+        
+    
+    
+            var marker_1f507d544b406c67a64054807c753517 = L.marker(
+                [52.1665289, 21.2825289],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_02a30a8383cace582eb4085a00e6f6fe = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e30\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1f507d544b406c67a64054807c753517.setIcon(div_icon_02a30a8383cace582eb4085a00e6f6fe);
+        
+    
+        var popup_1fb3971db93d6abc1671df9b81d1f2fe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6eaae28289449b71ba8803f0fa989033 = $(`<div id="html_6eaae28289449b71ba8803f0fa989033" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Góra Sobotów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Józefów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_1fb3971db93d6abc1671df9b81d1f2fe.setContent(html_6eaae28289449b71ba8803f0fa989033);
+            
+        
+
+        marker_1f507d544b406c67a64054807c753517.bindPopup(popup_1fb3971db93d6abc1671df9b81d1f2fe)
+        ;
+
+        
+    
+    
+            var marker_b643c1c25e734c6b72eec59a8dc07cd1 = L.marker(
+                [52.1493186, 21.25775],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_e135dbda37a268c2f7c5fed95cfbcbb7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e31\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b643c1c25e734c6b72eec59a8dc07cd1.setIcon(div_icon_e135dbda37a268c2f7c5fed95cfbcbb7);
+        
+    
+        var popup_87d62244fb7b713fc2efbed43ced43c1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a663f75759b8322cf513b5a9c9c15bca = $(`<div id="html_a663f75759b8322cf513b5a9c9c15bca" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Boryszewska Góra</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Józefów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_87d62244fb7b713fc2efbed43ced43c1.setContent(html_a663f75759b8322cf513b5a9c9c15bca);
+            
+        
+
+        marker_b643c1c25e734c6b72eec59a8dc07cd1.bindPopup(popup_87d62244fb7b713fc2efbed43ced43c1)
+        ;
+
+        
+    
+    
+            var marker_b085fddf4b14401559306a08e7e0b271 = L.marker(
+                [52.1517553, 21.2782842],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_e2554df549e41504bf0000c7a443fbd0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e32\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b085fddf4b14401559306a08e7e0b271.setIcon(div_icon_e2554df549e41504bf0000c7a443fbd0);
+        
+    
+        var popup_f90dc8c648abc6bc32d6e9fa82b19234 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0860884a8bfb1e3810de2d16ad29f417 = $(`<div id="html_0860884a8bfb1e3810de2d16ad29f417" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Dąb Mazowiecki Bartek</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Józefów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_f90dc8c648abc6bc32d6e9fa82b19234.setContent(html_0860884a8bfb1e3810de2d16ad29f417);
+            
+        
+
+        marker_b085fddf4b14401559306a08e7e0b271.bindPopup(popup_f90dc8c648abc6bc32d6e9fa82b19234)
+        ;
+
+        
+    
+    
+            var marker_f340a295fe7ed9e7bb253e3249c1fe42 = L.marker(
+                [52.1138778, 21.3038486],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_845e7b56c82138fef404e905ce406885 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e33\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_f340a295fe7ed9e7bb253e3249c1fe42.setIcon(div_icon_845e7b56c82138fef404e905ce406885);
+        
+    
+        var popup_1184f5a67b12cd60dea1b5f0fc847386 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ddf6ee07952883fe01f377b335572e60 = $(`<div id="html_ddf6ee07952883fe01f377b335572e60" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Meran</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Otwock</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_1184f5a67b12cd60dea1b5f0fc847386.setContent(html_ddf6ee07952883fe01f377b335572e60);
+            
+        
+
+        marker_f340a295fe7ed9e7bb253e3249c1fe42.bindPopup(popup_1184f5a67b12cd60dea1b5f0fc847386)
+        ;
+
+        
+    
+    
+            var marker_e3fc4d4b0bb7cfa4665b743184389d4c = L.marker(
+                [52.1298028, 21.3593408],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_ba31d9cbfd375722344f41f5d2b5e712 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e34\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e3fc4d4b0bb7cfa4665b743184389d4c.setIcon(div_icon_ba31d9cbfd375722344f41f5d2b5e712);
+        
+    
+        var popup_7edbddbf37e47a490cd40095cd8f6aa2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_785475bedafa8311c5ecf491004c96c1 = $(`<div id="html_785475bedafa8311c5ecf491004c96c1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Świder</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Otwock</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_7edbddbf37e47a490cd40095cd8f6aa2.setContent(html_785475bedafa8311c5ecf491004c96c1);
+            
+        
+
+        marker_e3fc4d4b0bb7cfa4665b743184389d4c.bindPopup(popup_7edbddbf37e47a490cd40095cd8f6aa2)
+        ;
+
+        
+    
+    
+            var marker_326ff0cdef19a69d7ecad31cb864a101 = L.marker(
+                [52.1517117, 21.4175669],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_c93bf37e89adcc1f70e83d13140b4e7e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e35\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_326ff0cdef19a69d7ecad31cb864a101.setIcon(div_icon_c93bf37e89adcc1f70e83d13140b4e7e);
+        
+    
+        var popup_cd5ff9c01f61db7c677a63c97de4ee16 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d2e57ba057b714991500b54472f1b98c = $(`<div id="html_d2e57ba057b714991500b54472f1b98c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Gołobórz</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Otwock</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_cd5ff9c01f61db7c677a63c97de4ee16.setContent(html_d2e57ba057b714991500b54472f1b98c);
+            
+        
+
+        marker_326ff0cdef19a69d7ecad31cb864a101.bindPopup(popup_cd5ff9c01f61db7c677a63c97de4ee16)
+        ;
+
+        
+    
+    
+            var marker_5bd3f2842ec3ec37ad9c142bfb72a802 = L.marker(
+                [52.0883456, 21.3083361],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_91705a1ac724db55d45e4577053ea1f1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e36\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_5bd3f2842ec3ec37ad9c142bfb72a802.setIcon(div_icon_91705a1ac724db55d45e4577053ea1f1);
+        
+    
+        var popup_bd32edeac820466582caea023bf50dec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6d2613a5ed411cced5fd4ce13aa190f5 = $(`<div id="html_6d2613a5ed411cced5fd4ce13aa190f5" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Łysa Góra</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Celestynów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_bd32edeac820466582caea023bf50dec.setContent(html_6d2613a5ed411cced5fd4ce13aa190f5);
+            
+        
+
+        marker_5bd3f2842ec3ec37ad9c142bfb72a802.bindPopup(popup_bd32edeac820466582caea023bf50dec)
+        ;
+
+        
+    
+    
+            var marker_0c013c2e253c5dece65f58b6beeffe0f = L.marker(
+                [52.0645217, 21.3349403],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_0d201bfe80a51e49ec7a5800c32bbf01 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e37\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0c013c2e253c5dece65f58b6beeffe0f.setIcon(div_icon_0d201bfe80a51e49ec7a5800c32bbf01);
+        
+    
+        var popup_3c191d3a571e18da44df911233b58a83 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8081c798aa1e49d7b496d6d5248772d7 = $(`<div id="html_8081c798aa1e49d7b496d6d5248772d7" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Dąbrowiecka Góra</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Celestynów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_3c191d3a571e18da44df911233b58a83.setContent(html_8081c798aa1e49d7b496d6d5248772d7);
+            
+        
+
+        marker_0c013c2e253c5dece65f58b6beeffe0f.bindPopup(popup_3c191d3a571e18da44df911233b58a83)
+        ;
+
+        
+    
+    
+            var marker_2e048e1546f7a7921110803f1a35f5e5 = L.marker(
+                [52.0741019, 21.4138664],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_081ddd55f7c324d403a0c623df455634 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e38\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_2e048e1546f7a7921110803f1a35f5e5.setIcon(div_icon_081ddd55f7c324d403a0c623df455634);
+        
+    
+        var popup_e1c106cd2eb5aa9017e1497ba368d2a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e77682de886a62b334a938ff9f1150cc = $(`<div id="html_e77682de886a62b334a938ff9f1150cc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Bagno Bocianowskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Celestynów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_e1c106cd2eb5aa9017e1497ba368d2a3.setContent(html_e77682de886a62b334a938ff9f1150cc);
+            
+        
+
+        marker_2e048e1546f7a7921110803f1a35f5e5.bindPopup(popup_e1c106cd2eb5aa9017e1497ba368d2a3)
+        ;
+
+        
+    
+    
+            var marker_73594ef18164af081fbd9c4a055f4cd7 = L.marker(
+                [52.050385, 21.4164625],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_0a96d28d4ebd0d46b95057a1b1911046 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e39\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_73594ef18164af081fbd9c4a055f4cd7.setIcon(div_icon_0a96d28d4ebd0d46b95057a1b1911046);
+        
+    
+        var popup_cbfbfbb26df8fec8dbe81a1215a557c7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b67d59e619f0c68b65b2840fc240ebdd = $(`<div id="html_b67d59e619f0c68b65b2840fc240ebdd" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Biała Góra</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Celestynów</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_cbfbfbb26df8fec8dbe81a1215a557c7.setContent(html_b67d59e619f0c68b65b2840fc240ebdd);
+            
+        
+
+        marker_73594ef18164af081fbd9c4a055f4cd7.bindPopup(popup_cbfbfbb26df8fec8dbe81a1215a557c7)
+        ;
+
+        
+    
+    
+            var marker_d0a6c8479bfb9c66e174ba34fa47d8fc = L.marker(
+                [52.0196719, 21.3950761],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_bd989516dfeed75a9b9432fc7b4f5728 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e40\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d0a6c8479bfb9c66e174ba34fa47d8fc.setIcon(div_icon_bd989516dfeed75a9b9432fc7b4f5728);
+        
+    
+        var popup_3ff07b2531c3aa9c9b5d4c32673ea42a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6d0b4658906f10f22273e632ed58b6f2 = $(`<div id="html_6d0b4658906f10f22273e632ed58b6f2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Góra Regucka</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Zabieżki</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_3ff07b2531c3aa9c9b5d4c32673ea42a.setContent(html_6d0b4658906f10f22273e632ed58b6f2);
+            
+        
+
+        marker_d0a6c8479bfb9c66e174ba34fa47d8fc.bindPopup(popup_3ff07b2531c3aa9c9b5d4c32673ea42a)
+        ;
+
+        
+    
+    
+            var marker_ed57df0d0f720e94e97d2120eb18b96f = L.marker(
+                [52.0001194, 21.4443336],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_93b6c9cace63614947ebea94e123af64 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e41\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ed57df0d0f720e94e97d2120eb18b96f.setIcon(div_icon_93b6c9cace63614947ebea94e123af64);
+        
+    
+        var popup_ee953cbd9c030bfe27571b0f5ebd5e48 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_313796f0863781fc24811b57d927037d = $(`<div id="html_313796f0863781fc24811b57d927037d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Szerokie Bagno</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Zabieżki</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_ee953cbd9c030bfe27571b0f5ebd5e48.setContent(html_313796f0863781fc24811b57d927037d);
+            
+        
+
+        marker_ed57df0d0f720e94e97d2120eb18b96f.bindPopup(popup_ee953cbd9c030bfe27571b0f5ebd5e48)
+        ;
+
+        
+    
+    
+            var marker_6ab829454ec8143e912ce1780367add9 = L.marker(
+                [52.0132306, 21.4513961],
+                {}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var div_icon_6be18ff8efb7693efe1e9a2280fcefff = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e42\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6ab829454ec8143e912ce1780367add9.setIcon(div_icon_6be18ff8efb7693efe1e9a2280fcefff);
+        
+    
+        var popup_a2b233b1016cee24de8e069bbf827f11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_86aaec278939209f3b6575d9811fad2c = $(`<div id="html_86aaec278939209f3b6575d9811fad2c" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Czarci Dół</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Mazowiecki Park Krajobrazowy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Zabieżki</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;"> m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_a2b233b1016cee24de8e069bbf827f11.setContent(html_86aaec278939209f3b6575d9811fad2c);
+            
+        
+
+        marker_6ab829454ec8143e912ce1780367add9.bindPopup(popup_a2b233b1016cee24de8e069bbf827f11)
+        ;
+
+        
+    
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_c28e88209da82646b77812fb5f387de4);
+        
+    
+            var tile_layer_c56cacdab25e948774bfc224632cd009 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_6d3efdb2bfbc8ca793bc307cdae901b2 = new L.Control.MiniMap(
+                tile_layer_c56cacdab25e948774bfc224632cd009,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_c28e88209da82646b77812fb5f387de4.addControl(mini_map_6d3efdb2bfbc8ca793bc307cdae901b2);
+        
+</script>
+</html>
