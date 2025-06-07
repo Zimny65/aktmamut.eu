@@ -40,29 +40,89 @@
     <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
 </head>
+
 <body>
-    
-    
-        <style>
+    <style>
         .leaflet-container {
             width: 100vw;
             height: 100vh;
         }
         .leaflet-control-zoom {
-            transform: translateY(160px); /* Większe przesunięcie kontrolki w dół */
+            transform: translateY(160px);
         }
         .leaflet-control-attribution {
             display: none;
         }
         .leaflet-control-minimap {
-            transform: translateY(-60px); /* Przesunięcie mini mapy w górę */
+            transform: translateY(-60px);
         }
-        </style>
-    
-    
-            <div class="folium-map" id="map_d01f37e12cf129d2e7b19eca31e3defa" ></div>
-        
+    </style>
+
+    <div class="folium-map" id="map_d01f37e12cf129d2e7b19eca31e3defa"></div>
+
+    <script>
+        let allGpxLayer = null;
+
+        window.addEventListener("DOMContentLoaded", function () {
+            function toggleAllGpxLayer() {
+                const map = map_d01f37e12cf129d2e7b19eca31e3defa;
+                const zoom = map.getZoom();
+
+                if (zoom >= 10 && !allGpxLayer) {
+                    fetch('gpx/simplified_trails.geojson')
+                        .then(res => res.json())
+                        .then(data => {
+                            const groupLayers = [];
+
+                            L.geoJSON(data, {
+                                style: {
+                                    color: 'red',
+                                    weight: 2,
+                                    opacity: 0.7
+                                },
+                                onEachFeature: function (feature, layer) {
+                                    if (feature.geometry.type === "LineString") {
+                                        const coords = feature.geometry.coordinates;
+
+                                        const startMarker = L.circleMarker([coords[0][1], coords[0][0]], {
+                                            radius: 3,
+                                            color: "green",
+                                            fillColor: "green",
+                                            fillOpacity: 1
+                                        });
+
+                                        const endMarker = L.circleMarker([coords[coords.length - 1][1], coords[coords.length - 1][0]], {
+                                            radius: 3,
+                                            color: "blue",
+                                            fillColor: "blue",
+                                            fillOpacity: 1
+                                        });
+
+                                        const group = L.layerGroup([layer, startMarker, endMarker]);
+                                        groupLayers.push(group);
+                                    }
+                                }
+                            });
+
+                            allGpxLayer = L.layerGroup(groupLayers);
+                            allGpxLayer.addTo(map);
+                        })
+                        .catch(err => console.error('❌ Błąd wczytywania GeoJSON:', err));
+                }
+
+                if (zoom < 10 && allGpxLayer) {
+                    map.removeLayer(allGpxLayer);
+                    allGpxLayer = null;
+                }
+            }
+
+            const map = map_d01f37e12cf129d2e7b19eca31e3defa;
+            map.on('zoomend', toggleAllGpxLayer);
+            toggleAllGpxLayer();
+        });
+    </script>
 </body>
+
 <script>
     
     
