@@ -69,7 +69,7 @@
                 const zoom = map.getZoom();
 
                 if (zoom >= 10 && !allGpxLayer) {
-                    fetch('gpx/simplified_trails.geojson')
+                    fetch('../gpx/simplified_trails.geojson')
                         .then(res => res.json())
                         .then(data => {
                             const groupLayers = [];
