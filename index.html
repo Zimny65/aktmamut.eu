@@ -1,65 +1,62 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AKT MAMUT</title>
-    <link rel="icon" href="images/M32.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>AKT MAMUT</title>
+  <link rel="icon" href="images/M32.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <ul>
-                <li>
-                    <a href="#">MENU</a>
-                    <ul class="submenu">
-                        <li><a href="maps/RO.html" target="_blank">KORONA&nbsp;GÓR&nbsp;RUMUNII</a></li>
-                        <li><a href="maps/SK.html" target="_blank">KORONA&nbsp;GÓR&nbsp;SŁOWACJI</a></li>
-                        <li><a href="maps/Kampinos.html" target="_blank">KORONA&nbsp;KAMPINOSU</a></li>
-                        <li><a href="maps/Masovia.html" target="_blank">KORONA&nbsp;MASOVII</a></li>
-                        <li><a href="maps/SwKrzyz.html" target="_blank">KORONA&nbsp;GÓR&nbsp;ŚWIĘTOKRZYSKICH</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="header-center">
-            <div class="banner">
-                <div class="container">
-                    <!-- Napis AKT -->
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-A.256.png" alt="A" class="letter">
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-K.256.png" alt="K" class="letter">
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-T.256.png" alt="T" class="letter">
-                    
-                    <!-- Odstęp między AKT i MAMUT -->
-                    <div class="space"></div>
-                    
-                    <!-- Napis MAMUT -->
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-M.256.png" alt="M" class="letter">
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-A.256.png" alt="A" class="letter">
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-M.256.png" alt="M" class="letter">
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-U.256.png" alt="U" class="letter">
-                    <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-T.256.png" alt="T" class="letter">
-                </div>
-            </div>
-            <p>Expeditions 2015 - 2025</p>
-        </div>
-    </header>
-    
-    <!-- Osadzanie mapy -->
-    <main>
-        <iframe src="maps/EXPEDITIONS.html" id="map-frame"></iframe>
-    </main>
-    
-    
-<footer>
-    <div class="footer-content" style="display: flex; justify-content: center; align-items: center; position: relative; height: 40px;">
-        <p style="margin: 0;">&copy; 2015 AKT MAMUT</p>
-        <span id="version-label" style="position: absolute; right: 10px; font-size: 0.9em; color: #666;">v 2025-06-07 21:33</span>
-    </div>
-</footer>
+
+<header>
+  <div class="menu">
+    <button id="menu-button">MENU</button>
+    <ul class="submenu">
+      <li><a href="maps/RO.html" target="_blank">KORONA GÓR RUMUNII</a></li>
+      <li><a href="maps/SK.html" target="_blank">KORONA GÓR SŁOWACJI</a></li>
+      <li><a href="maps/Kampinos.html" target="_blank">KORONA KAMPINOSU</a></li>
+      <li><a href="maps/Masovia.html" target="_blank">KORONA MASOVII</a></li>
+      <li><a href="maps/SwKrzyz.html" target="_blank">KORONA GÓR ŚWIĘTOKRZYSKICH</a></li>
+    </ul>
+  </div>
+  <div class="title">AKT MAMUT</div>
+</header>
+
+<main>
+  <iframe src="maps/EXPEDITIONS.html" id="map-frame"></iframe>
+  <div id="map-click-catcher"></div>
+</main>
+
+<script>
+  const menuButton = document.getElementById('menu-button');
+  const submenu = document.querySelector('.submenu');
+  const mapCatcher = document.getElementById('map-click-catcher');
+
+  let menuOpen = false;
+
+  menuButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    submenu.classList.toggle('visible');
+    menuOpen = submenu.classList.contains('visible');
+
+    // Jeśli menu otwarte — aktywuj blokadę kliknięcia mapy
+    if (menuOpen) {
+      mapCatcher.style.pointerEvents = 'auto';
+    } else {
+      mapCatcher.style.pointerEvents = 'none';
+    }
+  });
+
+  // Kliknięcie w nakładkę nad mapą = zamyka menu + odblokowuje mapę
+  mapCatcher.addEventListener('mousedown', () => {
+    if (menuOpen) {
+      submenu.classList.remove('visible');
+      menuOpen = false;
+      mapCatcher.style.pointerEvents = 'none';
+    }
+  });
+</script>
 
 </body>
 </html>

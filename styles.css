@@ -1,191 +1,105 @@
-
-/* Resetowanie marginesów i odstępów */
-body, h1, h2, p, ul {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Styl dla całego ciała strony */
 body {
-    font-family: 'Oswald', sans-serif;
-    line-height: 1.6;
-    background-color: #333; /* Ustawienie jednolitego ciemnego tła */
-    color: #fff;
-    overflow: hidden; /* Zapobiega przewijaniu */
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  background-color: #222;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Header */
 header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* Nagłówek na wierzchu */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
 }
 
-.header-center {
-    flex: 1;
-    text-align: center;
-    font-size: 1.6em; /* Default size for larger screens */
+.title {
+  margin: 0 auto;
+  font-size: 1.8em;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
 }
 
-@media (max-width: 1200px) {
-    .header-center {
-        font-size: 1.4em;
-    }
+.menu {
+  position: relative;
+  z-index: 11;
 }
 
-@media (max-width: 800px) {
-    .header-center {
-        font-size: 1.2em;
-    }
+#menu-button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
 }
 
-.header-center h1 {
-    margin-bottom: 5px;
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #111;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #444;
+  width: max-content;
 }
 
-.header-center p {
-    font-style: normal;
+.submenu.visible {
+  display: block;
 }
 
-/* Nawigacja */
-.header-left {
-    margin-left: 20px; /* Dodano margines, aby menu nie wychodziło poza ekran */
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
 }
 
-.header-left ul {
-    list-style: none;
-    display: flex;
-    position: relative;
+.submenu li a:hover {
+  background-color: #333;
 }
 
-.header-left ul li {
-    position: relative;
-    margin: 0 10px; /* Zmniejszono margines między elementami, aby zmieścić się w nagłówku */
+main {
+  position: absolute;
+  top: 60px; /* wysokość headera */
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
-.header-left ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Submenu styling */
-.header-left ul li .submenu {
-    display: none;
-    position: absolute;
-    top: 100%; /* Position below MENU */
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 0;
-    list-style: none;
-    min-width: 100px;
-}
-
-.header-left ul li:hover .submenu {
-    display: block;
-}
-
-.header-left ul li .submenu li {
-    padding: 5px 10px;
-}
-
-.header-left ul li .submenu li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: normal;
-}
-
-.header-left ul li .submenu li a:hover {
-    text-decoration: underline;
-}
-
-/* Mapa w pełnym ekranie */
 #map-frame {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none; /* Bez obramowania */
-    z-index: 1; /* Mapa poniżej nagłówka i stopki */
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-/* Stylizacja kontrolek mapy */
-.leaflet-control {
-    margin-top: 70px; /* Przesunięcie kontrolki w dół, aby nie nachodziła na nagłówek */
+#map-click-catcher {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none; /* domyślnie NIE blokuje mapy */
 }
 
-/* Stopka */
-footer {
-    background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10; /* Stopka na wierzchu */
+.leaflet-top.leaflet-left {
+  top: 70px !important; /* lub dokładnie tyle, ile ma Twój header */
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between; /* Distribute space between items */
-    align-items: center; /* Align items vertically */
-    width: 90%; /* Adjust width if needed */
-    margin: 0 auto; /* Center the content */
-}
 
-footer p {
-    flex-grow: 1; /* Allow the paragraph to take up remaining space */
-    text-align: center; /* Center the text */
-}
-
-/* New styles for the banner */
-.banner {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Półprzezroczysty czarny pasek (80%) */
-    display: flex;
-    justify-content: center;
-    padding-top: 15px; /* Ustawienie równych odstępów z góry i dołu */
-    padding-bottom: 15px; /* Ustawienie równych odstępów z góry i dołu */
-}
-
-.container {
-    display: flex;
-    flex-wrap: nowrap; /* Prevents wrapping of letters */
-    justify-content: center;
-    gap: 0.2em; /* Adjusted spacing between letters */
-    max-width: 90vw; /* Maximum width of the container */
-}
-
-.letter {
-    width: 1.6em; /* Default size */
-    max-width: 256px; /* Initial max width */
-    height: auto;
-}
-
-@media (max-width: 1200px) {
-    .letter {
-        width: 1.4em; /* Adjusted size */
-    }
-}
-
-@media (max-width: 800px) {
-    .letter {
-        width: 1.2em; /* Adjusted size */
-    }
-}
-
-.space {
-    width: 1em; /* Adjusted space between words */
-    height: auto;
-}
