@@ -102,4 +102,42 @@ main {
   top: 70px !important; /* lub dokładnie tyle, ile ma Twój header */
 }
 
+/* --- Tryb mobilny: max 800px --- */
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+    gap: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .menu {
+    align-self: flex-start;
+  }
+
+  #map-frame {
+    top: 100px; /* większy odstęp, jeśli header się powiększa */
+  }
+}
+
+/* --- Tryb tabletowy: 800–1200px --- */
+@media (min-width: 801px) and (max-width: 1200px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  #map-frame {
+    top: 70px;
+  }
+}
+
 
