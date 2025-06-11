@@ -102,8 +102,8 @@ main {
   top: 70px !important; /* lub dokładnie tyle, ile ma Twój header */
 }
 
-/* --- Tryb mobilny: max 1024px --- */
-@media (max-width: 1024px) {
+/* --- Tryb mobilny: max 1440px --- */
+@media (max-width: 1440px) {
   header {
     flex-direction: column;
     align-items: center;
@@ -122,21 +122,6 @@ main {
 
   #map-frame {
     top: 100px; /* większy odstęp, jeśli header się powiększa */
-  }
-}
-
-/* --- Tryb tabletowy: 1440px --- */
-@media (max-width: 1440px) {
-  header {
-    padding: 10px 20px;
-  }
-
-  .title {
-    font-size: 24px;
-  }
-
-  #map-frame {
-    top: 70px;
   }
 }
 
