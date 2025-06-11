@@ -104,25 +104,14 @@ main {
 
 /* --- Tryb mobilny: max 1440px --- */
 @media (max-width: 1440px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 5px;
-    gap: 10px;
-  }
+    .letter {
+        width: 1.4em;
+    }
 
-  .title {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .menu {
-    align-self: flex-start;
-  }
-
-  #map-frame {
-    top: 100px; /* większy odstęp, jeśli header się powiększa */
-  }
+    .header-center {
+        font-size: 1.4em;
+    }
 }
+
 
 
