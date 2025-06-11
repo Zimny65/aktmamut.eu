@@ -102,8 +102,8 @@ main {
   top: 70px !important; /* lub dokładnie tyle, ile ma Twój header */
 }
 
-/* --- Tryb mobilny: max 800px --- */
-@media (max-width: 800px) {
+/* --- Tryb mobilny: max 1024px --- */
+@media (max-width: 1024px) {
   header {
     flex-direction: column;
     align-items: center;
@@ -125,8 +125,8 @@ main {
   }
 }
 
-/* --- Tryb tabletowy: 800–1200px --- */
-@media (min-width: 801px) and (max-width: 1200px) {
+/* --- Tryb tabletowy: 1440px --- */
+@media (max-width: 1440px) {
   header {
     padding: 10px 20px;
   }
