@@ -37,13 +37,6 @@
       padding: 0 20px;
     }
 
-    .left a {
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 24px;
-    }
-
     .center .logo {
       display: flex;
       gap: 4px;
@@ -102,24 +95,6 @@
       display: block;
     }
 
-    @media (max-width: 1440px) {
-      .header-wrapper {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .left, .right {
-        width: 100%;
-        text-align: center;
-      }
-
-      .dropdown-content {
-        left: 50%;
-        transform: translateX(-50%);
-        right: auto;
-      }
-    }
-
     .hero {
       position: relative;
       height: 100vh;
@@ -151,10 +126,7 @@
 <body>
   <header>
     <div class="header-wrapper">
-      <div class="left">
-        <a href="maps/EXPEDITIONS.html" target="_blank" rel="noopener noreferrer">Expeditions Map</a>
-      </div>
-
+      <div class="left" style="width: 150px;"></div>
       <div class="center">
         <div class="logo">
           <img src="images/letters/Iconarchive-Red-Orb-Alphabet-Letter-A.256.png" alt="A">
@@ -171,8 +143,9 @@
 
       <div class="right">
         <div class="dropdown">
-          <button class="dropbtn">Map Menu</button>
+          <button class="dropbtn">Maps &#9776;</button>
           <div class="dropdown-content">
+            <a href="maps/EXPEDITIONS.html" target="_blank" rel="noopener noreferrer">Expeditions Map</a>
             <a href="maps/RO.html" target="_blank" rel="noopener noreferrer">Romanian Mountain Crown</a>
             <a href="maps/SK.html" target="_blank" rel="noopener noreferrer">Slovakian Mountain Crown</a>
             <a href="maps/SwKrzyz.html" target="_blank" rel="noopener noreferrer">Świętokrzyskie Mountain Crown</a>
