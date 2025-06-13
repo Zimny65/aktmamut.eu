@@ -122,27 +122,29 @@
       margin: 0;
     }
 
-    @media (max-width: 600px) {
+@media (max-width: 600px) {
   .header-wrapper {
     flex-wrap: nowrap;
-    gap: 8px;
+    gap: 4px;               /* było 8px — teraz mniejszy odstęp między logo a menu */
     padding: 4px 12px;
   }
 
   .center .logo img {
-    height: auto;
-    width: 150px;
-    max-width: 50vw;
+    height: 48px;           /* większe niż wcześniej */
+    max-width: 180px;       /* ograniczamy tylko w razie potrzeby */
   }
 
   .dropbtn {
     font-size: 18px;
+    white-space: nowrap;
+    padding: 6px 8px;       /* możesz też tutaj zmniejszyć wewnętrzny margines */
   }
 
   .left {
     display: none;
   }
 }
+
   </style>
 </head>
 <body>
