@@ -19,7 +19,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_6424ae13bdbb0a843870beb4462efe39 {
+                #map_54b6911d8e3e444ae18e8ba7dc177aa9 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -56,7 +56,7 @@
 <body>
     
     
-            <div class="folium-map" id="map_6424ae13bdbb0a843870beb4462efe39" ></div>
+            <div class="folium-map" id="map_54b6911d8e3e444ae18e8ba7dc177aa9" ></div>
         
 
 <script>
@@ -70,7 +70,8 @@ window.addEventListener("DOMContentLoaded", function () {
     fetch('expeditions.geojson')
         .then(res => res.json())
         .then(data => {
-            const groupLayers = [];
+            const groupLayers = [];  // wszystkie trasy i markery
+            const routeLayers = [];  // tylko trasy i ich elementy
 
             // 🔁 Przejdź przez wszystkie trasy w pliku
             data.features.forEach(feature => {
@@ -82,7 +83,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
                 // 🔧 Wydobycie atrybutów
                 const trailColor = props.color || '#654321'; // Chocolate
-                const trailNr = props.nr || '';  // dodajemy numer wyprawy
+                const trailNr = props.nr || '';
                 const trailCounter = props.trail_counter || '';
                 const trailName = props.name || '';
                 const lat = parseFloat(props.lat);
@@ -115,12 +116,11 @@ window.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
-                // 🟢 Marker w postaci zielonego kółeczka z numerkiem (DivIcon)
+                // 🟢 Marker z numerem
                 const iconHtml = `
                 <div style="
                     font-size: 10px;
                     font-family: Oswald, sans-serif;
-                    // font-weight: bold;
                     color: white;
                     background-color: ${trailColor};
                     border-radius: 50%;
@@ -142,14 +142,12 @@ window.addEventListener("DOMContentLoaded", function () {
                     })
                 });
 
-                // 🏷️ Dymek z nazwą trasy również na markerze
                 marker.bindTooltip(
                     `<div style='font-family: Oswald, sans-serif; font-size: 12px;'>
                         ${trailNr} ${trailName}
                     </div>`, { sticky: true }
                 );
 
-                // ✨ Efekt podświetlenia trasy po najechaniu na marker
                 marker.on('mouseover', function () {
                     line.setStyle({ weight: 6, color: '#000000' });
                     line.bringToFront();
@@ -158,7 +156,6 @@ window.addEventListener("DOMContentLoaded", function () {
                     line.setStyle({ weight: 3, color: trailColor });
                 });
 
-                // 🧾 Popup po kliknięciu w kółeczko – szczegóły trasy
                 const popupHtml = `
                 <div style="font-family: 'Oswald', sans-serif; font-size: 12px;">
                     <table style="border-collapse: collapse;">
@@ -179,7 +176,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 `;
                 marker.bindPopup(popupHtml);
 
-                // 🔴 Kółeczko na początku trasy (circleMarker)
+                // 🔴 Kółeczka początkowe i końcowe
                 const startCircle = L.circleMarker([coords[0][1], coords[0][0]], {
                     radius: 3,
                     color: trailColor,
@@ -187,7 +184,6 @@ window.addEventListener("DOMContentLoaded", function () {
                     fillOpacity: 1
                 });
 
-                // 🔵 Kółeczko na końcu trasy (circleMarker)
                 const endCoords = coords[coords.length - 1];
                 const endCircle = L.circleMarker([endCoords[1], endCoords[0]], {
                     radius: 3,
@@ -196,14 +192,25 @@ window.addEventListener("DOMContentLoaded", function () {
                     fillOpacity: 1
                 });
 
-                // 🧩 Połącz wszystkie elementy jednej trasy w grupę
+                // 🧩 Grupowanie obiektów
                 const group = L.layerGroup([line, marker, startCircle, endCircle]);
-                groupLayers.push(group);
+                routeLayers.push(group);
+                groupLayers.push(marker); // Tylko marker do załadowania od razu
             });
 
-            // 🌍 Dodaj wszystkie trasy na mapę
-            const allGpxLayer = L.layerGroup(groupLayers);
-            allGpxLayer.addTo(map);
+            // 🌍 Dodaj tylko markery na start
+            const initialLayer = L.layerGroup(groupLayers);
+            initialLayer.addTo(map);
+
+            // 🧭 Przy odpowiednim zoomie załaduj trasy
+            let added = false;
+            map.on('zoomend', () => {
+                if (map.getZoom() >= 10 && !added) {
+                    const lines = L.layerGroup(routeLayers);
+                    lines.addTo(map);
+                    added = true;
+                }
+            });
         });
 });
 </script>
@@ -212,8 +219,8 @@ window.addEventListener("DOMContentLoaded", function () {
 <script>
     
     
-            var map_6424ae13bdbb0a843870beb4462efe39 = L.map(
-                "map_6424ae13bdbb0a843870beb4462efe39",
+            var map_54b6911d8e3e444ae18e8ba7dc177aa9 = L.map(
+                "map_54b6911d8e3e444ae18e8ba7dc177aa9",
                 {
                     center: [48.88524522540481, 20.563185152538292],
                     crs: L.CRS.EPSG3857,
@@ -230,7 +237,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
         
     
-            var tile_layer_aa18d89f424aa974016ac34cb36b9064 = L.tileLayer(
+            var tile_layer_3951f01e26db7881c874a7c23fa28158 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -247,25 +254,25 @@ window.addEventListener("DOMContentLoaded", function () {
             );
         
     
-            tile_layer_aa18d89f424aa974016ac34cb36b9064.addTo(map_6424ae13bdbb0a843870beb4462efe39);
+            tile_layer_3951f01e26db7881c874a7c23fa28158.addTo(map_54b6911d8e3e444ae18e8ba7dc177aa9);
         
     
-            var layer_control_fd18f99723d4d35e89c5251e6af19b41_layers = {
+            var layer_control_2553145c06c2dba69461ca18dc0776ff_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_aa18d89f424aa974016ac34cb36b9064,
+                    "openstreetmap" : tile_layer_3951f01e26db7881c874a7c23fa28158,
                 },
                 overlays :  {
                 },
             };
-            let layer_control_fd18f99723d4d35e89c5251e6af19b41 = L.control.layers(
-                layer_control_fd18f99723d4d35e89c5251e6af19b41_layers.base_layers,
-                layer_control_fd18f99723d4d35e89c5251e6af19b41_layers.overlays,
+            let layer_control_2553145c06c2dba69461ca18dc0776ff = L.control.layers(
+                layer_control_2553145c06c2dba69461ca18dc0776ff_layers.base_layers,
+                layer_control_2553145c06c2dba69461ca18dc0776ff_layers.overlays,
                 {
   "position": "topright",
   "collapsed": true,
   "autoZIndex": true,
 }
-            ).addTo(map_6424ae13bdbb0a843870beb4462efe39);
+            ).addTo(map_54b6911d8e3e444ae18e8ba7dc177aa9);
 
         
 </script>
