@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', function () {
         .then((data) => {
             const groupLayers = []; // wszystkie trasy i markery
             const routeLayers = []; // tylko trasy i ich elementy
+            const allParticipantsSet = new Set(); // <-- zbieramy unikalnych uczestników
 
             // 🔁 Przejdź przez wszystkie trasy w pliku
             data.features.forEach((feature) => {
@@ -22,6 +23,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
                 const coords = feature.geometry.coordinates;
                 const props = feature.properties;
+                if (props.participants) {
+                    props.participants.split(',').forEach((p) => allParticipantsSet.add(p.trim()));
+                }
 
                 // 🔧 Wydobycie atrybutów
                 // const trailColor = props.color || '#654321'; // chocolate
@@ -144,30 +148,56 @@ window.addEventListener('DOMContentLoaded', function () {
 
                 // 🧩 Zgrupowanie wszystkich elementów jednej trasy
                 const group = L.layerGroup([line, marker, startCircle, endCircle]);
-                routeLayers.push(group);
-                groupLayers.push(marker); // Tylko marker do załadowania od razu
+                routeLayers.push({ layer: group, participants: props.participants || '' });
+                groupLayers.push({ layer: marker, participants: props.participants || '' });
+            });
+
+            // 🧩 Konwersja Set → lista posortowana
+            //const participantList = Array.from(allParticipantsSet).sort();
+
+            // 📥 Wypełnij dropdown uczestników
+            const select = document.getElementById('participant-filter');
+
+            const participantCounts = {};
+            data.features.forEach((feature) => {
+                const props = feature.properties;
+                if (props.participants) {
+                    props.participants.split(',').forEach((p) => {
+                        const name = p.trim();
+                        participantCounts[name] = (participantCounts[name] || 0) + 1;
+                    });
+                }
+            });
+
+            const participantList = Object.keys(participantCounts).sort();
+            participantList.forEach((p) => {
+                const option = document.createElement('option');
+                option.value = p;
+                option.textContent = `${p} (${participantCounts[p]})`;
+                select.appendChild(option);
             });
 
             // 🌍 Dodaj markery i trasy od razu bez zoomowania
-            const markerLayer = L.layerGroup(groupLayers);
-            markerLayer.addTo(map);
+            function applyParticipantFilter(selected) {
+                map.eachLayer((layer) => {
+                    // Usuń wszystkie nasze warstwy
+                    if (layer instanceof L.LayerGroup || layer instanceof L.Marker || layer instanceof L.GeoJSON) {
+                        map.removeLayer(layer);
+                    }
+                });
 
-            const routeLayer = L.layerGroup(routeLayers);
-            routeLayer.addTo(map);
+                const visibleMarkers = groupLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
+                const visibleRoutes = routeLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
 
-            // // 🌍 Dodaj tylko markery na start
-            // const initialLayer = L.layerGroup(groupLayers);
-            // initialLayer.addTo(map);
+                L.layerGroup(visibleMarkers).addTo(map);
+                L.layerGroup(visibleRoutes).addTo(map);
+            }
 
-            // // 🔍 Przybliżenie mapy powoduje załadowanie tras
-            // let added = false;
-            // map.on('zoomend', () => {
-            //     if (map.getZoom() >= 10 && !added) {
-            //         const lines = L.layerGroup(routeLayers);
-            //         lines.addTo(map);
-            //         added = true;
-            //     }
-            // });
+            applyParticipantFilter('ALL'); // 👈 pokaż wszystkie na start
+
+            document.getElementById('participant-filter').addEventListener('change', function () {
+                applyParticipantFilter(this.value);
+            });
         });
 });
 
