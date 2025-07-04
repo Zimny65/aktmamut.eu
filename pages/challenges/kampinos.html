@@ -1,0 +1,2203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kampinos</title>
+    <link rel="icon" href="M32.png" type="image/png">
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_534a327b121d68066cf7cbcdbcde1cae {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_534a327b121d68066cf7cbcdbcde1cae" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_534a327b121d68066cf7cbcdbcde1cae = L.map(
+                "map_534a327b121d68066cf7cbcdbcde1cae",
+                {
+                    center: [52.32932686309523, 20.61562896547619],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_eebb71d8c3c714da4e5bed1eab7a10f1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_eebb71d8c3c714da4e5bed1eab7a10f1.addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var tile_layer_1af86cc2dd79adcfcbd1d756068fc7c1 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_1af86cc2dd79adcfcbd1d756068fc7c1.addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var marker_6abda9fb0f104f89d53eaa1e3219ff6f = L.marker(
+                [52.3669459, 20.3464675],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_3d8521319e760bfa6177f5e12b2c78af = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e1\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6abda9fb0f104f89d53eaa1e3219ff6f.setIcon(div_icon_3d8521319e760bfa6177f5e12b2c78af);
+        
+    
+        var popup_91491ca07ee2efa2fbf8c97b23b1ef3f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_de16ddf041e5ad9b732846d48cb0ce26 = $(`<div id="html_de16ddf041e5ad9b732846d48cb0ce26" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kurlandzka Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Białe Góry Śladowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2504</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-26</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333</a></td></tr></table></div></div>`)[0];
+                popup_91491ca07ee2efa2fbf8c97b23b1ef3f.setContent(html_de16ddf041e5ad9b732846d48cb0ce26);
+            
+        
+
+        marker_6abda9fb0f104f89d53eaa1e3219ff6f.bindPopup(popup_91491ca07ee2efa2fbf8c97b23b1ef3f)
+        ;
+
+        
+    
+    
+            var marker_a1156e884e66944f08cfaf5866141085 = L.marker(
+                [52.3618087, 20.3284206],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_26e27814fa686f68e516ce368ff4c4aa = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e2\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a1156e884e66944f08cfaf5866141085.setIcon(div_icon_26e27814fa686f68e516ce368ff4c4aa);
+        
+    
+        var popup_51a81d20adf014c30a3f834d01746e9b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5c9a035bc4398be220d27b045cfc5b88 = $(`<div id="html_5c9a035bc4398be220d27b045cfc5b88" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Czerwińska</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Białe Góry Śladowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.30 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2504</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-26</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333</a></td></tr></table></div></div>`)[0];
+                popup_51a81d20adf014c30a3f834d01746e9b.setContent(html_5c9a035bc4398be220d27b045cfc5b88);
+            
+        
+
+        marker_a1156e884e66944f08cfaf5866141085.bindPopup(popup_51a81d20adf014c30a3f834d01746e9b)
+        ;
+
+        
+    
+    
+            var marker_0ea65770337c8ecf5b6c25c527ee6090 = L.marker(
+                [52.3589364, 20.3132638],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_95b4144470e46166f1fc5d68f4778a64 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e3\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0ea65770337c8ecf5b6c25c527ee6090.setIcon(div_icon_95b4144470e46166f1fc5d68f4778a64);
+        
+    
+        var popup_5e0c85f5b3ce19e118b68dcc188763c0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6557ecfb50a550a5f81e693318300013 = $(`<div id="html_6557ecfb50a550a5f81e693318300013" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Białe Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Białe Góry Śladowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>89.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2504</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-26</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333</a></td></tr></table></div></div>`)[0];
+                popup_5e0c85f5b3ce19e118b68dcc188763c0.setContent(html_6557ecfb50a550a5f81e693318300013);
+            
+        
+
+        marker_0ea65770337c8ecf5b6c25c527ee6090.bindPopup(popup_5e0c85f5b3ce19e118b68dcc188763c0)
+        ;
+
+        
+    
+    
+            var marker_82b6902e9c7b7fba7c0303c73aa605e3 = L.marker(
+                [52.3547783, 20.3193031],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_47faab9dc361c645331939b4ebbb1a18 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e4\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_82b6902e9c7b7fba7c0303c73aa605e3.setIcon(div_icon_47faab9dc361c645331939b4ebbb1a18);
+        
+    
+        var popup_5a6c886e83c9f8e60543d51e775071a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_eb5536d05d98c287c405c1b7a3fe1195 = $(`<div id="html_eb5536d05d98c287c405c1b7a3fe1195" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Wilcza Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Białe Góry Śladowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2504</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-26</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333</a></td></tr></table></div></div>`)[0];
+                popup_5a6c886e83c9f8e60543d51e775071a7.setContent(html_eb5536d05d98c287c405c1b7a3fe1195);
+            
+        
+
+        marker_82b6902e9c7b7fba7c0303c73aa605e3.bindPopup(popup_5a6c886e83c9f8e60543d51e775071a7)
+        ;
+
+        
+    
+    
+            var marker_69090914b74901027d0fce898ccdba6e = L.marker(
+                [52.3521052, 20.3069725],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_7a16d16148f8d42d89e2f363f51bc9f8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e5\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_69090914b74901027d0fce898ccdba6e.setIcon(div_icon_7a16d16148f8d42d89e2f363f51bc9f8);
+        
+    
+        var popup_891506e89f89750863a047e6b0fce377 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6e7395e7b6d301c658e2045260fb8dea = $(`<div id="html_6e7395e7b6d301c658e2045260fb8dea" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 05</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Białe Góry Śladowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>88.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2504</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-26</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-26-07-56-gora-czerwinska-199388333</a></td></tr></table></div></div>`)[0];
+                popup_891506e89f89750863a047e6b0fce377.setContent(html_6e7395e7b6d301c658e2045260fb8dea);
+            
+        
+
+        marker_69090914b74901027d0fce898ccdba6e.bindPopup(popup_891506e89f89750863a047e6b0fce377)
+        ;
+
+        
+    
+    
+            var marker_d52f090340ed21377c37f841ab8d4e6c = L.marker(
+                [52.3395474, 20.3494114],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_7e6ac09068523a9e2287e79c9a49ac4e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e6\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d52f090340ed21377c37f841ab8d4e6c.setIcon(div_icon_7e6ac09068523a9e2287e79c9a49ac4e);
+        
+    
+        var popup_8653a9e7da5ecf383abe402bf9525cdf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4e9731b16f7132137e0554d5c7387197 = $(`<div id="html_4e9731b16f7132137e0554d5c7387197" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Kapturowa</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Famułki</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_8653a9e7da5ecf383abe402bf9525cdf.setContent(html_4e9731b16f7132137e0554d5c7387197);
+            
+        
+
+        marker_d52f090340ed21377c37f841ab8d4e6c.bindPopup(popup_8653a9e7da5ecf383abe402bf9525cdf)
+        ;
+
+        
+    
+    
+            var marker_75796b37c1808166ee263f8a1960fd2c = L.marker(
+                [52.3390492, 20.3749933],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_fe60c5331a12f632ddd9641c5ad897f8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e7\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_75796b37c1808166ee263f8a1960fd2c.setIcon(div_icon_fe60c5331a12f632ddd9641c5ad897f8);
+        
+    
+        var popup_fcc1a239c00c42b05b7e1b42e77b3774 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_196b4392533efc2fc831e835f8e8938f = $(`<div id="html_196b4392533efc2fc831e835f8e8938f" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 07</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Famułki</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>84.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_fcc1a239c00c42b05b7e1b42e77b3774.setContent(html_196b4392533efc2fc831e835f8e8938f);
+            
+        
+
+        marker_75796b37c1808166ee263f8a1960fd2c.bindPopup(popup_fcc1a239c00c42b05b7e1b42e77b3774)
+        ;
+
+        
+    
+    
+            var marker_fddb099a44896c3a4e3ac3ca5637bb67 = L.marker(
+                [52.338315, 20.3820314],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_e06d4b8323fab9cb953da5f948b0ab87 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e8\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_fddb099a44896c3a4e3ac3ca5637bb67.setIcon(div_icon_e06d4b8323fab9cb953da5f948b0ab87);
+        
+    
+        var popup_91e6451249ba8072607db59c9389e1ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2b78b44f30803fa351fd79f0f44bf4ea = $(`<div id="html_2b78b44f30803fa351fd79f0f44bf4ea" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Famułki</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>71.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_91e6451249ba8072607db59c9389e1ae.setContent(html_2b78b44f30803fa351fd79f0f44bf4ea);
+            
+        
+
+        marker_fddb099a44896c3a4e3ac3ca5637bb67.bindPopup(popup_91e6451249ba8072607db59c9389e1ae)
+        ;
+
+        
+    
+    
+            var marker_4523ae77a753692846e0db5a7351e7e7 = L.marker(
+                [52.3450699, 20.4016932],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_a9b7c3abfeefe1a505b5c6c6ea9e9b15 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e9\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4523ae77a753692846e0db5a7351e7e7.setIcon(div_icon_a9b7c3abfeefe1a505b5c6c6ea9e9b15);
+        
+    
+        var popup_6e0fa5715ff0b2f56ff9b08eb74b2361 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_523153c135754c56437b5f8b20983512 = $(`<div id="html_523153c135754c56437b5f8b20983512" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Krukowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Famułki</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>94.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_6e0fa5715ff0b2f56ff9b08eb74b2361.setContent(html_523153c135754c56437b5f8b20983512);
+            
+        
+
+        marker_4523ae77a753692846e0db5a7351e7e7.bindPopup(popup_6e0fa5715ff0b2f56ff9b08eb74b2361)
+        ;
+
+        
+    
+    
+            var marker_673f73bfb68b2245715a2a711e297941 = L.marker(
+                [52.3407059, 20.4316191],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_dd8355933f68d293afa5708eff777fa9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e10\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_673f73bfb68b2245715a2a711e297941.setIcon(div_icon_dd8355933f68d293afa5708eff777fa9);
+        
+    
+        var popup_36307dd4156c6e23abdf31afc2cb2243 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cfc6a27be6286b8fc54e2d7c8504e841 = $(`<div id="html_cfc6a27be6286b8fc54e2d7c8504e841" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Krzywa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Krzywa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>93.20 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_36307dd4156c6e23abdf31afc2cb2243.setContent(html_cfc6a27be6286b8fc54e2d7c8504e841);
+            
+        
+
+        marker_673f73bfb68b2245715a2a711e297941.bindPopup(popup_36307dd4156c6e23abdf31afc2cb2243)
+        ;
+
+        
+    
+    
+            var marker_470331b51d7e647e7e66486bbbb7ee93 = L.marker(
+                [52.3614112, 20.4286332],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_cfce2b312fd831c0331c2c8200dba882 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e11\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_470331b51d7e647e7e66486bbbb7ee93.setIcon(div_icon_cfce2b312fd831c0331c2c8200dba882);
+        
+    
+        var popup_19a29ab94ccc08f525cd2430e833811b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fdf8da59101720a1a767efd9f8ca1d73 = $(`<div id="html_fdf8da59101720a1a767efd9f8ca1d73" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 11</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Krzywa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>86.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_19a29ab94ccc08f525cd2430e833811b.setContent(html_fdf8da59101720a1a767efd9f8ca1d73);
+            
+        
+
+        marker_470331b51d7e647e7e66486bbbb7ee93.bindPopup(popup_19a29ab94ccc08f525cd2430e833811b)
+        ;
+
+        
+    
+    
+            var marker_527365bd4859d2bafcd00c922324bd39 = L.marker(
+                [52.3525246, 20.4549832],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_5f3828c91aa8527e554b752819941c1d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e12\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_527365bd4859d2bafcd00c922324bd39.setIcon(div_icon_5f3828c91aa8527e554b752819941c1d);
+        
+    
+        var popup_db64c3912851bbed7eb49956e5f6158e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e53ad3e9920e80b756702722fa6fa92b = $(`<div id="html_e53ad3e9920e80b756702722fa6fa92b" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 12</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Krzywa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_db64c3912851bbed7eb49956e5f6158e.setContent(html_e53ad3e9920e80b756702722fa6fa92b);
+            
+        
+
+        marker_527365bd4859d2bafcd00c922324bd39.bindPopup(popup_db64c3912851bbed7eb49956e5f6158e)
+        ;
+
+        
+    
+    
+            var marker_7af6ddd8adb70e07ea49d84f1b32ae14 = L.marker(
+                [52.3473342, 20.4618496],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_232659bca68c91c5bc20042d1b2937b7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e13\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_7af6ddd8adb70e07ea49d84f1b32ae14.setIcon(div_icon_232659bca68c91c5bc20042d1b2937b7);
+        
+    
+        var popup_868dedb7e748c3eb5e69510f5fa20678 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_40c1405d186e9b7018785f1ff938d874 = $(`<div id="html_40c1405d186e9b7018785f1ff938d874" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 13</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Krzywa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>74.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_868dedb7e748c3eb5e69510f5fa20678.setContent(html_40c1405d186e9b7018785f1ff938d874);
+            
+        
+
+        marker_7af6ddd8adb70e07ea49d84f1b32ae14.bindPopup(popup_868dedb7e748c3eb5e69510f5fa20678)
+        ;
+
+        
+    
+    
+            var marker_313075a5eed151be79c032f111d49087 = L.marker(
+                [52.3606507, 20.4773432],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_277f2a6d8644d4790254d839bfcf1cee = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e14\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_313075a5eed151be79c032f111d49087.setIcon(div_icon_277f2a6d8644d4790254d839bfcf1cee);
+        
+    
+        var popup_59220d4bf0d5edd600dfd52912916ae9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d56e21d1031b075b944791134dd2d0cd = $(`<div id="html_d56e21d1031b075b944791134dd2d0cd" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 14</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Poleskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>93.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_59220d4bf0d5edd600dfd52912916ae9.setContent(html_d56e21d1031b075b944791134dd2d0cd);
+            
+        
+
+        marker_313075a5eed151be79c032f111d49087.bindPopup(popup_59220d4bf0d5edd600dfd52912916ae9)
+        ;
+
+        
+    
+    
+            var marker_6c44fb1d0bf592a81de0db6e8bcd05c4 = L.marker(
+                [52.3552303, 20.4963698],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_00a776012fdf11824426b8a421a3e8b7 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e15\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6c44fb1d0bf592a81de0db6e8bcd05c4.setIcon(div_icon_00a776012fdf11824426b8a421a3e8b7);
+        
+    
+        var popup_b5be23a5d9235d39c421658275b6c8b2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_566aa184f522834458ecfd4af09b018a = $(`<div id="html_566aa184f522834458ecfd4af09b018a" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Poleska Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Poleskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.20 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_b5be23a5d9235d39c421658275b6c8b2.setContent(html_566aa184f522834458ecfd4af09b018a);
+            
+        
+
+        marker_6c44fb1d0bf592a81de0db6e8bcd05c4.bindPopup(popup_b5be23a5d9235d39c421658275b6c8b2)
+        ;
+
+        
+    
+    
+            var marker_dee385fed964436952154b2340649a74 = L.marker(
+                [52.3409187, 20.5037983],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_47f9fd27a30804812a95de451994a589 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e16\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_dee385fed964436952154b2340649a74.setIcon(div_icon_47f9fd27a30804812a95de451994a589);
+        
+    
+        var popup_4012fd328a09b73a30e496b1e74c3d3d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_670c409d33eed258f6c759caf984d2ea = $(`<div id="html_670c409d33eed258f6c759caf984d2ea" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Cisowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Poleskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>92.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_4012fd328a09b73a30e496b1e74c3d3d.setContent(html_670c409d33eed258f6c759caf984d2ea);
+            
+        
+
+        marker_dee385fed964436952154b2340649a74.bindPopup(popup_4012fd328a09b73a30e496b1e74c3d3d)
+        ;
+
+        
+    
+    
+            var marker_d2560f51c0cbc467c8a3031cb6beaba2 = L.marker(
+                [52.3556832, 20.512758],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_c9b1b4cbe4856e21494459b99cc1ee90 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e17\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d2560f51c0cbc467c8a3031cb6beaba2.setIcon(div_icon_c9b1b4cbe4856e21494459b99cc1ee90);
+        
+    
+        var popup_4e96e564c6aa4f2925319c689d21645c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b3d8f4315e0b683646efc179e0ed2c0e = $(`<div id="html_b3d8f4315e0b683646efc179e0ed2c0e" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 17</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Poleskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_4e96e564c6aa4f2925319c689d21645c.setContent(html_b3d8f4315e0b683646efc179e0ed2c0e);
+            
+        
+
+        marker_d2560f51c0cbc467c8a3031cb6beaba2.bindPopup(popup_4e96e564c6aa4f2925319c689d21645c)
+        ;
+
+        
+    
+    
+            var marker_a0e5752190698d5d54247c160949c4df = L.marker(
+                [52.3666379, 20.518852],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_331fb4b70ee4185deab8a07cb621f2d1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e18\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a0e5752190698d5d54247c160949c4df.setIcon(div_icon_331fb4b70ee4185deab8a07cb621f2d1);
+        
+    
+        var popup_173b2fea7293deacc87703d8ddc31085 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b0c3bc171543c6d8e4b02d296a870ede = $(`<div id="html_b0c3bc171543c6d8e4b02d296a870ede" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 18</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>84.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_173b2fea7293deacc87703d8ddc31085.setContent(html_b0c3bc171543c6d8e4b02d296a870ede);
+            
+        
+
+        marker_a0e5752190698d5d54247c160949c4df.bindPopup(popup_173b2fea7293deacc87703d8ddc31085)
+        ;
+
+        
+    
+    
+            var marker_440b9376cdacae476867ed455ed2c8d3 = L.marker(
+                [52.3607953, 20.5267527],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_ffaf8f36941b0f1aec80e1629cff0429 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e19\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_440b9376cdacae476867ed455ed2c8d3.setIcon(div_icon_ffaf8f36941b0f1aec80e1629cff0429);
+        
+    
+        var popup_ad8f335fce0b9a5c879a7a84c6981964 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d1f25a532559f69cdb9c46724bed51b5 = $(`<div id="html_d1f25a532559f69cdb9c46724bed51b5" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kaczubalska Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_ad8f335fce0b9a5c879a7a84c6981964.setContent(html_d1f25a532559f69cdb9c46724bed51b5);
+            
+        
+
+        marker_440b9376cdacae476867ed455ed2c8d3.bindPopup(popup_ad8f335fce0b9a5c879a7a84c6981964)
+        ;
+
+        
+    
+    
+            var marker_0e9b88f84e8792ab0f2233b3b770377d = L.marker(
+                [52.3521826, 20.5355353],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_79cd51699a9d701c0b454cf53158a971 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e20\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0e9b88f84e8792ab0f2233b3b770377d.setIcon(div_icon_79cd51699a9d701c0b454cf53158a971);
+        
+    
+        var popup_586562704baed21b94213c1be3346d7e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b6595e313701ca3f2272aad1ebdec3fe = $(`<div id="html_b6595e313701ca3f2272aad1ebdec3fe" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 20</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_586562704baed21b94213c1be3346d7e.setContent(html_b6595e313701ca3f2272aad1ebdec3fe);
+            
+        
+
+        marker_0e9b88f84e8792ab0f2233b3b770377d.bindPopup(popup_586562704baed21b94213c1be3346d7e)
+        ;
+
+        
+    
+    
+            var marker_b4518dcbfba5196c7d9925a521386eee = L.marker(
+                [52.3569573, 20.5551963],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_a256bcc9edbd313f479d26129d171d11 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e21\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b4518dcbfba5196c7d9925a521386eee.setIcon(div_icon_a256bcc9edbd313f479d26129d171d11);
+        
+    
+        var popup_714c967241af3ea30ed0177c0a9f8bc5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2e6af5b921b40451b54f335e6a83bd1e = $(`<div id="html_2e6af5b921b40451b54f335e6a83bd1e" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Wisielak</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_714c967241af3ea30ed0177c0a9f8bc5.setContent(html_2e6af5b921b40451b54f335e6a83bd1e);
+            
+        
+
+        marker_b4518dcbfba5196c7d9925a521386eee.bindPopup(popup_714c967241af3ea30ed0177c0a9f8bc5)
+        ;
+
+        
+    
+    
+            var marker_21637a9558db0a418521b208e566ff24 = L.marker(
+                [52.3609148, 20.558372],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_37ad22cfb079f923f0bfba9fb173f3aa = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e22\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_21637a9558db0a418521b208e566ff24.setIcon(div_icon_37ad22cfb079f923f0bfba9fb173f3aa);
+        
+    
+        var popup_1929215dc55ceac720150c1709170178 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_392b1e65a48f9a0619f0aa19b796dd2f = $(`<div id="html_392b1e65a48f9a0619f0aa19b796dd2f" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Smaglina</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>88.30 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_1929215dc55ceac720150c1709170178.setContent(html_392b1e65a48f9a0619f0aa19b796dd2f);
+            
+        
+
+        marker_21637a9558db0a418521b208e566ff24.bindPopup(popup_1929215dc55ceac720150c1709170178)
+        ;
+
+        
+    
+    
+            var marker_6b483ebda3d804c566a130187bdd50be = L.marker(
+                [52.3800657, 20.5577697],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_c9c8eb45bd3cbb017dfc19f02627282e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e23\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6b483ebda3d804c566a130187bdd50be.setIcon(div_icon_c9c8eb45bd3cbb017dfc19f02627282e);
+        
+    
+        var popup_16a82c28ba80d88ba3b9443581ac629b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ecef1d6fd6bb03f86bd0b3274bfd3eec = $(`<div id="html_ecef1d6fd6bb03f86bd0b3274bfd3eec" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 23</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Rybitew</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_16a82c28ba80d88ba3b9443581ac629b.setContent(html_ecef1d6fd6bb03f86bd0b3274bfd3eec);
+            
+        
+
+        marker_6b483ebda3d804c566a130187bdd50be.bindPopup(popup_16a82c28ba80d88ba3b9443581ac629b)
+        ;
+
+        
+    
+    
+            var marker_ac7e47986082eac23f5b77a286de5d30 = L.marker(
+                [52.3831741, 20.5807063],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_721f8f10dfc8392fcd3e1dabd9e61ccf = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e24\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ac7e47986082eac23f5b77a286de5d30.setIcon(div_icon_721f8f10dfc8392fcd3e1dabd9e61ccf);
+        
+    
+        var popup_884e38f68ce7b59d26adcfba2a3e2c37 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_18918be365c925c4119c3dd81101611b = $(`<div id="html_18918be365c925c4119c3dd81101611b" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góralowa Górka</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Rybitew</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>85.20 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_884e38f68ce7b59d26adcfba2a3e2c37.setContent(html_18918be365c925c4119c3dd81101611b);
+            
+        
+
+        marker_ac7e47986082eac23f5b77a286de5d30.bindPopup(popup_884e38f68ce7b59d26adcfba2a3e2c37)
+        ;
+
+        
+    
+    
+            var marker_4122f2307934b2d15786e8f8fa43d95d = L.marker(
+                [52.3699246, 20.5877855],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_cead32cc1785f778fb1223e097c89dd5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e25\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4122f2307934b2d15786e8f8fa43d95d.setIcon(div_icon_cead32cc1785f778fb1223e097c89dd5);
+        
+    
+        var popup_8ead9df43f20d359a82aaba72cfb07ec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d13eaf342a11c7e2e87990f392e33f4d = $(`<div id="html_d13eaf342a11c7e2e87990f392e33f4d" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 25</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Rybitew</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_8ead9df43f20d359a82aaba72cfb07ec.setContent(html_d13eaf342a11c7e2e87990f392e33f4d);
+            
+        
+
+        marker_4122f2307934b2d15786e8f8fa43d95d.bindPopup(popup_8ead9df43f20d359a82aaba72cfb07ec)
+        ;
+
+        
+    
+    
+            var marker_a5dfcea414f071efbe350cfc442235a3 = L.marker(
+                [52.368756, 20.591739],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_63710c873989c7095873cbcc6502d16e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e26\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a5dfcea414f071efbe350cfc442235a3.setIcon(div_icon_63710c873989c7095873cbcc6502d16e);
+        
+    
+        var popup_8dfb318db0e173ce9a863e72c2d76f88 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a11190d70ae7993eb67d68b7f66f1d1f = $(`<div id="html_a11190d70ae7993eb67d68b7f66f1d1f" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Pamiątkowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Rybitew</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.20 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_8dfb318db0e173ce9a863e72c2d76f88.setContent(html_a11190d70ae7993eb67d68b7f66f1d1f);
+            
+        
+
+        marker_a5dfcea414f071efbe350cfc442235a3.bindPopup(popup_8dfb318db0e173ce9a863e72c2d76f88)
+        ;
+
+        
+    
+    
+            var marker_6c52ea46e2cb346482e11f33b4707fc0 = L.marker(
+                [52.3714455, 20.6113507],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_09c50158c50fdc936b776cbc0c4b6f5c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e27\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6c52ea46e2cb346482e11f33b4707fc0.setIcon(div_icon_09c50158c50fdc936b776cbc0c4b6f5c);
+        
+    
+        var popup_c49f966ef3b1f98f21f652e2b1a0c51d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3bb8057ae6ed9ce6b3679cf62e609f05 = $(`<div id="html_3bb8057ae6ed9ce6b3679cf62e609f05" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Helenowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Cybulice</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>89.50 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_c49f966ef3b1f98f21f652e2b1a0c51d.setContent(html_3bb8057ae6ed9ce6b3679cf62e609f05);
+            
+        
+
+        marker_6c52ea46e2cb346482e11f33b4707fc0.bindPopup(popup_c49f966ef3b1f98f21f652e2b1a0c51d)
+        ;
+
+        
+    
+    
+            var marker_8b0aa2f9de39fcbe47a54a618c96537e = L.marker(
+                [52.3748654, 20.6184155],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_6fb1038f4c586e5d93c2ca272763507b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e28\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8b0aa2f9de39fcbe47a54a618c96537e.setIcon(div_icon_6fb1038f4c586e5d93c2ca272763507b);
+        
+    
+        var popup_559bcdd8c253948a2ea61492a3b644c8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bcff5d0b5f032f4ef48cda2fc9a2b1f7 = $(`<div id="html_bcff5d0b5f032f4ef48cda2fc9a2b1f7" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 28</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Cybulice</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_559bcdd8c253948a2ea61492a3b644c8.setContent(html_bcff5d0b5f032f4ef48cda2fc9a2b1f7);
+            
+        
+
+        marker_8b0aa2f9de39fcbe47a54a618c96537e.bindPopup(popup_559bcdd8c253948a2ea61492a3b644c8)
+        ;
+
+        
+    
+    
+            var marker_628af9e99a5e62eca869d1e4c32097da = L.marker(
+                [52.3396864, 20.5317468],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_10b06b20799fd88dff9dcd06e86b33ed = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e29\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_628af9e99a5e62eca869d1e4c32097da.setIcon(div_icon_10b06b20799fd88dff9dcd06e86b33ed);
+        
+    
+        var popup_beec40032694fb497299c2984bff58e2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_28c8600a505404e578fb1384c8612e9a = $(`<div id="html_28c8600a505404e578fb1384c8612e9a" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Wilkowska Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>97.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_beec40032694fb497299c2984bff58e2.setContent(html_28c8600a505404e578fb1384c8612e9a);
+            
+        
+
+        marker_628af9e99a5e62eca869d1e4c32097da.bindPopup(popup_beec40032694fb497299c2984bff58e2)
+        ;
+
+        
+    
+    
+            var marker_d3095036e7688aaec441d01273003dd0 = L.marker(
+                [52.3416725, 20.5439081],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_4e756f049813baf7444488bb1e56bf1c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e30\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d3095036e7688aaec441d01273003dd0.setIcon(div_icon_4e756f049813baf7444488bb1e56bf1c);
+        
+    
+        var popup_d2b5f076572cf16fc7d40b93b9bcb9a4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c839fe6bdf9c56afb63a5156d4813838 = $(`<div id="html_c839fe6bdf9c56afb63a5156d4813838" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 30</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>102.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_d2b5f076572cf16fc7d40b93b9bcb9a4.setContent(html_c839fe6bdf9c56afb63a5156d4813838);
+            
+        
+
+        marker_d3095036e7688aaec441d01273003dd0.bindPopup(popup_d2b5f076572cf16fc7d40b93b9bcb9a4)
+        ;
+
+        
+    
+    
+            var marker_a47c788149bfbbe3981272c2bdcb6ed9 = L.marker(
+                [52.3436914, 20.5562248],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_b9dcac56aafb6c1a61eb57d954e8d564 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e31\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a47c788149bfbbe3981272c2bdcb6ed9.setIcon(div_icon_b9dcac56aafb6c1a61eb57d954e8d564);
+        
+    
+        var popup_33c580cfdb11178d0517bf067eabe82d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1ae1ee0b46ba5c859ebfb7fe12a5b6a0 = $(`<div id="html_1ae1ee0b46ba5c859ebfb7fe12a5b6a0" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 31</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>98.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_33c580cfdb11178d0517bf067eabe82d.setContent(html_1ae1ee0b46ba5c859ebfb7fe12a5b6a0);
+            
+        
+
+        marker_a47c788149bfbbe3981272c2bdcb6ed9.bindPopup(popup_33c580cfdb11178d0517bf067eabe82d)
+        ;
+
+        
+    
+    
+            var marker_56b416814756b1833f3e65663fecfe79 = L.marker(
+                [52.3462279, 20.587215],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_d3a8e471541a122c11055d60b8060917 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e32\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_56b416814756b1833f3e65663fecfe79.setIcon(div_icon_d3a8e471541a122c11055d60b8060917);
+        
+    
+        var popup_a1402546ca709afc3f64ea4814d20bcc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e55b8bad295eff854ea9a2d980aacafb = $(`<div id="html_e55b8bad295eff854ea9a2d980aacafb" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 32</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wilkowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>98.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_a1402546ca709afc3f64ea4814d20bcc.setContent(html_e55b8bad295eff854ea9a2d980aacafb);
+            
+        
+
+        marker_56b416814756b1833f3e65663fecfe79.bindPopup(popup_a1402546ca709afc3f64ea4814d20bcc)
+        ;
+
+        
+    
+    
+            var marker_eb83eba09deac819fe09559395bc5c97 = L.marker(
+                [52.3538877, 20.6132593],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_104561e319d2e9edcefb8834197ab1b1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e33\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_eb83eba09deac819fe09559395bc5c97.setIcon(div_icon_104561e319d2e9edcefb8834197ab1b1);
+        
+    
+        var popup_0171827322ebcb7452de5ef711e0308e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a24a1ec82ae60f581ccf46c31bf17984 = $(`<div id="html_a24a1ec82ae60f581ccf46c31bf17984" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 33</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Cybulice</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>89.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_0171827322ebcb7452de5ef711e0308e.setContent(html_a24a1ec82ae60f581ccf46c31bf17984);
+            
+        
+
+        marker_eb83eba09deac819fe09559395bc5c97.bindPopup(popup_0171827322ebcb7452de5ef711e0308e)
+        ;
+
+        
+    
+    
+            var marker_b99cd51e4da52400829ae4dca683a639 = L.marker(
+                [52.3613094, 20.6087444],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_7e8b9b9f4f7ad02b854814116f474639 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e34\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b99cd51e4da52400829ae4dca683a639.setIcon(div_icon_7e8b9b9f4f7ad02b854814116f474639);
+        
+    
+        var popup_9a87d209be62a366b6b20e4141a231f5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_82c71c506111dd452a4b3d958c29c992 = $(`<div id="html_82c71c506111dd452a4b3d958c29c992" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Jakubowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Cybulice</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.30 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_9a87d209be62a366b6b20e4141a231f5.setContent(html_82c71c506111dd452a4b3d958c29c992);
+            
+        
+
+        marker_b99cd51e4da52400829ae4dca683a639.bindPopup(popup_9a87d209be62a366b6b20e4141a231f5)
+        ;
+
+        
+    
+    
+            var marker_b9a52c93d1f7e703d49ad885d091128b = L.marker(
+                [52.2996156, 20.3796169],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_8f2982cb037009f2a522984cd2e629bf = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e35\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b9a52c93d1f7e703d49ad885d091128b.setIcon(div_icon_8f2982cb037009f2a522984cd2e629bf);
+        
+    
+        var popup_37088d4325ca74a357f87fe7191eef12 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_efdf080acb99fe2260d12da0ea840130 = $(`<div id="html_efdf080acb99fe2260d12da0ea840130" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 35</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Lasocin</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_37088d4325ca74a357f87fe7191eef12.setContent(html_efdf080acb99fe2260d12da0ea840130);
+            
+        
+
+        marker_b9a52c93d1f7e703d49ad885d091128b.bindPopup(popup_37088d4325ca74a357f87fe7191eef12)
+        ;
+
+        
+    
+    
+            var marker_23e67fd72c2453a865bb163bf9a7074a = L.marker(
+                [52.3049885, 20.3947869],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_a12d0bcb9ac1c1ef4da7edf63efea81f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e36\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_23e67fd72c2453a865bb163bf9a7074a.setIcon(div_icon_a12d0bcb9ac1c1ef4da7edf63efea81f);
+        
+    
+        var popup_080c1715eb8c9ecbfb2e86690677f570 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_83b228d71a85e84fa12e8f75b5e632ed = $(`<div id="html_83b228d71a85e84fa12e8f75b5e632ed" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra św. Teresy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Lasocin</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>97.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_080c1715eb8c9ecbfb2e86690677f570.setContent(html_83b228d71a85e84fa12e8f75b5e632ed);
+            
+        
+
+        marker_23e67fd72c2453a865bb163bf9a7074a.bindPopup(popup_080c1715eb8c9ecbfb2e86690677f570)
+        ;
+
+        
+    
+    
+            var marker_694b818bfb74941711bee36c9f915124 = L.marker(
+                [52.2854603, 20.4805316],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_ff1925ccec9390b833e8edf9a9312dac = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e37\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_694b818bfb74941711bee36c9f915124.setIcon(div_icon_ff1925ccec9390b833e8edf9a9312dac);
+        
+    
+        var popup_97c8c388fd92fae028d2c170d8bc988a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_74a01b8bd3eef8a5745dc7228e3d2c20 = $(`<div id="html_74a01b8bd3eef8a5745dc7228e3d2c20" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kadisznik</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Zamczysko</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>85.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_97c8c388fd92fae028d2c170d8bc988a.setContent(html_74a01b8bd3eef8a5745dc7228e3d2c20);
+            
+        
+
+        marker_694b818bfb74941711bee36c9f915124.bindPopup(popup_97c8c388fd92fae028d2c170d8bc988a)
+        ;
+
+        
+    
+    
+            var marker_7f7f146069b8b1acdcf2aba8d19300f9 = L.marker(
+                [52.2981061, 20.4988466],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_aa1f2de9d20132f7270ad0532e7dd125 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e38\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_7f7f146069b8b1acdcf2aba8d19300f9.setIcon(div_icon_aa1f2de9d20132f7270ad0532e7dd125);
+        
+    
+        var popup_f8a2d86bd87d22e9ca3a7a9227db23e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3ebe5901a46ccb7656254564c26b3d39 = $(`<div id="html_3ebe5901a46ccb7656254564c26b3d39" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Piaskowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Zamczysko</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_f8a2d86bd87d22e9ca3a7a9227db23e1.setContent(html_3ebe5901a46ccb7656254564c26b3d39);
+            
+        
+
+        marker_7f7f146069b8b1acdcf2aba8d19300f9.bindPopup(popup_f8a2d86bd87d22e9ca3a7a9227db23e1)
+        ;
+
+        
+    
+    
+            var marker_1297679cc67a775dfcb5332b0f363504 = L.marker(
+                [52.2992116, 20.5093686],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_3365f386c58ed3373e9bd08f6315349f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e39\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1297679cc67a775dfcb5332b0f363504.setIcon(div_icon_3365f386c58ed3373e9bd08f6315349f);
+        
+    
+        var popup_532687898dd816cef3a1a0e7ad3b1901 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2d5cc94a45ba070d82f79ab6c81226f7 = $(`<div id="html_2d5cc94a45ba070d82f79ab6c81226f7" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 39</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Zamczysko</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>85.90 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_532687898dd816cef3a1a0e7ad3b1901.setContent(html_2d5cc94a45ba070d82f79ab6c81226f7);
+            
+        
+
+        marker_1297679cc67a775dfcb5332b0f363504.bindPopup(popup_532687898dd816cef3a1a0e7ad3b1901)
+        ;
+
+        
+    
+    
+            var marker_36fc303be0e2dd913b803de1afcac7f8 = L.marker(
+                [52.3027553, 20.523224],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_cf45e430e2a9babe8514e82706bb96e9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e40\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_36fc303be0e2dd913b803de1afcac7f8.setIcon(div_icon_cf45e430e2a9babe8514e82706bb96e9);
+        
+    
+        var popup_c4dfb2e83ad16aec3cac035b9073034c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0b4e34fcc9d5254155f1ff5107f07873 = $(`<div id="html_0b4e34fcc9d5254155f1ff5107f07873" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Tartaczna Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Zamczysko</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>86.50 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_c4dfb2e83ad16aec3cac035b9073034c.setContent(html_0b4e34fcc9d5254155f1ff5107f07873);
+            
+        
+
+        marker_36fc303be0e2dd913b803de1afcac7f8.bindPopup(popup_c4dfb2e83ad16aec3cac035b9073034c)
+        ;
+
+        
+    
+    
+            var marker_8ab78838d4ffc99db57484a49e50c989 = L.marker(
+                [52.3107088, 20.5268969],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_84875914c9966811bfe08ef6bc3e30c0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e41\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8ab78838d4ffc99db57484a49e50c989.setIcon(div_icon_84875914c9966811bfe08ef6bc3e30c0);
+        
+    
+        var popup_9b8ff8eedafe5515da09fc6b8478a1e9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6eae5eaae136c9fade6e41e028016804 = $(`<div id="html_6eae5eaae136c9fade6e41e028016804" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Występna Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Zamczysko</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>89.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_9b8ff8eedafe5515da09fc6b8478a1e9.setContent(html_6eae5eaae136c9fade6e41e028016804);
+            
+        
+
+        marker_8ab78838d4ffc99db57484a49e50c989.bindPopup(popup_9b8ff8eedafe5515da09fc6b8478a1e9)
+        ;
+
+        
+    
+    
+            var marker_85463119b4691ff68efdef42cc09c1a6 = L.marker(
+                [52.3006065, 20.5761932],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_b7edb51421d1a2d302660672be8333ba = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e42\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_85463119b4691ff68efdef42cc09c1a6.setIcon(div_icon_b7edb51421d1a2d302660672be8333ba);
+        
+    
+        var popup_53fcb4ea3923993591de2da44dfd1cb2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2d85267b918164691c8653d870814818 = $(`<div id="html_2d85267b918164691c8653d870814818" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 42</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Leszno</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>92.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_53fcb4ea3923993591de2da44dfd1cb2.setContent(html_2d85267b918164691c8653d870814818);
+            
+        
+
+        marker_85463119b4691ff68efdef42cc09c1a6.bindPopup(popup_53fcb4ea3923993591de2da44dfd1cb2)
+        ;
+
+        
+    
+    
+            var marker_646cfc22699fa5a2e1f0596b3c399419 = L.marker(
+                [52.2805251, 20.5834764],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_3ffb29008c9ab81e00e16e6a78070a73 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e43\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_646cfc22699fa5a2e1f0596b3c399419.setIcon(div_icon_3ffb29008c9ab81e00e16e6a78070a73);
+        
+    
+        var popup_51a573da8b8be3674022e1ca273d16d4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_21565255be5b7386890443fa0891b737 = $(`<div id="html_21565255be5b7386890443fa0891b737" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Biała Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Leszno</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>104.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_51a573da8b8be3674022e1ca273d16d4.setContent(html_21565255be5b7386890443fa0891b737);
+            
+        
+
+        marker_646cfc22699fa5a2e1f0596b3c399419.bindPopup(popup_51a573da8b8be3674022e1ca273d16d4)
+        ;
+
+        
+    
+    
+            var marker_ca816d8f05503b11c833b329ef41694f = L.marker(
+                [52.3026462, 20.6083998],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_26fe6eb3d7bfff2b0d40d17cab4d3302 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e44\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ca816d8f05503b11c833b329ef41694f.setIcon(div_icon_26fe6eb3d7bfff2b0d40d17cab4d3302);
+        
+    
+        var popup_b3c682b23f0eacf2453a122c936e98b4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_31d8e0a30167a232a9246e270b901935 = $(`<div id="html_31d8e0a30167a232a9246e270b901935" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 44</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Leszno</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'> m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_b3c682b23f0eacf2453a122c936e98b4.setContent(html_31d8e0a30167a232a9246e270b901935);
+            
+        
+
+        marker_ca816d8f05503b11c833b329ef41694f.bindPopup(popup_b3c682b23f0eacf2453a122c936e98b4)
+        ;
+
+        
+    
+    
+            var marker_b55833ccdecf0cfcb92aa16e49c02f45 = L.marker(
+                [52.3120896, 20.6220945],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_cba741b3b3e3502f322dcee4c6edae3c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e45\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b55833ccdecf0cfcb92aa16e49c02f45.setIcon(div_icon_cba741b3b3e3502f322dcee4c6edae3c);
+        
+    
+        var popup_b01fed7333352a1621e048f3f34c31ab = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7018c077411a6f82f7d01983d7da5fb9 = $(`<div id="html_7018c077411a6f82f7d01983d7da5fb9" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 45</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Leszno</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'> m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_b01fed7333352a1621e048f3f34c31ab.setContent(html_7018c077411a6f82f7d01983d7da5fb9);
+            
+        
+
+        marker_b55833ccdecf0cfcb92aa16e49c02f45.bindPopup(popup_b01fed7333352a1621e048f3f34c31ab)
+        ;
+
+        
+    
+    
+            var marker_b217601d59437be0984858d7b274a0a9 = L.marker(
+                [52.2752721, 20.6224351],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_10bcd1ab338874c0c753abe27707fe17 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e46\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b217601d59437be0984858d7b274a0a9.setIcon(div_icon_10bcd1ab338874c0c753abe27707fe17);
+        
+    
+        var popup_1cc91b22fef8467344873cb1be3e4296 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a573e4e15ee4df1fa3bea43488238c38 = $(`<div id="html_a573e4e15ee4df1fa3bea43488238c38" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Łysa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Leszno</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>99.70 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_1cc91b22fef8467344873cb1be3e4296.setContent(html_a573e4e15ee4df1fa3bea43488238c38);
+            
+        
+
+        marker_b217601d59437be0984858d7b274a0a9.bindPopup(popup_1cc91b22fef8467344873cb1be3e4296)
+        ;
+
+        
+    
+    
+            var marker_5a0b946877bc4d373f30eec07a91b459 = L.marker(
+                [52.2934743, 20.6322406],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_209775b5d5cb8ae586a2c82bf369b5a9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e47\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_5a0b946877bc4d373f30eec07a91b459.setIcon(div_icon_209775b5d5cb8ae586a2c82bf369b5a9);
+        
+    
+        var popup_262f09420a6e57b9d4b525591414cd63 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5e5af79b9b7a3d9d5875aad699eda20a = $(`<div id="html_5e5af79b9b7a3d9d5875aad699eda20a" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kilianka</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Leszno</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_262f09420a6e57b9d4b525591414cd63.setContent(html_5e5af79b9b7a3d9d5875aad699eda20a);
+            
+        
+
+        marker_5a0b946877bc4d373f30eec07a91b459.bindPopup(popup_262f09420a6e57b9d4b525591414cd63)
+        ;
+
+        
+    
+    
+            var marker_6fc21f3d4d9e2ea2e2dff269d18a3f6d = L.marker(
+                [52.2927706, 20.6491062],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_6969035d57414e52e5d5acd2d7b56505 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e48\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6fc21f3d4d9e2ea2e2dff269d18a3f6d.setIcon(div_icon_6969035d57414e52e5d5acd2d7b56505);
+        
+    
+        var popup_dd82b8e2a41fe938376ebb1552c66818 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d58f16995c2f721771e6ff0a9b38a41d = $(`<div id="html_d58f16995c2f721771e6ff0a9b38a41d" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Nartowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Ławskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>84.30 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_dd82b8e2a41fe938376ebb1552c66818.setContent(html_d58f16995c2f721771e6ff0a9b38a41d);
+            
+        
+
+        marker_6fc21f3d4d9e2ea2e2dff269d18a3f6d.bindPopup(popup_dd82b8e2a41fe938376ebb1552c66818)
+        ;
+
+        
+    
+    
+            var marker_532e93111d3de3886909e833f22b90b8 = L.marker(
+                [52.302193, 20.6536966],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_01ba3529442a0e8b2ce14ba523a03f52 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e49\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_532e93111d3de3886909e833f22b90b8.setIcon(div_icon_01ba3529442a0e8b2ce14ba523a03f52);
+        
+    
+        var popup_557343b9f2f2d74f0014d86891536086 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2c45bc2fb53d2494d6c110773a9ab7ed = $(`<div id="html_2c45bc2fb53d2494d6c110773a9ab7ed" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Przejmowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Ławskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>89.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_557343b9f2f2d74f0014d86891536086.setContent(html_2c45bc2fb53d2494d6c110773a9ab7ed);
+            
+        
+
+        marker_532e93111d3de3886909e833f22b90b8.bindPopup(popup_557343b9f2f2d74f0014d86891536086)
+        ;
+
+        
+    
+    
+            var marker_9efd5b06c6e6cc7767761a15e4618c51 = L.marker(
+                [52.3054093, 20.6577327],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_bd8f16a0c856e9c3464c58228feb65c6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e50\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9efd5b06c6e6cc7767761a15e4618c51.setIcon(div_icon_bd8f16a0c856e9c3464c58228feb65c6);
+        
+    
+        var popup_e9bf5b93647e76c105cbfb55bd0c2efc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b66047d3be826ed5183790dda5f2ea1f = $(`<div id="html_b66047d3be826ed5183790dda5f2ea1f" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Dębowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Ławskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>85.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2452</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-12-08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921</a></td></tr></table></div></div>`)[0];
+                popup_e9bf5b93647e76c105cbfb55bd0c2efc.setContent(html_b66047d3be826ed5183790dda5f2ea1f);
+            
+        
+
+        marker_9efd5b06c6e6cc7767761a15e4618c51.bindPopup(popup_e9bf5b93647e76c105cbfb55bd0c2efc)
+        ;
+
+        
+    
+    
+            var marker_cdd0541310d27db4ce104ee1f88b682c = L.marker(
+                [52.3016331, 20.6693144],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_e2e63cf115ed92c423b95fe4ad585f1a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e51\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_cdd0541310d27db4ce104ee1f88b682c.setIcon(div_icon_e2e63cf115ed92c423b95fe4ad585f1a);
+        
+    
+        var popup_3f80f8670d57b52167c49d0e1bf9cfea = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9fc481a5aafc6abdd54daf00a85d1b6f = $(`<div id="html_9fc481a5aafc6abdd54daf00a85d1b6f" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Ławska Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Ławskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.50 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2452</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-12-08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921</a></td></tr></table></div></div>`)[0];
+                popup_3f80f8670d57b52167c49d0e1bf9cfea.setContent(html_9fc481a5aafc6abdd54daf00a85d1b6f);
+            
+        
+
+        marker_cdd0541310d27db4ce104ee1f88b682c.bindPopup(popup_3f80f8670d57b52167c49d0e1bf9cfea)
+        ;
+
+        
+    
+    
+            var marker_21647467d80cf74eaa46c3a04cb6aeb5 = L.marker(
+                [52.303247, 20.6772941],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_2797788997bd0a48622d0dd01ab74f22 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e52\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_21647467d80cf74eaa46c3a04cb6aeb5.setIcon(div_icon_2797788997bd0a48622d0dd01ab74f22);
+        
+    
+        var popup_bf98288b79df3a398623c2b816ae5a11 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1ee065fcf0d3562f229820a44f7ef9f4 = $(`<div id="html_1ee065fcf0d3562f229820a44f7ef9f4" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Piaskowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Ławskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>96.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2452</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-12-08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921</a></td></tr></table></div></div>`)[0];
+                popup_bf98288b79df3a398623c2b816ae5a11.setContent(html_1ee065fcf0d3562f229820a44f7ef9f4);
+            
+        
+
+        marker_21647467d80cf74eaa46c3a04cb6aeb5.bindPopup(popup_bf98288b79df3a398623c2b816ae5a11)
+        ;
+
+        
+    
+    
+            var marker_1f630e6e3461a1253bcaa6f775fef1be = L.marker(
+                [52.313834, 20.6613601],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_c0019825c71aa54ff2856c7a8ff7fdb0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e53\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1f630e6e3461a1253bcaa6f775fef1be.setIcon(div_icon_c0019825c71aa54ff2856c7a8ff7fdb0);
+        
+    
+        var popup_8c144e918bed29121c75a6a58cf86a89 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3a7172924e99eb4da247edc01ecdc994 = $(`<div id="html_3a7172924e99eb4da247edc01ecdc994" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Wierszowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wierszowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>93.20 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2452</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-12-08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921</a></td></tr></table></div></div>`)[0];
+                popup_8c144e918bed29121c75a6a58cf86a89.setContent(html_3a7172924e99eb4da247edc01ecdc994);
+            
+        
+
+        marker_1f630e6e3461a1253bcaa6f775fef1be.bindPopup(popup_8c144e918bed29121c75a6a58cf86a89)
+        ;
+
+        
+    
+    
+            var marker_35670004e0162a35b485ff2a46a4822a = L.marker(
+                [52.3216879, 20.6813816],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_d5978055fd1bb60e97421a692188f2e5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e54\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_35670004e0162a35b485ff2a46a4822a.setIcon(div_icon_d5978055fd1bb60e97421a692188f2e5);
+        
+    
+        var popup_c8e2ba76ef646340ebf48ca8ec305db7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ee91d57d33c1da760eb405bb64d2e879 = $(`<div id="html_ee91d57d33c1da760eb405bb64d2e879" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Długa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wierszowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>92.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2452</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-12-08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921</a></td></tr></table></div></div>`)[0];
+                popup_c8e2ba76ef646340ebf48ca8ec305db7.setContent(html_ee91d57d33c1da760eb405bb64d2e879);
+            
+        
+
+        marker_35670004e0162a35b485ff2a46a4822a.bindPopup(popup_c8e2ba76ef646340ebf48ca8ec305db7)
+        ;
+
+        
+    
+    
+            var marker_2c345fe2b8e6576c8428c376c5f05e66 = L.marker(
+                [52.324626, 20.687706],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_2de82af15bb85b161a979df7d20739f6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e55\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_2c345fe2b8e6576c8428c376c5f05e66.setIcon(div_icon_2de82af15bb85b161a979df7d20739f6);
+        
+    
+        var popup_bd52a1bed1b1427556926ada7009dc76 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a1221e00a67f1a6f67e723cc5b742eb7 = $(`<div id="html_a1221e00a67f1a6f67e723cc5b742eb7" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Modlińska Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wierszowskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>95.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2452</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-12-08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921</a></td></tr></table></div></div>`)[0];
+                popup_bd52a1bed1b1427556926ada7009dc76.setContent(html_a1221e00a67f1a6f67e723cc5b742eb7);
+            
+        
+
+        marker_2c345fe2b8e6576c8428c376c5f05e66.bindPopup(popup_bd52a1bed1b1427556926ada7009dc76)
+        ;
+
+        
+    
+    
+            var marker_31d7bf1c0e42074d90b19f2c2b44bbc6 = L.marker(
+                [52.2884518, 20.689698],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_34a646a696aa6e92ac300ebdbba766cf = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e56\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_31d7bf1c0e42074d90b19f2c2b44bbc6.setIcon(div_icon_34a646a696aa6e92ac300ebdbba766cf);
+        
+    
+        var popup_438c7db1c45bb5300cd79e5443c70334 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f97a56c76245f42f750732dc1aee5ec4 = $(`<div id="html_f97a56c76245f42f750732dc1aee5ec4" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Górka</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Ławskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>83.10 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_438c7db1c45bb5300cd79e5443c70334.setContent(html_f97a56c76245f42f750732dc1aee5ec4);
+            
+        
+
+        marker_31d7bf1c0e42074d90b19f2c2b44bbc6.bindPopup(popup_438c7db1c45bb5300cd79e5443c70334)
+        ;
+
+        
+    
+    
+            var marker_51585431208a22423d2c37221d888fb2 = L.marker(
+                [52.3084435, 20.7062524],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_febeb9e13ef4ac6f18884ae8d1b8aa59 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e57\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_51585431208a22423d2c37221d888fb2.setIcon(div_icon_febeb9e13ef4ac6f18884ae8d1b8aa59);
+        
+    
+        var popup_e6b7858779d67fa1bb0ba79b85558012 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_212dedbe64b4652e849bd2bf5485483b = $(`<div id="html_212dedbe64b4652e849bd2bf5485483b" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Nad Kaliskiem</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Nad Kaliskiem</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.90 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2452</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-12-08</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-12-08-07-58-wierszowskie-gory-194274921</a></td></tr></table></div></div>`)[0];
+                popup_e6b7858779d67fa1bb0ba79b85558012.setContent(html_212dedbe64b4652e849bd2bf5485483b);
+            
+        
+
+        marker_51585431208a22423d2c37221d888fb2.bindPopup(popup_e6b7858779d67fa1bb0ba79b85558012)
+        ;
+
+        
+    
+    
+            var marker_8e5932a4b9f81dd36948b7df9bb66dcd = L.marker(
+                [52.324711, 20.711748],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_fcd43bb7cce5cdca66c9950aafe5139c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e58\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8e5932a4b9f81dd36948b7df9bb66dcd.setIcon(div_icon_fcd43bb7cce5cdca66c9950aafe5139c);
+        
+    
+        var popup_65c4232d1519cf97bde0f2b40ab0571e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c2383150fd6f6de671972eb3a5daf6ea = $(`<div id="html_c2383150fd6f6de671972eb3a5daf6ea" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Cygańskie Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Nad Kaliskiem</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>94.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_65c4232d1519cf97bde0f2b40ab0571e.setContent(html_c2383150fd6f6de671972eb3a5daf6ea);
+            
+        
+
+        marker_8e5932a4b9f81dd36948b7df9bb66dcd.bindPopup(popup_65c4232d1519cf97bde0f2b40ab0571e)
+        ;
+
+        
+    
+    
+            var marker_0243026505144ef9ac917fc0789fc152 = L.marker(
+                [52.3325478, 20.7077008],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_b7794e6e2d30ddae349f0eff3500a099 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e59\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0243026505144ef9ac917fc0789fc152.setIcon(div_icon_b7794e6e2d30ddae349f0eff3500a099);
+        
+    
+        var popup_c161decd03d59cdf1c540d0033c29e81 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bf578b879bf4be1d2a96c03512f47ef0 = $(`<div id="html_bf578b879bf4be1d2a96c03512f47ef0" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kuropiowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Nad Kaliskiem</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>96.80 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_c161decd03d59cdf1c540d0033c29e81.setContent(html_bf578b879bf4be1d2a96c03512f47ef0);
+            
+        
+
+        marker_0243026505144ef9ac917fc0789fc152.bindPopup(popup_c161decd03d59cdf1c540d0033c29e81)
+        ;
+
+        
+    
+    
+            var marker_830db99d1e314e770132488423c83f37 = L.marker(
+                [52.3379516, 20.7247622],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_1c0f919fcbf61b6448342f478818b339 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e60\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_830db99d1e314e770132488423c83f37.setIcon(div_icon_1c0f919fcbf61b6448342f478818b339);
+        
+    
+        var popup_888ee744d68638a2b7207f41ce3c7329 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_45d1f2752fea47024b3494e4fc620f09 = $(`<div id="html_45d1f2752fea47024b3494e4fc620f09" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Parowiana Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Nad Kaliskiem</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>95.20 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_888ee744d68638a2b7207f41ce3c7329.setContent(html_45d1f2752fea47024b3494e4fc620f09);
+            
+        
+
+        marker_830db99d1e314e770132488423c83f37.bindPopup(popup_888ee744d68638a2b7207f41ce3c7329)
+        ;
+
+        
+    
+    
+            var marker_6b9570d7cd678c3e859575083e87bc8f = L.marker(
+                [52.3269501, 20.7415168],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_b42719da08c09f02b3aecae0480fe5d6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e61\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6b9570d7cd678c3e859575083e87bc8f.setIcon(div_icon_b42719da08c09f02b3aecae0480fe5d6);
+        
+    
+        var popup_2db6d211ccf5be909cf104736cfbe320 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d63a9c0c90ee5709ee4072eb6804deb2 = $(`<div id="html_d63a9c0c90ee5709ee4072eb6804deb2" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Ćwikowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Palmiry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>98.30 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_2db6d211ccf5be909cf104736cfbe320.setContent(html_d63a9c0c90ee5709ee4072eb6804deb2);
+            
+        
+
+        marker_6b9570d7cd678c3e859575083e87bc8f.bindPopup(popup_2db6d211ccf5be909cf104736cfbe320)
+        ;
+
+        
+    
+    
+            var marker_df0dcfef4daaaab89cfbfb214730f9b8 = L.marker(
+                [52.3250653, 20.7480534],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_54919cd7aa6a9d0390403d4a6cfc97b0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e62\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_df0dcfef4daaaab89cfbfb214730f9b8.setIcon(div_icon_54919cd7aa6a9d0390403d4a6cfc97b0);
+        
+    
+        var popup_e518698be42d1a0f8c9b8fcd3fc9a3fe = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c63456bc9aba1fe3e2b0bd79d3008a05 = $(`<div id="html_c63456bc9aba1fe3e2b0bd79d3008a05" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Tygrysia Górka</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Palmiry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>98.80 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_e518698be42d1a0f8c9b8fcd3fc9a3fe.setContent(html_c63456bc9aba1fe3e2b0bd79d3008a05);
+            
+        
+
+        marker_df0dcfef4daaaab89cfbfb214730f9b8.bindPopup(popup_e518698be42d1a0f8c9b8fcd3fc9a3fe)
+        ;
+
+        
+    
+    
+            var marker_05ac923278fa2ded0a0bfdf3fcdb2425 = L.marker(
+                [52.3228938, 20.7447648],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_b1ab2889da704cb02f51d07bc26a5860 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e63\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_05ac923278fa2ded0a0bfdf3fcdb2425.setIcon(div_icon_b1ab2889da704cb02f51d07bc26a5860);
+        
+    
+        var popup_e27786229a07edef1a82e81de4eb3856 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_409fe5669006a7b69c752f1e25b3d4aa = $(`<div id="html_409fe5669006a7b69c752f1e25b3d4aa" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Zdrojowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Palmiry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>101.80 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_e27786229a07edef1a82e81de4eb3856.setContent(html_409fe5669006a7b69c752f1e25b3d4aa);
+            
+        
+
+        marker_05ac923278fa2ded0a0bfdf3fcdb2425.bindPopup(popup_e27786229a07edef1a82e81de4eb3856)
+        ;
+
+        
+    
+    
+            var marker_5ad3714048bd3ab88cc3788ee00c5514 = L.marker(
+                [52.321071, 20.7456917],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_a4455ddc763f7b8ee71720114aafedcd = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e64\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_5ad3714048bd3ab88cc3788ee00c5514.setIcon(div_icon_a4455ddc763f7b8ee71720114aafedcd);
+        
+    
+        var popup_189e7e9ae90fcfd87d95c82f681ed003 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ca2b68c8b8834412c5247ff5235bdc93 = $(`<div id="html_ca2b68c8b8834412c5247ff5235bdc93" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Zakrętkowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Palmiry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>84.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_189e7e9ae90fcfd87d95c82f681ed003.setContent(html_ca2b68c8b8834412c5247ff5235bdc93);
+            
+        
+
+        marker_5ad3714048bd3ab88cc3788ee00c5514.bindPopup(popup_189e7e9ae90fcfd87d95c82f681ed003)
+        ;
+
+        
+    
+    
+            var marker_3154b5f7a1aee8fd72bc311b83c7e701 = L.marker(
+                [52.3211253, 20.7614033],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_9109ad498cd79adfd527e476b9def03a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e65\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_3154b5f7a1aee8fd72bc311b83c7e701.setIcon(div_icon_9109ad498cd79adfd527e476b9def03a);
+        
+    
+        var popup_d3bf6e65fa282ae3926fe426a894f10f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ee7ce5c4aaa6a1b0937c78cf26d8fc2a = $(`<div id="html_ee7ce5c4aaa6a1b0937c78cf26d8fc2a" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Niepustowe Łyse Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Palmiry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>88.90 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_d3bf6e65fa282ae3926fe426a894f10f.setContent(html_ee7ce5c4aaa6a1b0937c78cf26d8fc2a);
+            
+        
+
+        marker_3154b5f7a1aee8fd72bc311b83c7e701.bindPopup(popup_d3bf6e65fa282ae3926fe426a894f10f)
+        ;
+
+        
+    
+    
+            var marker_ddee14f959c257213178e8b566fa5412 = L.marker(
+                [52.3058607, 20.7493111],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_e4045781ab0eb367258ce34efaa80674 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e66\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ddee14f959c257213178e8b566fa5412.setIcon(div_icon_e4045781ab0eb367258ce34efaa80674);
+        
+    
+        var popup_6e2c0061191e47087f886a75e53b3f4a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b8c99e63021a7313b71209f7d75856b4 = $(`<div id="html_b8c99e63021a7313b71209f7d75856b4" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Marcinowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Nad Strugą</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>87.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2502</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-12</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-12-08-24-lisia-gora-197762189' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-12-08-24-lisia-gora-197762189</a></td></tr></table></div></div>`)[0];
+                popup_6e2c0061191e47087f886a75e53b3f4a.setContent(html_b8c99e63021a7313b71209f7d75856b4);
+            
+        
+
+        marker_ddee14f959c257213178e8b566fa5412.bindPopup(popup_6e2c0061191e47087f886a75e53b3f4a)
+        ;
+
+        
+    
+    
+            var marker_0c4f9a1afbeea7d58ded27b3428a80cb = L.marker(
+                [52.28791, 20.7614064],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_0ec8ea10e96b46702eeaa4b446b5358f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e67\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_0c4f9a1afbeea7d58ded27b3428a80cb.setIcon(div_icon_0ec8ea10e96b46702eeaa4b446b5358f);
+        
+    
+        var popup_73e5f1be38bf0a14d922de46d27485aa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d87402242df1d2cdd8979cdf6a227ee9 = $(`<div id="html_d87402242df1d2cdd8979cdf6a227ee9" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Lisia Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Nad Strugą</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>92.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2502</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-12</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-12-08-24-lisia-gora-197762189' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-12-08-24-lisia-gora-197762189</a></td></tr></table></div></div>`)[0];
+                popup_73e5f1be38bf0a14d922de46d27485aa.setContent(html_d87402242df1d2cdd8979cdf6a227ee9);
+            
+        
+
+        marker_0c4f9a1afbeea7d58ded27b3428a80cb.bindPopup(popup_73e5f1be38bf0a14d922de46d27485aa)
+        ;
+
+        
+    
+    
+            var marker_be46cad1f0dd6136c560cc2dc099bc23 = L.marker(
+                [52.2804274, 20.7985862],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_85f9ac9763f77fe1f07d86ec45e2c3eb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e68\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_be46cad1f0dd6136c560cc2dc099bc23.setIcon(div_icon_85f9ac9763f77fe1f07d86ec45e2c3eb);
+        
+    
+        var popup_49e20008c0a30058ed48cfa4a0ed655d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_376d22d17325cf545b77a9516629a733 = $(`<div id="html_376d22d17325cf545b77a9516629a733" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Wydma Bohuna</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Nad Strugą</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.50 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2502</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-12</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-12-08-24-lisia-gora-197762189' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-01-12-08-24-lisia-gora-197762189</a></td></tr></table></div></div>`)[0];
+                popup_49e20008c0a30058ed48cfa4a0ed655d.setContent(html_376d22d17325cf545b77a9516629a733);
+            
+        
+
+        marker_be46cad1f0dd6136c560cc2dc099bc23.bindPopup(popup_49e20008c0a30058ed48cfa4a0ed655d)
+        ;
+
+        
+    
+    
+            var marker_23690f2e6e81783660c80605fbd74c16 = L.marker(
+                [52.334752, 20.7634525],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_6363c268650feb70039d3a5005a2e695 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e69\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_23690f2e6e81783660c80605fbd74c16.setIcon(div_icon_6363c268650feb70039d3a5005a2e695);
+        
+    
+        var popup_3babc42b7b02ef4c4e327441f9514319 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_80c192e249e86741c53f5ac9b7e931ad = $(`<div id="html_80c192e249e86741c53f5ac9b7e931ad" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 69</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Palmiry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'> m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_3babc42b7b02ef4c4e327441f9514319.setContent(html_80c192e249e86741c53f5ac9b7e931ad);
+            
+        
+
+        marker_23690f2e6e81783660c80605fbd74c16.bindPopup(popup_3babc42b7b02ef4c4e327441f9514319)
+        ;
+
+        
+    
+    
+            var marker_d2710280a61897f0f4328b143c336a8d = L.marker(
+                [52.3376328, 20.7768297],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_66d69154f09d86315df47232a67bdd9b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e70\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d2710280a61897f0f4328b143c336a8d.setIcon(div_icon_66d69154f09d86315df47232a67bdd9b);
+        
+    
+        var popup_8bfc3091bf3de211ee156b849f4ceb69 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3a714905b56fe89ac48b49d5ad4d17a9 = $(`<div id="html_3a714905b56fe89ac48b49d5ad4d17a9" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Biała Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Sieraków</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>92.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_8bfc3091bf3de211ee156b849f4ceb69.setContent(html_3a714905b56fe89ac48b49d5ad4d17a9);
+            
+        
+
+        marker_d2710280a61897f0f4328b143c336a8d.bindPopup(popup_8bfc3091bf3de211ee156b849f4ceb69)
+        ;
+
+        
+    
+    
+            var marker_6c84bc649fd556fe396999d9281e4ea0 = L.marker(
+                [52.3448115, 20.7793004],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_0ca4eb89746c64fa66635ffb043a139e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e71\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6c84bc649fd556fe396999d9281e4ea0.setIcon(div_icon_0ca4eb89746c64fa66635ffb043a139e);
+        
+    
+        var popup_453583873dd677bddcf6da9ece9bb03a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_83fa590df85b55adb2d52d59bf58d87e = $(`<div id="html_83fa590df85b55adb2d52d59bf58d87e" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 71</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Sieraków</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'> m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_453583873dd677bddcf6da9ece9bb03a.setContent(html_83fa590df85b55adb2d52d59bf58d87e);
+            
+        
+
+        marker_6c84bc649fd556fe396999d9281e4ea0.bindPopup(popup_453583873dd677bddcf6da9ece9bb03a)
+        ;
+
+        
+    
+    
+            var marker_4515f4a3204565637c4cf2b53ebc25df = L.marker(
+                [52.3400731, 20.7959499],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_3567bfc9f7fe7d58875a06225e519017 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e72\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4515f4a3204565637c4cf2b53ebc25df.setIcon(div_icon_3567bfc9f7fe7d58875a06225e519017);
+        
+    
+        var popup_bea8f37bd8d1d828d4ec847c6019e8ac = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e374e8f3e7e4b8ec8d5eb970a0e38388 = $(`<div id="html_e374e8f3e7e4b8ec8d5eb970a0e38388" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Wywrotnia Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Sieraków</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>95.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_bea8f37bd8d1d828d4ec847c6019e8ac.setContent(html_e374e8f3e7e4b8ec8d5eb970a0e38388);
+            
+        
+
+        marker_4515f4a3204565637c4cf2b53ebc25df.bindPopup(popup_bea8f37bd8d1d828d4ec847c6019e8ac)
+        ;
+
+        
+    
+    
+            var marker_e156f532faf8890e4eea2eb805f1ba1f = L.marker(
+                [52.3192223, 20.7997569],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_a3580e31884af7c26bd7bd58c20b8417 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e73\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e156f532faf8890e4eea2eb805f1ba1f.setIcon(div_icon_a3580e31884af7c26bd7bd58c20b8417);
+        
+    
+        var popup_22d028b9c5c1d48daa0d238b180932e1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c462e85e4cc76696503fa75489fed1a8 = $(`<div id="html_c462e85e4cc76696503fa75489fed1a8" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Wierzejna Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Sieraków</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>93.20 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2507</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-02-23</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483</a></td></tr></table></div></div>`)[0];
+                popup_22d028b9c5c1d48daa0d238b180932e1.setContent(html_c462e85e4cc76696503fa75489fed1a8);
+            
+        
+
+        marker_e156f532faf8890e4eea2eb805f1ba1f.bindPopup(popup_22d028b9c5c1d48daa0d238b180932e1)
+        ;
+
+        
+    
+    
+            var marker_07666f97713b4bc66b296db38fcc9a34 = L.marker(
+                [52.3201803, 20.8100869],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_8cfd939687bec8a45de7a8ab87f97d90 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e74\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_07666f97713b4bc66b296db38fcc9a34.setIcon(div_icon_8cfd939687bec8a45de7a8ab87f97d90);
+        
+    
+        var popup_a237cbfe5cee2e2d7651ec7df10d180d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fdc2097b6d31ed60593124c608209b49 = $(`<div id="html_fdc2097b6d31ed60593124c608209b49" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Sierakowska Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Sieraków</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>91.80 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2507</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-02-23</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483</a></td></tr></table></div></div>`)[0];
+                popup_a237cbfe5cee2e2d7651ec7df10d180d.setContent(html_fdc2097b6d31ed60593124c608209b49);
+            
+        
+
+        marker_07666f97713b4bc66b296db38fcc9a34.bindPopup(popup_a237cbfe5cee2e2d7651ec7df10d180d)
+        ;
+
+        
+    
+    
+            var marker_76e31ed8341b8cf93608bd13fec18184 = L.marker(
+                [52.324231, 20.8217153],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_233400967092b022b63fa96191566f07 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e75\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_76e31ed8341b8cf93608bd13fec18184.setIcon(div_icon_233400967092b022b63fa96191566f07);
+        
+    
+        var popup_84810013290851c406bd96e99ec08587 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_41c0e11bdafdec1d6b5b762bb7f1225a = $(`<div id="html_41c0e11bdafdec1d6b5b762bb7f1225a" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kąt Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Sieraków</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2507</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-02-23</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483</a></td></tr></table></div></div>`)[0];
+                popup_84810013290851c406bd96e99ec08587.setContent(html_41c0e11bdafdec1d6b5b762bb7f1225a);
+            
+        
+
+        marker_76e31ed8341b8cf93608bd13fec18184.bindPopup(popup_84810013290851c406bd96e99ec08587)
+        ;
+
+        
+    
+    
+            var marker_37dcc14057309e17acbe2a723a4356ec = L.marker(
+                [52.3398627, 20.8584121],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_42351994513177fd63d74a4c0f662b49 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e76\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_37dcc14057309e17acbe2a723a4356ec.setIcon(div_icon_42351994513177fd63d74a4c0f662b49);
+        
+    
+        var popup_159c5131e84ff2bc4830ea3a88fe4428 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8419416c28ef9e07ebe79c1f806c2c4e = $(`<div id="html_8419416c28ef9e07ebe79c1f806c2c4e" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Rabego</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Sieraków</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>92.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2435</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-09-01</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-09-01-07-57-gora-rabego-183512511' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-09-01-07-57-gora-rabego-183512511</a></td></tr></table></div></div>`)[0];
+                popup_159c5131e84ff2bc4830ea3a88fe4428.setContent(html_8419416c28ef9e07ebe79c1f806c2c4e);
+            
+        
+
+        marker_37dcc14057309e17acbe2a723a4356ec.bindPopup(popup_159c5131e84ff2bc4830ea3a88fe4428)
+        ;
+
+        
+    
+    
+            var marker_92a0389468918c71fc61bab258f313fb = L.marker(
+                [52.325939, 20.8510457],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_937b06eaf6fb3ec6c380655b773c142e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e77\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_92a0389468918c71fc61bab258f313fb.setIcon(div_icon_937b06eaf6fb3ec6c380655b773c142e);
+        
+    
+        var popup_36043d5ffee081e3809c991a365eb026 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1cc0fc9690f3cd4e464b6c320084fcbd = $(`<div id="html_1cc0fc9690f3cd4e464b6c320084fcbd" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Spółkowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>90.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2447</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-11-11</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322</a></td></tr></table></div></div>`)[0];
+                popup_36043d5ffee081e3809c991a365eb026.setContent(html_1cc0fc9690f3cd4e464b6c320084fcbd);
+            
+        
+
+        marker_92a0389468918c71fc61bab258f313fb.bindPopup(popup_36043d5ffee081e3809c991a365eb026)
+        ;
+
+        
+    
+    
+            var marker_dcdf1adddcace6807b3bb2356136cacc = L.marker(
+                [52.3149222, 20.8358674],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_7798bcd617e38ea3e3e52d08cddafb65 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e78\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_dcdf1adddcace6807b3bb2356136cacc.setIcon(div_icon_7798bcd617e38ea3e3e52d08cddafb65);
+        
+    
+        var popup_c638677da1ba35a0f94225cb2839e121 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4d3daf1eedbabbd1f8e6a5ed24490f42 = $(`<div id="html_4d3daf1eedbabbd1f8e6a5ed24490f42" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góry</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>96.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2447</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-11-11</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322</a></td></tr></table></div></div>`)[0];
+                popup_c638677da1ba35a0f94225cb2839e121.setContent(html_4d3daf1eedbabbd1f8e6a5ed24490f42);
+            
+        
+
+        marker_dcdf1adddcace6807b3bb2356136cacc.bindPopup(popup_c638677da1ba35a0f94225cb2839e121)
+        ;
+
+        
+    
+    
+            var marker_b5d14340983902c0da1b92db54ea0bb6 = L.marker(
+                [52.3129214, 20.8499913],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_ae24a8bac125e628086d4573847c8547 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e79\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b5d14340983902c0da1b92db54ea0bb6.setIcon(div_icon_ae24a8bac125e628086d4573847c8547);
+        
+    
+        var popup_109157838c4740396fceb5dfc40fccc9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f4ae78dd5e738956302c99bbd1d75234 = $(`<div id="html_f4ae78dd5e738956302c99bbd1d75234" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Przedłuże</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>95.90 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2447</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-11-11</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322</a></td></tr></table></div></div>`)[0];
+                popup_109157838c4740396fceb5dfc40fccc9.setContent(html_f4ae78dd5e738956302c99bbd1d75234);
+            
+        
+
+        marker_b5d14340983902c0da1b92db54ea0bb6.bindPopup(popup_109157838c4740396fceb5dfc40fccc9)
+        ;
+
+        
+    
+    
+            var marker_4e90edf458e100ffe63187c5dcf43683 = L.marker(
+                [52.3168023, 20.8614934],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_4b5df5777406a5730240bb2b2b8af2ee = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e80\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4e90edf458e100ffe63187c5dcf43683.setIcon(div_icon_4b5df5777406a5730240bb2b2b8af2ee);
+        
+    
+        var popup_b6389dee162554c3a85ceca3d21c15da = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a0ffd718ffeec9f93cd792dae89d88a9 = $(`<div id="html_a0ffd718ffeec9f93cd792dae89d88a9" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Łużowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>101.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2447</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-11-11</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322</a></td></tr></table></div></div>`)[0];
+                popup_b6389dee162554c3a85ceca3d21c15da.setContent(html_a0ffd718ffeec9f93cd792dae89d88a9);
+            
+        
+
+        marker_4e90edf458e100ffe63187c5dcf43683.bindPopup(popup_b6389dee162554c3a85ceca3d21c15da)
+        ;
+
+        
+    
+    
+            var marker_7f4db6d06a74b244303fc3ca97af6484 = L.marker(
+                [52.3052381, 20.8388118],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_e56e0d1ab43918af8ab7d6a5ff92f7c5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e81\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_7f4db6d06a74b244303fc3ca97af6484.setIcon(div_icon_e56e0d1ab43918af8ab7d6a5ff92f7c5);
+        
+    
+        var popup_4f26d85b6fc08c748662f6216f516cf1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_849cbc31aae0edb6c9b96e0849f1e334 = $(`<div id="html_849cbc31aae0edb6c9b96e0849f1e334" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Ojca</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>100.60 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2507</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-02-23</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2025-02-23-07-58-sierakowska-gora-202622483</a></td></tr></table></div></div>`)[0];
+                popup_4f26d85b6fc08c748662f6216f516cf1.setContent(html_849cbc31aae0edb6c9b96e0849f1e334);
+            
+        
+
+        marker_7f4db6d06a74b244303fc3ca97af6484.bindPopup(popup_4f26d85b6fc08c748662f6216f516cf1)
+        ;
+
+        
+    
+    
+            var marker_6ea890b4ca4dd4ffa38d8f181a26f578 = L.marker(
+                [52.3023854, 20.8559139],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_b442a3389144498611c46f1d75415aee = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e82\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6ea890b4ca4dd4ffa38d8f181a26f578.setIcon(div_icon_b442a3389144498611c46f1d75415aee);
+        
+    
+        var popup_fbb4f076983df4afebf787a36fb3ac81 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4c50053180596c9b253b5a884b2d1565 = $(`<div id="html_4c50053180596c9b253b5a884b2d1565" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Laskowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>101.40 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_fbb4f076983df4afebf787a36fb3ac81.setContent(html_4c50053180596c9b253b5a884b2d1565);
+            
+        
+
+        marker_6ea890b4ca4dd4ffa38d8f181a26f578.bindPopup(popup_fbb4f076983df4afebf787a36fb3ac81)
+        ;
+
+        
+    
+    
+            var marker_01858aa2c725cd20581065304c196a3a = L.marker(
+                [52.3084684, 20.8791335],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_8c45d0154dd5b61e12ddf95c212c6213 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e83\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_01858aa2c725cd20581065304c196a3a.setIcon(div_icon_8c45d0154dd5b61e12ddf95c212c6213);
+        
+    
+        var popup_b356e4e16837bf928b91f3c88d577ce1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4f70883e967dd526c75822d7142503a0 = $(`<div id="html_4f70883e967dd526c75822d7142503a0" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 83</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>97.90 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2447</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-11-11</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322' target='_blank'>https://pl.wikiloc.com/szlaki-wycieczki-piesze/2024-11-11-07-55-luzowa-gora-191428322</a></td></tr></table></div></div>`)[0];
+                popup_b356e4e16837bf928b91f3c88d577ce1.setContent(html_4f70883e967dd526c75822d7142503a0);
+            
+        
+
+        marker_01858aa2c725cd20581065304c196a3a.bindPopup(popup_b356e4e16837bf928b91f3c88d577ce1)
+        ;
+
+        
+    
+    
+            var marker_1a627fdbdfc18c0fe0b6158d6c1fda93 = L.marker(
+                [52.2985345, 20.8749899],
+                {}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var div_icon_0a3e03b0c56fd9cdbe32d0202fd176ef = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e84\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1a627fdbdfc18c0fe0b6158d6c1fda93.setIcon(div_icon_0a3e03b0c56fd9cdbe32d0202fd176ef);
+        
+    
+        var popup_8b1466b5e233f682f0322729f89e6b32 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_28eb50d9c9ded8278fb57718c430433f = $(`<div id="html_28eb50d9c9ded8278fb57718c430433f" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Peak 84</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Kampinoski Park Narodowy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Laski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>106.00 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_8b1466b5e233f682f0322729f89e6b32.setContent(html_28eb50d9c9ded8278fb57718c430433f);
+            
+        
+
+        marker_1a627fdbdfc18c0fe0b6158d6c1fda93.bindPopup(popup_8b1466b5e233f682f0322729f89e6b32)
+        ;
+
+        
+    
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_534a327b121d68066cf7cbcdbcde1cae);
+        
+    
+            var tile_layer_5855e3c4048b5695480018644baf36da = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_a08af9dd55eb47700e5248480c714e69 = new L.Control.MiniMap(
+                tile_layer_5855e3c4048b5695480018644baf36da,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_534a327b121d68066cf7cbcdbcde1cae.addControl(mini_map_a08af9dd55eb47700e5248480c714e69);
+        
+</script>
+</html>

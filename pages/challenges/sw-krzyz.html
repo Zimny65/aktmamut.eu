@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SwKrzyz</title>
+    <link rel="icon" href="M32.png" type="image/png">
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ea3ee4b1acebea17435fe8d50baa4b2a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ea3ee4b1acebea17435fe8d50baa4b2a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ea3ee4b1acebea17435fe8d50baa4b2a = L.map(
+                "map_ea3ee4b1acebea17435fe8d50baa4b2a",
+                {
+                    center: [50.883404778571425, 20.678599775000006],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0eacd024721b7375ef43e7031d5dbbf8 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_0eacd024721b7375ef43e7031d5dbbf8.addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var tile_layer_8b897278875f63512e633d3e63632b71 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_8b897278875f63512e633d3e63632b71.addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var marker_fb61d61956186f1fbe9c30b6438306ce = L.marker(
+                [51.0270156, 19.9698792],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_6f3d38d3f73c308c6743f9406f4171f2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e1\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_fb61d61956186f1fbe9c30b6438306ce.setIcon(div_icon_6f3d38d3f73c308c6743f9406f4171f2);
+        
+    
+        var popup_849746f1259c7dc4efda7e3d2cabaa5e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_84c2bf513e85692cc812230dff6af88d = $(`<div id="html_84c2bf513e85692cc812230dff6af88d" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Fajna Ryba</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Przedborsko-Małogoskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>347 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2221</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2022-09-24</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-09-24-09-46-fajna-ryba-114471326' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-09-24-09-46-fajna-ryba-114471326</a></td></tr></table></div></div>`)[0];
+                popup_849746f1259c7dc4efda7e3d2cabaa5e.setContent(html_84c2bf513e85692cc812230dff6af88d);
+            
+        
+
+        marker_fb61d61956186f1fbe9c30b6438306ce.bindPopup(popup_849746f1259c7dc4efda7e3d2cabaa5e)
+        ;
+
+        
+    
+    
+            var marker_a2741c24a5397459cbd18009240a4be6 = L.marker(
+                [51.1764311, 20.7553117],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_9cff5a45dc04c9b5ea1d4087d7107232 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e2\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a2741c24a5397459cbd18009240a4be6.setIcon(div_icon_9cff5a45dc04c9b5ea1d4087d7107232);
+        
+    
+        var popup_fa839761e9cdb530792170c9e9ec2638 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8d033dc435d2d7ef1d87b3930d1e3599 = $(`<div id="html_8d033dc435d2d7ef1d87b3930d1e3599" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Altana</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wzgórza Niekłańsko-Bliżyńskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>408 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2201</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2022-01-02</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-02-09-09-altana-91922460' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-02-09-09-altana-91922460</a></td></tr></table></div></div>`)[0];
+                popup_fa839761e9cdb530792170c9e9ec2638.setContent(html_8d033dc435d2d7ef1d87b3930d1e3599);
+            
+        
+
+        marker_a2741c24a5397459cbd18009240a4be6.bindPopup(popup_fa839761e9cdb530792170c9e9ec2638)
+        ;
+
+        
+    
+    
+            var marker_15af9da34b6162eb73e190b019d2b398 = L.marker(
+                [50.9844978, 20.3048183],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_6077bde3a884f8c2bfafa54e8a526e37 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e3\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_15af9da34b6162eb73e190b019d2b398.setIcon(div_icon_6077bde3a884f8c2bfafa54e8a526e37);
+        
+    
+        var popup_44cd6b5cd7dcd21e5d0f080403007b04 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5af437486567a54e5f16ab67b483abb2 = $(`<div id="html_5af437486567a54e5f16ab67b483abb2" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Dobrzeszowska</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Dobrzeszowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>364 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2101</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2021-02-25</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-02-25-08-58-gora-dobrzeszowska-66560932' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-02-25-08-58-gora-dobrzeszowska-66560932</a></td></tr></table></div></div>`)[0];
+                popup_44cd6b5cd7dcd21e5d0f080403007b04.setContent(html_5af437486567a54e5f16ab67b483abb2);
+            
+        
+
+        marker_15af9da34b6162eb73e190b019d2b398.bindPopup(popup_44cd6b5cd7dcd21e5d0f080403007b04)
+        ;
+
+        
+    
+    
+            var marker_e7fed8ba53a7c7d554b12d30f45a0627 = L.marker(
+                [50.9750592, 20.4448803],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_6ef4638fc843d27d12dd53d2c5b0a4be = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e4\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_e7fed8ba53a7c7d554b12d30f45a0627.setIcon(div_icon_6ef4638fc843d27d12dd53d2c5b0a4be);
+        
+    
+        var popup_654fcdbe54f383987eb4e15711eaa43e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f9600bef695982e0d0cad5dee58b6e77 = $(`<div id="html_f9600bef695982e0d0cad5dee58b6e77" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Siniewska</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Oblęgorskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>448 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2012</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2020-08-16</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-08-16-06-51-gora-siniewska-54827290' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-08-16-06-51-gora-siniewska-54827290</a></td></tr></table></div></div>`)[0];
+                popup_654fcdbe54f383987eb4e15711eaa43e.setContent(html_f9600bef695982e0d0cad5dee58b6e77);
+            
+        
+
+        marker_e7fed8ba53a7c7d554b12d30f45a0627.bindPopup(popup_654fcdbe54f383987eb4e15711eaa43e)
+        ;
+
+        
+    
+    
+            var marker_97649f65f1b68dd73e03b04351e0cd46 = L.marker(
+                [51.0220386, 20.7340847],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_8e609803b7063e5776469899d3993acb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e5\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_97649f65f1b68dd73e03b04351e0cd46.setIcon(div_icon_8e609803b7063e5776469899d3993acb);
+        
+    
+        var popup_efae7b6f2eeb352994a7149b56a8bfce = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9cd91f621e7e16277d7d1100db23bea0 = $(`<div id="html_9cd91f621e7e16277d7d1100db23bea0" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Osieczyńska</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wzgórza Suchedniowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>407 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2001</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2020-06-04</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-04-12-26-gora-osieczynska-50481176' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-04-12-26-gora-osieczynska-50481176</a></td></tr></table></div></div>`)[0];
+                popup_efae7b6f2eeb352994a7149b56a8bfce.setContent(html_9cd91f621e7e16277d7d1100db23bea0);
+            
+        
+
+        marker_97649f65f1b68dd73e03b04351e0cd46.bindPopup(popup_efae7b6f2eeb352994a7149b56a8bfce)
+        ;
+
+        
+    
+    
+            var marker_969c9d152f78b8ed4f15cfd7921b2c33 = L.marker(
+                [50.9981892, 20.8748097],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_7c8271852b143cd37292140fdd1ad2d4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e6\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_969c9d152f78b8ed4f15cfd7921b2c33.setIcon(div_icon_7c8271852b143cd37292140fdd1ad2d4);
+        
+    
+        var popup_94f5138c2aaebaf954fc10e90777b59f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4503b69e5720eb29cc99228e73eebfa2 = $(`<div id="html_4503b69e5720eb29cc99228e73eebfa2" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kamień Michniowski</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Sieradowickie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>435 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2203</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2022-02-06</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-02-06-08-28-kamien-michniowski-94630926' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-02-06-08-28-kamien-michniowski-94630926</a></td></tr></table></div></div>`)[0];
+                popup_94f5138c2aaebaf954fc10e90777b59f.setContent(html_4503b69e5720eb29cc99228e73eebfa2);
+            
+        
+
+        marker_969c9d152f78b8ed4f15cfd7921b2c33.bindPopup(popup_94f5138c2aaebaf954fc10e90777b59f)
+        ;
+
+        
+    
+    
+            var marker_93449a7cfd06a8a61a7b7c15cb429d45 = L.marker(
+                [50.9580194, 20.8331283],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_a80d3ea2dc43575c0b60f3ede39701fd = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e7\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_93449a7cfd06a8a61a7b7c15cb429d45.setIcon(div_icon_a80d3ea2dc43575c0b60f3ede39701fd);
+        
+    
+        var popup_7a09320572f4c2c37501b4665d2c77f1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_340da624c5e51a343d40d3a50393fbe1 = $(`<div id="html_340da624c5e51a343d40d3a50393fbe1" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Bukowa Góra</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Klonowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>484 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2202</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2022-01-07</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-07-09-41-bukowa-gora-92265671' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-01-07-09-41-bukowa-gora-92265671</a></td></tr></table></div></div>`)[0];
+                popup_7a09320572f4c2c37501b4665d2c77f1.setContent(html_340da624c5e51a343d40d3a50393fbe1);
+            
+        
+
+        marker_93449a7cfd06a8a61a7b7c15cb429d45.bindPopup(popup_7a09320572f4c2c37501b4665d2c77f1)
+        ;
+
+        
+    
+    
+            var marker_06f171af4dcd4acd30f674613daf66f7 = L.marker(
+                [50.9485342, 20.6460422],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_1b2104fa98de297f3268726b0284398f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e8\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_06f171af4dcd4acd30f674613daf66f7.setIcon(div_icon_1b2104fa98de297f3268726b0284398f);
+        
+    
+        var popup_e5f2f62a1bc709784be5c01c158ca011 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2b0fc0997795065ef3b0ed32b3f21bf3 = $(`<div id="html_2b0fc0997795065ef3b0ed32b3f21bf3" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Sosnowica</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wzgórza Tumlińskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>403 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2358</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2023-12-29</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-12-29-10-06-sosnowica-156848236' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-12-29-10-06-sosnowica-156848236</a></td></tr></table></div></div>`)[0];
+                popup_e5f2f62a1bc709784be5c01c158ca011.setContent(html_2b0fc0997795065ef3b0ed32b3f21bf3);
+            
+        
+
+        marker_06f171af4dcd4acd30f674613daf66f7.bindPopup(popup_e5f2f62a1bc709784be5c01c158ca011)
+        ;
+
+        
+    
+    
+            var marker_b5cded02b8550a46acd5b8c0f7351a08 = L.marker(
+                [50.9043681, 20.7641406],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_5dd2affdb37468bc8d4b32a35b627b08 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e9\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b5cded02b8550a46acd5b8c0f7351a08.setIcon(div_icon_5dd2affdb37468bc8d4b32a35b627b08);
+        
+    
+        var popup_b2da1afd8e0412684b366287b7be3615 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_58a97dcf12a6a5532014fc7610f97839 = $(`<div id="html_58a97dcf12a6a5532014fc7610f97839" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Klonówka</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Masłowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>461 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2503</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-19</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-01-19-09-10-radostowa-klonowka-198638798' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-01-19-09-10-radostowa-klonowka-198638798</a></td></tr></table></div></div>`)[0];
+                popup_b2da1afd8e0412684b366287b7be3615.setContent(html_58a97dcf12a6a5532014fc7610f97839);
+            
+        
+
+        marker_b5cded02b8550a46acd5b8c0f7351a08.bindPopup(popup_b2da1afd8e0412684b366287b7be3615)
+        ;
+
+        
+    
+    
+            var marker_158593c56a699eac28f04fd1d0ff8844 = L.marker(
+                [50.8982992, 20.8022047],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_bff7d6097255a6fad9cdb0707c4eaccb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e10\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_158593c56a699eac28f04fd1d0ff8844.setIcon(div_icon_bff7d6097255a6fad9cdb0707c4eaccb);
+        
+    
+        var popup_7c44c2f9ea3c5c1377590508912cf1f7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d814c8d04e62a0fbdb795ce0101865e0 = $(`<div id="html_d814c8d04e62a0fbdb795ce0101865e0" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Radostowa</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Grzbiet Krajeński</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>451 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2503</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-01-19</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-01-19-09-10-radostowa-klonowka-198638798' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-01-19-09-10-radostowa-klonowka-198638798</a></td></tr></table></div></div>`)[0];
+                popup_7c44c2f9ea3c5c1377590508912cf1f7.setContent(html_d814c8d04e62a0fbdb795ce0101865e0);
+            
+        
+
+        marker_158593c56a699eac28f04fd1d0ff8844.bindPopup(popup_7c44c2f9ea3c5c1377590508912cf1f7)
+        ;
+
+        
+    
+    
+            var marker_1c4cdf74c984f6e119081b018d8d2e08 = L.marker(
+                [50.89159, 20.89649],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_42cf74399310e132608122b66552b852 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e11\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1c4cdf74c984f6e119081b018d8d2e08.setIcon(div_icon_42cf74399310e132608122b66552b852);
+        
+    
+        var popup_45eec5cd6230a397edebf14d957d487d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2fbdc00e971e30cdce31e37a6c51137d = $(`<div id="html_2fbdc00e971e30cdce31e37a6c51137d" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Łysica</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Łysogórskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>612 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>1647</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2016-12-31</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2016-12-31-11-51-lysica-17800773' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2016-12-31-11-51-lysica-17800773</a></td></tr></table></div></div>`)[0];
+                popup_45eec5cd6230a397edebf14d957d487d.setContent(html_2fbdc00e971e30cdce31e37a6c51137d);
+            
+        
+
+        marker_1c4cdf74c984f6e119081b018d8d2e08.bindPopup(popup_45eec5cd6230a397edebf14d957d487d)
+        ;
+
+        
+    
+    
+            var marker_61660c706fc57987b38854ede073f67b = L.marker(
+                [50.8335247, 20.3209231],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_bb6bdf868e22487313bf1db0e6b6b13a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e12\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_61660c706fc57987b38854ede073f67b.setIcon(div_icon_bb6bdf868e22487313bf1db0e6b6b13a);
+        
+    
+        var popup_13749e964412a6fa2291430f4b801653 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9b80d87524435b4356bda47db3b662ef = $(`<div id="html_9b80d87524435b4356bda47db3b662ef" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Milechowska</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Grząby Bolmińskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>335 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2315</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2023-05-01</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-10-35-milechowska-133462108' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-10-35-milechowska-133462108</a></td></tr></table></div></div>`)[0];
+                popup_13749e964412a6fa2291430f4b801653.setContent(html_9b80d87524435b4356bda47db3b662ef);
+            
+        
+
+        marker_61660c706fc57987b38854ede073f67b.bindPopup(popup_13749e964412a6fa2291430f4b801653)
+        ;
+
+        
+    
+    
+            var marker_9529eacb437b573f1a39a8d8643fae84 = L.marker(
+                [50.8470914, 20.3593253],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_de0ad800dc1f1ba14c39fe7b78669886 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e13\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9529eacb437b573f1a39a8d8643fae84.setIcon(div_icon_de0ad800dc1f1ba14c39fe7b78669886);
+        
+    
+        var popup_c8520e3d1db824b15d0c0a4d5110e4a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fe99b2ca3349fd03baa2cdf5c26a8766 = $(`<div id="html_fe99b2ca3349fd03baa2cdf5c26a8766" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Miedzianka</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Wzgórza Miedziankowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>356 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2314</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2023-05-01</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-09-02-miedzianka-133462073' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-05-01-09-02-miedzianka-133462073</a></td></tr></table></div></div>`)[0];
+                popup_c8520e3d1db824b15d0c0a4d5110e4a1.setContent(html_fe99b2ca3349fd03baa2cdf5c26a8766);
+            
+        
+
+        marker_9529eacb437b573f1a39a8d8643fae84.bindPopup(popup_c8520e3d1db824b15d0c0a4d5110e4a1)
+        ;
+
+        
+    
+    
+            var marker_d4a19d1e9f64a5bacbb02b84db90dc02 = L.marker(
+                [50.8197192, 20.4550064],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_0cfab01050d8337e6fef5ffd6cc4b016 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e14\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_d4a19d1e9f64a5bacbb02b84db90dc02.setIcon(div_icon_0cfab01050d8337e6fef5ffd6cc4b016);
+        
+    
+        var popup_947f2017cb651afda2bb9ed851db2783 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7a803452705f9e854293d92c53ec3e28 = $(`<div id="html_7a803452705f9e854293d92c53ec3e28" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Zelejowa</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Zelejowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>361 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2424</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-05-26</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-11-45-zelejowa-172140177' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-11-45-zelejowa-172140177</a></td></tr></table></div></div>`)[0];
+                popup_947f2017cb651afda2bb9ed851db2783.setContent(html_7a803452705f9e854293d92c53ec3e28);
+            
+        
+
+        marker_d4a19d1e9f64a5bacbb02b84db90dc02.bindPopup(popup_947f2017cb651afda2bb9ed851db2783)
+        ;
+
+        
+    
+    
+            var marker_360d04dba143aae325431d77b606e106 = L.marker(
+                [50.7971244, 20.4613553],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_05590de853762008d6986133ce046351 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e15\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_360d04dba143aae325431d77b606e106.setIcon(div_icon_05590de853762008d6986133ce046351);
+        
+    
+        var popup_4fbab676baad817b356c00b169e401a1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1eade8cebecacb0495f7fce5aa1d86cb = $(`<div id="html_1eade8cebecacb0495f7fce5aa1d86cb" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Zamkowa</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Chęcińskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>360 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_4fbab676baad817b356c00b169e401a1.setContent(html_1eade8cebecacb0495f7fce5aa1d86cb);
+            
+        
+
+        marker_360d04dba143aae325431d77b606e106.bindPopup(popup_4fbab676baad817b356c00b169e401a1)
+        ;
+
+        
+    
+    
+            var marker_2c7e0c70347f6ff00848c18d566114f9 = L.marker(
+                [50.7922972, 20.4215419],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_14c7021d4b7e953411f6396bdd020b87 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e16\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_2c7e0c70347f6ff00848c18d566114f9.setIcon(div_icon_14c7021d4b7e953411f6396bdd020b87);
+        
+    
+        var popup_969a46e2c316489ff3f49924ba630814 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_000e342fdd3a51ebc92140509efcc83f = $(`<div id="html_000e342fdd3a51ebc92140509efcc83f" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Glinianki</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Grzywy Korzeczkowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>336 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2312</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2023-04-20</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-04-20-10-36-glinianki-zelejowa-132235101' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-04-20-10-36-glinianki-zelejowa-132235101</a></td></tr></table></div></div>`)[0];
+                popup_969a46e2c316489ff3f49924ba630814.setContent(html_000e342fdd3a51ebc92140509efcc83f);
+            
+        
+
+        marker_2c7e0c70347f6ff00848c18d566114f9.bindPopup(popup_969a46e2c316489ff3f49924ba630814)
+        ;
+
+        
+    
+    
+            var marker_6c797fdf510680be906ee6ad619bbbf1 = L.marker(
+                [50.8387433, 20.51905],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_f5e54c840b0942124fc224676658ca85 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e17\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6c797fdf510680be906ee6ad619bbbf1.setIcon(div_icon_f5e54c840b0942124fc224676658ca85);
+        
+    
+        var popup_1e7da8c3a8e56301c218a0ab79beeb95 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_391671468ed2c1db95973601fbdbd0bb = $(`<div id="html_391671468ed2c1db95973601fbdbd0bb" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Patrol</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Zgórskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>338 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2425</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-05-26</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-15-02-patrol-172143362' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-05-26-15-02-patrol-172143362</a></td></tr></table></div></div>`)[0];
+                popup_1e7da8c3a8e56301c218a0ab79beeb95.setContent(html_391671468ed2c1db95973601fbdbd0bb);
+            
+        
+
+        marker_6c797fdf510680be906ee6ad619bbbf1.bindPopup(popup_1e7da8c3a8e56301c218a0ab79beeb95)
+        ;
+
+        
+    
+    
+            var marker_6d97f5a00f55de44d463511c7244c8c1 = L.marker(
+                [50.8679586, 20.58785],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_d795bbf55a770015b1797a5cca73ca6b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e18\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_6d97f5a00f55de44d463511c7244c8c1.setIcon(div_icon_d795bbf55a770015b1797a5cca73ca6b);
+        
+    
+        var popup_e28d234a6e32ad04389a2cb255eb1122 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_79e10ace27ff39ed22ed8f5584f2a779 = $(`<div id="html_79e10ace27ff39ed22ed8f5584f2a779" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Karczówka</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Kadzielniańskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>319 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'></td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'></td></tr>         </table></div></div>`)[0];
+                popup_e28d234a6e32ad04389a2cb255eb1122.setContent(html_79e10ace27ff39ed22ed8f5584f2a779);
+            
+        
+
+        marker_6d97f5a00f55de44d463511c7244c8c1.bindPopup(popup_e28d234a6e32ad04389a2cb255eb1122)
+        ;
+
+        
+    
+    
+            var marker_77c321b60806365a85774ecb5f567ed9 = L.marker(
+                [50.8338336, 20.5706553],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_58016b85d72fa04684005c1ab338fb60 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e19\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_77c321b60806365a85774ecb5f567ed9.setIcon(div_icon_58016b85d72fa04684005c1ab338fb60);
+        
+    
+        var popup_69a9a32b24bd4d08f8e51d0da9f309b1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_0198a84e1aaf4df744274d778854c645 = $(`<div id="html_0198a84e1aaf4df744274d778854c645" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Biesak</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Posłowickie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>381 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2419</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-04-28</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778</a></td></tr></table></div></div>`)[0];
+                popup_69a9a32b24bd4d08f8e51d0da9f309b1.setContent(html_0198a84e1aaf4df744274d778854c645);
+            
+        
+
+        marker_77c321b60806365a85774ecb5f567ed9.bindPopup(popup_69a9a32b24bd4d08f8e51d0da9f309b1)
+        ;
+
+        
+    
+    
+            var marker_ccaf59c8dffa9998f0f89eb3808c6c5e = L.marker(
+                [50.8378992, 20.6439975],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_9b5c9645d426eb1c74d0975268d91aeb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e20\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ccaf59c8dffa9998f0f89eb3808c6c5e.setIcon(div_icon_9b5c9645d426eb1c74d0975268d91aeb);
+        
+    
+        var popup_d3b72cc934a709e6e2bb2bcf16217938 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ae6d8c5eb02edc5cd32ef7f5e01e65ba = $(`<div id="html_ae6d8c5eb02edc5cd32ef7f5e01e65ba" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Telegraf</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Dymińskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>408 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2419</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2024-04-28</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2024-04-28-10-32-telegraf-biesak-168944778</a></td></tr></table></div></div>`)[0];
+                popup_d3b72cc934a709e6e2bb2bcf16217938.setContent(html_ae6d8c5eb02edc5cd32ef7f5e01e65ba);
+            
+        
+
+        marker_ccaf59c8dffa9998f0f89eb3808c6c5e.bindPopup(popup_d3b72cc934a709e6e2bb2bcf16217938)
+        ;
+
+        
+    
+    
+            var marker_c2422fa384c96b8849552ca300d26519 = L.marker(
+                [50.8416669, 20.7322183],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_a591ffd8c6425bb5befca61e375c816c = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e21\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_c2422fa384c96b8849552ca300d26519.setIcon(div_icon_a591ffd8c6425bb5befca61e375c816c);
+        
+    
+        var popup_5f07cbe6e80d507f6f1340c1d12d147f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_50f0e35f92f93e94bb78416a0672702e = $(`<div id="html_50f0e35f92f93e94bb78416a0672702e" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Otrocz</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Daleszyckie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>375 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2506</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-02-09</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-02-09-09-45-otrocz-sikorza-200998758' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-02-09-09-45-otrocz-sikorza-200998758</a></td></tr></table></div></div>`)[0];
+                popup_5f07cbe6e80d507f6f1340c1d12d147f.setContent(html_50f0e35f92f93e94bb78416a0672702e);
+            
+        
+
+        marker_c2422fa384c96b8849552ca300d26519.bindPopup(popup_5f07cbe6e80d507f6f1340c1d12d147f)
+        ;
+
+        
+    
+    
+            var marker_24f1913cb12d799390656d0c581c573a = L.marker(
+                [50.8324614, 20.7656481],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_92a0bb58e8cbcc83e640e2e54dbe03a0 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e22\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_24f1913cb12d799390656d0c581c573a.setIcon(div_icon_92a0bb58e8cbcc83e640e2e54dbe03a0);
+        
+    
+        var popup_b6fdfb0717e37e2cae90050b299a308c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4a981d1f42c2aa398b80b637156fd222 = $(`<div id="html_4a981d1f42c2aa398b80b637156fd222" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Sikorza</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Brzechowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>361 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2506</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2025-02-09</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-02-09-09-45-otrocz-sikorza-200998758' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2025-02-09-09-45-otrocz-sikorza-200998758</a></td></tr></table></div></div>`)[0];
+                popup_b6fdfb0717e37e2cae90050b299a308c.setContent(html_4a981d1f42c2aa398b80b637156fd222);
+            
+        
+
+        marker_24f1913cb12d799390656d0c581c573a.bindPopup(popup_b6fdfb0717e37e2cae90050b299a308c)
+        ;
+
+        
+    
+    
+            var marker_f5a043a1e7d5bc8c8fb41809b7a34f0c = L.marker(
+                [50.7718156, 20.9092914],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_43a32451338dc0d1d7db00b40ebcaedc = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e23\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_f5a043a1e7d5bc8c8fb41809b7a34f0c.setIcon(div_icon_43a32451338dc0d1d7db00b40ebcaedc);
+        
+    
+        var popup_8270b7b7d1b591a5f4bc0908cab8d7cd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_edc825e98e26224c60c367cc3126efbf = $(`<div id="html_edc825e98e26224c60c367cc3126efbf" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Włochy</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Cisowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>427 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2204</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2022-03-23</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-03-23-09-20-wlochy-98169252' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2022-03-23-09-20-wlochy-98169252</a></td></tr></table></div></div>`)[0];
+                popup_8270b7b7d1b591a5f4bc0908cab8d7cd.setContent(html_edc825e98e26224c60c367cc3126efbf);
+            
+        
+
+        marker_f5a043a1e7d5bc8c8fb41809b7a34f0c.bindPopup(popup_8270b7b7d1b591a5f4bc0908cab8d7cd)
+        ;
+
+        
+    
+    
+            var marker_9994eda08e1a76ea698dc9dc816c50d1 = L.marker(
+                [50.7347661, 20.9611928],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_3e1d4771dda3a506ebb1c82fa9d24cd1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e24\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_9994eda08e1a76ea698dc9dc816c50d1.setIcon(div_icon_3e1d4771dda3a506ebb1c82fa9d24cd1);
+        
+    
+        var popup_22ad2a1175db7b4d3508783292635eea = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_adae4d9ce61b2a9294383a0633ef4e60 = $(`<div id="html_adae4d9ce61b2a9294383a0633ef4e60" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Jaźwina</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Ociesęckie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>361 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2320</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2023-06-07</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-11-39-jazwina-137060561' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-11-39-jazwina-137060561</a></td></tr></table></div></div>`)[0];
+                popup_22ad2a1175db7b4d3508783292635eea.setContent(html_adae4d9ce61b2a9294383a0633ef4e60);
+            
+        
+
+        marker_9994eda08e1a76ea698dc9dc816c50d1.bindPopup(popup_22ad2a1175db7b4d3508783292635eea)
+        ;
+
+        
+    
+    
+            var marker_4fbd3c3e7ff135808839ff53e190b34a = L.marker(
+                [50.7689375, 20.9905783],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_989f83ae791bd6519be99d32681e6481 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e25\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4fbd3c3e7ff135808839ff53e190b34a.setIcon(div_icon_989f83ae791bd6519be99d32681e6481);
+        
+    
+        var popup_6a0721072bd14dd257f837633d67bae9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e686aaabae5e09f8bda1977bf02f3693 = $(`<div id="html_e686aaabae5e09f8bda1977bf02f3693" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Kiełki</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Orłowińskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>452 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2102</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2021-03-31</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-03-31-09-29-kielki-69285152' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-03-31-09-29-kielki-69285152</a></td></tr></table></div></div>`)[0];
+                popup_6a0721072bd14dd257f837633d67bae9.setContent(html_e686aaabae5e09f8bda1977bf02f3693);
+            
+        
+
+        marker_4fbd3c3e7ff135808839ff53e190b34a.bindPopup(popup_6a0721072bd14dd257f837633d67bae9)
+        ;
+
+        
+    
+    
+            var marker_8c8dd319c65e54869cd3c1670c1726cf = L.marker(
+                [50.82235, 21.00758],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_254da922e432ae70b539ae636ee59b7b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e26\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8c8dd319c65e54869cd3c1670c1726cf.setIcon(div_icon_254da922e432ae70b539ae636ee59b7b);
+        
+    
+        var popup_5006cc76dae598b24f1699cdb2332e05 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1f86a9742ba846003fab4b14744c87ba = $(`<div id="html_1f86a9742ba846003fab4b14744c87ba" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Drogosiowa</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Bielinśkie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>447 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2004</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2020-07-05</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-07-05-08-57-lysa-gora-52247770' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-07-05-08-57-lysa-gora-52247770</a></td></tr></table></div></div>`)[0];
+                popup_5006cc76dae598b24f1699cdb2332e05.setContent(html_1f86a9742ba846003fab4b14744c87ba);
+            
+        
+
+        marker_8c8dd319c65e54869cd3c1670c1726cf.bindPopup(popup_5006cc76dae598b24f1699cdb2332e05)
+        ;
+
+        
+    
+    
+            var marker_f0a1a46c738a357413da0bf6592b4a3c = L.marker(
+                [50.8848431, 21.1080642],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_cb6c2efca1f9f2d0017aedc587f11dc5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e27\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_f0a1a46c738a357413da0bf6592b4a3c.setIcon(div_icon_cb6c2efca1f9f2d0017aedc587f11dc5);
+        
+    
+        var popup_815b61fee798375e43a98c1cf88d759f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b0cad4b17586b9f2f4cf971fb7a3d1e9 = $(`<div id="html_b0cad4b17586b9f2f4cf971fb7a3d1e9" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Góra Chełmowa</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Pokrzywiańskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>351 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2321</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2023-06-07</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-14-31-chelmowa-137060928' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-06-07-14-31-chelmowa-137060928</a></td></tr></table></div></div>`)[0];
+                popup_815b61fee798375e43a98c1cf88d759f.setContent(html_b0cad4b17586b9f2f4cf971fb7a3d1e9);
+            
+        
+
+        marker_f0a1a46c738a357413da0bf6592b4a3c.bindPopup(popup_815b61fee798375e43a98c1cf88d759f)
+        ;
+
+        
+    
+    
+            var marker_f1938d97f2835c50eee535e190bd06d7 = L.marker(
+                [50.8262592, 21.1607261],
+                {}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var div_icon_086a86b65d1e5af7f3f15026a782c9ec = L.divIcon({"className": "empty", "html": "\u003cdiv style=\u0027font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\u0027\u003e28\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_f1938d97f2835c50eee535e190bd06d7.setIcon(div_icon_086a86b65d1e5af7f3f15026a782c9ec);
+        
+    
+        var popup_4401e38451fee9b1ac4c9ebfded21e3f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_52222029e747e9ac803786de9d689fbe = $(`<div id="html_52222029e747e9ac803786de9d689fbe" style="width: 100.0%; height: 100.0%;">         <div style='font-family: Oswald, sans-serif; font-size: 12px; color: black;'>         <table style='width: auto; border-collapse: collapse;'>         <tr><td style='padding: 4px; font-weight: bold;'>Peak:</td><td style='padding: 4px;'>Szczytniak</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Region:</td><td style='padding: 4px;'>Góry Świętokrzyskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>SubRegion:</td><td style='padding: 4px;'>Pasmo Jeleniowskie</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Height:</td><td style='padding: 4px;'>554 m</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Expedition:</td><td style='padding: 4px;'>2003</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Date:</td><td style='padding: 4px;'>2020-06-14</td></tr>         <tr><td style='padding: 4px; font-weight: bold;'>Trail GPX:</td><td style='padding: 4px;'><a href='https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-14-09-58-szczytniak-51044470' target='_blank'>https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2020-06-14-09-58-szczytniak-51044470</a></td></tr></table></div></div>`)[0];
+                popup_4401e38451fee9b1ac4c9ebfded21e3f.setContent(html_52222029e747e9ac803786de9d689fbe);
+            
+        
+
+        marker_f1938d97f2835c50eee535e190bd06d7.bindPopup(popup_4401e38451fee9b1ac4c9ebfded21e3f)
+        ;
+
+        
+    
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_ea3ee4b1acebea17435fe8d50baa4b2a);
+        
+    
+            var tile_layer_53fb708c15dac13e3cefdcc7e3fc61c2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_04c5cd8db4bd8a91443bd8ef937f7fc0 = new L.Control.MiniMap(
+                tile_layer_53fb708c15dac13e3cefdcc7e3fc61c2,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_ea3ee4b1acebea17435fe8d50baa4b2a.addControl(mini_map_04c5cd8db4bd8a91443bd8ef937f7fc0);
+        
+</script>
+</html>
