@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             container.innerHTML = '';
 
             const table = document.createElement('table');
+            table.className = 'monotable';
             const thead = document.createElement('thead');
             const headerRow = document.createElement('tr');
             headerRow.appendChild(document.createElement('th')); // lewa kolumna: rok
@@ -116,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             table.appendChild(tbody);
-            table.style.fontFamily = "'Oswald', sans-serif";
             container.appendChild(table);
         })
         .catch((err) => {
