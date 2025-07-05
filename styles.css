@@ -112,6 +112,31 @@ header {
     margin: 0;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #1a1a1a;
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 0 20px;
+}
+
+.footer-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.footer-right {
+    position: absolute;
+    right: 20px;
+    text-align: right;
+}
+
 @media (max-width: 600px) {
     .header-wrapper {
         flex-wrap: nowrap;
