@@ -51,7 +51,7 @@ header {
 
 .dropbtn {
     background-color: transparent;
-    color: white;
+    color: #cccccc;
     font-weight: bold;
     border: none;
     font-size: 24px;
@@ -64,7 +64,7 @@ header {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #f9f9f9;
+    background-color: #cccccc;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     min-width: 240px;
     z-index: 10;

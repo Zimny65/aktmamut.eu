@@ -66,29 +66,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 yearCell.textContent = year;
                 tr.appendChild(yearCell);
 
+                // paleta maroon
+                // const gotColorPalette = [
+                //     { max: 100, background: '#ffffff', color: 'black' },
+                //     { max: 200, background: '#f5cccc', color: 'black' },
+                //     { max: 400, background: '#ea9999', color: 'black' },
+                //     { max: 600, background: '#e06666', color: 'white' },
+                //     { max: 800, background: '#cc0000', color: 'white' },
+                //     { max: 1000, background: '#990000', color: 'white' },
+                //     { max: Infinity, background: '#800000', color: 'white' },
+                // ];
+
+                // paleta blue
+                // const gotColorPalette = [
+                //     { max: 100, background: '#ffffff', color: 'black' },
+                //     { max: 200, background: '#c9daf8', color: 'black' },
+                //     { max: 400, background: '#a4c2f4', color: 'black' },
+                //     { max: 600, background: '#6d9eeb', color: 'white' },
+                //     { max: 800, background: '#3c78d8', color: 'white' },
+                //     { max: 1000, background: '#1155cc', color: 'white' },
+                //     { max: Infinity, background: '#1c4587', color: 'white' },
+                // ];
+
+                // paleta green
+                const gotColorPalette = [
+                    { max: 100, background: '#ffffff', color: 'black' },
+                    { max: 200, background: '#d9ead3', color: 'black' },
+                    { max: 400, background: '#b6d7a8', color: 'black' },
+                    { max: 600, background: '#93c47d', color: 'black' },
+                    { max: 800, background: '#6aa84f', color: 'white' },
+                    { max: 1000, background: '#38761d', color: 'white' },
+                    { max: Infinity, background: '#274e13', color: 'white' },
+                ];
+
                 cumulativeGOT[year].forEach((val) => {
                     const td = document.createElement('td');
                     td.textContent = val != null ? val.toFixed(2) : '';
                     if (val != null) {
                         const got = val;
-                        if (got <= 100) {
-                            td.style.backgroundColor = '#ffffff';
-                        } else if (got <= 200) {
-                            td.style.backgroundColor = '#f5cccc';
-                        } else if (got <= 400) {
-                            td.style.backgroundColor = '#ea9999';
-                        } else if (got <= 600) {
-                            td.style.backgroundColor = '#e06666';
-                        } else if (got <= 800) {
-                            td.style.backgroundColor = '#cc0000';
-                            td.style.color = 'white'; // dla kontrastu
-                        } else if (got <= 1000) {
-                            td.style.backgroundColor = '#990000';
-                            td.style.color = 'white'; // dla kontrastu
-                        } else {
-                            td.style.backgroundColor = '#800000';
-                            td.style.color = 'white'; // dla kontrastu
-                        }
+                        const palette = gotColorPalette.find((p) => got <= p.max);
+                        td.style.backgroundColor = palette.background;
+                        td.style.color = palette.color;
                     }
 
                     tr.appendChild(td);
