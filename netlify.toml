@@ -4,3 +4,10 @@
   to = "/maps/kampinos.html"
   status = 200
   force = true
+
+# Kompresja GeoJSON
+[[headers]]
+  for = "/pages/expeditions/expeditions.geojson"
+  [headers.values]
+    Content-Encoding = "gzip"
+    Content-Type = "application/json"
