@@ -259,6 +259,15 @@ var maptilerHybridLayer = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/
     crossOrigin: true,
 });
 
+// 🥾 Warstwa 6: Tracestrack Topo (bez MapTiler)
+var tracestrackTopoLayer = L.tileLayer('https://tile.tracestrack.com/topo__/{z}/{x}/{y}.webp?key=98a25989268be3eb15a4369c05eda018', {
+    minZoom: 0,
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://tracestrack.com">Tracestrack</a> & OpenStreetMap contributors',
+    tileSize: 256,
+    crossOrigin: true,
+});
+
 // ✅ Domyślnie dodajemy OpenStreetMap
 osmLayer.addTo(map_f15ff5f41b2dbbf273d8c3052233061a);
 
@@ -270,6 +279,7 @@ var layer_control_62bf6a9bcc869e79e51c96d84cfc230a_layers = {
         '🌄 MapTiler Outdoor': maptilerLayer,
         '🏔️ MapTiler Topo': maptilerTopoLayer,
         '🛰️ MapTiler Hybrid': maptilerHybridLayer,
+        '🥾 Tracestrack Topo': tracestrackTopoLayer,
     },
     overlays: {},
 };
