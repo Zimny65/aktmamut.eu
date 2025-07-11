@@ -220,6 +220,15 @@ var osmLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     opacity: 1,
 });
 
+// 🗺️ Warstwa: OSM.de (FOSSGIS)
+var osmDeLayer = L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
+    minZoom: 0,
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> contributors, tiles by <a href="https://openstreetmap.de/">openstreetmap.de</a>',
+    tileSize: 256,
+    crossOrigin: true,
+});
+
 // 🗺️ Warstwa 2: OpenTopoMap (mapa turystyczna)
 var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     minZoom: 0,
@@ -275,6 +284,7 @@ osmLayer.addTo(map_f15ff5f41b2dbbf273d8c3052233061a);
 var layer_control_62bf6a9bcc869e79e51c96d84cfc230a_layers = {
     base_layers: {
         '🗺️ OpenStreetMap': osmLayer,
+        '🗺️ OSM DE': osmDeLayer,
         '🧭 OpenTopoMap': topoLayer,
         '🌄 MapTiler Outdoor': maptilerLayer,
         '🏔️ MapTiler Topo': maptilerTopoLayer,
