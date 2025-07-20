@@ -8,36 +8,38 @@ window.addEventListener('DOMContentLoaded', function () {
     const map = window[mapId];
     if (!map) return;
 
-    console.time('📥 fetch + przetwarzanie geojson');
-
+    // 📥 Pobranie danych tras w formacie GeoJSON
     fetch('expeditions.geojson')
         .then((res) => res.json())
         .then((data) => {
-            console.timeEnd('📥 fetch + przetwarzanie geojson');
-            console.time('🔁 iteracja po trasach');
+            const groupLayers = []; // wszystkie trasy i markery
+            const routeLayers = []; // tylko trasy i ich elementy
+            const allParticipantsSet = new Set(); // <-- zbieramy unikalnych uczestników
 
-            const groupLayers = [];
-            const routeLayers = [];
-            const allParticipantsSet = new Set();
-
-            data.features.forEach((feature, i) => {
+            // 🔁 Przejdź przez wszystkie trasy w pliku
+            data.features.forEach((feature) => {
+                // ➤ Obsługujemy tylko linie (trasy)
                 if (feature.geometry.type !== 'LineString') return;
 
-                const props = feature.properties;
-                // console.time(`🧪 trasa ${props.nr || i}`);
-
                 const coords = feature.geometry.coordinates;
+                const props = feature.properties;
                 if (props.participants) {
                     props.participants.split(',').forEach((p) => allParticipantsSet.add(p.trim()));
                 }
 
-                const trailColor = props.color || '#800000';
+                // 🔧 Wydobycie atrybutów
+                // const trailColor = props.color || '#654321'; // chocolate
+                // const trailColor = props.color || '#FF00FF'; // magenta
+                // const trailColor = props.color || '#0000FF'; // blue
+                // const trailColor = props.color || '#FF0000'; // red
+                const trailColor = props.color || '#800000'; // maroon
                 const trailNr = props.nr || '';
+                // const trailCounter = props.trail_counter || '';
                 const trailName = props.name || '';
                 const lat = parseFloat(props.lat);
                 const lon = parseFloat(props.lon);
 
-                // console.time(`🔷 geojson + tooltip ${trailNr}`);
+                // ➤ Utwórz warstwę z liniami (trasami)
                 const line = L.geoJSON(feature, {
                     style: {
                         color: trailColor,
@@ -46,8 +48,15 @@ window.addEventListener('DOMContentLoaded', function () {
                     },
                 });
 
-                line.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
+                // 🏷️ Wyświetlenie nazwy trasy po najechaniu kursorem
+                line.bindTooltip(
+                    `<div style='font-family: Oswald, sans-serif; font-size: 12px;'>
+                        ${trailNr} ${trailName}
+                    </div>`,
+                    { sticky: true }
+                );
 
+                // ✨ Efekt podświetlenia trasy przy najechaniu
                 line.on({
                     mouseover: () => {
                         line.setStyle({ weight: 6, color: '#000000' });
@@ -57,24 +66,23 @@ window.addEventListener('DOMContentLoaded', function () {
                         line.setStyle({ weight: 3, color: trailColor });
                     },
                 });
-                // console.timeEnd(`🔷 geojson + tooltip ${trailNr}`);
 
-                // console.time(`🟢 marker ${trailNr}`);
+                // 🟢 Utworzenie markera z numerem trasy
                 const iconHtml = `
-            <div style="
-                font-size: 10px;
-                font-family: Oswald, sans-serif;
-                color: white;
-                background-color: ${trailColor};
-                border-radius: 50%;
-                border: 1px solid white;
-                width: 24px;
-                height: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;">
-                ${trailNr}
-            </div>`;
+                <div style="
+                    font-size: 10px;
+                    font-family: Oswald, sans-serif;
+                    color: white;
+                    background-color: ${trailColor};
+                    border-radius: 50%;
+                    border: 1px solid white;
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;">
+                    ${trailNr}
+                </div>`;
 
                 const marker = L.marker([lat, lon], {
                     icon: L.divIcon({
@@ -85,8 +93,15 @@ window.addEventListener('DOMContentLoaded', function () {
                     }),
                 });
 
-                marker.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
+                // 🏷️ Tooltip dla markera
+                marker.bindTooltip(
+                    `<div style='font-family: Oswald, sans-serif; font-size: 12px;'>
+                        ${trailNr} ${trailName}
+                    </div>`,
+                    { sticky: true }
+                );
 
+                // 🔁 Podświetlenie linii po najechaniu na marker
                 marker.on('mouseover', function () {
                     line.setStyle({ weight: 6, color: '#000000' });
                     line.bringToFront();
@@ -94,27 +109,28 @@ window.addEventListener('DOMContentLoaded', function () {
                 marker.on('mouseout', function () {
                     line.setStyle({ weight: 3, color: trailColor });
                 });
-                // console.timeEnd(`🟢 marker ${trailNr}`);
 
+                // 📋 Szczegółowy popup z informacjami o trasie
                 const popupHtml = `
-            <div style="font-family: 'Oswald', sans-serif; font-size: 12px;">
-                <table style="border-collapse: collapse;">
-                    <tr><th style="text-align: left;">Trail nr:</th><td>${props.nr || ''}</td></tr>
-                    <tr><th style="text-align: left;">Date:</th><td>${props.date || ''}</td></tr>
-                    <tr><th style="text-align: left;">Trail name:</th><td>${trailName}</td></tr>
-                    <tr><th style="text-align: left;">Mountains:</th><td>${props.mountains || ''}</td></tr>
-                    <tr><th style="text-align: left;">Country:</th><td>${props.country || ''}</td></tr>
-                    <tr><th style="text-align: left;">Distance:</th><td>${props.distance_km || ''} km</td></tr>
-                    <tr><th style="text-align: left;">Up:</th><td>${props.ascent_m || ''} m</td></tr>
-                    <tr><th style="text-align: left;">Time:</th><td>${props.duration_h || ''} h</td></tr>
-                    <tr><th style="text-align: left;">GOT:</th><td>${props.got || ''}</td></tr>
-                    <tr><th style="text-align: left;">Participants:</th><td>${props.participants || ''}</td></tr>
-                    <tr><th style="text-align: left;">GPX:</th><td><a href="${props.gpx_url || '#'}" target="_blank">Wikiloc Link</a></td></tr>
-                </table>
-            </div>
-            `;
+                <div style="font-family: 'Oswald', sans-serif; font-size: 12px;">
+                    <table style="border-collapse: collapse;">
+                        <tr><th style="text-align: left;">Trail nr:</th><td>${props.nr || ''}</td></tr>
+                        <tr><th style="text-align: left;">Date:</th><td>${props.date || ''}</td></tr>
+                        <tr><th style="text-align: left;">Trail name:</th><td>${trailName}</td></tr>
+                        <tr><th style="text-align: left;">Mountains:</th><td>${props.mountains || ''}</td></tr>
+                        <tr><th style="text-align: left;">Country:</th><td>${props.country || ''}</td></tr>
+                        <tr><th style="text-align: left;">Distance:</th><td>${props.distance_km || ''} km</td></tr>
+                        <tr><th style="text-align: left;">Up:</th><td>${props.ascent_m || ''} m</td></tr>
+                        <tr><th style="text-align: left;">Time:</th><td>${props.duration_h || ''} h</td></tr>
+                        <tr><th style="text-align: left;">GOT:</th><td>${props.got || ''}</td></tr>
+                        <tr><th style="text-align: left;">Participants:</th><td>${props.participants || ''}</td></tr>
+                        <tr><th style="text-align: left;">GPX:</th><td><a href="${props.gpx_url || '#'}" target="_blank">Wikiloc Link</a></td></tr>
+                    </table>
+                </div>
+                `;
                 marker.bindPopup(popupHtml);
 
+                // 🔴 Początek i koniec trasy jako małe kółka
                 const startCircle = L.circleMarker([coords[0][1], coords[0][0]], {
                     radius: 3,
                     color: trailColor,
@@ -130,19 +146,19 @@ window.addEventListener('DOMContentLoaded', function () {
                     fillOpacity: 1,
                 });
 
+                // 🧩 Zgrupowanie wszystkich elementów jednej trasy
                 const group = L.layerGroup([line, marker, startCircle, endCircle]);
                 routeLayers.push({ layer: group, participants: props.participants || '' });
                 groupLayers.push({ layer: marker, participants: props.participants || '' });
-
-                // console.timeEnd(`🧪 trasa ${props.nr || i}`);
             });
 
-            console.timeEnd('🔁 iteracja po trasach');
+            // 🧩 Konwersja Set → lista posortowana
+            //const participantList = Array.from(allParticipantsSet).sort();
 
-            console.time('🔽 tworzenie listy uczestników');
+            // 📥 Wypełnij dropdown uczestników
             const select = document.getElementById('participant-filter');
-            const participantCounts = {};
 
+            const participantCounts = {};
             data.features.forEach((feature) => {
                 const props = feature.properties;
                 if (props.participants) {
@@ -160,11 +176,11 @@ window.addEventListener('DOMContentLoaded', function () {
                 option.textContent = `${p} (${participantCounts[p]})`;
                 select.appendChild(option);
             });
-            console.timeEnd('🔽 tworzenie listy uczestników');
 
-            console.time('🌍 applyParticipantFilter');
+            // 🌍 Dodaj markery i trasy od razu bez zoomowania
             function applyParticipantFilter(selected) {
                 map.eachLayer((layer) => {
+                    // Usuń wszystkie nasze warstwy
                     if (layer instanceof L.LayerGroup || layer instanceof L.Marker || layer instanceof L.GeoJSON) {
                         map.removeLayer(layer);
                     }
@@ -177,15 +193,17 @@ window.addEventListener('DOMContentLoaded', function () {
                 L.layerGroup(visibleRoutes).addTo(map);
             }
 
-            applyParticipantFilter('ALL');
-            console.timeEnd('🌍 applyParticipantFilter');
+            applyParticipantFilter('ALL'); // 👈 pokaż wszystkie na start
 
+            // 🕒 Wyświetlenie daty ostatniej trasy jako wersji
             const features = data.features;
             if (features.length > 0) {
                 const last = features[features.length - 1];
                 const date = last.properties.date;
                 const versionInfo = document.getElementById('version-info');
-                if (versionInfo) versionInfo.textContent = `${date}`;
+                if (versionInfo) {
+                    versionInfo.textContent = `${date}`;
+                }
             }
 
             document.getElementById('participant-filter').addEventListener('change', function () {
