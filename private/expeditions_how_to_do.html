@@ -90,7 +90,7 @@
         </div>
 
         <div class="step">
-            <h2>Krok 5: VSCode GeoJSON-Operations.ipynb</h2>
+            <h2>Krok 5: VSCode: GeoJSON-Operations.ipynb</h2>
             <ul>
                 <li>Otwórz katalog: <code>OneDrive/AKT-MAMUT/python</code></li>
                 <li>Otwórz plik: <code>GeoJSON-Operations.ipynb</code></li>
@@ -99,31 +99,35 @@
                 <li>Komórka 3 → Konwersja GPX na GeoJSON z metadanymi z AKT Mamut Expeditions</li>
                 <li>Komórka 4 → Scalanie plików GeoJSON w jeden plus upraszczanie geometrii</li>
                 <li>Komórka 5 → Kopiowanie pliku expeditions.geojson do folderu publikacji</li>
-                <li>Plik skopiowany do: <code>OneDrive\AKT-MAMUT\github\aktmamut.eu\pages\expeditions\expeditions.geojson</code></li>
+                <li>Plik skopiowany do: <code>OneDrive/AKT-MAMUT/github/aktmamut.eu/pages/expeditions/expeditions.geojson</code></li>
             </ul>
         </div>
 
         <div class="step">
-            <h2>Krok 3: Sprawdź efekt</h2>
-            <p>W folderze:</p>
-            <pre>C:\github\aktmamut.eu\maps</pre>
-            <p>znajdziesz gotowe pliki:</p>
+            <h2>Krok 6: Localhost test</h2>
             <ul>
-                <li><code>EXPEDITIONS.html</code></li>
-                <li><code>expeditions.geojson</code></li>
-            </ul>
-            <p>Otwórz <code>EXPEDITIONS.html</code> w przeglądarce, by zobaczyć efekt.</p>
+                <li>Otwórz terminal PS w katalogu: <code>OneDrive/AKT-MAMUT/github/aktmamut.eu</code></li>
+                <li>
+                    Python HTTP Server:
+                    <pre>python -m http.server 8000</pre>
+                </li>
+                <li>
+                    Przeglądarka:
+                    <pre>http://localhost:8000/index.html</pre>
+                </li>
+                <li>Sprawdź czy nowa trasa została dodana i czy jest nowa wersja strony</li>
         </div>
 
         <div class="step">
-            <h2>Krok 4: Publikacja</h2>
-            <p>Otwórz GitHub Desktop, zrób <code>commit</code> i <code>push</code> zmian do repozytorium:</p>
-            <pre>aktmamut.eu</pre>
-            <p>Po kilku minutach Netlify automatycznie zaktualizuje stronę:</p>
-            <pre>https://aktmamut.eu/maps/EXPEDITIONS.html</pre>
-        </div>
-
-        <hr />
+            <h2>Krok 7: VSCode: Publikacja na GitHub/Netlify</h2>
+            <ul>
+                <li>Source Control: <code>Release vX.XX OPIS</code></li>
+                <li>
+                    Po kilku minutach Netlify automatycznie zaktualizuje stronę: 
+                    <pre>https://aktmamut.eu</pre>
+                </li>
+            </ul>
+            <hr />
         <p><em>Wersja instrukcji: 2025-07-20</em></p>
     </body>
 </html>
