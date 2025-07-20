@@ -195,6 +195,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
             applyParticipantFilter('ALL'); // 👈 pokaż wszystkie na start
 
+            // 🕒 Wyświetlenie daty ostatniej trasy jako wersji
+            const features = data.features;
+            if (features.length > 0) {
+                const last = features[features.length - 1];
+                const date = last.properties.date;
+                const versionInfo = document.getElementById('version-info');
+                if (versionInfo) {
+                    versionInfo.textContent = `Updated ${date}`;
+                }
+            }
+
             document.getElementById('participant-filter').addEventListener('change', function () {
                 applyParticipantFilter(this.value);
             });
