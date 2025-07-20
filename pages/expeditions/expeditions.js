@@ -202,7 +202,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 const date = last.properties.date;
                 const versionInfo = document.getElementById('version-info');
                 if (versionInfo) {
-                    versionInfo.textContent = `Updated ${date}`;
+                    versionInfo.textContent = `${date}`;
                 }
             }
 
