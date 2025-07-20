@@ -8,73 +8,59 @@ window.addEventListener('DOMContentLoaded', function () {
     const map = window[mapId];
     if (!map) return;
 
-    // console.time('📥 fetch + przetwarzanie geojson');
+    console.time('📥 fetch + przetwarzanie geojson');
 
-    // fetch('expeditions.geojson')
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //         console.timeEnd('📥 fetch + przetwarzanie geojson');
+    fetch('expeditions.geojson')
+        .then((res) => res.json())
+        .then((data) => {
+            console.timeEnd('📥 fetch + przetwarzanie geojson');
+            console.time('🔁 iteracja po trasach');
 
-    console.time('📡 fetch geojson'); // tylko pobieranie
-    console.time('📦 parse json'); // tylko parsowanie
+            const groupLayers = [];
+            const routeLayers = [];
+            const allParticipantsSet = new Set();
 
-    fetch('expeditions.geojson').then(async (res) => {
-        console.timeEnd('📡 fetch geojson');
+            data.features.forEach((feature, i) => {
+                if (feature.geometry.type !== 'LineString') return;
 
-        const text = await res.text(); // ⏳ ręczne pobranie jako tekst
-        console.timeEnd('📦 parse json');
+                const props = feature.properties;
+                // console.time(`🧪 trasa ${props.nr || i}`);
 
-        console.time('🧠 JSON.parse'); // teraz mierzymy tylko to
-        const data = JSON.parse(text);
-        console.timeEnd('🧠 JSON.parse');
+                const coords = feature.geometry.coordinates;
+                if (props.participants) {
+                    props.participants.split(',').forEach((p) => allParticipantsSet.add(p.trim()));
+                }
 
-        console.time('🔁 iteracja po trasach');
+                const trailColor = props.color || '#800000';
+                const trailNr = props.nr || '';
+                const trailName = props.name || '';
+                const lat = parseFloat(props.lat);
+                const lon = parseFloat(props.lon);
 
-        const groupLayers = [];
-        const routeLayers = [];
-        const allParticipantsSet = new Set();
+                // console.time(`🔷 geojson + tooltip ${trailNr}`);
+                const line = L.geoJSON(feature, {
+                    style: {
+                        color: trailColor,
+                        weight: 3,
+                        opacity: 0.8,
+                    },
+                });
 
-        data.features.forEach((feature, i) => {
-            if (feature.geometry.type !== 'LineString') return;
+                line.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
 
-            const props = feature.properties;
-            // console.time(`🧪 trasa ${props.nr || i}`);
+                line.on({
+                    mouseover: () => {
+                        line.setStyle({ weight: 6, color: '#000000' });
+                        line.bringToFront();
+                    },
+                    mouseout: () => {
+                        line.setStyle({ weight: 3, color: trailColor });
+                    },
+                });
+                // console.timeEnd(`🔷 geojson + tooltip ${trailNr}`);
 
-            const coords = feature.geometry.coordinates;
-            if (props.participants) {
-                props.participants.split(',').forEach((p) => allParticipantsSet.add(p.trim()));
-            }
-
-            const trailColor = props.color || '#800000';
-            const trailNr = props.nr || '';
-            const trailName = props.name || '';
-            const lat = parseFloat(props.lat);
-            const lon = parseFloat(props.lon);
-
-            // console.time(`🔷 geojson + tooltip ${trailNr}`);
-            const line = L.geoJSON(feature, {
-                style: {
-                    color: trailColor,
-                    weight: 3,
-                    opacity: 0.8,
-                },
-            });
-
-            line.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
-
-            line.on({
-                mouseover: () => {
-                    line.setStyle({ weight: 6, color: '#000000' });
-                    line.bringToFront();
-                },
-                mouseout: () => {
-                    line.setStyle({ weight: 3, color: trailColor });
-                },
-            });
-            // console.timeEnd(`🔷 geojson + tooltip ${trailNr}`);
-
-            // console.time(`🟢 marker ${trailNr}`);
-            const iconHtml = `
+                // console.time(`🟢 marker ${trailNr}`);
+                const iconHtml = `
             <div style="
                 font-size: 10px;
                 font-family: Oswald, sans-serif;
@@ -90,27 +76,27 @@ window.addEventListener('DOMContentLoaded', function () {
                 ${trailNr}
             </div>`;
 
-            const marker = L.marker([lat, lon], {
-                icon: L.divIcon({
-                    className: '',
-                    html: iconHtml,
-                    iconSize: [24, 24],
-                    iconAnchor: [12, 12],
-                }),
-            });
+                const marker = L.marker([lat, lon], {
+                    icon: L.divIcon({
+                        className: '',
+                        html: iconHtml,
+                        iconSize: [24, 24],
+                        iconAnchor: [12, 12],
+                    }),
+                });
 
-            marker.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
+                marker.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
 
-            marker.on('mouseover', function () {
-                line.setStyle({ weight: 6, color: '#000000' });
-                line.bringToFront();
-            });
-            marker.on('mouseout', function () {
-                line.setStyle({ weight: 3, color: trailColor });
-            });
-            // console.timeEnd(`🟢 marker ${trailNr}`);
+                marker.on('mouseover', function () {
+                    line.setStyle({ weight: 6, color: '#000000' });
+                    line.bringToFront();
+                });
+                marker.on('mouseout', function () {
+                    line.setStyle({ weight: 3, color: trailColor });
+                });
+                // console.timeEnd(`🟢 marker ${trailNr}`);
 
-            const popupHtml = `
+                const popupHtml = `
             <div style="font-family: 'Oswald', sans-serif; font-size: 12px;">
                 <table style="border-collapse: collapse;">
                     <tr><th style="text-align: left;">Trail nr:</th><td>${props.nr || ''}</td></tr>
@@ -127,85 +113,85 @@ window.addEventListener('DOMContentLoaded', function () {
                 </table>
             </div>
             `;
-            marker.bindPopup(popupHtml);
+                marker.bindPopup(popupHtml);
 
-            const startCircle = L.circleMarker([coords[0][1], coords[0][0]], {
-                radius: 3,
-                color: trailColor,
-                fillColor: trailColor,
-                fillOpacity: 1,
-            });
-
-            const endCoords = coords[coords.length - 1];
-            const endCircle = L.circleMarker([endCoords[1], endCoords[0]], {
-                radius: 3,
-                color: trailColor,
-                fillColor: trailColor,
-                fillOpacity: 1,
-            });
-
-            const group = L.layerGroup([line, marker, startCircle, endCircle]);
-            routeLayers.push({ layer: group, participants: props.participants || '' });
-            groupLayers.push({ layer: marker, participants: props.participants || '' });
-
-            // console.timeEnd(`🧪 trasa ${props.nr || i}`);
-        });
-
-        console.timeEnd('🔁 iteracja po trasach');
-
-        console.time('🔽 tworzenie listy uczestników');
-        const select = document.getElementById('participant-filter');
-        const participantCounts = {};
-
-        data.features.forEach((feature) => {
-            const props = feature.properties;
-            if (props.participants) {
-                props.participants.split(',').forEach((p) => {
-                    const name = p.trim();
-                    participantCounts[name] = (participantCounts[name] || 0) + 1;
+                const startCircle = L.circleMarker([coords[0][1], coords[0][0]], {
+                    radius: 3,
+                    color: trailColor,
+                    fillColor: trailColor,
+                    fillOpacity: 1,
                 });
-            }
-        });
 
-        const participantList = Object.keys(participantCounts).sort();
-        participantList.forEach((p) => {
-            const option = document.createElement('option');
-            option.value = p;
-            option.textContent = `${p} (${participantCounts[p]})`;
-            select.appendChild(option);
-        });
-        console.timeEnd('🔽 tworzenie listy uczestników');
+                const endCoords = coords[coords.length - 1];
+                const endCircle = L.circleMarker([endCoords[1], endCoords[0]], {
+                    radius: 3,
+                    color: trailColor,
+                    fillColor: trailColor,
+                    fillOpacity: 1,
+                });
 
-        console.time('🌍 applyParticipantFilter');
-        function applyParticipantFilter(selected) {
-            map.eachLayer((layer) => {
-                if (layer instanceof L.LayerGroup || layer instanceof L.Marker || layer instanceof L.GeoJSON) {
-                    map.removeLayer(layer);
+                const group = L.layerGroup([line, marker, startCircle, endCircle]);
+                routeLayers.push({ layer: group, participants: props.participants || '' });
+                groupLayers.push({ layer: marker, participants: props.participants || '' });
+
+                // console.timeEnd(`🧪 trasa ${props.nr || i}`);
+            });
+
+            console.timeEnd('🔁 iteracja po trasach');
+
+            console.time('🔽 tworzenie listy uczestników');
+            const select = document.getElementById('participant-filter');
+            const participantCounts = {};
+
+            data.features.forEach((feature) => {
+                const props = feature.properties;
+                if (props.participants) {
+                    props.participants.split(',').forEach((p) => {
+                        const name = p.trim();
+                        participantCounts[name] = (participantCounts[name] || 0) + 1;
+                    });
                 }
             });
 
-            const visibleMarkers = groupLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
-            const visibleRoutes = routeLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
+            const participantList = Object.keys(participantCounts).sort();
+            participantList.forEach((p) => {
+                const option = document.createElement('option');
+                option.value = p;
+                option.textContent = `${p} (${participantCounts[p]})`;
+                select.appendChild(option);
+            });
+            console.timeEnd('🔽 tworzenie listy uczestników');
 
-            L.layerGroup(visibleMarkers).addTo(map);
-            L.layerGroup(visibleRoutes).addTo(map);
-        }
+            console.time('🌍 applyParticipantFilter');
+            function applyParticipantFilter(selected) {
+                map.eachLayer((layer) => {
+                    if (layer instanceof L.LayerGroup || layer instanceof L.Marker || layer instanceof L.GeoJSON) {
+                        map.removeLayer(layer);
+                    }
+                });
 
-        applyParticipantFilter('ALL');
-        console.timeEnd('🌍 applyParticipantFilter');
+                const visibleMarkers = groupLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
+                const visibleRoutes = routeLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
 
-        const features = data.features;
-        if (features.length > 0) {
-            const last = features[features.length - 1];
-            const date = last.properties.date;
-            const versionInfo = document.getElementById('version-info');
-            if (versionInfo) versionInfo.textContent = `${date}`;
-        }
+                L.layerGroup(visibleMarkers).addTo(map);
+                L.layerGroup(visibleRoutes).addTo(map);
+            }
 
-        document.getElementById('participant-filter').addEventListener('change', function () {
-            applyParticipantFilter(this.value);
+            applyParticipantFilter('ALL');
+            console.timeEnd('🌍 applyParticipantFilter');
+
+            const features = data.features;
+            if (features.length > 0) {
+                const last = features[features.length - 1];
+                const date = last.properties.date;
+                const versionInfo = document.getElementById('version-info');
+                if (versionInfo) versionInfo.textContent = `${date}`;
+            }
+
+            document.getElementById('participant-filter').addEventListener('change', function () {
+                applyParticipantFilter(this.value);
+            });
         });
-    });
 });
 
 // 🌍 Inicjalizacja mapy Leaflet
