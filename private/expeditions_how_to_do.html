@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Instrukcja: Generowanie EXPEDITIONS</title>
+        <style>
+            body {
+                font-family: 'Roboto Mono', monospace;
+                max-width: 800px;
+                margin: 40px auto;
+                padding: 20px;
+                line-height: 1.6;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+            h1,
+            h2 {
+                color: #004c3f;
+            }
+            code {
+                background-color: #eee;
+                padding: 2px 5px;
+                border-radius: 4px;
+            }
+            pre {
+                background-color: #eee;
+                padding: 10px;
+                overflow-x: auto;
+                border-radius: 4px;
+            }
+            .step {
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Instrukcja: <code>EXPEDITIONS</code></h1>
+
+        <div class="step">
+            <h2>Krok 1: Locus Map</h2>
+            <ul>
+                <li>Zarejestruj trasę</li>
+                <li>Edytuj trasę: <code>Moja biblioteka → &lt;TRAIL NAME&gt;</code></li>
+                <li>Nazwij ją zgodnie ze standardem: <code>2025-06-18 07:26 Nemira Mare</code></li>
+                <li>Aktualizuj wysokość: <code>Narzędzia → Aktualizacja wysokości</code></li>
+                <li>Eksport pliku GPX: <code>Eksportuj</code></li>
+                <li>Plik GPX zapisany w: <code>OneDrive/AKT-MAMUT/trails/locus</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Krok 2: GPX Track Editor</h2>
+            <ul>
+                <li>Otwórz plik GPX</li>
+                <li>Standaryzacja punktów do 10 metrów: <code>Filter → By value → Min. distance (m): 10</code></li>
+                <li>Usunięcie nieścisłości trasy: <code>Filter → Local inconsistencies</code></li>
+                <li>Usunięcie niepotrzebnych punktów: <code>Filter → Delete filtered points</code></li>
+                <li>Zachowanie zmodyfikowanego pliku: <code>File → Save (Ctrl+S)</code></li>
+                <li>Plik GPX zapisany w: <code>OneDrive/AKT-MAMUT/trails/locus</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Krok 3: Wikiloc</h2>
+            <ul>
+                <li>Otwórz witrynę: <code>wikiloc.com</code></li>
+                <li>Zaloguj się</li>
+                <li>Wgraj trasę GPX: <code>Załaduj szlaki → załaduj plik</code></li>
+                <li>Otwórz szczegóły trasy</li>
+                <li>Pobierz plik GPX Wikiloc: <code>Pobierz → Plik → Pierwotnie (bez zmniejszania)</code></li>
+                <li>Zachowaj plik w: <code>OneDrive/AKT-MAMUT/trails/gpx</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Krok 4: Google Drive: AKT Mamut Expeditions</h2>
+            <ul>
+                <li>Otwórz witrynę: <code>https://drive.google.com/drive/my-drive</code></li>
+                <li>Wybierz Google sheet: <code>AKT Mamut Expeditions</code></li>
+                <li>Dodaj trasę jako nowy wiersz</li>
+                <li>Trail GPX: <code>&lt;WIKILOC TRAIL LINK&gt;</code></li>
+                <li>Distance: <code>&lt;WIKILOC TRAIL "Długość śladu"&gt;</code></li>
+                <li>Up: <code>&lt;WIKILOC TRAIL "Suma"&gt;</code></li>
+                <li>Time: <code>&lt;WIKILOC TRAIL "Czas"&gt;</code></li>
+                <li>LAT LON: Liczą się ze skrypty z ostatniej kolumny (dane z mapy.cz)</li>
+                <li>GPX: nazwa pliku w katalogu OneDrive/AKT-MAMUT/trails/gpx</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Krok 5: VSCode GeoJSON-Operations.ipynb</h2>
+            <ul>
+                <li>Otwórz katalog: <code>OneDrive/AKT-MAMUT/python</code></li>
+                <li>Otwórz plik: <code>GeoJSON-Operations.ipynb</code></li>
+                <li>Komórka 1 → Wszystkie wiersze z AKT Mamut Expeditions zostaną wczytane</li>
+                <li>Komórka 2 → Diagnostyka brakujących i zbędnych plików GPX i GeoJSON</li>
+                <li>Komórka 3 → Konwersja GPX na GeoJSON z metadanymi z AKT Mamut Expeditions</li>
+                <li>Komórka 4 → Scalanie plików GeoJSON w jeden plus upraszczanie geometrii</li>
+                <li>Komórka 5 → Kopiowanie pliku expeditions.geojson do folderu publikacji</li>
+                <li>Plik skopiowany do: <code>OneDrive\AKT-MAMUT\github\aktmamut.eu\pages\expeditions\expeditions.geojson</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>Krok 3: Sprawdź efekt</h2>
+            <p>W folderze:</p>
+            <pre>C:\github\aktmamut.eu\maps</pre>
+            <p>znajdziesz gotowe pliki:</p>
+            <ul>
+                <li><code>EXPEDITIONS.html</code></li>
+                <li><code>expeditions.geojson</code></li>
+            </ul>
+            <p>Otwórz <code>EXPEDITIONS.html</code> w przeglądarce, by zobaczyć efekt.</p>
+        </div>
+
+        <div class="step">
+            <h2>Krok 4: Publikacja</h2>
+            <p>Otwórz GitHub Desktop, zrób <code>commit</code> i <code>push</code> zmian do repozytorium:</p>
+            <pre>aktmamut.eu</pre>
+            <p>Po kilku minutach Netlify automatycznie zaktualizuje stronę:</p>
+            <pre>https://aktmamut.eu/maps/EXPEDITIONS.html</pre>
+        </div>
+
+        <hr />
+        <p><em>Wersja instrukcji: 2025-07-20</em></p>
+    </body>
+</html>
