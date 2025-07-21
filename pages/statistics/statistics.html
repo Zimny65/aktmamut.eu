@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@latest/index.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@latest/index.min.css" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
 
         <style>
             body,
@@ -34,12 +37,12 @@
                 padding: 2px 2px;
                 text-align: right;
             }
-            th:first-child,
-            td:first-child {
-                text-align: left;
+            .monotable th:first-child,
+            .monotable td:first-child {
                 background-color: #f8f8f8;
                 font-weight: bold;
                 max-width: 80px;
+                color: black;
             }
             thead {
                 background-color: #eee;

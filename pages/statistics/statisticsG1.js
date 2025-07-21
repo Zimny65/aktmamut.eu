@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
             const years = Array.from({ length: 11 }, (_, i) => 2015 + i); // 2015–2025
 
+            // [rok][dekada] = suma GOT (36 kolumn: 12 mies. * 3 dekady)
             const decadalGOT = {};
             years.forEach((y) => {
-                decadalGOT[y] = Array.from({ length: 36 }, () => ({ sum: 0, records: [] }));
+                decadalGOT[y] = Array(36).fill(0);
             });
 
             data.features.forEach((f) => {
@@ -22,52 +23,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (!decadalGOT[year] || month < 0 || month > 11 || day < 1 || day > 31) return;
 
-                const decade = day <= 10 ? 0 : day <= 20 ? 1 : 2;
-                const index = month * 3 + decade;
+                let decade = 0;
+                if (day <= 10) decade = 0;
+                else if (day <= 20) decade = 1;
+                else decade = 2;
 
-                decadalGOT[year][index].sum += got;
-                decadalGOT[year][index].records.push({
-                    nr: f.properties.nr || '???',
-                    date: date,
-                    name: f.properties.name || '',
-                    got: got,
-                });
+                const index = month * 3 + decade;
+                decadalGOT[year][index] += got;
             });
 
+            // Zamiana na wartości skumulowane
             const today = new Date();
             const currentYear = today.getFullYear();
-            const currentMonth = today.getMonth();
+            const currentMonth = today.getMonth(); // 0-based
             const currentDay = today.getDate();
-            let maxIndex = 35;
 
+            let maxIndex = 35; // dla pełnych lat
             if (years.includes(currentYear)) {
-                const decade = currentDay <= 10 ? 0 : currentDay <= 20 ? 1 : 2;
+                let decade = 0;
+                if (currentDay <= 10) decade = 0;
+                else if (currentDay <= 20) decade = 1;
+                else decade = 2;
                 maxIndex = currentMonth * 3 + decade;
             }
 
             years.forEach((year) => {
                 for (let i = 1; i < 36; i++) {
                     if (year === currentYear && i > maxIndex) {
-                        decadalGOT[year][i].sum = null;
+                        decadalGOT[year][i] = null; // nie pokazuj po dzisiejszej dacie
                     } else {
-                        const prev = decadalGOT[year][i - 1];
-                        const curr = decadalGOT[year][i];
-                        if (prev.sum != null && curr.sum != null) {
-                            curr.sum += prev.sum;
-                        }
+                        if (decadalGOT[year][i - 1] != null) decadalGOT[year][i] += decadalGOT[year][i - 1];
                     }
                 }
             });
 
+            // Generowanie transponowanej tabeli HTML
             const container = document.getElementById('gotTableContainer');
             container.innerHTML = '';
 
             const table = document.createElement('table');
             table.className = 'monotable';
-
             const thead = document.createElement('thead');
             const headerRow = document.createElement('tr');
-            headerRow.appendChild(document.createElement('th'));
+            headerRow.appendChild(document.createElement('th')); // lewa kolumna: miesiąc+dekada
 
             years.forEach((y) => {
                 const th = document.createElement('th');
@@ -80,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const tbody = document.createElement('tbody');
 
+            // paleta green
             const gotColorPalette = [
                 { max: 0, background: '#ffffff', color: 'black' },
                 { max: 100, background: '#eef7eb', color: 'black' },
@@ -101,66 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 tr.appendChild(labelCell);
 
                 years.forEach((year) => {
-                    const entry = decadalGOT[year][i];
-                    const val = entry?.sum;
+                    const val = decadalGOT[year][i];
                     const td = document.createElement('td');
-
-                    if (val != null && entry) {
+                    if (val != null) {
                         const got = Math.round(val);
                         const palette = gotColorPalette.find((p) => got <= p.max);
                         td.style.backgroundColor = palette.background;
                         td.style.color = palette.color;
+                        td.textContent = got;
 
-                        if (entry.records.length > 0) {
-                            const tooltipHTML = `
-  <table style="border-collapse: collapse; font-size: 0.85em;">
-    <thead>
-      <tr>
-        <th style="padding: 4px 6px; background-color: #f0f0f0; color: black;">Nr</th>
-        <th style="padding: 4px 6px; background-color: #f0f0f0; color: black;">Date</th>
-        <th style="padding: 4px 6px; background-color: #f0f0f0; color: black;">Name</th>
-        <th style="padding: 4px 6px; background-color: #f0f0f0; color: black; text-align: right;">GOT</th>
-      </tr>
-    </thead>
-    <tbody>
-      ${entry.records
-          .map(
-              (r) => `
-        <tr>
-          <td style="padding: 4px 6px; background-color: #f0f0f0; color: black;">${r.nr}</td>
-          <td style="padding: 4px 6px; background-color: #f0f0f0; color: black;">${r.date}</td>
-          <td style="padding: 4px 6px; background-color: #f0f0f0; color: black;">${r.name}</td>
-          <td style="padding: 4px 6px; background-color: #f0f0f0; color: black; text-align: right;">${Number(r.got).toFixed(2)}</td>
-        </tr>
-      `
-          )
-          .join('')}
-    </tbody>
-  </table>
-`;
-
-                            const star = document.createElement('span');
-                            star.textContent = '✳';
-                            star.style.opacity = '0.5';
-                            star.style.cursor = 'help';
-                            td.appendChild(star);
-                            td.append(` ${got}`);
-
-                            tippy(star, {
-                                content: tooltipHTML,
-                                allowHTML: true,
-                                interactive: true,
-                                placement: 'top',
-                                theme: 'light-border',
-                                maxWidth: 500,
-                            });
-                        } else {
-                            td.textContent = got;
-                        }
+                        // Dodanie tooltipa
+                        td.title = `Skumulowane GOT: ${got}`;
                     } else {
                         td.textContent = '';
                     }
-
                     tr.appendChild(td);
                 });
 
