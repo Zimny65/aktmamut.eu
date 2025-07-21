@@ -80,7 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // paleta green
             const gotColorPalette = [
-                { max: 100, background: '#ffffff', color: 'black' },
+                { max: 0, background: '#ffffff', color: 'black' },
+                { max: 100, background: '#eef7eb', color: 'black' },
                 { max: 200, background: '#d9ead3', color: 'black' },
                 { max: 400, background: '#b6d7a8', color: 'black' },
                 { max: 600, background: '#93c47d', color: 'black' },
