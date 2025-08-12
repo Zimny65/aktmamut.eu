@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             for (let i = 0; i < 36; i++) {
                 const month = months[Math.floor(i / 3)];
-                const dayLabels = ['days 01–10', 'days 11–20', 'days 21–31'];
+                const dayLabels = ['10', '20', '30'];
                 const decadeLabel = dayLabels[i % 3];
                 const tr = document.createElement('tr');
                 const labelCell = document.createElement('td');
