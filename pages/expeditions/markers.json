@@ -2770,5 +2770,59 @@
     "name": "Vlkolinec",
     "lat": 49.0367936,
     "lon": 19.2665542
+  },
+  {
+    "nr": "2525",
+    "name": "Rondvassbu",
+    "lat": 61.8787483,
+    "lon": 9.7963375
+  },
+  {
+    "nr": "2526",
+    "name": "Bjornhollia",
+    "lat": 61.8840822,
+    "lon": 10.0119583
+  },
+  {
+    "nr": "2527",
+    "name": "Doralseter",
+    "lat": 61.9990836,
+    "lon": 9.8040458
+  },
+  {
+    "nr": "2528",
+    "name": "Atndalen",
+    "lat": 62.0165506,
+    "lon": 9.88761
+  },
+  {
+    "nr": "2529",
+    "name": "Grimsdalshytta",
+    "lat": 62.0910528,
+    "lon": 9.6421664
+  },
+  {
+    "nr": "2530",
+    "name": "Hageseter",
+    "lat": 62.1956231,
+    "lon": 9.5471111
+  },
+  {
+    "nr": "2531",
+    "name": "Tverrfjellet",
+    "lat": 62.2259944,
+    "lon": 9.4924056
+  },
+  {
+    "nr": "2532",
+    "name": "Stropsjodalen",
+    "lat": 62.3411775,
+    "lon": 9.3561922
+  },
+  {
+    "nr": "2533",
+    "name": "Snohetta",
+    "lat": 62.3198619,
+    "lon": 9.267825
   }
 ]

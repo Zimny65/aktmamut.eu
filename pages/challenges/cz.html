@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CZ</title>
+    <link rel="icon" href="M32.png" type="image/png">
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_58ea14921c118db771a18d46cd95ab01 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_58ea14921c118db771a18d46cd95ab01" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_58ea14921c118db771a18d46cd95ab01 = L.map(
+                "map_58ea14921c118db771a18d46cd95ab01",
+                {
+                    center: [49.42113847857143, 17.820728442857142],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d0ded8fc2787b221568ed9d03635b61a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d0ded8fc2787b221568ed9d03635b61a.addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var tile_layer_a3148e797751ac8b92df37811f4d86d3 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_a3148e797751ac8b92df37811f4d86d3.addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var marker_c79b2bcda484a6936d64ec9785a50354 = L.marker(
+                [49.0418164, 16.6390914],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_442d985452d964bc5817565cb28e10dc = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e1\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_c79b2bcda484a6936d64ec9785a50354.setIcon(div_icon_442d985452d964bc5817565cb28e10dc);
+        
+    
+        var popup_5829e8dd146f3073ed4eb4b7afec6d27 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4dcb34196e0a7e9ffda0c77a1e311845 = $(`<div id="html_4dcb34196e0a7e9ffda0c77a1e311845" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Vyhon CZ Výhon</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Obniżenie Dyjsko-Swrateckie CZ Dyjsko-svratecký úval</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">355 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_5829e8dd146f3073ed4eb4b7afec6d27.setContent(html_4dcb34196e0a7e9ffda0c77a1e311845);
+            
+        
+
+        marker_c79b2bcda484a6936d64ec9785a50354.bindPopup(popup_5829e8dd146f3073ed4eb4b7afec6d27)
+        ;
+
+        
+    
+    
+            var marker_b02ffacc232c047a23969c50b2da0e45 = L.marker(
+                [49.35222, 17.06389],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_f3aea64c0fdb8515cce7a0b6f5cd8a5e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e2\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b02ffacc232c047a23969c50b2da0e45.setIcon(div_icon_f3aea64c0fdb8515cce7a0b6f5cd8a5e);
+        
+    
+        var popup_7a0bedb5b996aa450b53a277278232aa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_caf3491562862e375796b3fabb84c212 = $(`<div id="html_caf3491562862e375796b3fabb84c212" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Na Hanacke CZ Na Hanácké</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Brama Wyszkowska CZ Vyškovská brána</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">339 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_7a0bedb5b996aa450b53a277278232aa.setContent(html_caf3491562862e375796b3fabb84c212);
+            
+        
+
+        marker_b02ffacc232c047a23969c50b2da0e45.bindPopup(popup_7a0bedb5b996aa450b53a277278232aa)
+        ;
+
+        
+    
+    
+            var marker_593bc1ce50dec2efc596f083ae6b6ac4 = L.marker(
+                [49.4109622, 17.0739253],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_1b24ac35a6087e09230e4d0d9a496c71 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e3\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_593bc1ce50dec2efc596f083ae6b6ac4.setIcon(div_icon_1b24ac35a6087e09230e4d0d9a496c71);
+        
+    
+        var popup_41a0bfd6a2ac1db894a42a43bee02e6c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_741ddb41dfac4aead4c941ede9576d89 = $(`<div id="html_741ddb41dfac4aead4c941ede9576d89" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Detkovice Planiva CZ Dětkovice - Plániva</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Obniżenie Górnomorawskie CZ Hornomoravský úval</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">347 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_41a0bfd6a2ac1db894a42a43bee02e6c.setContent(html_741ddb41dfac4aead4c941ede9576d89);
+            
+        
+
+        marker_593bc1ce50dec2efc596f083ae6b6ac4.bindPopup(popup_41a0bfd6a2ac1db894a42a43bee02e6c)
+        ;
+
+        
+    
+    
+            var marker_20fff4777c626f77b37cc0dfd392fea3 = L.marker(
+                [49.7732392, 16.9806606],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_db9e53f7958ad01b3ebc95580dd55442 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e4\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_20fff4777c626f77b37cc0dfd392fea3.setIcon(div_icon_db9e53f7958ad01b3ebc95580dd55442);
+        
+    
+        var popup_9aebc807175f484e087dc828757fa247 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3d2fe78120c6ee1b6ede7d7e039069cb = $(`<div id="html_3d2fe78120c6ee1b6ede7d7e039069cb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Jeleni Vrch CZ Jelení vrch</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Obniżenie Górnomorawskie CZ Hornomoravský úval</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">345 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_9aebc807175f484e087dc828757fa247.setContent(html_3d2fe78120c6ee1b6ede7d7e039069cb);
+            
+        
+
+        marker_20fff4777c626f77b37cc0dfd392fea3.bindPopup(popup_9aebc807175f484e087dc828757fa247)
+        ;
+
+        
+    
+    
+            var marker_8db6f35557dc9744086dc20ff0a92cf9 = L.marker(
+                [49.856943, 17.128663],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_aee4e0630df13f6228a68640ac26028a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e5\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8db6f35557dc9744086dc20ff0a92cf9.setIcon(div_icon_aee4e0630df13f6228a68640ac26028a);
+        
+    
+        var popup_83003bfd09e425f182c20d9461e29712 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_df3df230ccc55451bf24cc28074db927 = $(`<div id="html_df3df230ccc55451bf24cc28074db927" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Sumvaldska Horka CZ Šumvaldská horka</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Obniżenie Górnomorawskie CZ Hornomoravský úval</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">331 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_83003bfd09e425f182c20d9461e29712.setContent(html_df3df230ccc55451bf24cc28074db927);
+            
+        
+
+        marker_8db6f35557dc9744086dc20ff0a92cf9.bindPopup(popup_83003bfd09e425f182c20d9461e29712)
+        ;
+
+        
+    
+    
+            var marker_842d64f68ac0a3fa1806747188b3830a = L.marker(
+                [49.5904492, 17.7083594],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_6618c6558f56d6a1ec0e5afd4c4529d1 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e6\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_842d64f68ac0a3fa1806747188b3830a.setIcon(div_icon_6618c6558f56d6a1ec0e5afd4c4529d1);
+        
+    
+        var popup_084e71b28ec18d74bd8ac9486cd54e71 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9080f3156f42a3088e695a5abfa388e9 = $(`<div id="html_9080f3156f42a3088e695a5abfa388e9" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Za Humny CZ Za Humny</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Brama Morawska CZ Moravská brána</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">344 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_084e71b28ec18d74bd8ac9486cd54e71.setContent(html_9080f3156f42a3088e695a5abfa388e9);
+            
+        
+
+        marker_842d64f68ac0a3fa1806747188b3830a.bindPopup(popup_084e71b28ec18d74bd8ac9486cd54e71)
+        ;
+
+        
+    
+    
+            var marker_ce7fb2ad4740417f8da59534335aa563 = L.marker(
+                [49.60212, 17.82572],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_6e605c1ad0cd3ee3c964ef0b16fd9714 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e7\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ce7fb2ad4740417f8da59534335aa563.setIcon(div_icon_6e605c1ad0cd3ee3c964ef0b16fd9714);
+        
+    
+        var popup_b80d4b87378164f52e187b0b46236bfd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5668e51204cb74cafff47b8573d4be76 = $(`<div id="html_5668e51204cb74cafff47b8573d4be76" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Lucicka Straz CZ Lučická stráž</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Brama Morawska CZ Moravská brána</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">339 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_b80d4b87378164f52e187b0b46236bfd.setContent(html_5668e51204cb74cafff47b8573d4be76);
+            
+        
+
+        marker_ce7fb2ad4740417f8da59534335aa563.bindPopup(popup_b80d4b87378164f52e187b0b46236bfd)
+        ;
+
+        
+    
+    
+            var marker_ff29fb1a2d388ef9cf35a154fa9afbcf = L.marker(
+                [49.573585, 17.778142],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_fa9a85ba4faef681808c524506e5cce9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e8\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ff29fb1a2d388ef9cf35a154fa9afbcf.setIcon(div_icon_fa9a85ba4faef681808c524506e5cce9);
+        
+    
+        var popup_dad2617a004e7699c6222b6e1d568c3a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_54673204c167452b56b63a7fad079c88 = $(`<div id="html_54673204c167452b56b63a7fad079c88" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Straze CZ Stráže</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Brama Morawska CZ Moravská brána</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">343 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_dad2617a004e7699c6222b6e1d568c3a.setContent(html_54673204c167452b56b63a7fad079c88);
+            
+        
+
+        marker_ff29fb1a2d388ef9cf35a154fa9afbcf.bindPopup(popup_dad2617a004e7699c6222b6e1d568c3a)
+        ;
+
+        
+    
+    
+            var marker_170ebd74fedab7d6c56f9aa221fcce45 = L.marker(
+                [49.7298669, 18.0074953],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_e9d98d60d4ed576fc605e6504ca49bb9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e9\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_170ebd74fedab7d6c56f9aa221fcce45.setIcon(div_icon_e9d98d60d4ed576fc605e6504ca49bb9);
+        
+    
+        var popup_225ca6acc9430a1d4a7c8d7db79a1ddd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_585ccd092b002f82638b84363cf7ee13 = $(`<div id="html_585ccd092b002f82638b84363cf7ee13" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Kanihura CZ Kanihůra</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Zachodnie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Brama Morawska CZ Moravská brána</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">347 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_225ca6acc9430a1d4a7c8d7db79a1ddd.setContent(html_585ccd092b002f82638b84363cf7ee13);
+            
+        
+
+        marker_170ebd74fedab7d6c56f9aa221fcce45.bindPopup(popup_225ca6acc9430a1d4a7c8d7db79a1ddd)
+        ;
+
+        
+    
+    
+            var marker_4d8fbb809a7f21688ca3d729823d57ff = L.marker(
+                [49.7317592, 18.3431667],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_47277697aa7f5721814740fb09808887 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e10\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_4d8fbb809a7f21688ca3d729823d57ff.setIcon(div_icon_47277697aa7f5721814740fb09808887);
+        
+    
+        var popup_ee6689760cd9129b87a4ac18f6726129 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6311b12420ddc26d66b2e76398b02a65 = $(`<div id="html_6311b12420ddc26d66b2e76398b02a65" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Zavisník CZ Závišník</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Północne</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Kotlina Ostrawska CZ Ostravská pánev</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">334 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_ee6689760cd9129b87a4ac18f6726129.setContent(html_6311b12420ddc26d66b2e76398b02a65);
+            
+        
+
+        marker_4d8fbb809a7f21688ca3d729823d57ff.bindPopup(popup_ee6689760cd9129b87a4ac18f6726129)
+        ;
+
+        
+    
+    
+            var marker_651648a0185272d699f0ea2466dfadee = L.marker(
+                [49.7316703, 18.3661264],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_7ab4d4a6a4754341ab5c67198a66464a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e11\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_651648a0185272d699f0ea2466dfadee.setIcon(div_icon_7ab4d4a6a4754341ab5c67198a66464a);
+        
+    
+        var popup_5b571cabe5ff00c418c2d310ae4401db = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_daca8e83d9189aae1cb6e1a463918bd1 = $(`<div id="html_daca8e83d9189aae1cb6e1a463918bd1" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Kouty CZ Kouty</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Podkarpacie Północne</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Kotlina Ostrawska CZ Ostravská pánev</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">333 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_5b571cabe5ff00c418c2d310ae4401db.setContent(html_daca8e83d9189aae1cb6e1a463918bd1);
+            
+        
+
+        marker_651648a0185272d699f0ea2466dfadee.bindPopup(popup_5b571cabe5ff00c418c2d310ae4401db)
+        ;
+
+        
+    
+    
+            var marker_cdfc3ddcea88bc2a9f6980bce71536d0 = L.marker(
+                [48.8694219, 16.6500858],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_c25045e42ae347e4bcf18c43df6a3110 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e12\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_cdfc3ddcea88bc2a9f6980bce71536d0.setIcon(div_icon_c25045e42ae347e4bcf18c43df6a3110);
+        
+    
+        var popup_ae7b332c05da3a3098f0fbd27a2503f0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8964f678c9a4c0108b79541a4e1a4993 = $(`<div id="html_8964f678c9a4c0108b79541a4e1a4993" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Devin CZ Děvín</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Austriacko-Morawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Wzgórza Mikulowskie CZ Mikulovská vrchovina</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">549 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;">1808</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;">2018-02-18</td></tr>                          <tr><td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                 <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2018-02-18-09-23-devin-22753507" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2018-02-18-09-23-devin-22753507</a></td></tr>             </table></div></div>`)[0];
+                popup_ae7b332c05da3a3098f0fbd27a2503f0.setContent(html_8964f678c9a4c0108b79541a4e1a4993);
+            
+        
+
+        marker_cdfc3ddcea88bc2a9f6980bce71536d0.bindPopup(popup_ae7b332c05da3a3098f0fbd27a2503f0)
+        ;
+
+        
+    
+    
+            var marker_ddc516e2ae564775080587c1a8226266 = L.marker(
+                [49.1003897, 17.0492181],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_f8a5a8b366d756d54d9f5b674f6efe8d = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e13\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ddc516e2ae564775080587c1a8226266.setIcon(div_icon_f8a5a8b366d756d54d9f5b674f6efe8d);
+        
+    
+        var popup_4b879d783b9ba8c66f1a1642a491f6b4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3536e89e458574e244bd81dc67add4a2 = $(`<div id="html_3536e89e458574e244bd81dc67add4a2" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">U Slepice CZ U Slepice</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Środkowomorawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Las Żdanicki CZ Ždánický les</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">438 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_4b879d783b9ba8c66f1a1642a491f6b4.setContent(html_3536e89e458574e244bd81dc67add4a2);
+            
+        
+
+        marker_ddc516e2ae564775080587c1a8226266.bindPopup(popup_4b879d783b9ba8c66f1a1642a491f6b4)
+        ;
+
+        
+    
+    
+            var marker_da0be6688bb98a3335fe90738b956ae7 = L.marker(
+                [49.0152308, 17.0556894],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_05df3c2b59e3d20fe15640ba6479a42a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e14\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_da0be6688bb98a3335fe90738b956ae7.setIcon(div_icon_05df3c2b59e3d20fe15640ba6479a42a);
+        
+    
+        var popup_73b940bb368d74d8c4f8f15a99504c49 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_536762babdce173a1f32247bc2fe3c3e = $(`<div id="html_536762babdce173a1f32247bc2fe3c3e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Babi Lom CZ Babí lom</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Środkowomorawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Pogórze Kyjowskie CZ Kyjovská pahorkatina</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">417 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_73b940bb368d74d8c4f8f15a99504c49.setContent(html_536762babdce173a1f32247bc2fe3c3e);
+            
+        
+
+        marker_da0be6688bb98a3335fe90738b956ae7.bindPopup(popup_73b940bb368d74d8c4f8f15a99504c49)
+        ;
+
+        
+    
+    
+            var marker_8c02ae249f6ea3d2a76fe835ef8a96b5 = L.marker(
+                [49.1710567, 17.3091369],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_83cc03d90a0f22351d0407ba63490aab = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e15\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_8c02ae249f6ea3d2a76fe835ef8a96b5.setIcon(div_icon_83cc03d90a0f22351d0407ba63490aab);
+        
+    
+        var popup_ed756d133aeec4298bd995da7e2899b4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_df7da15a93060f8e39e9c34efcc6084e = $(`<div id="html_df7da15a93060f8e39e9c34efcc6084e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Brdo CZ Brdo</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Środkowomorawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Chrziby CZ Chřiby</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">587 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_ed756d133aeec4298bd995da7e2899b4.setContent(html_df7da15a93060f8e39e9c34efcc6084e);
+            
+        
+
+        marker_8c02ae249f6ea3d2a76fe835ef8a96b5.bindPopup(popup_ed756d133aeec4298bd995da7e2899b4)
+        ;
+
+        
+    
+    
+            var marker_2e703bf8d53768608018bdcab26f6c83 = L.marker(
+                [49.2010122, 17.1211686],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_1d834eb899a531e24cc833b55f89dc9f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e16\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_2e703bf8d53768608018bdcab26f6c83.setIcon(div_icon_1d834eb899a531e24cc833b55f89dc9f);
+        
+    
+        var popup_aac4a7a26de1256d7e51aeb5d62c34ec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f6016e154f4974246fab4a4aa7e8a2ab = $(`<div id="html_f6016e154f4974246fab4a4aa7e8a2ab" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Hradisko CZ Hradisko</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Środkowomorawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Pogórze Litenczyckie CZ Litenčická pahorkatina</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">518 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_aac4a7a26de1256d7e51aeb5d62c34ec.setContent(html_f6016e154f4974246fab4a4aa7e8a2ab);
+            
+        
+
+        marker_2e703bf8d53768608018bdcab26f6c83.bindPopup(popup_aac4a7a26de1256d7e51aeb5d62c34ec)
+        ;
+
+        
+    
+    
+            var marker_ea3685df14c9aa4d3c3c508d31e0723f = L.marker(
+                [49.2058903, 17.9437351],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_b20ec901e29d0ec74d3f0a71ddeea5ec = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e17\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ea3685df14c9aa4d3c3c508d31e0723f.setIcon(div_icon_b20ec901e29d0ec74d3f0a71ddeea5ec);
+        
+    
+        var popup_215db8d24abc5315fa4cc16a99c2fa69 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c7094f12f977d364f3cc90cf58eb3089 = $(`<div id="html_c7094f12f977d364f3cc90cf58eb3089" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Klastov CZ Klášťov</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Słowacko-Morawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Góry Wizowickie CZ Vizovická vrchovina</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">753 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_215db8d24abc5315fa4cc16a99c2fa69.setContent(html_c7094f12f977d364f3cc90cf58eb3089);
+            
+        
+
+        marker_ea3685df14c9aa4d3c3c508d31e0723f.bindPopup(popup_215db8d24abc5315fa4cc16a99c2fa69)
+        ;
+
+        
+    
+    
+            var marker_77b7b378add5da3c6b55dc761f91ed01 = L.marker(
+                [48.8578167, 17.6756536],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_b45fc9341988ccdd3dbc43d145de5a0a = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e18\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_77b7b378add5da3c6b55dc761f91ed01.setIcon(div_icon_b45fc9341988ccdd3dbc43d145de5a0a);
+        
+    
+        var popup_a35292c7a3965b5bf7ea4b93e18a8e64 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b21a5405d4becd08a36f4cffa548afec = $(`<div id="html_b21a5405d4becd08a36f4cffa548afec" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Velka Javorina CZ Velká Javořina - SK Veľká Javorina</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Słowacko-Morawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Białe Karpaty CZ Bílé Karpaty - SK Biele Karpaty</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">970 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;">2332</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;">2023-08-16</td></tr>                          <tr><td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                 <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-08-16-07-37-velka-javorina-143998938" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2023-08-16-07-37-velka-javorina-143998938</a></td></tr>             </table></div></div>`)[0];
+                popup_a35292c7a3965b5bf7ea4b93e18a8e64.setContent(html_b21a5405d4becd08a36f4cffa548afec);
+            
+        
+
+        marker_77b7b378add5da3c6b55dc761f91ed01.bindPopup(popup_a35292c7a3965b5bf7ea4b93e18a8e64)
+        ;
+
+        
+    
+    
+            var marker_64c7bbb1bfb0b0e2bd370cfd3f8a7a7b = L.marker(
+                [49.3056486, 18.3031681],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_785ad0ea7cd4070730bdb65631361f14 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e19\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_64c7bbb1bfb0b0e2bd370cfd3f8a7a7b.setIcon(div_icon_785ad0ea7cd4070730bdb65631361f14);
+        
+    
+        var popup_08979377f2c414f75004e795c6fe55c1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fadbb1dda8ab69e1f61b19248194699e = $(`<div id="html_fadbb1dda8ab69e1f61b19248194699e" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Maly Javornik CZ Malý Javorník - PL Mały Jawornik</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Karpaty Słowacko-Morawskie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Jaworniki SK Javorníky</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">1019 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_08979377f2c414f75004e795c6fe55c1.setContent(html_fadbb1dda8ab69e1f61b19248194699e);
+            
+        
+
+        marker_64c7bbb1bfb0b0e2bd370cfd3f8a7a7b.bindPopup(popup_08979377f2c414f75004e795c6fe55c1)
+        ;
+
+        
+    
+    
+            var marker_58bf6018ea243e18b4178138bbdb9120 = L.marker(
+                [49.5528039, 18.3008601],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_3aad68c11d8ab7d5aeeb754bd5b5cca8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e20\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_58bf6018ea243e18b4178138bbdb9120.setIcon(div_icon_3aad68c11d8ab7d5aeeb754bd5b5cca8);
+        
+    
+        var popup_ee5be87bc58d93b6f44c7505b3463682 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2b0565bfc5eec5e62078bd6066c11a53 = $(`<div id="html_2b0565bfc5eec5e62078bd6066c11a53" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Ondrejnicka Skalka CZ Skalka - PL Ondrejnicka Skałka</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Pogórze Zachodniobeskidzkie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Pogórze Morawsko-Śląskie CZ Podbeskydská pahorkatina</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">964 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_ee5be87bc58d93b6f44c7505b3463682.setContent(html_2b0565bfc5eec5e62078bd6066c11a53);
+            
+        
+
+        marker_58bf6018ea243e18b4178138bbdb9120.bindPopup(popup_ee5be87bc58d93b6f44c7505b3463682)
+        ;
+
+        
+    
+    
+            var marker_589f7ad7c2a591403ef03293249e083c = L.marker(
+                [49.4039475, 18.3607525],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_2b9ae835b36bb73c88136ee6768b3c30 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e21\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_589f7ad7c2a591403ef03293249e083c.setIcon(div_icon_2b9ae835b36bb73c88136ee6768b3c30);
+        
+    
+        var popup_bc944ef7964fef1647ced83c9f7d42e9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_415303d2ddc5fdce32675b13b024c435 = $(`<div id="html_415303d2ddc5fdce32675b13b024c435" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Vysoka Vsetinska CZ Vysoká - PL Wysoka Wsetyńska</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Góry Hostyńsko-Wsetyńskie CZ Hostýnsko-vsetínská hornatina</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">1024 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;">1806</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;">2018-01-28</td></tr>                          <tr><td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                 <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2018-01-28-07-52-vysoka-22333608" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2018-01-28-07-52-vysoka-22333608</a></td></tr>             </table></div></div>`)[0];
+                popup_bc944ef7964fef1647ced83c9f7d42e9.setContent(html_415303d2ddc5fdce32675b13b024c435);
+            
+        
+
+        marker_589f7ad7c2a591403ef03293249e083c.bindPopup(popup_bc944ef7964fef1647ced83c9f7d42e9)
+        ;
+
+        
+    
+    
+            var marker_57417f361c1471738b85de69b5c7f42a = L.marker(
+                [49.4350819, 18.2211372],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_e07cb16c36f7371e41f822e52a6b7f81 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e22\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_57417f361c1471738b85de69b5c7f42a.setIcon(div_icon_e07cb16c36f7371e41f822e52a6b7f81);
+        
+    
+        var popup_3cd16c2c31afce165e7bc327810304aa = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ca7e40bc4304d8140773494e8baff684 = $(`<div id="html_ca7e40bc4304d8140773494e8baff684" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Poskla CZ Poskla</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Rów Rożnowski CZ Rožnovská brázda</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">576 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_3cd16c2c31afce165e7bc327810304aa.setContent(html_ca7e40bc4304d8140773494e8baff684);
+            
+        
+
+        marker_57417f361c1471738b85de69b5c7f42a.bindPopup(popup_3cd16c2c31afce165e7bc327810304aa)
+        ;
+
+        
+    
+    
+            var marker_fd47bd761a0682656dfe0f8e32d0400d = L.marker(
+                [49.4237344, 18.3340506],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_0103ad71336dfe9534983ab6a90dfb9b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e23\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_fd47bd761a0682656dfe0f8e32d0400d.setIcon(div_icon_0103ad71336dfe9534983ab6a90dfb9b);
+        
+    
+        var popup_89b0669be8ec9fc5ba4bbb812cde4b2c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cbf0e93d2c4c58bd02c6dcb3d0392c1d = $(`<div id="html_cbf0e93d2c4c58bd02c6dcb3d0392c1d" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Sorstyn CZ Šorštýn</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Rów Rożnowski CZ Rožnovská brázda</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">781 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_89b0669be8ec9fc5ba4bbb812cde4b2c.setContent(html_cbf0e93d2c4c58bd02c6dcb3d0392c1d);
+            
+        
+
+        marker_fd47bd761a0682656dfe0f8e32d0400d.bindPopup(popup_89b0669be8ec9fc5ba4bbb812cde4b2c)
+        ;
+
+        
+    
+    
+            var marker_ee899631e83d11169877f08c499b9c5d = L.marker(
+                [49.5459894, 18.4473364],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_315c6c26eedc023a5317b786785ed07f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e24\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_ee899631e83d11169877f08c499b9c5d.setIcon(div_icon_315c6c26eedc023a5317b786785ed07f);
+        
+    
+        var popup_dfc8be9b04cccc7d0cfe6d147782963f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_446bdd1f1f1287c7f2af770f17927483 = $(`<div id="html_446bdd1f1f1287c7f2af770f17927483" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Lysa Hora CZ Lysá hora - PL Łysa Góra - DE Kahlberg</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Beskidy Śląsko-Morawskie DE Mährisch-Schlesischen Beskiden - CZ Moravskoslezské Beskydy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">1323 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;">1801</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;">2018-01-13</td></tr>                          <tr><td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                 <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2018-01-13-12-01-lysa-hora-22034214" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2018-01-13-12-01-lysa-hora-22034214</a></td></tr>             </table></div></div>`)[0];
+                popup_dfc8be9b04cccc7d0cfe6d147782963f.setContent(html_446bdd1f1f1287c7f2af770f17927483);
+            
+        
+
+        marker_ee899631e83d11169877f08c499b9c5d.bindPopup(popup_dfc8be9b04cccc7d0cfe6d147782963f)
+        ;
+
+        
+    
+    
+            var marker_3453811a836b515746b9a315d8bdb604 = L.marker(
+                [49.5519625, 18.8390708],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_47436cf45be528ec97fe08deefe595d9 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e25\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_3453811a836b515746b9a315d8bdb604.setIcon(div_icon_47436cf45be528ec97fe08deefe595d9);
+        
+    
+        var popup_e1402accfa99a7ebb886b15dc9fce89d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_00206512d5fd7b08cc3996182221593b = $(`<div id="html_00206512d5fd7b08cc3996182221593b" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Kempa CZ Kempa</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Rów Jabłonkowski CZ Jablunkovská brázda</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">571 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_e1402accfa99a7ebb886b15dc9fce89d.setContent(html_00206512d5fd7b08cc3996182221593b);
+            
+        
+
+        marker_3453811a836b515746b9a315d8bdb604.bindPopup(popup_e1402accfa99a7ebb886b15dc9fce89d)
+        ;
+
+        
+    
+    
+            var marker_b57afb8d653a51d8988ff399809247ec = L.marker(
+                [49.5467539, 18.8494581],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_62a676c251c07106c5e8e2d0e679bcb4 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e26\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_b57afb8d653a51d8988ff399809247ec.setIcon(div_icon_62a676c251c07106c5e8e2d0e679bcb4);
+        
+    
+        var popup_d8241a81f35dcdcc9d484c9b35a15769 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_79a26e334299f2d8e477f942d88cb7bc = $(`<div id="html_79a26e334299f2d8e477f942d88cb7bc" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Za Kempou CZ Za Kempou</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Rów Jabłonkowski CZ Jablunkovská brázda</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">572 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_d8241a81f35dcdcc9d484c9b35a15769.setContent(html_79a26e334299f2d8e477f942d88cb7bc);
+            
+        
+
+        marker_b57afb8d653a51d8988ff399809247ec.bindPopup(popup_d8241a81f35dcdcc9d484c9b35a15769)
+        ;
+
+        
+    
+    
+            var marker_1048b4e4172dfe7042a07816fe4bbc80 = L.marker(
+                [49.5316492, 18.8000322],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_8ddbc2fdccbe6d82ddd905b82640912b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: red; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e27\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_1048b4e4172dfe7042a07816fe4bbc80.setIcon(div_icon_8ddbc2fdccbe6d82ddd905b82640912b);
+        
+    
+        var popup_9caed800726ade000f01cb33bb52f20f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2aecd03af64742fec8bbec833b7395bb = $(`<div id="html_2aecd03af64742fec8bbec833b7395bb" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Girova CZ Girova</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Międzygórze Jabłonkowskie CZ Jablunkovské mezihoří - SK Jablunkovské medzihorie</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">840 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;"></td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;"></td></tr>         </table></div></div>`)[0];
+                popup_9caed800726ade000f01cb33bb52f20f.setContent(html_2aecd03af64742fec8bbec833b7395bb);
+            
+        
+
+        marker_1048b4e4172dfe7042a07816fe4bbc80.bindPopup(popup_9caed800726ade000f01cb33bb52f20f)
+        ;
+
+        
+    
+    
+            var marker_a2c233dd2bcd8bb8c6053841dedd3ec4 = L.marker(
+                [49.6788564, 18.8046028],
+                {}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var div_icon_ab32c66f3fb092e5a2df8434fde03936 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12px; font-family: Oswald, Arial, sans-serif; font-weight: bold; color: white; background-color: green; border-radius: 50%; border: 1px solid white; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;\"\u003e28\u003c/div\u003e", "iconAnchor": [12, 12], "iconSize": [24, 24]});
+            marker_a2c233dd2bcd8bb8c6053841dedd3ec4.setIcon(div_icon_ab32c66f3fb092e5a2df8434fde03936);
+        
+    
+        var popup_1b178fad9004785832bc6a57e762e851 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d6b86b8a67344f13a47298735592a4b3 = $(`<div id="html_d6b86b8a67344f13a47298735592a4b3" style="width: 100.0%; height: 100.0%;">         <div style="font-family: 'Oswald', sans-serif; font-size: 12px; color: black;">             <table style="width: auto; border-collapse: collapse;">                 <tr><td style="padding: 4px; font-weight: bold;">Peak:</td><td style="padding: 4px;">Wielka Czantoria CZ Velká Čantoryje - DE Großer Czantory-Berg</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Region:</td><td style="padding: 4px;">Zewnętrzne Karpaty Zachodnie Beskidy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">SubRegion:</td><td style="padding: 4px;">Beskid Śląski DE Schlesischen Beskiden - CZ Slezské Beskydy</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Height:</td><td style="padding: 4px;">995 m</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Expedition:</td><td style="padding: 4px;">2141</td></tr>                 <tr><td style="padding: 4px; font-weight: bold;">Date:</td><td style="padding: 4px;">2021-10-10</td></tr>                          <tr><td style="padding: 4px; font-weight: bold;">Trail GPX:</td>                 <td style="padding: 4px;"><a href="https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-10-10-07-44-wielka-czantoria-86009815" target="_blank">https://pl.wikiloc.com/szlaki-wspinaczka-gorska/2021-10-10-07-44-wielka-czantoria-86009815</a></td></tr>             </table></div></div>`)[0];
+                popup_1b178fad9004785832bc6a57e762e851.setContent(html_d6b86b8a67344f13a47298735592a4b3);
+            
+        
+
+        marker_a2c233dd2bcd8bb8c6053841dedd3ec4.bindPopup(popup_1b178fad9004785832bc6a57e762e851)
+        ;
+
+        
+    
+    
+            L.control.fullscreen(
+                {"forceSeparateButton": false, "position": "topleft", "title": "Full Screen", "titleCancel": "Exit Full Screen"}
+            ).addTo(map_58ea14921c118db771a18d46cd95ab01);
+        
+    
+            var tile_layer_48c0342714389a67f04f8805dab1c641 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_a2cb60381ef308191a593e1741e64ecd = new L.Control.MiniMap(
+                tile_layer_48c0342714389a67f04f8805dab1c641,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": true, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_58ea14921c118db771a18d46cd95ab01.addControl(mini_map_a2cb60381ef308191a593e1741e64ecd);
+        
+</script>
+</html>
