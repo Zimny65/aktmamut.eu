@@ -2824,5 +2824,23 @@
     "name": "Snohetta",
     "lat": 62.3198619,
     "lon": 9.267825
+  },
+  {
+    "nr": "2534",
+    "name": "Flochova",
+    "lat": 48.8072872,
+    "lon": 18.9722644
+  },
+  {
+    "nr": "2535",
+    "name": "Kralova Studna",
+    "lat": 48.8832697,
+    "lon": 19.0459289
+  },
+  {
+    "nr": "2536",
+    "name": "Belianska Dolina",
+    "lat": 48.9623164,
+    "lon": 19.0908064
   }
 ]
