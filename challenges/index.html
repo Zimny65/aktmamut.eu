@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CHALLENGES – Mapy</title>
+        <link rel="icon" href="/data/M32.png" />
+
+        <!-- Oswald font -->
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+
+        <!-- Leaflet core -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+
+        <!-- Fullscreen & MiniMap (opcjonalne) -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.css" />
+        <script src="https://unpkg.com/leaflet.fullscreen@3.0.2/Control.FullScreen.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.css" />
+        <script src="https://unpkg.com/leaflet-minimap@3.6.1/dist/Control.MiniMap.min.js"></script>
+
+        <style>
+            html,
+            body,
+            #map {
+                height: 100%;
+                margin: 0;
+            }
+
+            .topbar {
+                position: absolute;
+                inset: 10px auto auto 120px;
+                z-index: 1000;
+                background: rgba(255, 255, 255, 0.92);
+                backdrop-filter: blur(3px);
+                border-radius: 12px;
+                padding: 8px 10px;
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                font: 14px/1.2 system-ui, Segoe UI, Roboto, sans-serif;
+            }
+
+            .topbar h1 {
+                font-size: 16px;
+                margin: 0 8px 0 0;
+                font-weight: 700;
+            }
+
+            .legend {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 4px 8px;
+                border-radius: 999px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+
+            .dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+                box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
+            }
+
+            /* Numerowane ikonki jak w ro.html */
+            .num-pin {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: 'Oswald', Arial, sans-serif;
+                font-size: 12px;
+                font-weight: 700;
+                color: white;
+                border: 1px solid white;
+            }
+
+            .num-pin.green {
+                background: #008000;
+            }
+
+            .num-pin.red {
+                background: #880808;
+            }
+
+            /* Popup tabela */
+            .popup-table {
+                border-collapse: collapse;
+                font: 13px/1.25 system-ui, sans-serif;
+            }
+
+            .popup-table th {
+                text-align: left;
+                color: #333;
+                padding: 2px 6px;
+            }
+
+            .popup-table td {
+                padding: 2px 6px;
+            }
+
+            .popup-table tr + tr td,
+            .popup-table tr + tr th {
+                border-top: 1px dotted #ddd;
+            }
+
+            /* Przycisk CSV */
+            .topbar button {
+                appearance: none;
+                border: none;
+                background: #111;
+                color: #fff;
+                padding: 6px 10px;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+
+            .topbar button:disabled {
+                opacity: 0.5;
+                cursor: default;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <div class="topbar">
+            <h1 id="title">Challenges</h1>
+            <div class="legend">
+                <span class="pill"><span class="dot" style="background: #008000"></span> DONE</span>
+                <span class="pill"><span class="dot" style="background: #880808"></span> TODO</span>
+            </div>
+            <button id="exportCsv" disabled>Get CSV</button>
+        </div>
+
+        <script>
+            (function () {
+                'use strict';
+
+                // --------- KONFIGURACJA REGIONÓW ---------
+                const REGIONS = {
+                    kampinos: {
+                        title: 'Kampinos Hills Challenge',
+                        center: [52.3, 20.55],
+                        zoom: 12,
+                        dataUrl: 'data/challenges-kampinos.json',
+                        minimap: false,
+                        fullscreen: true,
+                    },
+                    masovia: {
+                        title: 'Masovian Challenge',
+                        center: [52.23, 21.01],
+                        zoom: 9,
+                        dataUrl: 'data/challenges-masovia.json',
+                        minimap: true,
+                        fullscreen: true,
+                    },
+                    swkrzyz: {
+                        title: 'Świętokrzyskie Peak Challenge',
+                        center: [50.86, 20.93],
+                        zoom: 11,
+                        dataUrl: 'data/challenges-swkrzyz.json',
+                        minimap: false,
+                        fullscreen: true,
+                    },
+                    raba: {
+                        title: 'Beskid Myślenicki Challenge',
+                        center: [49.9, 20.1],
+                        zoom: 10,
+                        dataUrl: 'data/challenges-raba.json',
+                        minimap: true,
+                        fullscreen: true,
+                    },
+                    ro: {
+                        title: 'Romanian Peak Challenge',
+                        center: [45.8, 24.9],
+                        zoom: 7,
+                        dataUrl: 'data/challenges-ro.json',
+                        minimap: true,
+                        fullscreen: true,
+                    },
+                    sk: {
+                        title: 'Slovakian Peak Challenge',
+                        center: [48.7, 19.7],
+                        zoom: 7,
+                        dataUrl: 'data/challenges-sk.json',
+                        minimap: true,
+                        fullscreen: true,
+                    },
+                    hu: {
+                        title: 'Hungarian Peak Challenge',
+                        center: [47.1, 19.4],
+                        zoom: 8,
+                        dataUrl: 'data/challenges-hu.json',
+                        minimap: true,
+                        fullscreen: true,
+                    },
+                    cz: {
+                        title: 'Czech Peak Challenge',
+                        center: [49.8, 15.5],
+                        zoom: 7,
+                        dataUrl: 'data/challenges-cz.json',
+                        minimap: true,
+                        fullscreen: true,
+                    },
+                };
+
+                // Wybór regionu z ?region=xxx
+                const params = new URLSearchParams(window.location.search);
+                const regionKey = (params.get('region') || 'kampinos').toLowerCase();
+                const CFG = Object.prototype.hasOwnProperty.call(REGIONS, regionKey) ? REGIONS[regionKey] : REGIONS.kampinos;
+
+                // Ustaw tytuł strony i nagłówek
+                document.title = CFG.title;
+                const titleEl = document.getElementById('title');
+                if (titleEl) {
+                    titleEl.textContent = CFG.title;
+                }
+
+                // --------- MAPA ---------
+                const map = L.map('map', {
+                    center: CFG.center,
+                    zoom: CFG.zoom,
+                    zoomControl: true,
+                    attributionControl: true,
+                });
+
+                const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    attribution: "&copy; <a href='https://www.openstreetmap.org/copyright'>OSM contributors</a>",
+                }).addTo(map);
+
+                // Skala (metryczna)
+                L.control.scale({ imperial: false }).addTo(map);
+
+                // Drugi styl (jasny)
+                const osmGray = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                    maxZoom: 20,
+                    subdomains: 'abcd',
+                    attribution: "&copy; OSM &copy; <a href='https://carto.com/attributions'>CARTO</a>",
+                });
+
+                const baseLayers = {
+                    OSM: osm,
+                    'OSM (light)': osmGray,
+                };
+
+                // MiniMap (opcjonalnie)
+                if (CFG.minimap) {
+                    const mini = new L.Control.MiniMap(
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '',
+                        }),
+                        { toggleDisplay: true }
+                    );
+                    mini.addTo(map);
+                }
+
+                // Fullscreen (opcjonalnie)
+                if (CFG.fullscreen && L.control.fullscreen) {
+                    L.control.fullscreen({ position: 'topleft' }).addTo(map);
+                }
+
+                // --------- IKONY ---------
+                function makeNumberIcon(n, status) {
+                    const colorClass = status === 'done' ? 'green' : 'red';
+                    return L.divIcon({
+                        className: 'num-pin ' + colorClass,
+                        html: String(n),
+                        iconSize: [24, 24],
+                        iconAnchor: [12, 12],
+                    });
+                }
+
+                function popupHtml(p) {
+                    const rows = [
+                        ['Peak', p.peak],
+                        ['Region', p.region],
+                        ['SubRegion', p.subregion],
+                        ['Height', p.height ? p.height + ' m' : '—'],
+                        ['Expedition', p.expedition || '—'],
+                        ['Date', p.date || '—'],
+                        ['Trail GPX', p.gpx ? '<a href="' + p.gpx + '" target="_blank" rel="noopener">link</a>' : '—'],
+                    ];
+                    let html = '<table class="popup-table">';
+                    html += rows
+                        .map(function (rv) {
+                            const key = rv[0];
+                            const val = rv[1] || '—';
+                            return '<tr><th>' + key + '</th><td>' + val + '</td></tr>';
+                        })
+                        .join('');
+                    html += '</table>';
+                    return html;
+                }
+
+                // --------- WARSTWA Z PUNKTAMI ---------
+                let markersLayer = L.layerGroup().addTo(map);
+                let layersControl = null;
+
+                function loadData(url) {
+                    fetch(url)
+                        .then(function (res) {
+                            if (!res.ok) {
+                                throw new Error('Błąd pobierania danych: ' + res.status);
+                            }
+                            return res.json();
+                        })
+                        .then(function (items) {
+                            const btn = document.getElementById('exportCsv');
+                            if (btn) {
+                                btn.disabled = false;
+                            }
+
+                            markersLayer.clearLayers();
+
+                            const bounds = [];
+
+                            items.forEach(function (p, idx) {
+                                if (!p.lat || !p.lon) {
+                                    return;
+                                }
+                                const n = p.number != null ? p.number : idx + 1;
+                                const status = p.status || (p.date ? 'done' : 'todo');
+                                const m = L.marker([p.lat, p.lon], {
+                                    icon: makeNumberIcon(n, status),
+                                }).bindPopup(popupHtml(p));
+                                markersLayer.addLayer(m);
+                                bounds.push([p.lat, p.lon]);
+                            });
+
+                            if (layersControl) {
+                                map.removeControl(layersControl);
+                            }
+                            layersControl = L.control.layers(baseLayers, { Punkty: markersLayer }, { collapsed: true }).addTo(map);
+
+                            if (bounds.length) {
+                                const b = L.latLngBounds(bounds);
+                                map.fitBounds(b.pad(0.1));
+                            }
+
+                            const exportBtn = document.getElementById('exportCsv');
+                            if (exportBtn) {
+                                exportBtn.onclick = function () {
+                                    exportCsv(items);
+                                };
+                            }
+                        })
+                        .catch(function (err) {
+                            // prosty komunikat
+                            alert(err.message);
+                        });
+                }
+
+                // --------- CSV EXPORT ---------
+                function exportCsv(items) {
+                    const cols = ['number', 'peak', 'region', 'subregion', 'height', 'expedition', 'date', 'gpx', 'lat', 'lon', 'status'];
+                    const esc = function (v) {
+                        const s = String(v == null ? '' : v);
+                        return /[;"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+                    };
+                    const header = cols.join(';');
+                    const lines = items.map(function (p, idx) {
+                        return [p.number != null ? p.number : idx + 1, p.peak || '', p.region || '', p.subregion || '', p.height || '', p.expedition || '', p.date || '', p.gpx || '', p.lat || '', p.lon || '', p.status || '']
+                            .map(esc)
+                            .join(';');
+                    });
+                    const csv = [header].concat(lines).join('\n');
+                    const blob = new Blob([csv], {
+                        type: 'text/csv;charset=utf-8;',
+                    });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = 'challenges-' + regionKey + '.csv';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                }
+
+                // #zoom/lat/lon w URL (udostępnianie widoku)
+                (function () {
+                    const hash = window.location.hash.slice(1);
+                    if (hash) {
+                        const parts = hash.split('/').map(Number);
+                        if (parts.length === 3 && !isNaN(parts[0]) && !isNaN(parts[1]) && !isNaN(parts[2])) {
+                            map.setView([parts[1], parts[2]], parts[0]);
+                        }
+                    }
+                    map.on('moveend', function () {
+                        const c = map.getCenter();
+                        const z = map.getZoom();
+                        window.location.hash = z + '/' + c.lat.toFixed(5) + '/' + c.lng.toFixed(5);
+                    });
+                })();
+
+                // Start
+                loadData(CFG.dataUrl);
+            })();
+        </script>
+    </body>
+</html>
