@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('/pages/expeditions/expeditions.geojson')
+    fetch('/expeditions/expeditions.geojson')
         .then((res) => res.json())
         .then((data) => {
             const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
