@@ -10,8 +10,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
     # DODANO https://flagcdn.com do img-src oraz czcionki Google do style-src i font-src
-    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com https://*.openstreetmap.org https://tile.openstreetmap.org https://flagcdn.com; worker-src 'self' blob:;"
-
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com https://*.unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://*.unpkg.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://*.tile.openstreetmap.org https://*.openstreetmap.org https://tile.openstreetmap.org https://unpkg.com https://*.unpkg.com https://flagcdn.com; worker-src 'self' blob:;"
 # 2. Ultra-szybkie ładowanie obrazków i wideo (Cache na 1 rok)
 [[headers]]
   for = "/assets/img/*"
