@@ -9,8 +9,8 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
-    # Pozwalamy na skrypty z unpkg (Leaflet) i mapy z OpenStreetMap
-    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com; worker-src 'self' blob:;"
+    # POLUZOWANE CSP: Dodane domeny dla map i zewnętrznych zasobów
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com https://*.openstreetmap.org https://tile.openstreetmap.org; worker-src 'self' blob:;"
 
 # 2. Ultra-szybkie ładowanie obrazków i wideo (Cache na 1 rok)
 [[headers]]
