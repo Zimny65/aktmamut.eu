@@ -1,9 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
     <head>
         <meta charset="UTF-8" />
         <title>STATISTICS</title>
-        <link rel="icon" type="image/webp" href="/assets/img/M32.webp" />
+        <link rel="icon" type="image/png" href="/data/M32.png" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-code@latest/index.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@latest/index.min.css" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@latest/index.min.css" />
@@ -50,52 +50,9 @@
             .monotable {
                 font-size: 14px;
             }
-            .home-btn {
-                position: fixed;
-                top: 20px;
-                left: 20px;
-                z-index: 9999; /* Musi być wyżej niż mapa Leaflet */
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                padding: 8px 15px;
-                background: rgba(0, 0, 0, 0.6);
-                color: white;
-                text-decoration: none;
-                border-radius: 30px;
-                font-family: 'Oswald', sans-serif;
-                transition: all 0.3s ease;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(5px); /* Efekt rozmycia tła pod przyciskiem */
-            }
-
-            .home-btn:hover {
-                background: rgba(0, 0, 0, 0.9);
-                transform: scale(1.05);
-                border-color: rgba(255, 255, 255, 0.5);
-            }
-
-            .home-btn img {
-                height: 24px;
-                width: auto;
-            }
-
-            /* Ukryj napis "Home" na bardzo małych telefonach, zostaw samą ikonkę */
-            @media (max-width: 480px) {
-                .home-btn span {
-                    display: none;
-                }
-                .home-btn {
-                    padding: 10px;
-                }
-            }
         </style>
     </head>
     <body>
-        <a href="/" class="home-btn" title="HOME">
-            <img src="/assets/img/M32.webp" alt="Home" />
-            <span>Home</span>
-        </a>
         <h2>GOT STATISTICS</h2>
         <div id="gotTableContainer">Data input...</div>
 

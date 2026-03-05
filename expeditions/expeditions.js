@@ -199,16 +199,10 @@ var map_f15ff5f41b2dbbf273d8c3052233061a = L.map('map_f15ff5f41b2dbbf273d8c30522
     center: [48.88524522540481, 20.563185152538292],
     crs: L.CRS.EPSG3857,
     zoom: 9,
-    zoomControl: false,
+    zoomControl: true,
     preferCanvas: false,
-    fullscreenControl: false,
+    fullscreenControl: true,
 });
-
-L.control
-    .zoom({
-        position: 'bottomright',
-    })
-    .addTo(map_f15ff5f41b2dbbf273d8c3052233061a);
 
 // 🗺️ Warstwa 1: OpenStreetMap Standard
 var osmLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

@@ -1,39 +1,6 @@
-[build]
-  publish = "."
-
-# 1. Nagłówki bezpieczeństwa (CSP WYŁĄCZONE DO TESTU)
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer-when-downgrade"
-    # Tymczasowo usuwamy linię Content-Security-Policy, żeby sprawdzić mapy
-
-# 2. Ultra-szybkie ładowanie obrazków i wideo (TO ZOSTAWIAMY)
-[[headers]]
-  for = "/assets/img/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/assets/video/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# 3. Cache dla danych JSON (TO TEŻ ZOSTAWIAMY)
-[[headers]]
-  for = "/challenges/data/*.json"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/expeditions/*.geojson"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
-
-[[headers]]
-  for = "/expeditions/*.json"
-  [headers.values]
-    Cache-Control = "public, max-age=3600"
+# Przekierowanie subdomeny kampinos.aktmamut.eu na gotową mapę
+[[redirects]]
+  from = "https://kampinos.aktmamut.eu/*"
+  to = "/maps/kampinos.html"
+  status = 200
+  force = true
