@@ -3,7 +3,7 @@ let L_NO_TOUCH = false;
 let L_DISABLE_3D = false;
 
 window.addEventListener('DOMContentLoaded', function () {
-    // 🔍 Znajdź ID mapy wygenerowanej przez Folium
+    // Znajdź ID mapy wygenerowanej przez Folium
     const mapId = document.querySelector('.folium-map')?.getAttribute('id');
     const map = window[mapId];
     if (!map) return;
@@ -16,20 +16,14 @@ window.addEventListener('DOMContentLoaded', function () {
             console.timeEnd('📥 fetch + przetwarzanie geojson');
             console.time('🔁 iteracja po trasach');
 
-            const groupLayers = [];
-            const routeLayers = [];
-            const allParticipantsSet = new Set();
+            const allRoutesGroup = L.layerGroup().addTo(map);
 
             data.features.forEach((feature, i) => {
                 if (feature.geometry.type !== 'LineString') return;
 
-                const props = feature.properties;
-                // console.time(`🧪 trasa ${props.nr || i}`);
-
-                const coords = feature.geometry.coordinates;
-                if (props.participants) {
-                    props.participants.split(',').forEach((p) => allParticipantsSet.add(p.trim()));
-                }
+                const props = feature.properties || {};
+                const coords = feature.geometry.coordinates || [];
+                if (coords.length === 0) return;
 
                 const trailColor = props.color || '#800000';
                 const trailNr = props.nr || '';
@@ -37,7 +31,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 const lat = parseFloat(props.lat);
                 const lon = parseFloat(props.lon);
 
-                // console.time(`🔷 geojson + tooltip ${trailNr}`);
+                // Linia trasy
                 const line = L.geoJSON(feature, {
                     style: {
                         color: trailColor,
@@ -46,7 +40,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     },
                 });
 
-                line.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
+                line.bindTooltip(`<div style="font-family: Oswald, sans-serif; font-size: 12px;">${trailNr} ${trailName}</div>`, { sticky: true });
 
                 line.on({
                     mouseover: () => {
@@ -57,64 +51,67 @@ window.addEventListener('DOMContentLoaded', function () {
                         line.setStyle({ weight: 3, color: trailColor });
                     },
                 });
-                // console.timeEnd(`🔷 geojson + tooltip ${trailNr}`);
 
-                // console.time(`🟢 marker ${trailNr}`);
-                const iconHtml = `
-            <div style="
-                font-size: 10px;
-                font-family: Oswald, sans-serif;
-                color: white;
-                background-color: ${trailColor};
-                border-radius: 50%;
-                border: 1px solid white;
-                width: 24px;
-                height: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;">
-                ${trailNr}
-            </div>`;
+                // Marker z numerem trasy
+                let marker = null;
+                if (!Number.isNaN(lat) && !Number.isNaN(lon)) {
+                    const iconHtml = `
+                        <div style="
+                            font-size: 10px;
+                            font-family: Oswald, sans-serif;
+                            color: white;
+                            background-color: ${trailColor};
+                            border-radius: 50%;
+                            border: 1px solid white;
+                            width: 24px;
+                            height: 24px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;">
+                            ${trailNr}
+                        </div>`;
 
-                const marker = L.marker([lat, lon], {
-                    icon: L.divIcon({
-                        className: '',
-                        html: iconHtml,
-                        iconSize: [24, 24],
-                        iconAnchor: [12, 12],
-                    }),
-                });
+                    marker = L.marker([lat, lon], {
+                        icon: L.divIcon({
+                            className: '',
+                            html: iconHtml,
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12],
+                        }),
+                    });
 
-                marker.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${trailNr} ${trailName}</div>`, { sticky: true });
+                    marker.bindTooltip(`<div style="font-family: Oswald, sans-serif; font-size: 12px;">${trailNr} ${trailName}</div>`, { sticky: true });
 
-                marker.on('mouseover', function () {
-                    line.setStyle({ weight: 6, color: '#000000' });
-                    line.bringToFront();
-                });
-                marker.on('mouseout', function () {
-                    line.setStyle({ weight: 3, color: trailColor });
-                });
-                // console.timeEnd(`🟢 marker ${trailNr}`);
+                    marker.on('mouseover', function () {
+                        line.setStyle({ weight: 6, color: '#000000' });
+                        line.bringToFront();
+                    });
 
-                const popupHtml = `
-            <div style="font-family: 'Oswald', sans-serif; font-size: 12px;">
-                <table style="border-collapse: collapse;">
-                    <tr><th style="text-align: left;">Trail nr:</th><td>${props.nr || ''}</td></tr>
-                    <tr><th style="text-align: left;">Date:</th><td>${props.date || ''}</td></tr>
-                    <tr><th style="text-align: left;">Trail name:</th><td>${trailName}</td></tr>
-                    <tr><th style="text-align: left;">Mountains:</th><td>${props.mountains || ''}</td></tr>
-                    <tr><th style="text-align: left;">Country:</th><td>${props.country || ''}</td></tr>
-                    <tr><th style="text-align: left;">Distance:</th><td>${props.distance_km || ''} km</td></tr>
-                    <tr><th style="text-align: left;">Up:</th><td>${props.ascent_m || ''} m</td></tr>
-                    <tr><th style="text-align: left;">Time:</th><td>${props.duration_h || ''} h</td></tr>
-                    <tr><th style="text-align: left;">GOT:</th><td>${props.got || ''}</td></tr>
-                    <tr><th style="text-align: left;">Participants:</th><td>${props.participants || ''}</td></tr>
-                    <tr><th style="text-align: left;">GPX:</th><td><a href="${props.gpx_url || '#'}" target="_blank">Wikiloc Link</a></td></tr>
-                </table>
-            </div>
-            `;
-                marker.bindPopup(popupHtml);
+                    marker.on('mouseout', function () {
+                        line.setStyle({ weight: 3, color: trailColor });
+                    });
 
+                    const popupHtml = `
+                        <div style="font-family: 'Oswald', sans-serif; font-size: 12px;">
+                            <table style="border-collapse: collapse;">
+                                <tr><th style="text-align: left;">Trail nr:</th><td>${props.nr || ''}</td></tr>
+                                <tr><th style="text-align: left;">Date:</th><td>${props.date || ''}</td></tr>
+                                <tr><th style="text-align: left;">Trail name:</th><td>${trailName}</td></tr>
+                                <tr><th style="text-align: left;">Mountains:</th><td>${props.mountains || ''}</td></tr>
+                                <tr><th style="text-align: left;">Country:</th><td>${props.country || ''}</td></tr>
+                                <tr><th style="text-align: left;">Distance:</th><td>${props.distance_km || ''} km</td></tr>
+                                <tr><th style="text-align: left;">Up:</th><td>${props.ascent_m || ''} m</td></tr>
+                                <tr><th style="text-align: left;">Time:</th><td>${props.duration_h || ''} h</td></tr>
+                                <tr><th style="text-align: left;">GOT:</th><td>${props.got || ''}</td></tr>
+                                <tr><th style="text-align: left;">Participants:</th><td>${props.participants || ''}</td></tr>
+                                <tr><th style="text-align: left;">GPX:</th><td><a href="${props.gpx_url || '#'}" target="_blank">Wikiloc Link</a></td></tr>
+                            </table>
+                        </div>
+                    `;
+                    marker.bindPopup(popupHtml);
+                }
+
+                // Początek i koniec trasy
                 const startCircle = L.circleMarker([coords[0][1], coords[0][0]], {
                     radius: 3,
                     color: trailColor,
@@ -130,71 +127,30 @@ window.addEventListener('DOMContentLoaded', function () {
                     fillOpacity: 1,
                 });
 
-                const group = L.layerGroup([line, marker, startCircle, endCircle]);
-                routeLayers.push({ layer: group, participants: props.participants || '' });
-                groupLayers.push({ layer: marker, participants: props.participants || '' });
+                const layers = [line, startCircle, endCircle];
+                if (marker) layers.push(marker);
 
-                // console.timeEnd(`🧪 trasa ${props.nr || i}`);
+                const group = L.layerGroup(layers);
+                group.addTo(allRoutesGroup);
             });
 
             console.timeEnd('🔁 iteracja po trasach');
 
-            console.time('🔽 tworzenie listy uczestników');
-            const select = document.getElementById('participant-filter');
-            const participantCounts = {};
-
-            data.features.forEach((feature) => {
-                const props = feature.properties;
-                if (props.participants) {
-                    props.participants.split(',').forEach((p) => {
-                        const name = p.trim();
-                        participantCounts[name] = (participantCounts[name] || 0) + 1;
-                    });
-                }
-            });
-
-            const participantList = Object.keys(participantCounts).sort();
-            participantList.forEach((p) => {
-                const option = document.createElement('option');
-                option.value = p;
-                option.textContent = `${p} (${participantCounts[p]})`;
-                select.appendChild(option);
-            });
-            console.timeEnd('🔽 tworzenie listy uczestników');
-
-            console.time('🌍 applyParticipantFilter');
-            function applyParticipantFilter(selected) {
-                map.eachLayer((layer) => {
-                    if (layer instanceof L.LayerGroup || layer instanceof L.Marker || layer instanceof L.GeoJSON) {
-                        map.removeLayer(layer);
-                    }
-                });
-
-                const visibleMarkers = groupLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
-                const visibleRoutes = routeLayers.filter((obj) => selected === 'ALL' || (obj.participants && obj.participants.includes(selected))).map((obj) => obj.layer);
-
-                L.layerGroup(visibleMarkers).addTo(map);
-                L.layerGroup(visibleRoutes).addTo(map);
-            }
-
-            applyParticipantFilter('ALL');
-            console.timeEnd('🌍 applyParticipantFilter');
-
-            const features = data.features;
+            // Informacja o wersji / dacie ostatniej trasy
+            const features = data.features || [];
             if (features.length > 0) {
                 const last = features[features.length - 1];
-                const date = last.properties.date;
+                const date = last?.properties?.date || '';
                 const versionInfo = document.getElementById('version-info');
                 if (versionInfo) versionInfo.textContent = `${date}`;
             }
-
-            document.getElementById('participant-filter').addEventListener('change', function () {
-                applyParticipantFilter(this.value);
-            });
+        })
+        .catch((error) => {
+            console.error('Błąd ładowania expeditions.geojson:', error);
         });
 });
 
-// 🌍 Inicjalizacja mapy Leaflet
+// Inicjalizacja mapy Leaflet
 var map_f15ff5f41b2dbbf273d8c3052233061a = L.map('map_f15ff5f41b2dbbf273d8c3052233061a', {
     center: [48.88524522540481, 20.563185152538292],
     crs: L.CRS.EPSG3857,
@@ -204,7 +160,7 @@ var map_f15ff5f41b2dbbf273d8c3052233061a = L.map('map_f15ff5f41b2dbbf273d8c30522
     fullscreenControl: true,
 });
 
-// 🗺️ Warstwa 1: OpenStreetMap Standard
+// Warstwa 1: OpenStreetMap Standard
 var osmLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     minZoom: 0,
     maxZoom: 19,
@@ -213,7 +169,7 @@ var osmLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     opacity: 1,
 });
 
-// 🗺️ Warstwa: OSM.de (FOSSGIS)
+// Warstwa: OSM.de (FOSSGIS)
 var osmDeLayer = L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
     minZoom: 0,
     maxZoom: 19,
@@ -222,7 +178,7 @@ var osmDeLayer = L.tileLayer('https://tile.openstreetmap.de/{z}/{x}/{y}.png', {
     crossOrigin: true,
 });
 
-// 🗺️ Warstwa 2: OpenTopoMap (mapa turystyczna)
+// Warstwa 2: OpenTopoMap
 var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
     minZoom: 0,
     maxZoom: 17,
@@ -231,7 +187,7 @@ var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', 
     opacity: 1,
 });
 
-// 🗺️ Warstwa 3: MapTiler Outdoor (wymaga klucza API)
+// Warstwa 3: MapTiler Outdoor
 var maptilerLayer = L.tileLayer('https://api.maptiler.com/maps/outdoor/{z}/{x}/{y}.png?key=bMbOwauRVWZIi3aajhra', {
     minZoom: 0,
     maxZoom: 20,
@@ -241,7 +197,7 @@ var maptilerLayer = L.tileLayer('https://api.maptiler.com/maps/outdoor/{z}/{x}/{
     crossOrigin: true,
 });
 
-// 🏔️ Warstwa 4: MapTiler Topo
+// Warstwa 4: MapTiler Topo
 var maptilerTopoLayer = L.tileLayer('https://api.maptiler.com/maps/topo/{z}/{x}/{y}.png?key=bMbOwauRVWZIi3aajhra', {
     minZoom: 0,
     maxZoom: 20,
@@ -251,7 +207,7 @@ var maptilerTopoLayer = L.tileLayer('https://api.maptiler.com/maps/topo/{z}/{x}/
     crossOrigin: true,
 });
 
-// 🛰️ Warstwa 5: MapTiler Hybrid (satelita + ulice)
+// Warstwa 5: MapTiler Hybrid
 var maptilerHybridLayer = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/{x}/{y}.jpg?key=bMbOwauRVWZIi3aajhra', {
     minZoom: 0,
     maxZoom: 20,
@@ -261,7 +217,7 @@ var maptilerHybridLayer = L.tileLayer('https://api.maptiler.com/maps/hybrid/{z}/
     crossOrigin: true,
 });
 
-// 🥾 Warstwa 6: Tracestrack Topo (bez MapTiler)
+// Warstwa 6: Tracestrack Topo
 var tracestrackTopoLayer = L.tileLayer('https://tile.tracestrack.com/topo__/{z}/{x}/{y}.webp?key=98a25989268be3eb15a4369c05eda018', {
     minZoom: 0,
     maxZoom: 19,
@@ -270,10 +226,10 @@ var tracestrackTopoLayer = L.tileLayer('https://tile.tracestrack.com/topo__/{z}/
     crossOrigin: true,
 });
 
-// ✅ Domyślnie dodajemy OpenStreetMap
+// Domyślnie dodajemy OpenStreetMap
 osmLayer.addTo(map_f15ff5f41b2dbbf273d8c3052233061a);
 
-// 🎚️ Przełącznik warstw (Leaflet layers control)
+// Przełącznik warstw
 var layer_control_62bf6a9bcc869e79e51c96d84cfc230a_layers = {
     base_layers: {
         '🗺️ OpenStreetMap': osmLayer,
@@ -287,7 +243,6 @@ var layer_control_62bf6a9bcc869e79e51c96d84cfc230a_layers = {
     overlays: {},
 };
 
-// 🎚️ Dodanie panelu warstw (przełącznik stylów mapy - bazowe + nakładki)
 L.control
     .layers(layer_control_62bf6a9bcc869e79e51c96d84cfc230a_layers.base_layers, layer_control_62bf6a9bcc869e79e51c96d84cfc230a_layers.overlays, {
         position: 'topright',
@@ -296,10 +251,10 @@ L.control
     })
     .addTo(map_f15ff5f41b2dbbf273d8c3052233061a);
 
-// 📏 Dodanie klasycznego paska skali w lewym dolnym rogu
+// Skala
 L.control
     .scale({
         position: 'bottomleft',
-        imperial: false, // tylko metry
+        imperial: false,
     })
     .addTo(map_f15ff5f41b2dbbf273d8c3052233061a);
