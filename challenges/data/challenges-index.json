@@ -1,0 +1,37 @@
+[
+  {
+    "key": "ro",
+    "name": "Romanian Peak Challenge",
+    "icon": "/assets/img/ro.svg"
+  },
+  {
+    "key": "sk",
+    "name": "Slovak Peak Challenge",
+    "icon": "/assets/img/sk.svg"
+  },
+  {
+    "key": "cz",
+    "name": "Czech Peak Challenge",
+    "icon": "/assets/img/cz.svg"
+  },
+  {
+    "key": "hu",
+    "name": "Hungarian Peak Challenge",
+    "icon": "/assets/img/hu.svg"
+  },
+  {
+    "key": "swkrzyz",
+    "name": "Świętokrzyskie Peak Challenge",
+    "icon": "/assets/img/SWK.webp"
+  },
+  {
+    "key": "kampinos",
+    "name": "Kampinos Hills Challenge",
+    "icon": "🌲"
+  },
+  {
+    "key": "masovia",
+    "name": "Masovian Challenge",
+    "icon": "🌄"
+  }
+]

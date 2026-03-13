@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>AKT MAMUT – Challenges Manual</title>
+        <link rel="icon" type="image/png" href="/assets/img/M32.webp" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+        <style>
+            :root {
+                --bg: #f5f7f8;
+                --card: #ffffff;
+                --text: #1f2937;
+                --muted: #6b7280;
+                --line: #e5e7eb;
+                --accent: #1f7a4f;
+                --accent-soft: #e8f5ee;
+                --code: #111827;
+                --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+                --radius: 18px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--text);
+                font-family: Inter, Arial, sans-serif;
+                line-height: 1.65;
+            }
+
+            .page {
+                max-width: 1180px;
+                margin: 0 auto;
+                padding: 28px 20px 60px;
+            }
+
+            .topbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 24px;
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .brand img {
+                height: 46px;
+                display: block;
+            }
+
+            .brand-text strong {
+                display: block;
+                font-family: Oswald, sans-serif;
+                font-size: 1.7rem;
+                font-weight: 500;
+                line-height: 1;
+            }
+
+            .brand-text span {
+                color: var(--muted);
+                font-size: 0.95rem;
+            }
+
+            .back {
+                text-decoration: none;
+                color: var(--accent);
+                font-weight: 700;
+            }
+
+            .hero {
+                background: linear-gradient(135deg, #ffffff, #eef5f1);
+                border-radius: 24px;
+                padding: 30px 28px;
+                box-shadow: var(--shadow);
+                margin-bottom: 24px;
+            }
+
+            .hero h1 {
+                margin: 0 0 10px;
+                font-family: Oswald, sans-serif;
+                font-size: clamp(2.1rem, 4vw, 3.2rem);
+                line-height: 1;
+                font-weight: 500;
+            }
+
+            .hero p {
+                margin: 0;
+                max-width: 850px;
+                color: var(--muted);
+                font-size: 1.02rem;
+            }
+
+            .layout {
+                display: grid;
+                grid-template-columns: 260px 1fr;
+                gap: 24px;
+                align-items: start;
+            }
+
+            .toc {
+                position: sticky;
+                top: 18px;
+                background: var(--card);
+                border-radius: var(--radius);
+                padding: 18px;
+                box-shadow: var(--shadow);
+            }
+
+            .toc h2 {
+                margin: 0 0 10px;
+                font-size: 1rem;
+            }
+
+            .toc a {
+                display: block;
+                text-decoration: none;
+                color: var(--text);
+                padding: 7px 0;
+                border-bottom: 1px solid #f0f2f4;
+                font-size: 0.95rem;
+            }
+
+            .toc a:last-child {
+                border-bottom: 0;
+            }
+
+            .content {
+                display: grid;
+                gap: 22px;
+            }
+
+            section {
+                background: var(--card);
+                border-radius: var(--radius);
+                padding: 24px;
+                box-shadow: var(--shadow);
+            }
+
+            section h2 {
+                margin: 0 0 12px;
+                font-family: Oswald, sans-serif;
+                font-size: 1.6rem;
+                font-weight: 500;
+            }
+
+            section h3 {
+                margin-top: 24px;
+                margin-bottom: 10px;
+                font-size: 1.05rem;
+            }
+
+            p {
+                margin: 0 0 12px;
+            }
+
+            ul,
+            ol {
+                margin: 0 0 12px 20px;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 6px;
+            }
+
+            .grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+            }
+
+            .mini-card {
+                background: #f9fafb;
+                border: 1px solid var(--line);
+                border-radius: 14px;
+                padding: 16px;
+            }
+
+            .mini-card strong {
+                display: block;
+                margin-bottom: 6px;
+            }
+
+            pre {
+                margin: 12px 0 0;
+                background: var(--code);
+                color: #f9fafb;
+                padding: 16px;
+                border-radius: 14px;
+                overflow-x: auto;
+                font-size: 0.93rem;
+                line-height: 1.5;
+            }
+
+            code {
+                font-family: Consolas, 'Courier New', monospace;
+            }
+
+            .path {
+                color: var(--accent);
+                font-weight: 700;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 12px;
+                font-size: 0.95rem;
+            }
+
+            th,
+            td {
+                text-align: left;
+                padding: 10px 12px;
+                border-bottom: 1px solid var(--line);
+                vertical-align: top;
+            }
+
+            th {
+                background: #f9fafb;
+            }
+
+            .note {
+                background: var(--accent-soft);
+                border-left: 4px solid var(--accent);
+                padding: 14px 16px;
+                border-radius: 12px;
+                margin-top: 14px;
+            }
+
+            .flow {
+                display: grid;
+                gap: 12px;
+                margin-top: 14px;
+            }
+
+            .flow-step {
+                background: #f9fafb;
+                border: 1px solid var(--line);
+                border-radius: 14px;
+                padding: 14px 16px;
+                font-weight: 600;
+            }
+
+            .muted {
+                color: var(--muted);
+            }
+
+            @media (max-width: 900px) {
+                .layout {
+                    grid-template-columns: 1fr;
+                }
+
+                .toc {
+                    position: static;
+                }
+
+                .grid-2 {
+                    grid-template-columns: 1fr;
+                }
+
+                .topbar {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="topbar">
+                <a class="brand" href="/index.html">
+                    <img src="/assets/img/logo-akt-mamut.svg" alt="AKT MAMUT" />
+                    <div class="brand-text">
+                        <strong>AKT MAMUT</strong>
+                        <span>Challenges Manual</span>
+                    </div>
+                </a>
+
+                <a class="back" href="/challenges/list.html">← Back to Challenges</a>
+            </div>
+
+            <div class="hero">
+                <h1>Challenges System Manual</h1>
+                <p>Dokumentacja systemu challenges dla projektu AKT MAMUT. System jest oparty na Google Sheets, Pythonie oraz statycznych plikach JSON używanych przez frontend.</p>
+            </div>
+
+            <div class="layout">
+                <nav class="toc">
+                    <h2>Spis treści</h2>
+                    <a href="#overview">1. Overview</a>
+                    <a href="#structure">2. Struktura projektu</a>
+                    <a href="#config">3. CONFIG w Google Sheets</a>
+                    <a href="#region-data">4. Dane regionów</a>
+                    <a href="#generator">5. Generator Python</a>
+                    <a href="#json">6. JSON output</a>
+                    <a href="#pages">7. Strony frontendowe</a>
+                    <a href="#workflow">8. Workflow</a>
+                    <a href="#new-challenge">9. Dodanie nowego challenge</a>
+                </nav>
+
+                <div class="content">
+                    <section id="overview">
+                        <h2>1. Overview</h2>
+                        <p>System challenges działa w modelu:</p>
+                        <pre><code>Google Sheets → Python generator → JSON → Frontend HTML/JS</code></pre>
+
+                        <div class="grid-2" style="margin-top: 16px">
+                            <div class="mini-card">
+                                <strong>Źródło danych</strong>
+                                Google Sheets zawiera zakładkę <code>CONFIG</code> oraz osobne zakładki dla regionów.
+                            </div>
+                            <div class="mini-card">
+                                <strong>Efekt końcowy</strong>
+                                Frontend korzysta z wygenerowanych plików JSON i pokazuje kafelki oraz stronę pojedynczego challenge.
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="structure">
+                        <h2>2. Struktura projektu</h2>
+                        <pre><code>AKT-MAMUT/
+├─ data/
+│  └─ generate_challenges.py
+└─ site/
+   ├─ index.html
+   └─ challenges/
+      ├─ list.html
+      ├─ index.html
+      ├─ manual.html
+      └─ data/
+         ├─ challenges-index.json
+         ├─ challenges-ro.json
+         ├─ challenges-sk.json
+         ├─ challenges-cz.json
+         └─ ...</code></pre>
+
+                        <div class="note">
+                            Najważniejsze katalogi to
+                            <span class="path">data/</span> i <span class="path">site/challenges/data/</span>.
+                        </div>
+                    </section>
+
+                    <section id="config">
+                        <h2>3. CONFIG w Google Sheets</h2>
+                        <p>Zakładka <code>CONFIG</code> steruje tym, jakie challenge są aktywne i jak są prezentowane.</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>kolumna</th>
+                                    <th>opis</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>key</code></td>
+                                    <td>unikalny identyfikator challenge</td>
+                                </tr>
+                                <tr>
+                                    <td><code>sheet</code></td>
+                                    <td>nazwa zakładki z danymi regionu</td>
+                                </tr>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td>nazwa challenge wyświetlana w UI</td>
+                                </tr>
+                                <tr>
+                                    <td><code>icon</code></td>
+                                    <td>emoji albo ścieżka do obrazka, np. <code>/assets/img/ro.svg</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>active</code></td>
+                                    <td><code>1</code> = aktywny, <code>0</code> = wyłączony</td>
+                                </tr>
+                                <tr>
+                                    <td><code>order</code></td>
+                                    <td>kolejność wyświetlania</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>Przykład</h3>
+                        <pre><code>key       sheet     name                           icon                   active   order
+ro        RO        Romanian Peak Challenge        /assets/img/ro.svg    1        1
+sk        SK        Slovak Peak Challenge          /assets/img/sk.svg    1        2
+cz        CZ        Czech Peak Challenge           /assets/img/cz.svg    1        3
+kampinos  Kampinos  Kampinos Hills Challenge       🌲                    1        6
+raba      Raba      Beskid Myślenicki Challenge                          0        8</code></pre>
+                    </section>
+
+                    <section id="region-data">
+                        <h2>4. Dane regionów</h2>
+                        <p>Każdy challenge ma własną zakładkę w Google Sheets. Generator oczekuje kolumn:</p>
+
+                        <pre><code>NR
+PEAK
+REGION
+SUBREGION
+HEIGHT
+EXPEDITION
+DATE
+LAT
+LON</code></pre>
+
+                        <p>Status jest obliczany automatycznie:</p>
+                        <pre><code>DATE != ""  → done
+DATE == ""  → todo</code></pre>
+                    </section>
+
+                    <section id="generator">
+                        <h2>5. Generator Python</h2>
+                        <p>Plik generatora:</p>
+                        <pre><code>data/generate_challenges.py</code></pre>
+
+                        <p>Uruchamianie:</p>
+                        <pre><code>python generate_challenges.py</code></pre>
+
+                        <div class="flow">
+                            <div class="flow-step">1. Wczytaj CONFIG z Google Sheets</div>
+                            <div class="flow-step">2. Dla każdego aktywnego challenge pobierz dane z odpowiedniej zakładki</div>
+                            <div class="flow-step">3. Wygeneruj plik <code>challenges-&lt;key&gt;.json</code></div>
+                            <div class="flow-step">4. Zaktualizuj menu w <code>site/index.html</code></div>
+                            <div class="flow-step">5. Wygeneruj <code>challenges-index.json</code> dla strony kafelków</div>
+                        </div>
+                    </section>
+
+                    <section id="json">
+                        <h2>6. JSON output</h2>
+
+                        <h3>Plik indeksu</h3>
+                        <pre><code>[
+  {
+    "key": "ro",
+    "name": "Romanian Peak Challenge",
+    "icon": "/assets/img/ro.svg"
+  },
+  {
+    "key": "sk",
+    "name": "Slovak Peak Challenge",
+    "icon": "/assets/img/sk.svg"
+  }
+]</code></pre>
+
+                        <h3>Plik pojedynczego challenge</h3>
+                        <pre><code>[
+  {
+    "number": 1,
+    "peak": "Moldoveanu",
+    "region": "Făgăraș",
+    "subregion": "",
+    "height": 2544,
+    "expedition": "AKT Mamut",
+    "date": "2024-08-15",
+    "lat": 45.599,
+    "lon": 24.736,
+    "status": "done"
+  }
+]</code></pre>
+                    </section>
+
+                    <section id="pages">
+                        <h2>7. Strony frontendowe</h2>
+
+                        <h3><code>list.html</code></h3>
+                        <p>Strona z kafelkami. Wczytuje <code>challenges-index.json</code>, a potem dla każdego challenge pobiera jego JSON i liczy:</p>
+                        <ul>
+                            <li>liczbę wszystkich szczytów,</li>
+                            <li>liczbę ukończonych,</li>
+                            <li>procent progresu.</li>
+                        </ul>
+
+                        <h3><code>index.html</code></h3>
+                        <p>Strona pojedynczego challenge, otwierana jako:</p>
+                        <pre><code>/challenges/index.html?region=ro</code></pre>
+
+                        <p class="muted">Parametr <code>region</code> musi odpowiadać polu <code>key</code> z CONFIG.</p>
+                    </section>
+
+                    <section id="workflow">
+                        <h2>8. Workflow</h2>
+                        <pre><code>1. Edycja danych w Google Sheets
+2. python generate_challenges.py
+3. commit
+4. push
+5. Netlify deploy</code></pre>
+
+                        <div class="note">Jeśli dodajesz lub zmieniasz challenge, nie trzeba ręcznie edytować menu, jeżeli generator poprawnie aktualizuje <code>site/index.html</code>.</div>
+                    </section>
+
+                    <section id="new-challenge">
+                        <h2>9. Dodanie nowego challenge</h2>
+                        <ol>
+                            <li>Dodaj nową zakładkę w Google Sheets z danymi szczytów.</li>
+                            <li>Dodaj nowy wiersz w <code>CONFIG</code>.</li>
+                            <li>Uruchom generator.</li>
+                            <li>Sprawdź, czy powstał nowy plik <code>challenges-&lt;key&gt;.json</code>.</li>
+                            <li>Sprawdź, czy challenge pojawił się w menu i na stronie kafelków.</li>
+                        </ol>
+
+                        <h3>Przykład wpisu w CONFIG</h3>
+                        <pre><code>tatry   Tatry   Tatra Peak Challenge   /assets/img/tatry.svg   1   9</code></pre>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>AKT MAMUT – Challenges</title>
+        <link rel="icon" type="image/png" href="/assets/img/M32.webp" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+        <style>
+            :root {
+                --bg: #f5f7f8;
+                --card: #ffffff;
+                --text: #1f2937;
+                --muted: #6b7280;
+                --line: #e5e7eb;
+                --accent: #1f7a4f;
+                --accent-soft: #e8f5ee;
+                --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+                --radius: 18px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                font-family: Inter, Arial, sans-serif;
+                background: var(--bg);
+                color: var(--text);
+            }
+
+            .page {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 32px 20px 48px;
+            }
+
+            .topbar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 16px;
+                margin-bottom: 28px;
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                text-decoration: none;
+                color: inherit;
+            }
+
+            .brand img {
+                height: 44px;
+                width: auto;
+                display: block;
+            }
+
+            .brand-text {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .brand-text strong {
+                font-family: Oswald, sans-serif;
+                font-size: 1.6rem;
+                line-height: 1;
+                font-weight: 500;
+            }
+
+            .brand-text span {
+                color: var(--muted);
+                font-size: 0.95rem;
+            }
+
+            .back-link {
+                text-decoration: none;
+                color: var(--accent);
+                font-weight: 600;
+            }
+
+            .hero {
+                margin-bottom: 26px;
+            }
+
+            .hero h1 {
+                margin: 0 0 8px;
+                font-family: Oswald, sans-serif;
+                font-size: clamp(2rem, 4vw, 3rem);
+                line-height: 1;
+                font-weight: 500;
+            }
+
+            .hero p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 1.02rem;
+                max-width: 780px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 22px;
+            }
+
+            .card {
+                background: var(--card);
+                border-radius: var(--radius);
+                box-shadow: var(--shadow);
+                border: 1px solid rgba(0, 0, 0, 0.04);
+                padding: 22px;
+                display: flex;
+                flex-direction: column;
+                min-height: 250px;
+                transition:
+                    transform 0.18s ease,
+                    box-shadow 0.18s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+            }
+
+            .card-head {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 16px;
+            }
+
+            .card-icon {
+                width: 34px;
+                height: 34px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex: 0 0 34px;
+            }
+
+            .card-icon img {
+                max-width: 100%;
+                max-height: 100%;
+                display: block;
+            }
+
+            .card-title {
+                margin: 0;
+                font-size: 1.1rem;
+                line-height: 1.25;
+                font-weight: 700;
+            }
+
+            .meta {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+                margin: 4px 0 18px;
+            }
+
+            .metric {
+                background: #f9fafb;
+                border: 1px solid var(--line);
+                border-radius: 14px;
+                padding: 12px 14px;
+            }
+
+            .metric-label {
+                display: block;
+                font-size: 0.8rem;
+                color: var(--muted);
+                margin-bottom: 4px;
+            }
+
+            .metric-value {
+                font-size: 1.05rem;
+                font-weight: 700;
+            }
+
+            .progress-row {
+                margin-top: auto;
+            }
+
+            .progress-top {
+                display: flex;
+                justify-content: space-between;
+                gap: 12px;
+                font-size: 0.92rem;
+                margin-bottom: 8px;
+            }
+
+            .progress-top .left {
+                color: var(--muted);
+            }
+
+            .progress-top .right {
+                font-weight: 700;
+            }
+
+            .bar {
+                width: 100%;
+                height: 10px;
+                background: #e5e7eb;
+                border-radius: 999px;
+                overflow: hidden;
+                margin-bottom: 18px;
+            }
+
+            .bar-fill {
+                height: 100%;
+                background: var(--accent);
+                border-radius: 999px;
+            }
+
+            .open-btn {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                background: var(--accent);
+                color: white;
+                font-weight: 700;
+                border-radius: 12px;
+                padding: 12px 16px;
+            }
+
+            .loading,
+            .empty,
+            .error {
+                background: white;
+                border-radius: 18px;
+                padding: 24px;
+                box-shadow: var(--shadow);
+            }
+
+            .error {
+                color: #991b1b;
+            }
+
+            .manual-floating {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 46px;
+                height: 46px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: white;
+                border-radius: 999px;
+                border: 1px solid #e5e7eb;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+                text-decoration: none;
+                color: #374151;
+                font-size: 1.1rem;
+                transition:
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease,
+                    background 0.2s ease;
+                z-index: 1000;
+            }
+
+            .manual-floating:hover {
+                background: #f9fafb;
+                transform: translateY(-1px);
+                box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+            }
+
+            @media (max-width: 640px) {
+                .topbar {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .meta {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="page">
+            <div class="topbar">
+                <a class="brand" href="/index.html">
+                    <img src="/assets/img/logo-akt-mamut.svg" alt="AKT MAMUT" />
+                    <div class="brand-text">
+                        <strong>AKT MAMUT</strong>
+                        <span>Mountain Challenges</span>
+                    </div>
+                </a>
+
+                <a class="back-link" href="/index.html">← Back to homepage</a>
+            </div>
+
+            <section class="hero">
+                <h1>Challenges</h1>
+                <p>Wybierz wyzwanie i sprawdź postęp zdobywania szczytów.</p>
+            </section>
+
+            <div id="content" class="loading">Ładowanie challenges…</div>
+        </div>
+
+        <script>
+            function renderIcon(icon, name) {
+                if (!icon) return '';
+
+                const lower = icon.toLowerCase();
+                const isImage = lower.endsWith('.svg') || lower.endsWith('.png') || lower.endsWith('.webp') || lower.endsWith('.jpg') || lower.endsWith('.jpeg') || lower.endsWith('.gif') || icon.startsWith('/');
+
+                if (isImage) {
+                    return `<img src="${icon}" alt="${name}">`;
+                }
+
+                return `<span style="font-size: 1.5rem; line-height: 1;">${icon}</span>`;
+            }
+
+            async function fetchJson(url) {
+                const response = await fetch(url, { cache: 'no-store' });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status} for ${url}`);
+                }
+
+                return response.json();
+            }
+
+            async function buildCards() {
+                const content = document.getElementById('content');
+
+                try {
+                    const challenges = await fetchJson('/challenges/data/challenges-index.json');
+
+                    if (!Array.isArray(challenges) || challenges.length === 0) {
+                        content.className = 'empty';
+                        content.textContent = 'Brak aktywnych challenges.';
+                        return;
+                    }
+
+                    const stats = await Promise.all(
+                        challenges.map(async (challenge) => {
+                            const rows = await fetchJson(`/challenges/data/challenges-${challenge.key}.json`);
+
+                            const total = Array.isArray(rows) ? rows.length : 0;
+                            const done = Array.isArray(rows) ? rows.filter((r) => r.status === 'done').length : 0;
+
+                            const percent = total > 0 ? Math.round((done / total) * 100) : 0;
+
+                            return {
+                                ...challenge,
+                                total,
+                                done,
+                                todo: Math.max(0, total - done),
+                                percent,
+                            };
+                        })
+                    );
+
+                    const grid = document.createElement('div');
+                    grid.className = 'grid';
+
+                    for (const item of stats) {
+                        const card = document.createElement('article');
+                        card.className = 'card';
+
+                        card.innerHTML = `
+                        <div class="card-head">
+                            <div class="card-icon">${renderIcon(item.icon, item.name)}</div>
+                            <h2 class="card-title">${item.name}</h2>
+                        </div>
+
+                        <div class="meta">
+                            <div class="metric">
+                                <span class="metric-label">Peaks</span>
+                                <span class="metric-value">${item.total}</span>
+                            </div>
+
+                            <div class="metric">
+                                <span class="metric-label">Completed</span>
+                                <span class="metric-value">${item.done}</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-row">
+                            <div class="progress-top">
+                                <span class="left">${item.done} / ${item.total}</span>
+                                <span class="right">${item.percent}%</span>
+                            </div>
+
+                            <div class="bar">
+                                <div class="bar-fill" style="width: ${item.percent}%"></div>
+                            </div>
+
+                            <a class="open-btn" href="/challenges/index.html?region=${item.key}">
+                                Open challenge
+                            </a>
+                        </div>
+                    `;
+
+                        grid.appendChild(card);
+                    }
+
+                    content.className = '';
+                    content.innerHTML = '';
+                    content.appendChild(grid);
+                } catch (error) {
+                    console.error(error);
+                    content.className = 'error';
+                    content.textContent = 'Nie udało się wczytać challenges.';
+                }
+            }
+
+            buildCards();
+        </script>
+        <a class="manual-floating" href="/challenges/manual.html" title="Manual"> ⚙ </a>
+    </body>
+</html>
