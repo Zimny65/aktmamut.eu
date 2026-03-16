@@ -2,82 +2,225 @@
 <html lang="pl">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>AKT MAMUT</title>
+
         <link rel="icon" type="image/png" href="/assets/img/M32.webp" />
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <header>
-            <div class="header-wrapper">
-                <div class="left" style="width: 150px"></div>
-                <div class="center">
-                    <div class="logo">
-                        <img src="/assets/img/logo-akt-mamut.svg" alt="AKT MAMUT" style="height: 74px" />
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="dropdown">
-                        <button class="dropbtn">Menu &#9776;</button>
-                        <div class="dropdown-content">
-                            <a href="/statistics" target="_blank">📊 Statistics</a>
-                            <a href="/expeditions" target="_blank">🌍 Expeditions Map</a>
-                            <a href="/challenges/list.html" target="_blank">🏔 Challenges</a>
-                            <!-- CHALLENGES_MENU_START -->
-                            <a href="/challenges/index.html?region=ro" target="_blank">
-                                <img src="/assets/img/ro.svg" width="20" style="vertical-align: middle; margin-right: 5px" alt="Romanian Peak Challenge" />
-                                Romanian Peak Challenge
-                            </a>
+        <header class="site-header">
+            <div class="container nav-wrap">
+                <a class="site-logo" href="/index.html" aria-label="AKT MAMUT home">
+                    <img src="/assets/img/M32.webp" alt="AKT MAMUT" />
+                    <span>AKT MAMUT</span>
+                </a>
 
-                            <a href="/challenges/index.html?region=sk" target="_blank">
-                                <img src="/assets/img/sk.svg" width="20" style="vertical-align: middle; margin-right: 5px" alt="Slovak Peak Challenge" />
-                                Slovak Peak Challenge
-                            </a>
+                <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                    <a href="/expeditions" target="_blank">Expeditions</a>
+                    <a href="/challenges/list.html" target="_blank">Challenges</a>
+                    <a href="/statistics" target="_blank">Statistics</a>
+                    <a href="#modules">Modules</a>
+                </nav>
 
-                            <a href="/challenges/index.html?region=cz" target="_blank">
-                                <img src="/assets/img/cz.svg" width="20" style="vertical-align: middle; margin-right: 5px" alt="Czech Peak Challenge" />
-                                Czech Peak Challenge
-                            </a>
-
-                            <a href="/challenges/index.html?region=hu" target="_blank">
-                                <img src="/assets/img/hu.svg" width="20" style="vertical-align: middle; margin-right: 5px" alt="Hungarian Peak Challenge" />
-                                Hungarian Peak Challenge
-                            </a>
-
-                            <a href="/challenges/index.html?region=swkrzyz" target="_blank">
-                                <img src="/assets/img/SWK.webp" width="20" style="vertical-align: middle; margin-right: 5px" alt="Świętokrzyskie Peak Challenge" />
-                                Świętokrzyskie Peak Challenge
-                            </a>
-
-                            <a href="/challenges/index.html?region=kampinos" target="_blank">
-                                <span style="margin-right: 5px">🌲</span>
-                                Kampinos Hills Challenge
-                            </a>
-
-                            <a href="/challenges/index.html?region=masovia" target="_blank">
-                                <span style="margin-right: 5px">🌄</span>
-                                Masovian Challenge
-                            </a>
-                            <!-- CHALLENGES_MENU_END -->
-                        </div>
-                    </div>
-                </div>
+                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </header>
 
         <section class="hero">
-            <video autoplay muted loop>
+            <video autoplay muted loop playsinline>
                 <source src="/assets/video/video.mp4" type="video/mp4" />
                 HTML5 video not supported
             </video>
-            <h1>
-                AKT MAMUT<br />
-                <span style="font-size: 0.6em">Expeditions 2015 – 2025</span>
-            </h1>
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+                <div class="hero-copy">
+                    <div class="hero-kicker">Since 2015</div>
+                    <div class="hero-brand">AKT MAMUT</div>
+                    <h1>The Carpathian World</h1>
+                    <p class="hero-lead">A mountain project built around expeditions, routes and peak challenges across the landscapes of the Carpathians.</p>
+
+                    <p class="hero-sub">It brings together years of routes, maps and mountain observations, gradually forming a growing archive of places explored across the range.</p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="/expeditions" target="_blank">Explore Expeditions</a>
+                        <a class="btn btn-secondary" href="/challenges/list.html" target="_blank">Open Challenges</a>
+                    </div>
+                </div>
+            </div>
         </section>
-        <footer class="footer">
-            <div class="footer-center">© AKT Mamut 2015</div>
+
+        <main>
+            <section class="statement">
+                <div class="container">
+                    <div class="statement-inner">
+                        <h2>
+                            Mountain routes,<br />
+                            peak challenges<br />
+                            and a growing<br />
+                            Carpathian atlas.
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="modules">
+                <div class="container">
+                    <div class="section-header">
+                        <div>
+                            <h2>Explore the project</h2>
+                            <p>The homepage works as a hub for AKT MAMUT modules — current and future.</p>
+                        </div>
+                    </div>
+
+                    <div class="modules-grid">
+                        <a class="module-card" href="/expeditions" target="_blank">
+                            <div class="module-icon">🌍</div>
+                            <h3>Expeditions</h3>
+                            <p>Recorded routes, mountain trips and locations on the main interactive map.</p>
+                            <div class="module-meta">Open map →</div>
+                        </a>
+
+                        <a class="module-card" href="/challenges/list.html" target="_blank">
+                            <div class="module-icon">🏔</div>
+                            <h3>Challenges</h3>
+                            <p>Peak collections, regional challenges and progress tracking.</p>
+                            <div class="module-meta">Open challenges →</div>
+                        </a>
+
+                        <a class="module-card" href="/statistics" target="_blank">
+                            <div class="module-icon">📊</div>
+                            <h3>Statistics</h3>
+                            <p>Numbers behind the mountain activity: totals, regions, years and more.</p>
+                            <div class="module-meta">Open statistics →</div>
+                        </a>
+
+                        <div class="module-card module-coming">
+                            <div class="module-icon">🌸</div>
+                            <h3>Carpathian Flowers</h3>
+                            <p>A future atlas of mountain plants and field observations.</p>
+                            <div class="module-meta">Planned module</div>
+                        </div>
+
+                        <div class="module-card module-coming">
+                            <div class="module-icon">🗺️</div>
+                            <h3>Regionalization</h3>
+                            <p>A future module for mountain region classification and comparison.</p>
+                            <div class="module-meta">Planned module</div>
+                        </div>
+
+                        <div class="module-card module-coming">
+                            <div class="module-icon">🦣</div>
+                            <h3>More to come</h3>
+                            <p>The structure is ready for new modules built from routes, images and datasets.</p>
+                            <div class="module-meta">Scalable homepage</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-top-tight">
+                <div class="container">
+                    <div class="section-header">
+                        <div>
+                            <h2>Featured directions</h2>
+                            <p>A visual preview of the project’s strongest directions, ready to be replaced later with real expeditions and photos.</p>
+                        </div>
+                    </div>
+
+                    <div class="featured-grid">
+                        <a class="featured-card" href="/expeditions" target="_blank">
+                            <div class="featured-image"></div>
+                            <div class="featured-body">
+                                <span class="eyebrow">Maps</span>
+                                <h3>Recorded expeditions and route archive</h3>
+                                <p>The strongest core of the project: routes, places, mountain ranges and expedition details.</p>
+                            </div>
+                        </a>
+
+                        <a class="featured-card" href="/challenges/list.html" target="_blank">
+                            <div class="featured-image"></div>
+                            <div class="featured-body">
+                                <span class="eyebrow">Challenges</span>
+                                <h3>Regional peak collections with progress</h3>
+                                <p>A cleaner and more modern entry point into mountain challenge tracking.</p>
+                            </div>
+                        </a>
+
+                        <a class="featured-card" href="/statistics" target="_blank">
+                            <div class="featured-image"></div>
+                            <div class="featured-body">
+                                <span class="eyebrow">Data</span>
+                                <h3>Numbers behind the activity</h3>
+                                <p>Distance, elevation, years and the measurable side of the archive.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section about-section">
+                <div class="container about-wrap">
+                    <div class="about-card">
+                        <h2>About the project</h2>
+                        <p>AKT MAMUT is a personal mountain project focused on routes, maps, peaks and useful thematic modules around the Carpathians and beyond.</p>
+                        <p>Instead of relying on long promotional text, the project is built from real material: tracks, photos, challenge lists and mountain datasets.</p>
+                    </div>
+
+                    <div class="numbers-card">
+                        <div class="numbers-grid">
+                            <div class="number-box">
+                                <strong>2015–2026</strong>
+                                <span>Expeditions timeline</span>
+                            </div>
+
+                            <div class="number-box">
+                                <strong>3</strong>
+                                <span>Live modules today</span>
+                            </div>
+
+                            <div class="number-box">
+                                <strong>2+</strong>
+                                <span>Future modules planned</span>
+                            </div>
+
+                            <div class="number-box">
+                                <strong>1</strong>
+                                <span>Growing mountain hub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <div class="footer-mark">© 2015 AKT MAMUT</div>
+
+                <div class="footer-links">
+                    <a href="/expeditions" target="_blank">Expeditions</a>
+                    <a href="/challenges/list.html" target="_blank">Challenges</a>
+                    <a href="/statistics" target="_blank">Statistics</a>
+                </div>
+            </div>
         </footer>
+
+        <script>
+            const navToggle = document.getElementById('navToggle');
+            const mainNav = document.getElementById('mainNav');
+
+            navToggle.addEventListener('click', () => {
+                const isOpen = mainNav.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            });
+        </script>
     </body>
 </html>
