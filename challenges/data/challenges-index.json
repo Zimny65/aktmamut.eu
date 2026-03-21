@@ -27,11 +27,16 @@
   {
     "key": "kampinos",
     "name": "Kampinos Hills Challenge",
-    "icon": "🌲"
+    "icon": "/assets/img/kpn.svg"
   },
   {
     "key": "masovia",
     "name": "Masovian Challenge",
-    "icon": "🌄"
+    "icon": "/assets/img/MAS.webp"
+  },
+  {
+    "key": "raba",
+    "name": "Beskid Myślenicki Challenge",
+    "icon": "/assets/img/BMY.webp"
   }
 ]
