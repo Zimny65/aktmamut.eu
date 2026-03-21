@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (mode === 'menu') {
         right.innerHTML = `
-            <nav class="header-nav">
-                <a href="/expeditions" target="_blank">Expeditions</a>
-                <a href="/challenges/list.html" target="_blank">Challenges</a>
-                <a href="/statistics" target="_blank">Statistics</a>
-            </nav>
-        `;
+        <nav class="header-nav">
+            <a href="/expeditions">Expeditions</a>
+            <a href="/challenges/list.html">Challenges</a>
+            <a href="/statistics">Statistics</a>
+        </nav>
+    `;
     }
 
     if (mode === 'back-home') {

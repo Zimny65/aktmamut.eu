@@ -1,0 +1,150 @@
+:root {
+    --stats-max: 1480px;
+    --stats-label-col: 88px;
+    --stats-table-min: 960px;
+
+    --stats-cell-border: 1px solid #000;
+    --stats-head-bg: #eee;
+    --stats-label-bg: #f8f8f8;
+
+    --stats-hero-bg: linear-gradient(135deg, #ffffff, #eef5f1);
+}
+
+/* ===== TYPO (tylko tabela!) ===== */
+table,
+.monotable,
+th,
+td {
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* ===== LAYOUT ===== */
+.page {
+    max-width: var(--stats-max);
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+}
+
+.hero {
+    background: var(--stats-hero-bg);
+    border-radius: 24px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    margin: 0 0 10px;
+    font-family: Oswald, sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1;
+    font-weight: 500;
+}
+
+.hero p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* ===== TABLE CARD ===== */
+.table-card {
+    background: var(--card);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 18px;
+    overflow: auto;
+    max-height: calc(100vh - 220px);
+}
+
+.table-wrap {
+    min-width: var(--stats-table-min);
+}
+
+/* ===== TABLE ===== */
+.monotable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    font-size: 14px;
+}
+
+/* ===== CELLS ===== */
+.monotable th,
+.monotable td {
+    border-right: var(--stats-cell-border);
+    border-bottom: var(--stats-cell-border);
+    padding: 4px 6px;
+    text-align: right;
+    vertical-align: middle;
+    background: var(--card);
+}
+
+/* ===== HEADER (sticky TOP) ===== */
+.monotable thead th {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--stats-head-bg);
+}
+
+/* ===== TOP-LEFT CELL ===== */
+.monotable thead th:first-child {
+    left: 0;
+    z-index: 30;
+    background: var(--stats-label-bg);
+}
+
+/* ===== FIRST COLUMN (sticky LEFT) ===== */
+.monotable th:first-child,
+.monotable td:first-child {
+    position: sticky;
+    left: 0;
+    width: var(--stats-label-col);
+    min-width: var(--stats-label-col);
+    max-width: var(--stats-label-col);
+    background: var(--stats-label-bg);
+    color: var(--text);
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* ===== BORDERS FIX ===== */
+.monotable tr:first-child th {
+    border-top: var(--stats-cell-border);
+}
+
+.monotable th:first-child,
+.monotable td:first-child {
+    border-left: var(--stats-cell-border);
+}
+
+/* ===== EQUAL WIDTH COLUMNS ===== */
+.monotable th:not(:first-child),
+.monotable td:not(:first-child) {
+    width: calc((100% - var(--stats-label-col)) / var(--years-count, 1));
+}
+
+/* ===== CELL CONTENT ===== */
+.cell-value {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    width: 100%;
+}
+
+.cell-marker {
+    flex: 0 0 auto;
+    opacity: 0.55;
+    cursor: help;
+}
+
+/* ===== NOTE ===== */
+.table-note {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
