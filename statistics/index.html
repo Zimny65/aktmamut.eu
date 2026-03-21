@@ -2,60 +2,36 @@
 <html lang="pl">
     <head>
         <meta charset="UTF-8" />
-        <title>STATISTICS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>AKT MAMUT – Statistics</title>
         <link rel="icon" type="image/png" href="/assets/img/M32.webp" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/fira-code@latest/index.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono@latest/index.min.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-mono@latest/index.min.css" />
+
+        <link rel="stylesheet" href="/assets/css/shared.css" />
+        <link rel="stylesheet" href="/assets/css/statistics.css" />
+
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css" />
         <script src="https://unpkg.com/@popperjs/core@2"></script>
         <script src="https://unpkg.com/tippy.js@6"></script>
-
-        <style>
-            body,
-            h2,
-            table,
-            .monotable,
-            th,
-            td {
-                font-family: 'Roboto Mono', monospace;
-            }
-            body {
-                padding: 2px;
-            }
-            h2 {
-                text-align: center;
-            }
-            table {
-                border-collapse: collapse;
-                width: 100%;
-            }
-            th,
-            td {
-                border: 1px solid black;
-                padding: 2px 2px;
-                text-align: right;
-            }
-            .monotable th:first-child,
-            .monotable td:first-child {
-                background-color: #f8f8f8;
-                font-weight: bold;
-                max-width: 80px;
-                color: black;
-            }
-            thead {
-                background-color: #eee;
-            }
-            .monotable {
-                font-size: 14px;
-            }
-        </style>
     </head>
     <body>
-        <h2>GOT STATISTICS</h2>
-        <div id="gotTableContainer">Data input...</div>
+        <div id="headerMount" data-mode="back-home"></div>
 
-        <script src="statistics.js"></script>
+        <div class="page">
+            <section class="hero">
+                <h1>GOT Statistics</h1>
+                <p>Zestawienie narastających punktów GOT w podziale na dekady miesięcy.</p>
+            </section>
+
+            <div class="table-card">
+                <div class="table-wrap">
+                    <div id="gotTableContainer">Data input...</div>
+                </div>
+                <div class="table-note">Po najechaniu na znak ✳ pokazuje się tooltip ze szczegółami tras.</div>
+            </div>
+        </div>
+
+        <script src="/statistics/statistics.js"></script>
+        <script src="/assets/js/header.js"></script>
     </body>
 </html>

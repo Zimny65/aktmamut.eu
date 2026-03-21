@@ -7,18 +7,12 @@
         <link rel="icon" type="image/png" href="/assets/img/M32.webp" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
+        <link rel="stylesheet" href="/assets/css/shared.css" />
+        <link rel="stylesheet" href="/assets/css/challenges.css" />
+
         <style>
             :root {
-                --bg: #f5f7f8;
-                --card: #ffffff;
-                --text: #1f2937;
-                --muted: #6b7280;
-                --line: #e5e7eb;
-                --accent: #1f7a4f;
-                --accent-soft: #e8f5ee;
                 --code: #111827;
-                --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
-                --radius: 18px;
             }
 
             * {
@@ -41,46 +35,6 @@
                 max-width: 1180px;
                 margin: 0 auto;
                 padding: 28px 20px 60px;
-            }
-
-            .topbar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 16px;
-                margin-bottom: 24px;
-            }
-
-            .brand {
-                display: flex;
-                align-items: center;
-                gap: 14px;
-                text-decoration: none;
-                color: inherit;
-            }
-
-            .brand img {
-                height: 46px;
-                display: block;
-            }
-
-            .brand-text strong {
-                display: block;
-                font-family: Oswald, sans-serif;
-                font-size: 1.7rem;
-                font-weight: 500;
-                line-height: 1;
-            }
-
-            .brand-text span {
-                color: var(--muted);
-                font-size: 0.95rem;
-            }
-
-            .back {
-                text-decoration: none;
-                color: var(--accent);
-                font-weight: 700;
             }
 
             .hero {
@@ -115,7 +69,7 @@
 
             .toc {
                 position: sticky;
-                top: 18px;
+                top: calc(var(--header-h) + 18px);
                 background: var(--card);
                 border-radius: var(--radius);
                 padding: 18px;
@@ -138,6 +92,10 @@
 
             .toc a:last-child {
                 border-bottom: 0;
+            }
+
+            .toc a:hover {
+                color: var(--accent);
             }
 
             .content {
@@ -274,28 +232,13 @@
                 .grid-2 {
                     grid-template-columns: 1fr;
                 }
-
-                .topbar {
-                    flex-direction: column;
-                    align-items: flex-start;
-                }
             }
         </style>
     </head>
     <body>
+        <div id="headerMount" data-mode="back-challenges"></div>
+
         <div class="page">
-            <div class="topbar">
-                <a class="brand" href="/index.html">
-                    <img src="/assets/img/logo-akt-mamut.svg" alt="AKT MAMUT" />
-                    <div class="brand-text">
-                        <strong>AKT MAMUT</strong>
-                        <span>Challenges Manual</span>
-                    </div>
-                </a>
-
-                <a class="back" href="/challenges/list.html">← Back to Challenges</a>
-            </div>
-
             <div class="hero">
                 <h1>Challenges System Manual</h1>
                 <p>Dokumentacja systemu challenges dla projektu AKT MAMUT. System jest oparty na Google Sheets, Pythonie oraz statycznych plikach JSON używanych przez frontend.</p>
@@ -520,5 +463,6 @@ DATE == ""  → todo</code></pre>
                 </div>
             </div>
         </div>
+        <script src="/assets/js/header.js"></script>
     </body>
 </html>

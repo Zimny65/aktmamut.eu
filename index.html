@@ -7,30 +7,11 @@
 
         <link rel="icon" type="image/png" href="/assets/img/M32.webp" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="/assets/css/shared.css" />
+        <link rel="stylesheet" href="/assets/css/home.css" />
     </head>
     <body>
-        <header class="site-header">
-            <div class="container nav-wrap">
-                <a class="site-logo" href="/index.html" aria-label="AKT MAMUT home">
-                    <img src="/assets/img/M32.webp" alt="AKT MAMUT" />
-                    <span>AKT MAMUT</span>
-                </a>
-
-                <nav class="main-nav" id="mainNav" aria-label="Main navigation">
-                    <a href="/expeditions" target="_blank">Expeditions</a>
-                    <a href="/challenges/list.html" target="_blank">Challenges</a>
-                    <a href="/statistics" target="_blank">Statistics</a>
-                    <a href="#modules">Modules</a>
-                </nav>
-
-                <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </header>
+        <div id="headerMount" data-mode="menu"></div>
 
         <section class="hero">
             <video autoplay muted loop playsinline>
@@ -211,15 +192,6 @@
                 </div>
             </div>
         </footer>
-
-        <script>
-            const navToggle = document.getElementById('navToggle');
-            const mainNav = document.getElementById('mainNav');
-
-            navToggle.addEventListener('click', () => {
-                const isOpen = mainNav.classList.toggle('open');
-                navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            });
-        </script>
+        <script src="/assets/js/header.js"></script>
     </body>
 </html>

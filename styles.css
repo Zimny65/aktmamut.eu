@@ -63,7 +63,7 @@ img {
     gap: 24px;
 }
 
-.site-logo {
+/* .site-logo {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -81,6 +81,37 @@ img {
     font-size: 28px;
     letter-spacing: 1px;
     color: var(--text);
+} */
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-logo img {
+    height: 44px;
+    width: auto;
+    display: block;
+}
+
+.site-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-logo strong {
+    font-family: Oswald, sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.brand-text span {
+    color: var(--muted);
+    font-size: 0.95rem;
 }
 
 .main-nav {

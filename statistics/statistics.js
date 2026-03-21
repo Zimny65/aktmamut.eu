@@ -3,7 +3,20 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((res) => res.json())
         .then((data) => {
             const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-            const years = Array.from({ length: 11 }, (_, i) => 2015 + i); // 2015–2025
+
+            const dataYears = data.features
+                .map((f) => {
+                    const date = f.properties.date;
+                    if (!date) return null;
+                    const year = parseInt(date.split('-')[0], 10);
+                    return Number.isFinite(year) ? year : null;
+                })
+                .filter((year) => year !== null);
+
+            const minYear = dataYears.length ? Math.min(...dataYears) : new Date().getFullYear();
+            const maxYear = dataYears.length ? Math.max(...dataYears) : new Date().getFullYear();
+
+            const years = Array.from({ length: maxYear - minYear + 1 }, (_, i) => minYear + i);
 
             const decadalGOT = {};
             years.forEach((y) => {
@@ -13,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
             data.features.forEach((f) => {
                 const got = parseFloat(f.properties.got || '0');
                 const date = f.properties.date;
-                if (!date || isNaN(got)) return;
+                if (!date || Number.isNaN(got)) return;
 
                 const [yearStr, monthStr, dayStr] = date.split('-');
-                const year = parseInt(yearStr);
-                const month = parseInt(monthStr) - 1;
-                const day = parseInt(dayStr);
+                const year = parseInt(yearStr, 10);
+                const month = parseInt(monthStr, 10) - 1;
+                const day = parseInt(dayStr, 10);
 
                 if (!decadalGOT[year] || month < 0 || month > 11 || day < 1 || day > 31) return;
 
@@ -61,9 +74,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const container = document.getElementById('gotTableContainer');
             container.innerHTML = '';
+            container.style.setProperty('--years-count', years.length);
 
             const table = document.createElement('table');
             table.className = 'monotable';
+
+            const colgroup = document.createElement('colgroup');
+
+            const firstCol = document.createElement('col');
+            firstCol.style.width = '88px';
+            colgroup.appendChild(firstCol);
+
+            years.forEach(() => {
+                const col = document.createElement('col');
+                col.style.width = `${100 / years.length}%`;
+                colgroup.appendChild(col);
+            });
+
+            table.appendChild(colgroup);
 
             const thead = document.createElement('thead');
             const headerRow = document.createElement('tr');
@@ -95,7 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const month = months[Math.floor(i / 3)];
                 const dayLabels = ['10', '20', '30'];
                 const decadeLabel = dayLabels[i % 3];
+
                 const tr = document.createElement('tr');
+
                 const labelCell = document.createElement('td');
                 labelCell.textContent = `${month} ${decadeLabel}`;
                 tr.appendChild(labelCell);
@@ -139,12 +169,19 @@ document.addEventListener('DOMContentLoaded', () => {
   </table>
 `;
 
+                            const wrap = document.createElement('span');
+                            wrap.className = 'cell-value';
+
                             const star = document.createElement('span');
+                            star.className = 'cell-marker';
                             star.textContent = '✳';
-                            star.style.opacity = '0.5';
-                            star.style.cursor = 'help';
-                            td.appendChild(star);
-                            td.append(` ${got}`);
+
+                            const value = document.createElement('span');
+                            value.textContent = got;
+
+                            wrap.appendChild(star);
+                            wrap.appendChild(value);
+                            td.appendChild(wrap);
 
                             tippy(star, {
                                 content: tooltipHTML,

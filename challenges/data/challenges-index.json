@@ -1,42 +1,82 @@
 [
   {
+    "key": "pl",
+    "name": "Korona Gór Polski",
+    "icon": "/assets/img/pl.svg"
+  },
+  {
+    "key": "ua",
+    "name": "Korona Gór Ukrainy",
+    "icon": "/assets/img/ua.svg"
+  },
+  {
     "key": "ro",
-    "name": "Romanian Peak Challenge",
+    "name": "Korona Gór Rumunii",
     "icon": "/assets/img/ro.svg"
   },
   {
     "key": "sk",
-    "name": "Slovak Peak Challenge",
+    "name": "Korona Gór Słowacji",
     "icon": "/assets/img/sk.svg"
   },
   {
     "key": "cz",
-    "name": "Czech Peak Challenge",
+    "name": "Korona Gór Czech",
     "icon": "/assets/img/cz.svg"
   },
   {
     "key": "hu",
-    "name": "Hungarian Peak Challenge",
+    "name": "Korona Gór Węgier",
     "icon": "/assets/img/hu.svg"
   },
   {
-    "key": "swkrzyz",
-    "name": "Świętokrzyskie Peak Challenge",
-    "icon": "/assets/img/SWK.webp"
+    "key": "wkb",
+    "name": "Wielka Korona Beskidów PTT",
+    "icon": "/assets/img/wkb.webp"
   },
   {
-    "key": "kampinos",
-    "name": "Kampinos Hills Challenge",
+    "key": "kbk",
+    "name": "Korona Beskidów PTTK",
+    "icon": "/assets/img/kbk.webp"
+  },
+  {
+    "key": "dpg",
+    "name": "Diadem Polskich Gór",
+    "icon": "/assets/img/dpg.webp"
+  },
+  {
+    "key": "sud",
+    "name": "Korona Sudetów",
+    "icon": "/assets/img/sud.webp"
+  },
+  {
+    "key": "bie",
+    "name": "Korona Bieszczadów",
+    "icon": "/assets/img/bie.webp"
+  },
+  {
+    "key": "nis",
+    "name": "Korona Beskidu Niskiego",
+    "icon": "/assets/img/nis.webp"
+  },
+  {
+    "key": "mys",
+    "name": "Korona Beskidu Myślenickiego",
+    "icon": "/assets/img/mys.webp"
+  },
+  {
+    "key": "skr",
+    "name": "Korona Gór Świętokrzyskich",
+    "icon": "/assets/img/skr.webp"
+  },
+  {
+    "key": "kpn",
+    "name": "Korona Kampinosu",
     "icon": "/assets/img/kpn.svg"
   },
   {
-    "key": "masovia",
-    "name": "Masovian Challenge",
-    "icon": "/assets/img/MAS.webp"
-  },
-  {
-    "key": "raba",
-    "name": "Beskid Myślenicki Challenge",
-    "icon": "/assets/img/BMY.webp"
+    "key": "mas",
+    "name": "Korona Mazowsza",
+    "icon": "/assets/img/mas.webp"
   }
 ]
