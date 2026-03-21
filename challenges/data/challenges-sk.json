@@ -449,11 +449,11 @@
     "region": "Wewnętrzne Karpaty Zachodnie\nŚredniogórze Słowackie",
     "subregion": "Góry Kremnickie\nSK Kremnické vrchy",
     "height": 1317,
-    "expedition": "",
-    "date": "",
+    "expedition": "2534",
+    "date": "2025-08-22",
     "lat": 48.8066679,
     "lon": 18.9736112,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 412,
