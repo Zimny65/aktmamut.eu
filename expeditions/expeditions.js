@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     console.time('📥 fetch + przetwarzanie geojson');
 
-    fetch('expeditions.geojson')
+    fetch('/expeditions/expeditions.geojson')
         .then((res) => res.json())
         .then((data) => {
             console.timeEnd('📥 fetch + przetwarzanie geojson');

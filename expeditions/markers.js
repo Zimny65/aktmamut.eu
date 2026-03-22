@@ -1,5 +1,3 @@
-// markers.js
-
 window.addEventListener('DOMContentLoaded', function () {
     const mapId = document.querySelector('.folium-map')?.getAttribute('id');
     const map = window[mapId];
@@ -7,7 +5,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     console.time('📍 fetch markers.json');
 
-    fetch('markers.json')
+    fetch('/expeditions/markers.json')
         .then((res) => res.json())
         .then((markers) => {
             console.timeEnd('📍 fetch markers.json');
@@ -41,9 +39,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     }),
                 });
 
-                marker.bindTooltip(`<div style='font-family: Oswald, sans-serif; font-size: 12px;'>${m.nr} ${m.name}</div>`, {
-                    sticky: true,
-                });
+                marker.bindTooltip(`<div style="font-family: Oswald, sans-serif; font-size: 12px;">${m.nr} ${m.name}</div>`, { sticky: true });
 
                 markersGroup.addLayer(marker);
             });

@@ -1,12 +1,11 @@
-#map_f15ff5f41b2dbbf273d8c3052233061a {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    left: 0%;
-    top: 0%;
+html {
+    font-size: 16px;
 }
-.leaflet-container {
-    font-size: 1rem;
+
+body {
+    font-size: 16px;
+    background: var(--bg);
+    color: var(--text);
 }
 
 html,
@@ -17,10 +16,73 @@ body {
     padding: 0;
 }
 
-map {
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+.expeditions-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.expeditions-map-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+#map_f15ff5f41b2dbbf273d8c3052233061a,
+.folium-map {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.expeditions-map-wrap .leaflet-container {
+    font-size: 1rem;
+}
+
+.expeditions-topbar {
+    position: absolute;
+    top: 12px;
+    left: 72px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+.expeditions-topbar-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.expeditions-topbar-title strong {
+    font-family: Oswald, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.expeditions-topbar-title span {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+    .expeditions-topbar {
+        left: 12px;
+        right: 12px;
+        top: 12px;
+        padding: 10px 12px;
+    }
 }
