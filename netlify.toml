@@ -4,11 +4,11 @@
 # =========================================================
 # 1. REWRITE dla subdomeny kampinos.aktmamut.eu
 # =========================================================
-[[redirects]]
-  from = "https://kampinos.aktmamut.eu/*"
-  to = "/maps/kampinos.html"
-  status = 200
-  force = true
+# [[redirects]]
+#   from = "https://kampinos.aktmamut.eu/*"
+#   to = "/maps/kampinos.html"
+#   status = 200
+#   force = true
 
 # =========================================================
 # 2. PODSTAWOWE HEADERS BEZPIECZEŃSTWA
