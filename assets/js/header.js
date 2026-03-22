@@ -4,12 +4,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const version = window.APP_VERSION || '1';
 
-    // wczytaj HTML headera
     const res = await fetch(`/assets/components/header.html?v=${version}`);
     const html = await res.text();
     mount.innerHTML = html;
 
-    // ustaw prawa strona (menu lub back)
     const mode = mount.dataset.mode || 'menu';
     const right = document.getElementById('headerRight');
 
@@ -17,12 +15,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (mode === 'menu') {
         right.innerHTML = `
-        <nav class="header-nav">
-            <a href="/expeditions">Expeditions</a>
-            <a href="/challenges/list.html">Challenges</a>
-            <a href="/statistics">Statistics</a>
-        </nav>
-    `;
+            <nav class="header-nav">
+                <a href="/expeditions">Expeditions</a>
+                <a href="/challenges/list.html">Challenges</a>
+                <a href="/statistics">Statistics</a>
+            </nav>
+        `;
     }
 
     if (mode === 'back-home') {
