@@ -594,7 +594,7 @@
     "subregion": "Ławskie Góry",
     "height": 85,
     "expedition": "2452",
-    "date": "45634",
+    "date": "2024-12-08",
     "lat": 52.3054093,
     "lon": 20.6577327,
     "status": "done"
@@ -606,7 +606,7 @@
     "subregion": "Ławskie Góry",
     "height": 91,
     "expedition": "2452",
-    "date": "45634",
+    "date": "2024-12-08",
     "lat": 52.3016331,
     "lon": 20.6693144,
     "status": "done"
@@ -618,7 +618,7 @@
     "subregion": "Ławskie Góry",
     "height": 96,
     "expedition": "2452",
-    "date": "45634",
+    "date": "2024-12-08",
     "lat": 52.303247,
     "lon": 20.6772941,
     "status": "done"
@@ -630,7 +630,7 @@
     "subregion": "Wierszowskie Góry",
     "height": 93,
     "expedition": "2452",
-    "date": "45634",
+    "date": "2024-12-08",
     "lat": 52.313834,
     "lon": 20.6613601,
     "status": "done"
@@ -642,7 +642,7 @@
     "subregion": "Wierszowskie Góry",
     "height": 92,
     "expedition": "2452",
-    "date": "45634",
+    "date": "2024-12-08",
     "lat": 52.3216879,
     "lon": 20.6813816,
     "status": "done"
@@ -654,7 +654,7 @@
     "subregion": "Wierszowskie Góry",
     "height": 95,
     "expedition": "2452",
-    "date": "45634",
+    "date": "2024-12-08",
     "lat": 52.324626,
     "lon": 20.687706,
     "status": "done"
@@ -678,7 +678,7 @@
     "subregion": "Nad Kaliskiem",
     "height": 91,
     "expedition": "2452",
-    "date": "45634",
+    "date": "2024-12-08",
     "lat": 52.3084435,
     "lon": 20.7062524,
     "status": "done"
@@ -726,7 +726,7 @@
     "subregion": "Palmiry",
     "height": 98,
     "expedition": "2520",
-    "date": "45858",
+    "date": "2025-07-20",
     "lat": 52.3269501,
     "lon": 20.7415168,
     "status": "done"
@@ -738,7 +738,7 @@
     "subregion": "Palmiry",
     "height": 98,
     "expedition": "2520",
-    "date": "45858",
+    "date": "2025-07-20",
     "lat": 52.3250653,
     "lon": 20.7480534,
     "status": "done"
@@ -750,7 +750,7 @@
     "subregion": "Palmiry",
     "height": 101,
     "expedition": "2520",
-    "date": "45858",
+    "date": "2025-07-20",
     "lat": 52.3228938,
     "lon": 20.7447648,
     "status": "done"
@@ -762,7 +762,7 @@
     "subregion": "Palmiry",
     "height": 84,
     "expedition": "2520",
-    "date": "45858",
+    "date": "2025-07-20",
     "lat": 52.321071,
     "lon": 20.7456917,
     "status": "done"
@@ -786,7 +786,7 @@
     "subregion": "Nad Strugą",
     "height": 87,
     "expedition": "2502",
-    "date": "45669",
+    "date": "2025-01-12",
     "lat": 52.3058607,
     "lon": 20.7493111,
     "status": "done"
@@ -798,7 +798,7 @@
     "subregion": "Nad Strugą",
     "height": 92,
     "expedition": "2502",
-    "date": "45669",
+    "date": "2025-01-12",
     "lat": 52.28791,
     "lon": 20.7614064,
     "status": "done"
@@ -810,7 +810,7 @@
     "subregion": "Nad Strugą",
     "height": 90,
     "expedition": "2502",
-    "date": "45669",
+    "date": "2025-01-12",
     "lat": 52.2804274,
     "lon": 20.7985862,
     "status": "done"
@@ -870,7 +870,7 @@
     "subregion": "Sieraków",
     "height": 93,
     "expedition": "2507",
-    "date": "45711",
+    "date": "2025-02-23",
     "lat": 52.3192223,
     "lon": 20.7997569,
     "status": "done"
@@ -882,7 +882,7 @@
     "subregion": "Sieraków",
     "height": 91,
     "expedition": "2507",
-    "date": "45711",
+    "date": "2025-02-23",
     "lat": 52.3201803,
     "lon": 20.8100869,
     "status": "done"
@@ -894,7 +894,7 @@
     "subregion": "Sieraków",
     "height": 90,
     "expedition": "2507",
-    "date": "45711",
+    "date": "2025-02-23",
     "lat": 52.324231,
     "lon": 20.8217153,
     "status": "done"
@@ -906,7 +906,7 @@
     "subregion": "Sieraków",
     "height": 92,
     "expedition": "2435",
-    "date": "45536",
+    "date": "2024-09-01",
     "lat": 52.3398627,
     "lon": 20.8584121,
     "status": "done"
@@ -918,7 +918,7 @@
     "subregion": "Laski",
     "height": 90,
     "expedition": "2447",
-    "date": "45607",
+    "date": "2024-11-11",
     "lat": 52.325939,
     "lon": 20.8510457,
     "status": "done"
@@ -930,7 +930,7 @@
     "subregion": "Laski",
     "height": 96,
     "expedition": "2447",
-    "date": "45607",
+    "date": "2024-11-11",
     "lat": 52.3149222,
     "lon": 20.8358674,
     "status": "done"
@@ -942,7 +942,7 @@
     "subregion": "Laski",
     "height": 95,
     "expedition": "2447",
-    "date": "45607",
+    "date": "2024-11-11",
     "lat": 52.3129214,
     "lon": 20.8499913,
     "status": "done"
@@ -954,7 +954,7 @@
     "subregion": "Laski",
     "height": 101,
     "expedition": "2447",
-    "date": "45607",
+    "date": "2024-11-11",
     "lat": 52.3168023,
     "lon": 20.8614934,
     "status": "done"
@@ -966,7 +966,7 @@
     "subregion": "Laski",
     "height": 100,
     "expedition": "2507",
-    "date": "45711",
+    "date": "2025-02-23",
     "lat": 52.3052381,
     "lon": 20.8388118,
     "status": "done"
@@ -977,11 +977,11 @@
     "region": "Kampinoski Park Narodowy",
     "subregion": "Laski",
     "height": 101,
-    "expedition": "",
-    "date": "",
+    "expedition": "2603",
+    "date": "2026-03-22",
     "lat": 52.3023854,
     "lon": 20.8559139,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 83,
@@ -990,7 +990,7 @@
     "subregion": "Laski",
     "height": 97,
     "expedition": "2447",
-    "date": "45607",
+    "date": "2024-11-11",
     "lat": 52.3084684,
     "lon": 20.8791335,
     "status": "done"
@@ -1001,10 +1001,10 @@
     "region": "Kampinoski Park Narodowy",
     "subregion": "Laski",
     "height": 106,
-    "expedition": "",
-    "date": "",
+    "expedition": "2603",
+    "date": "2026-03-22",
     "lat": 52.2985345,
     "lon": 20.8749899,
-    "status": "todo"
+    "status": "done"
   }
 ]
