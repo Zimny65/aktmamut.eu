@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const mount = document.getElementById('headerMount');
     if (!mount) return;
 
+    const version = window.APP_VERSION || '1';
+
     // wczytaj HTML headera
-    const res = await fetch('/assets/components/header.html');
+    const res = await fetch(`/assets/components/header.html?v=${version}`);
     const html = await res.text();
     mount.innerHTML = html;
 
