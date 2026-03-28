@@ -617,11 +617,11 @@
     "region": "Wewnętrzne Karpaty Zachodnie\nŚredniogórze Północnowęgierskie",
     "subregion": "Cserhat\nHU Cserhát-hegység - SK Cerová vrchovina - PL Czerhat",
     "height": 727,
-    "expedition": "",
-    "date": "",
+    "expedition": "2606",
+    "date": "2026-03-26",
     "lat": 48.1586119,
     "lon": 19.7894444,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 470,

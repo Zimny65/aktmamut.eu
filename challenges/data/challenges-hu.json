@@ -41,11 +41,11 @@
     "region": "Wewnętrzne Karpaty Zachodnie\nŚredniogórze Północnowęgierskie",
     "subregion": "Cserhat\nHU Cserhát-hegység - SK Cerová vrchovina - PL Czerhat",
     "height": 727,
-    "expedition": "",
-    "date": "",
+    "expedition": "2606",
+    "date": "2026-03-26",
     "lat": 48.1586119,
     "lon": 19.7894444,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 464,
@@ -53,11 +53,11 @@
     "region": "Wewnętrzne Karpaty Zachodnie\nŚredniogórze Północnowęgierskie",
     "subregion": "Cserhat\nHU Cserhát-hegység - SK Cerová vrchovina - PL Czerhat",
     "height": 628,
-    "expedition": "",
-    "date": "",
+    "expedition": "2605",
+    "date": "2026-03-26",
     "lat": 48.1172286,
     "lon": 19.9009606,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 465,
@@ -65,11 +65,11 @@
     "region": "Wewnętrzne Karpaty Zachodnie\nŚredniogórze Północnowęgierskie",
     "subregion": "Cserhat\nHU Cserhát-hegység - SK Cerová vrchovina - PL Czerhat",
     "height": 658,
-    "expedition": "",
-    "date": "",
+    "expedition": "2609",
+    "date": "2026-03-28",
     "lat": 48.1670281,
     "lon": 19.8829311,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 466,
