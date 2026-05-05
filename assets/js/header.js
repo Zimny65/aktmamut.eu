@@ -19,6 +19,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (!right) return;
 
+    // Tryby headera:
+    // - menu: pełna nawigacja na stronie głównej
+    // - back-home: ikona powrotu do strony głównej
+    // - back-challenges: ikona powrotu do listy Challenges
     if (mode === 'menu') {
         right.innerHTML = `
             <nav class="header-nav">
@@ -32,14 +36,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (mode === 'back-home') {
         right.innerHTML = `
             <a class="header-icon-link" href="/index.html" title="Back to homepage" aria-label="Back to homepage">
-                // <svg viewBox="0 0 24 24" class="header-icon" aria-hidden="true">
-                //     <path d="M15 6l-6 6 6 6"
-                //           fill="none"
-                //           stroke="currentColor"
-                //           stroke-width="1.9"
-                //           stroke-linecap="round"
-                //           stroke-linejoin="round"></path>
-                // </svg>
                 <svg viewBox="0 0 24 24" class="header-icon" aria-hidden="true">
                     <path d="M15 6l-6 6 6 6"
                         fill="none"
