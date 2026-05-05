@@ -149,11 +149,11 @@
     "region": "Las Młochowski",
     "subregion": "Pruszków",
     "height": null,
-    "expedition": "",
-    "date": "",
+    "expedition": "2617",
+    "date": "2026-05-03",
     "lat": 52.1138408,
     "lon": 20.7562356,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": null,

@@ -17,11 +17,11 @@
     "region": "Zewnętrzne Karpaty Zachodnie\nKarpaty Środkowomorawskie",
     "subregion": "Las Żdanicki\nCZ Ždánický les",
     "height": 438,
-    "expedition": "",
-    "date": "",
+    "expedition": "2610",
+    "date": "2026-04-11",
     "lat": 49.1003897,
     "lon": 17.0492181,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 103,
@@ -29,11 +29,11 @@
     "region": "Zewnętrzne Karpaty Zachodnie\nKarpaty Środkowomorawskie",
     "subregion": "Pogórze Kyjowskie\nCZ Kyjovská pahorkatina",
     "height": 417,
-    "expedition": "",
-    "date": "",
+    "expedition": "2611",
+    "date": "2026-04-11",
     "lat": 49.0152308,
     "lon": 17.0556894,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 104,
@@ -41,11 +41,11 @@
     "region": "Zewnętrzne Karpaty Zachodnie\nKarpaty Środkowomorawskie",
     "subregion": "Chrziby\nCZ Chřiby",
     "height": 587,
-    "expedition": "",
-    "date": "",
+    "expedition": "2612",
+    "date": "2026-04-12",
     "lat": 49.1710567,
     "lon": 17.3091369,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 105,
@@ -53,11 +53,11 @@
     "region": "Zewnętrzne Karpaty Zachodnie\nKarpaty Środkowomorawskie",
     "subregion": "Pogórze Litenczyckie\nCZ Litenčická pahorkatina",
     "height": 518,
-    "expedition": "",
-    "date": "",
+    "expedition": "2616",
+    "date": "2026-04-14",
     "lat": 49.2010122,
     "lon": 17.1211686,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 106,
