@@ -122,6 +122,32 @@ img {
     color: var(--accent);
 }
 
+.header-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--accent);
+    background: transparent;
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.header-icon-link:hover {
+    background: var(--accent-soft);
+    transform: translateX(-1px);
+}
+
+.header-icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
 /* ===== SHARED FOOTER ===== */
 
 .site-footer {
@@ -178,17 +204,46 @@ img {
     }
 }
 
+@media (max-width: 768px) {
+    :root {
+        --header-h: 64px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand img {
+        height: 34px;
+    }
+
+    .brand-text strong {
+        font-size: 26px;
+    }
+
+    .header-icon-link {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+
+    .header-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 @media (max-width: 640px) {
     .container {
         width: min(var(--max), calc(100% - 24px));
     }
 
     .brand img {
-        height: 32px;
+        height: 30px;
     }
 
     .brand-text strong {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .header-back,

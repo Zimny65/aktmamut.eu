@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+        <title>AKT MAMUT</title>
+
+        <link rel="icon" href="/assets/img/M32.webp" />
+
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="/app/app.css?v=2" />
+    </head>
+    <body>
+        <header class="app-header">
+            <div class="brand">
+                <img src="/assets/img/M256.webp" alt="Mamut" />
+                <span>AKT MAMUT</span>
+            </div>
+        </header>
+
+        <main id="app">
+            <section id="view-start" class="view active">
+                <div class="hero">
+                    <video autoplay muted loop playsinline>
+                        <source src="/assets/video/video.mp4" type="video/mp4" />
+                    </video>
+
+                    <div class="hero-overlay"></div>
+
+                    <div class="hero-content">
+                        <div class="hero-copy">
+                            <div class="hero-kicker">Since 2015</div>
+                            <div class="hero-brand">AKT MAMUT</div>
+
+                            <h1>The Carpathian World</h1>
+
+                            <p class="hero-lead">A mountain project built around expeditions, routes and peak challenges across the Carpathians.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-expeditions" class="view">
+                <iframe src="/expeditions" class="view-frame"></iframe>
+            </section>
+
+            <section id="view-challenges" class="view">
+                <iframe src="/challenges/list.html" class="view-frame"></iframe>
+            </section>
+
+            <section id="view-statistics" class="view">
+                <iframe src="/statistics" class="view-frame"></iframe>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <button data-view="start" class="nav-item active" aria-label="Start">
+                <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+                    <path d="M4 11.5L12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                </svg>
+                <span>Start</span>
+            </button>
+
+            <button data-view="expeditions" class="nav-item" aria-label="Expeditions">
+                <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+                    <path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8" />
+                </svg>
+                <span>Expeditions</span>
+            </button>
+
+            <button data-view="challenges" class="nav-item" aria-label="Challenges">
+                <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+                    <path d="M3 20l6-10 4 6 3-4 5 8H3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                </svg>
+                <span>Challenges</span>
+            </button>
+
+            <button data-view="statistics" class="nav-item" aria-label="Statistics">
+                <svg viewBox="0 0 24 24" class="nav-icon" aria-hidden="true">
+                    <path d="M5 19V10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    <path d="M12 19V6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    <path d="M19 19V13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                </svg>
+                <span>Stats</span>
+            </button>
+        </nav>
+
+        <script src="/app/app.js?v=2"></script>
+    </body>
+</html>

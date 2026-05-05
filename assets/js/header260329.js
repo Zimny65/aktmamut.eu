@@ -1,0 +1,37 @@
+document.addEventListener('DOMContentLoaded', async () => {
+    const mount = document.getElementById('headerMount');
+    if (!mount) return;
+
+    const version = window.APP_VERSION || '1';
+
+    const res = await fetch(`/assets/components/header.html?v=${version}`);
+    const html = await res.text();
+    mount.innerHTML = html;
+
+    const mode = mount.dataset.mode || 'menu';
+    const right = document.getElementById('headerRight');
+
+    if (!right) return;
+
+    if (mode === 'menu') {
+        right.innerHTML = `
+            <nav class="header-nav">
+                <a href="/expeditions">Expeditions</a>
+                <a href="/challenges/list.html">Challenges</a>
+                <a href="/statistics">Statistics</a>
+            </nav>
+        `;
+    }
+
+    if (mode === 'back-home') {
+        right.innerHTML = `
+            <a class="header-back" href="/index.html">← Back to homepage</a>
+        `;
+    }
+
+    if (mode === 'back-challenges') {
+        right.innerHTML = `
+            <a class="header-back" href="/challenges/list.html">← Back to Challenges</a>
+        `;
+    }
+});
