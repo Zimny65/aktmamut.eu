@@ -45,7 +45,6 @@ img {
     width: min(var(--max), calc(100% - 40px));
     margin: 0 auto;
 }
-
 /* ===== SHARED HEADER ===== */
 
 .site-header {
