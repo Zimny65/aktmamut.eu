@@ -65,6 +65,15 @@ img {
     gap: 24px;
 }
 
+.site-header .header-bar {
+    width: min(var(--max), calc(100% - 40px));
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .brand {
     display: flex;
     align-items: center;
