@@ -109,3 +109,33 @@ td {
     color: var(--muted);
     font-size: 0.92rem;
 }
+
+@media (max-width: 640px) {
+    :root {
+        --stats-table-min: 720px;
+        --stats-label-col: 72px;
+    }
+
+    .page {
+        padding: 18px 12px 44px;
+    }
+
+    .hero {
+        border-radius: 18px;
+        padding: 20px;
+    }
+
+    .table-card {
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .monotable {
+        font-size: 12px;
+    }
+
+    .monotable th,
+    .monotable td {
+        padding: 3px 4px;
+    }
+}
