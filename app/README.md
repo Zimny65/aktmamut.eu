@@ -1,8 +1,29 @@
 # site/app/
 
-`site/app/` jest eksperymentalnym app shell oraz równoległą, mobilną wersją AKT Mamut. Ten katalog może być bazą pod przyszłą aplikację mobilną, PWA albo wariant Android.
+`site/app/` jest eksperymentalnym app shell oraz równoległą, mobilną wersją AKT Mamut. To świadomy sandbox mobilny i prototyp nowego UX, a nie przypadkowy duplikat strony i nie produkcyjny zamiennik głównych widoków.
 
-Nie jest to kopia klasycznej wersji webowej 1:1. Może mieć własny układ, własną nawigację i własne decyzje projektowe.
+Główna strona w `site/` pozostaje stabilną wersją produkcyjną. To ona ma dalej działać normalnie, zwłaszcza że regularnie dochodzą nowe trasy i dane. `site/app/` służy do eksperymentów mobile-first bez ryzyka psucia produkcji.
+
+Nie jest to kopia klasycznej wersji webowej 1:1. Może mieć własny układ, własną nawigację i własne decyzje projektowe. Pomysły sprawdzone w `site/app/` mogą być później przenoszone do głównych widoków, ale dopiero po weryfikacji.
+
+## Jedne dane, dwa interfejsy
+
+Najważniejsza zasada:
+
+```text
+jedne dane, dwa interfejsy
+```
+
+`site/app/` powinno korzystać z tych samych danych, które generuje produkcyjna fabryka danych i których używają klasyczne widoki strony.
+
+Przykładowe źródła danych:
+
+- `site/expeditions/expeditions.geojson`,
+- `site/expeditions/markers.json`,
+- `site/challenges/data/challenges-index.json`,
+- `site/challenges/data/challenges-*.json`.
+
+Nowe widoki w `site/app/` powinny czytać istniejące JSON/GeoJSON z `site/`. `site/app/` nie powinno tworzyć własnej, równoległej kopii danych ani stać się osobnym źródłem prawdy.
 
 ## Header i nawigacja
 
@@ -59,6 +80,17 @@ Bez wyraźnej zgody nie należy zmieniać:
 - cache bustingu dla `app.css` i `app.js`.
 
 Ten katalog jest eksperymentalny, ale może być ważną bazą pod przyszły kierunek aplikacyjny.
+
+## Nie robić bez decyzji
+
+Bez wyraźnej decyzji nie należy:
+
+- kopiować danych ręcznie do `site/app/`,
+- tworzyć równoległych plików danych tylko dla app shell,
+- przenosić produkcyjnych widoków do `site/app/` bez planu,
+- mocno linkować `site/app/` z głównego menu, dopóki pozostaje eksperymentalne,
+- traktować `site/app/` jako źródła prawdy dla danych,
+- zmieniać produkcyjnych generatorów tylko pod potrzeby eksperymentu w `site/app/`.
 
 ## Do zrobienia później
 
