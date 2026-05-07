@@ -1,0 +1,25 @@
+.version-label {
+    position: fixed;
+    right: 10px;
+    bottom: 8px;
+    z-index: 2000;
+    padding: 3px 7px;
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.72);
+    color: rgba(31, 41, 55, 0.55);
+    font:
+        11px/1.2 Consolas,
+        'Courier New',
+        monospace;
+    pointer-events: none;
+}
+
+@media (max-width: 640px) {
+    .version-label {
+        right: 8px;
+        bottom: 6px;
+        font-size: 10px;
+        opacity: 0.65;
+    }
+}
