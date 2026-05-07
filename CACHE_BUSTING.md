@@ -1,31 +1,38 @@
 # Cache busting w `site/`
 
-Ten dokument opisuje znalezione mechanizmy wersjonowania i omijania cache w części publikowanej strony. To opis stanu obecnego, a nie decyzja o zmianach.
+Ten dokument opisuje praktyczny mechanizm wersjonowania i omijania cache w części publikowanej strony.
 
-## Aktywny mechanizm wersjonowania nagłówka
+## Co robi `update_version.py`
 
-Główny mechanizm wersjonowania wygląda tak:
+Skrypt:
 
-1. `site/scripts/update_version.py` generuje znacznik czasu w formacie `YYYYMMDDHHMMSS`.
-2. Skrypt zapisuje ten numer do `site/assets/js/app-version.js`.
-3. `site/assets/js/app-version.js` ustawia globalną zmienną:
+```text
+site/scripts/update_version.py
+```
 
-   ```js
-   window.APP_VERSION = "...";
-   ```
+generuje znacznik czasu w formacie `YYYYMMDDHHMMSS`, np.:
 
-4. `site/assets/js/header.js` odczytuje `window.APP_VERSION`.
-5. `header.js` pobiera komponent nagłówka z parametrem wersji:
+```text
+20260507211944
+```
 
-   ```js
-   /assets/components/header.html?v=<APP_VERSION>
-   ```
+Następnie zapisuje go do:
 
-Dzięki temu przeglądarka powinna pobrać świeżą wersję `header.html`, gdy zmieni się `APP_VERSION`.
+```text
+site/assets/js/app-version.js
+```
 
-## Strony używające `app-version.js` i `header.js`
+w formie:
 
-Poniższe strony ładują mechanizm wersji aplikacji oraz wspólny nagłówek:
+```js
+window.APP_VERSION = "20260507211944";
+```
+
+Ten sam numer jest używany jako `?v=<APP_VERSION>` dla lokalnych plików CSS i JS ładowanych w wybranych plikach HTML.
+
+## HTML-e aktualizowane przez skrypt
+
+`update_version.py` aktualizuje lokalne linki CSS/JS w:
 
 - `site/index.html`
 - `site/expeditions/index.html`
@@ -33,21 +40,119 @@ Poniższe strony ładują mechanizm wersji aplikacji oraz wspólny nagłówek:
 - `site/challenges/list.html`
 - `site/challenges/manual.html`
 - `site/statistics/index.html`
+- `site/app/index.html`
 
-Ważne: `app-version.js` powinien być ładowany przed `header.js`, żeby `header.js` mógł użyć `window.APP_VERSION`.
+Skrypt dotyka tylko lokalnych assetów w atrybutach:
 
-## Osobny mechanizm w `site/app/index.html`
+```html
+href="/...css..."
+src="/...js..."
+```
 
-`site/app/index.html` używa osobnego, statycznego cache bustingu:
+Jeśli link nie ma `?v=`, skrypt dopisuje wersję. Jeśli link ma stare `?v=...`, skrypt podmienia je na aktualne `APP_VERSION`.
+
+## Czego skrypt nie rusza
+
+`update_version.py` nie powinien ruszać:
+
+- zewnętrznych URL-i `https://`, `http://`, `//`,
+- plików JSON,
+- plików GeoJSON,
+- wywołań `fetch(...)`,
+- danych generowanych przez skrypty Python.
+
+JSON/GeoJSON i `fetch` są osobnym tematem. Na razie nie są objęte tym etapem cache bustingu.
+
+## Pre-commit hook
+
+Pre-commit hook uruchamia:
+
+```powershell
+python scripts/update_version.py
+```
+
+przed commitem w repozytorium `site/`.
+
+Hook powinien dodać do commita pliki zmienione przez wersjonowanie, czyli przede wszystkim:
+
+- `assets/js/app-version.js`,
+- HTML-e z listy obsługiwanej przez `update_version.py`, jeśli zmieniły się w nich parametry `?v=`.
+
+Jeśli po commicie albo po próbie commita zostają zmienione HTML-e, oznacza to zwykle, że hook zaktualizował wersje po przygotowaniu commita. Wtedy trzeba sprawdzić zmiany, dodać je do commita i ponowić commit.
+
+## Ręczne uruchomienie
+
+Z katalogu `site/`:
+
+```powershell
+python scripts/update_version.py
+```
+
+To zaktualizuje:
+
+- `assets/js/app-version.js`,
+- `?v=<APP_VERSION>` w lokalnych linkach CSS/JS w obsługiwanych HTML-ach.
+
+## Sprawdzenie aktualnej wersji
+
+Aktualna wersja znajduje się w:
+
+```text
+site/assets/js/app-version.js
+```
+
+Przykład:
+
+```js
+window.APP_VERSION = "20260507211944";
+```
+
+## Header i `APP_VERSION`
+
+`site/assets/js/header.js` odczytuje `window.APP_VERSION` i pobiera wspólny komponent nagłówka z parametrem:
+
+```js
+/assets/components/header.html?v=<APP_VERSION>
+```
+
+Dzięki temu przeglądarka powinna pobrać świeżą wersję `header.html`, gdy zmieni się `APP_VERSION`.
+
+Ważne: `app-version.js` musi być ładowany przed `header.js`.
+
+## Version label
+
+Na stronie głównej działa testowa etykieta wersji.
+
+Używane pliki:
+
+- `site/assets/css/version-label.css`
+- `site/assets/js/version-label.js`
+- `site/assets/js/app-version.js`
+
+`version-label.js` odczytuje `window.APP_VERSION` i dodaje do strony dyskretną etykietę:
+
+```text
+v20260507211944
+```
+
+Na razie etykieta wersji jest dodana tylko do:
+
+- `site/index.html`
+
+Nie jest jeszcze dodana do pozostałych stron.
+
+## Osobny przypadek `site/app/index.html`
+
+`site/app/index.html` wcześniej używał ręcznych wersji:
 
 ```html
 <link rel="stylesheet" href="/app/app.css?v=2" />
 <script src="/app/app.js?v=2"></script>
 ```
 
-To oznacza, że `site/app/app.css` i `site/app/app.js` mają ręcznie ustawioną wersję `v=2`, niezależną od `window.APP_VERSION`.
+Po rozszerzeniu `update_version.py` te lokalne linki mogą być aktualizowane do aktualnego `APP_VERSION`, tak jak pozostałe lokalne CSS/JS.
 
-## Mechanizm `no-store` w challenges
+## Mechanizm `no-store` w Challenges
 
 Challenge'e używają dodatkowo mechanizmu omijania cache przy pobieraniu danych JSON.
 
@@ -71,18 +176,21 @@ Dotyczy to przede wszystkim:
 
 Bez wyraźnej zgody nie należy usuwać, przenosić ani zmieniać:
 
-- `site/scripts/update_version.py`
-- `site/assets/js/app-version.js`
-- `site/assets/js/header.js`
-- `site/assets/js/header260329.js`
-- `site/app/index.html`
-- `site/challenges/index.html`
-- `site/challenges/list.html`
+- `site/scripts/update_version.py`,
+- `site/assets/js/app-version.js`,
+- `site/assets/js/header.js`,
+- `site/assets/js/header260329.js`,
+- `site/assets/js/version-label.js`,
+- `site/assets/css/version-label.css`,
+- pre-commit hooka w repozytorium `site/`,
+- ręcznie parametrów `?v=...` w HTML-ach, jeśli są zarządzane przez `update_version.py`.
 
-Te pliki są powiązane z aktualnym ładowaniem nagłówka, wersjonowaniem albo pobieraniem danych bez cache.
+Te pliki i wpisy są powiązane z aktualnym ładowaniem nagłówka, wersjonowaniem assetów albo testową etykietą wersji.
 
-## Do wyjaśnienia
+## Do zrobienia później
 
-- Czy dodać cache busting dla `site/expeditions/expeditions.geojson` i `site/expeditions/markers.json`.
-- Czy `site/assets/js/header260329.js` można później przenieść do archiwum.
-- Czy `app.css?v=2` i `app.js?v=2` w `site/app/index.html` powinny kiedyś używać `APP_VERSION`.
+- Zdecydować, czy dodać cache busting dla `site/expeditions/expeditions.geojson` i `site/expeditions/markers.json`.
+- Zdecydować, czy JSON-y Challenges mają nadal używać `cache: 'no-store'`, czy także `?v=<APP_VERSION>`.
+- Dodać version label do pozostałych stron, jeśli test na `site/index.html` będzie udany.
+- Sprawdzić, czy version label nie przeszkadza na mapach i w `site/app/` z dolną nawigacją.
+- Zdecydować, czy `site/assets/js/header260329.js` można przenieść do archiwum.
