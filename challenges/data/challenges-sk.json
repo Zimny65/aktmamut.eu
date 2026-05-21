@@ -293,11 +293,11 @@
     "region": "Wewnętrzne Karpaty Zachodnie\nTatry i Fatra",
     "subregion": "Sułowskie Wierchy\nSK Súľovské vrchy",
     "height": 891,
-    "expedition": "",
-    "date": "",
+    "expedition": "2621",
+    "date": "2026-05-19",
     "lat": 49.1252315,
     "lon": 18.4958339,
-    "status": "todo"
+    "status": "done"
   },
   {
     "number": 309,
